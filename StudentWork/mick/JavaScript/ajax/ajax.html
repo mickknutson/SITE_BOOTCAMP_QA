@@ -1,0 +1,31 @@
+
+
+<html>
+    <body>
+        <script language=javascript 
+                type="text/javascript">
+
+                var title = "AJAX Example"
+
+                document.write(title);
+                console.log(title);
+
+            // Replace ./data.json with your JSON feed
+            fetch('./data.json')
+                .then(response => {
+                return
+                response.json ()
+            })
+            .then(data => {
+                // Work with JSON data here
+                console.log(data)
+            })
+            .catch(err => {
+                // Do something for an error here
+                console.error(err)
+            })
+            
+        </script>
+    </body>
+</html>
+
