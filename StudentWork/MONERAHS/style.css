@@ -1,0 +1,15 @@
+.Title {
+    color:#000000; 
+    text-decoration: underline;
+    text-align: center;
+}
+.Bod{
+ 
+  font-size: 30pt;
+  background-color:#ffffff;
+  text-align: center;
+  display: block; 
+  background-color: #dddd ; 
+  padding: 50px; 
+  font-size: 30px; 
+  color: pink }
