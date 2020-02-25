@@ -1,10 +1,12 @@
-# SITE_BOOTCAMP_QA
-Bootcamp for SITE Students
+# Student Project Files
 
 
-## README DETAILS
-README.md files are in https://en.wikipedia.org/wiki/Markdown format
+Student Name  |
+------------- |
+[Mick Knutson](./mick/)  |
+[Mick Knutson](./mick/)  |
+[Mick Knutson](./mick/)  |
 
-FOO BAR
+
 
 ## The End...
