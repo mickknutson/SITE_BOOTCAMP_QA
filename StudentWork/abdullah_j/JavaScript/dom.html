@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    
+    <h2>Unordered List</h2>
+
+    <ul id="create"></ul>
+
+    <ul id="read">
+      <li>Li Read</li>
+    </ul>
+
+    <ul id="update">
+      <li>Li Update</li>
+    </ul>
+
+    <ul id="del">
+      <li>Li delete</li>
+    </ul>
+
+
+
+    <script language="javascript" type="text/javascript">
+    
+        //create
+
+        let text = document.createTextNode("'li' element");
+        let li = document.createElement("li");
+        li.appendChild(text);
+
+        let ul = document.getElementsByTagName("ul")[0];
+        ul.appendChild(li);
+
+
+
+        //read
+
+        let read = document.getElementById('read');
+        console.log(read.textContent);
+        console.log(read.innerHTML);
+        
+        
+
+        //update // doesn't work
+
+        let update = document.getElementById('update');
+        update.childNodes = li.innerHTML;
+        console.log(update.textContent);
+        console.log(update.innerHTML);
+
+        //delete
+    
+        let del = document.getElementById('del');
+        
+        if(del.parentNode){
+            del.parentNode.removeChild(del);
+        }
+        console.log(del.innerHTML);
+        
+    
+    
+    </script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<body>
+    <b id="demo"></b>
+<script language='javascript' type='text/javascript'>
+/*how to identify json "literal" 1st way*/
+emp= {id:102,name:"Mohan", salary: 3000};/*Using constructors to identify objects*/
+
+document.write(emp.id+" "+emp.name+" "+emp.salary);
+/*how to identify json 2nd way*/
+var emp2=new Object ();
+emp2.id=103;
+emp2.name="ghadeer";
+emp2.salary=90900;
+document.write('<br>'+emp2.id+" "+emp2.name+" "+emp2.salary);
+/*Using constructors to identify objects*/
+function emp3 (id, name, salary){
+    this.id=id;
+    this.name=name;
+    this.salary=salary;
+
+}
+
+e= new emp3(103,"ghadeer",88000);
+document.write('<br>'+e.id+" "+e.name+" "+e.salary);
+/*accessing proprities on an object*/
+let obj={
+    cat:"meow",
+    dog:'woof'
+
+};
+let sound=obj["cat"];
+let sound2=obj.dog;
+
+console.log(sound);
+console.log(sound2);
+console.log(obj[0]);//is not working
+let arr=['a','b','c'];
+let letter=arr[1];
+console.log(letter);
+
+
+</script>
+</body>
+</html>
