@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <script language=javascript
+                type='text/javascript'>
+            
+            //  ++ Getters & Setters : ++
+            /*
+            function bike(){
+                console.log(this.name);
+            }
+            
+            var name = 'Mohammed';
+            var obj1 = {name:"Mick", bike:bike};
+            var obj2 = {name: "Talal", bike:bike};
+            bike();
+            obj1.bike();
+            bike();
+            obj2.bike();
+            */
+            
+            
+            // ++ Prototype an OBJECT ++ 
+            
+            function Person (first, last, age, eyecolor){
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eyecolor;
+            }
+            Person.prototype.name = function(){
+                return this.firstName + " " + this.lastName;
+            };
+            var p = new Person('MOHAMMED','ALDWSARI', 34, 'brown');
+            document.write(p.name());
+            console.log(p.name());
+            
+            // ++ PROTOTYPE INHERTINCAE ++ 
+            
+            const car = {};
+            const list = [];
+            console.log(Object.getPrototypeOf(car)=== Object.prototype);
+            
+            console.log(Object.prototype.isPrototypeOf(car));
+            
+            console.log(Object.getPrototypeOf(list) === Array.prototype);
+            
+            console.log(Array.prototype.isPrototypeOf(list));
+        </script>
+    </body>
+</html>
