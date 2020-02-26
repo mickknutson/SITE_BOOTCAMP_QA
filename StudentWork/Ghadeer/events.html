@@ -1,0 +1,24 @@
+<html>
+    <ul>
+        
+    </ul>
+<script>
+    function sayHello(){
+        alert("hello!");
+        let text=document.createTextNode("'li' element.");
+        let li=document.createElement("LI");
+        li.appendChild(text);
+        let ul=document.getElementsByTagName("ul")[0];
+        ul.appendChild(li);
+    
+    }
+    sayHello();
+</script>
+<p>click the following</p>
+<form>
+    <input type="button"
+    onclick="sayHello()"
+    value="say Hello"/>
+
+</form>
+</html>

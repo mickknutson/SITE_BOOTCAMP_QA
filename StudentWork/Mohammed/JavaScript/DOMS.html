@@ -1,0 +1,51 @@
+<html>
+    <body href="foo">
+
+        <h2>Unorderd List</h2>
+        
+        <ul id="create"></ul>
+        
+        <ul id="read">
+            <li>Li Read</li>
+        </ul>
+        
+        <ul id="update">
+            <li>Li Update</li>
+        </ul>
+        
+        <ul id="del">
+            <li>Li Delete</li>
+        </ul>
+        
+        
+        <script language=javascript
+                type='text/javascript'>
+            
+            // CREATE 
+            let text = document.createTextNode("'Li' element has been added!");
+            let li = document.createElement("LI");
+            li.appendChild(text);
+            let ul = document.getElementsByTagName("ul")[0];
+            ul.appendChild(li);
+            
+            // READ
+            let re = document.getElementById("read");
+            console.log(re.textContent);
+            console.log(re.innerHTML);
+            
+            // UPDATE .. *>>>>>>>>> need to be fixed!!<<<<<<<<<<<
+            let update = document.getElementById("update");
+            update.childNodes = li.innerHTML;
+            console.log(update.textContent);
+            console.log(update.innerHTML);
+            
+            // delete ..
+            let del = document.getElementsByName("ul")[3];
+            if (del.parentNode){
+                del.parentNode.removeChild(del);
+            }
+            console.log(del.innerHTML);
+            
+        </script>
+    </body>
+</html>
