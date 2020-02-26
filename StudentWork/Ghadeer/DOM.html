@@ -1,0 +1,45 @@
+<html>
+    <body href="foo">
+        <h2>Unordered List</h2>
+        <ul id="create"></ul>
+        <ul id="read">
+            <li>LI read</li>
+        </ul>
+        <ul id="Update">
+            <li>Update</li>
+        </ul>
+        <ul id="delete">
+            <li>Delete</li>
+        </ul>
+        <script>
+        //create
+       let text=document.createTextNode("'li' element.");
+        let li=document.createElement("LI");
+        li.appendChild(text);
+        let ul=document.getElementsByTagName("ul")[0];
+        ul.appendChild(li);
+        //read
+        let read=document.getElementById("read");
+        console.log(read.textContent);
+        console.log(read.innerHTML);
+        //update
+        let update1=document.getElementById('Update');
+        update1.childNodees=li.innerHTML;
+        update1.innerHTML=update1.childNodees;
+        console.log(update1.textContent);
+        console.log(update1.innerHTML);
+        //delete
+        let del=document.getElementsByTagName("ul")[3];
+        if(del.parentNode){
+            del.parentNode.removeChild(del);  
+        }
+        console.log(del.innerHTML);
+
+
+
+
+
+        </script>
+
+    </body>
+</html>

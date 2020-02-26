@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script language="javascript" type="text/javascript">
+      var emp = { id: 101, name: 'Abdullah', salary: 40000 };
+      document.write(emp.id + ' ' + emp.name + ' ' + emp.salary + '<br><br>');
+
+      /////////////////////////////////////////////////////////////
+
+      var emp2 = new Object();
+      emp2.id = 102;
+      emp2.name = 'Ahmed';
+      emp2.salary = 50000;
+      document.write(emp2.id + ' ' + emp2.name + ' ' + emp2.salary + '<br><br>');
+
+      /////////////////////////////////////////////////////////////
+
+      function employee(id, name, salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+      }
+
+      var emp3 = new employee(103, 'khalid', 45000);
+      document.write(emp3.id + ' ' + emp3.name + ' ' + emp3.salary + '<br><br>');
+
+      ///////////////////////////////////////////////////////////////////
+
+      let obj = {
+        cat: 'meow',
+        dog: 'woof'
+      };
+
+      console.log(obj.cat);
+      console.log(obj['dog']);
+      console.log(obj[1]);
+
+      //////////////////////////////////////////////////////////////////////
+
+      function bike() {
+        console.log(this.name);
+      }
+
+      var name = 'ninja';
+
+      var obj1 = { name: 'obj1', bike: bike };
+      var obj2 = { name: 'obj2', bike: bike };
+
+      bike();
+      obj1.bike();
+      obj2.bike();
+
+      ////////////////////////////////////////////////////////////////////////////
+
+      function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+      }
+
+      Person.prototype.fullName = function() {
+        return this.firstName + ' ' + this.lastName;
+      };
+
+      var per = new Person('Abdullah', 'Jaber', 10, 'blue');
+
+      console.log(per.fullName());
+
+      //////////////////////////////////////////////////////////////////////////////
+
+      const car = {};
+      const list = [];
+
+      console.log(Object.getPrototypeOf(car) === Object.prototype);
+      console.log(Object.prototype.isPrototypeOf(car));
+      console.log(Object.getPrototypeOf(list) === Array.prototype);
+      console.log(Array.prototype.isPrototypeOf(list));
+    </script>
+  </body>
+</html>
