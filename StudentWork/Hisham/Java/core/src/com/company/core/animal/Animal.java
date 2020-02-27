@@ -14,9 +14,11 @@ public class Animal {
 
         Dog dog = new Dog();
         dog.talk();
+        dog.eat();
 
         //down-casting
         Animal cat = new Cat();
+        cat.eat();
 
         //way 1
         Cat c = (Cat)cat;
