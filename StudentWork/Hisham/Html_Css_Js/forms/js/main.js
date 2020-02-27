@@ -5,6 +5,6 @@ function toSubmit() {
   let password = document.getElementById("password");
 
   alert(
-    `Hello ${fname.value} ${lname.value} \n your email is : ${email.value} \n \n your password is : ofcourse i will not print it , thats not secure`
+    `\t Hello ${fname.value} ${lname.value} \n your email is : ${email.value} \n \n your password is : ofcourse i will not print it , thats not secure`
   );
 }
