@@ -1,0 +1,195 @@
+<html>
+		<body>
+				<script language=javascript 
+						type='text/javascript'>
+
+						document.write('Hello World!<br> Foo bar <br>'); 
+
+						document.write('<br>');
+
+						document.write('<b>Hello my name is "Sara"</b>');
+
+						console.log('a\nbc');
+
+/*						console.log(true);
+						console.log(null);
+						console.log(undefined);
+						console.log([1,2,3,4]);
+						console.log({a:1,b:2,c:3});
+*/
+//						console.error('This is a simple error!!');
+
+						//JSON						
+						console.table( 
+							{
+								'a' : 1,
+								'b' : 2
+							}
+						);
+
+						var a = 5,
+							b = 10,
+							c = 5;
+
+						var x = a;
+						console.log(a==c);
+						console.log(a===c);
+						console.log(a==x);
+						console.log(a===x);
+
+						console.log((a!=b)&&(a<b));
+						var a='sara',
+							b='\tAlhunaiti';
+						console.log(a+b);
+
+
+						var age =10
+
+						console.log((age<18)?'too young':'old enough');
+
+						document.write("<br>");
+						document.write("<br>");
+
+						var student_age = 22;
+
+						if(student_age > 10)
+						{
+
+							document.write('This is my first program');
+						}
+
+						else if (student_age < 10) {
+
+							document.write('<b> Age is Less than 10</b>');
+						}
+						else{
+							document.write('<b> Other age</b>');
+
+						}
+						document.write('<br>');
+						document.write('<br>');
+
+						document.write((student_age > 10)?' *This is my first program':'<b> Age is Less than 10</b>');
+
+						var text;
+						var x=0;
+						switch(x){
+							case 0:
+							  text='Off';
+							  break;
+							case 1:
+							   text ='ON';
+							   break;
+							default:
+							   text='No value found';
+						}
+						document.write('<br>');
+						document.write('<br>');
+
+						document.write('<br>'+ text);
+
+
+						for(let i=0;i<=10;i++){
+							document.write('<br>'+i);
+
+						}
+
+
+						document.write('<br>');
+
+						let i=0;
+						
+						do{
+							i=i+1;
+							document.write('<br>'+i);
+						} while(i<5);
+
+
+
+					//	let i=0;
+						let n=0;
+						while(i<5){
+							i++;
+
+							if(i===3){
+								continue;
+							}
+							n +=i;
+
+							document.write('<br>'+n);
+						}
+
+						document.write('<br>');
+
+
+						var cars =['BMW', 'Volvo','Mini'];
+						var car;
+						for (car of cars){
+							document.write(car+'<br>');
+						}
+
+
+
+						function myFunc(x,y){
+							if(x === y){
+								document.write('Both are same!');
+							}
+						}
+
+						//Best to place the function before calling it 
+
+						myFunc(10,10);
+
+						document.write('<br>');
+
+						var x = function(a,b){return a*b};
+						var z = x(4,3);
+						console.log(z);
+						document.write(z);
+
+						function myFun(a,b){
+							return a*b;
+						}
+
+						console.log(myFun(2,5));
+
+
+					/*	function add(a,b,callback){
+							document.write(a+b);
+							callback();
+						}
+						add(5,6, function display
+*/
+					var list= ['bar', 'baz', 'foo', 'qux'];
+					console.log(list);
+					list.pop();
+					console.log(list);
+
+					var list= ['bar', 'baz', 'foo', 'qux'];
+					console.log(list);
+					list.shift();
+					console.log(list);
+
+
+					var list= ['bar', 'baz', 'foo', 'qux'];
+					console.log(list);
+					//list.splice(2);
+
+					list.splice(0,2);
+
+					console.log(list);
+
+
+					var list2= ['a', 'b', 'c', 'd','e', 'f', 'x', 'y','z'];
+
+					console.log('Alhunaiti'.slice(3));
+
+
+
+
+
+
+
+				</script>
+		</body>
+</html>
