@@ -1,0 +1,21 @@
+<html>
+    <ul>
+
+    </ul>
+<script>
+    function mult(...args){
+       console.log(args.reduce(function(acc,curValue){
+           return acc*curValue;
+       }));
+    
+    }
+    console.log(mult(5,1,2,3));
+</script>
+<p>click the following</p>
+<form>
+    <input type="button"
+    onclick="sayHello()"
+    value="say Hello"/>
+
+</form>
+</html>

@@ -1,0 +1,39 @@
+.myform {
+  text-align: center;
+  font-size: larger;
+  margin: auto 0;
+  margin-top: 15%;
+  border: 2px double black;
+}
+
+.formEle {
+  margin-bottom: 50px;
+}
+
+input {
+  height: 15px;
+  width: 15%;
+  font-size: large;
+}
+
+label {
+  text-align: left;
+}
+
+.buttons {
+  border: 1px solid red;
+  color: white;
+  background-color: teal;
+  height: 50px;
+  width: 150px;
+  margin-right: 30px;
+  font-weight: bolder;
+  text-shadow: 1px 1px black;
+}
+
+#sub:hover {
+  background-color: greenyellow;
+}
+#res:hover {
+  background-color: red;
+}
