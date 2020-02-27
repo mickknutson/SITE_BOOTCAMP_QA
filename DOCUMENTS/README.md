@@ -1,7 +1,6 @@
 # CLASS NOTES
 
 
---
 ## HTTP:
 
 
@@ -18,7 +17,6 @@
 
 
 
---
 ## LANGUAGE:
 
 [**JSON**](https://www.json.org)
@@ -26,7 +24,6 @@
 
 
 
---
 ## PATTERNS:
 
 [**Facade_pattern**](https://en.wikipedia.org/wiki/Facade_pattern)
@@ -44,7 +41,7 @@
 (https://www.enterpriseintegrationpatterns.com)
 
 
---
+
 ## HTML (5):
 
 
@@ -57,7 +54,7 @@
 [](https://www.w3schools.com)
 
 
---
+
 ## TESTING
 
 
@@ -67,7 +64,6 @@
 
 
 
---
 ## TOOLS
 
 ### Editors
@@ -78,7 +74,7 @@
 
 [**sublimetext**](https://www.sublimetext.com)
 
---
+---
 ### GIT Clients
 
 [**GIT Kraken**](https://www.gitkraken.com)
@@ -92,7 +88,7 @@
 
 
 
---
+---
 
 [**Kingsmen Exploading head**](https://www.youtube.com/watch?v=ZD24VY0YWdQ)
 
