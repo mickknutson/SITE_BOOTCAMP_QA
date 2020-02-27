@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="/style/main.css" />
+  </head>
+  <body>
+    <form onsubmit="toSubmit()" class="myform">
+      <div class="formEle">
+        <label for="fname">First Name :</label>
+        <input
+          type="text"
+          id="fname"
+          placeholder="enter your first name in here ..."
+          required
+        />
+      </div>
+
+      <div class="formEle">
+        <label for="lname">Last Name :</label>
+        <input
+          type="text"
+          id="lname"
+          placeholder="enter your last name in here ..."
+          required
+        />
+      </div>
+
+      <div class="formEle">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="enter your email in here ..."
+          required
+        />
+      </div>
+
+      <div class="formEle">
+        <label for="password">Password :</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="enter your password in here ..."
+          required
+        />
+      </div>
+
+      <div class="formEle">
+        <input type="submit" value="Submit" class="buttons" id="sub" />
+        <input type="reset" value="Reset" class="buttons" id="res" />
+      </div>
+    </form>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>

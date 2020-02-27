@@ -1,0 +1,25 @@
+<html>
+      <body>
+					<form>
+					<label for="fName"> First Name:</label><br>
+					<input type="text" id="fName" name="first name"><br>
+					<label for="lName"> Last Name: </label><br>
+					<input type="text" id="lName" name="Last name"><br>
+					<label for="email">Email: </label><br>
+					<input type="email" id="email" name="Email"><br>
+					<label for="pass"> Password: </label><br>
+					<input type="password" id="pass" name="pass"><br><br>
+					<input type="submit" value="Submit" onclick =info()>
+					
+					
+					</form>
+				<script type = "text/javascript ">
+                     function info(){
+					 var x= document.getElementById('fName').value;
+					 var y= document.getElementById('lName').value;
+					 alert("Hello " +x + " " + y);					 
+					 }
+                    </script>
+				
+      </body>
+</html>

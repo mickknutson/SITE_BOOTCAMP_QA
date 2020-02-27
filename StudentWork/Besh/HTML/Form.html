@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Webpage</title>
+    <style>
+      .fname[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 30;
+  color: #45a049
+}
+
+.formStyle{
+  width: 100%;
+  color: blueviolet;
+  padding: 20px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
+  </head>
+  <script>
+    function sumbitForm(){
+    var fname=document.getElementById("fname").value;
+    var lname=document.getElementById("lname").value;
+    var email=document.getElementById("Email").value;
+    var pass=document.getElementById("Password").value;
+    alert('User full name: '+fname+' '+lname+'\nUser Email: '+email+'\nUser password: '+pass);
+}
+  </script>
+  <body>
+    <h1>Students' Information</h1>
+    <div>
+    <form action="sumbitForm()">
+    <label class="formStyle" for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label class="formStyle" for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label class="formStyle" for="Email">Email:</label><br>
+    <input type="text" id="Email" name="Email"><br><br>
+    <label class="formStyle" for="Password">Password:</label><br>
+    <input type="password" id="Password" name="Password"><br><br>
+    <input type = "button" 
+                 onclick = "sumbitForm()" 
+                 
+                 value = "submit" /> 
+
+               </div>
+
+
+  </body>
+</html>
