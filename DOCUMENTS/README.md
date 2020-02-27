@@ -4,13 +4,16 @@
 ## HTTP:
 
 
-[**Hypertext_Transfer_Protocol**](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+[**Hypertext Transfer Protocol**](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+
 
 [**HTTP Status Codes**]
 (https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
-[**Request_methods**]
+
+[**HTTP Request Methods**]
 (https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+
 
 [**HTTP Header Fields**]
 (https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
@@ -19,8 +22,24 @@
 
 ## LANGUAGE:
 
-[**JSON**](https://www.json.org)
-[**MarkDown**](https://www.md)
+[**Java**](https://java.oracle.com)
+
+[**HTML**](https://www.json.org)
+
+[**CSS**](https://www.json.org)
+
+[**Markdown**](https://www.json.org)
+
+[**JavaScript**](https://www.json.org)
+
+[**Python**](https://www.json.org)
+
+[**Spring Boot**](https://www.spring.io)
+
+[**RegEx Tester**](https://regexr.com)
+
+
+
 
 
 
@@ -47,20 +66,26 @@
 
 [**HTML5**](https://en.wikipedia.org/wiki/HTML5)
 
-[**Comparison_of_browser_engines (HTML_support)**](https://en.wikipedia.org/wiki/Comparison_of_browser_engines_(HTML_support))
+[**Comparison of browser engines (HTML support)**](https://en.wikipedia.org/wiki/Comparison_of_browser_engines_(HTML_support))
 
-[](https://caniuse.com)
+[**HTML5 Browser Support Checker**](https://caniuse.com)
 
-[](https://www.w3schools.com)
+[**W3 Schools**](https://www.w3schools.com)
 
 
 
 ## TESTING
 
+[**JUnit**](http://www.junit.org)
 
 [**assertj**](http://joel-costigliola.github.io/assertj/index.html)
 
 [**JsonPath**](https://github.com/json-path/JsonPath)
+
+[**SOAP UI**](http://www.junit.org)
+
+[**SOAP UI**](http://www.junit.org)
+
 
 
 
@@ -82,6 +107,13 @@
 [**Source Tree**](https://www.sourcetreeapp.com)
 
 [**GIT Up**](https://gitup.co)
+
+
+---
+### Misc Tools
+
+[**ZAP Attack Proxy**](https://www.zaproxy.org)
+
 
 
 

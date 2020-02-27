@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+ 	<head>
+
+ 		
+
+	 
+
+ 	</head>
+  	<body>
+
+  		<form id="myform">  
+            <label for="fname">First name:</label><br>   
+            <input type="text" id="fname" name="fname">
+            <br><label for="lname">Last name:</label><br>   
+            <input type="text" id="lname" name="lname"> 
+            <br><label for="email">Email:</label><br>
+            <input type="email" id="email" name="email">
+            <br> <label for="password">Password</label><br>
+            <input type="password" id="pass" name="pass">
+            <br> <button onclick="myFunction()"> Submit</button> <br>
+<!--            <br> <input type="button" id="submit" name="sub" onclick="sub()"><br>-->
+        </form> 
+ 
+        
+        
+        <script>
+            function myFunction(){
+                
+           //document.getElementById("myform").submit();
+                alert(document.getElementById("fname").value+' '+ document.getElementById("lname").value+' '
+                     +document.getElementById("email").value+' '+document.getElementById("pass").value);
+                
+            //document.write('first name: ')
+            }
+           
+	  		
+	  	</script>
+
+	</body>
+    
+    
+    
+     	
+	
+</html>
