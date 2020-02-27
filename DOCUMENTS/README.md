@@ -22,6 +22,7 @@
 ## LANGUAGE:
 
 [**JSON**](https://www.json.org)
+[**MarkDown**](https://www.md)
 
 
 
@@ -69,6 +70,7 @@
 --
 ## TOOLS
 
+### Editors
 
 [**IntelliJ**](https://www.jetbrains.com/idea/)
 
@@ -76,9 +78,24 @@
 
 [**sublimetext**](https://www.sublimetext.com)
 
+--
+### GIT Clients
+
+[**GIT Kraken**](https://www.gitkraken.com)
+
+[**Source Tree**](https://www.sourcetreeapp.com)
+
+[**GIT Up**](https://gitup.co)
 
 
+
+
+
+
+--
 
 [**Kingsmen Exploading head**](https://www.youtube.com/watch?v=ZD24VY0YWdQ)
+
+[**BAD Dad Jokes**](https://www.youtube.com/results?search_query=bad+dad+jokes)
 
 --
