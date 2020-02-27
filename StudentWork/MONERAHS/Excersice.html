@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+	  <header>
+         <h2>**Registration Form**</h2>
+      </header>
+<fieldset>
+	<legend>User Information</legend>
+	<form>
+		<label for="fname">First Name:</label>
+		<input type="Text" id="fname"name="fname"><br/>
+		<label for="lname">Last Name: </label>
+		<input type="Text" id="lname" name="lname"><br/>
+		<label for="email">E-mail:</label>
+		<input type="E-mail" id="email" name="email"><br/>
+		<label for="pass">Password:</label>
+		<input type="Password" id="pass"name="pass"><br/>
+		<button Text="submit" id="submit" onclick="myfunction()">submit</button>
+</fieldset>
+		
+	</form>
+		<script type="text/javascript">
+		function myfunction(){
+			var a=document.getElementById('fname').value;
+			var b=document.getElementById('lname').value;
+
+
+
+
+			alert("Welcome "+a+" "+b);
+		}
+		</script>
+</body>
+</html>
