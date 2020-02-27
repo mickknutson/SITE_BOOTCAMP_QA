@@ -1,0 +1,138 @@
+<html>
+		
+	<head>
+		<title> Object Examples</title>
+	</head>
+		<body href="foo">
+			<h1>Object Examples</h1>
+				<script language=javascript 
+						type='text/javascript'>
+
+						// ######  1  ######
+
+						var emp;
+						var id;
+						var name;
+						var salary;
+
+						emp = { id : 101 , name : 'Sara' , salary : 40000};
+
+						document.write( emp.id + " " + emp.name + " " +emp.salary ); 
+
+						document.write('<br>');
+						document.write('<br>');
+
+						// ######  2  ######
+
+						var emp2 = new Object();
+						emp2.name2 = 'Haifa';
+						emp2.id2 = 102;
+						emp2.salary2 = 50000;
+
+						document.write(emp2.id2 + " " + emp2.name2 + " " + emp2.salary2);
+
+						document.write('<br>');
+						document.write('<br>');
+
+
+						// ######  3  ######
+
+						function Employee( id3 , name3 , salary3){
+
+							this.id3 = id3;
+							this.name3 = name3;
+							this.salary3 = salary3;
+						}
+
+						emp3 = new Employee(103 , 'Nada' , 30000);
+
+						document.write(emp3.id3 + " " + emp3.name3 + " " + emp3.salary3);
+
+						document.write('<br>');
+						document.write('<br>');
+
+						// ######  4  ######
+
+						let obj = {
+							cat : 'MEW',
+							dog : 'WOOF'
+						};
+
+						let sound = obj.cat; // Same as obj["cat"] === obj['cat']
+
+						console.log(obj['cat']);
+						console.log(obj[0]);
+						console.log(sound);
+
+						document.write('Cat goes <b>'+ sound + '</b>');
+
+
+						document.write('<br>');
+						document.write('<br>');
+
+						// ######  5  ######
+
+						let arr = ['a' , 'b' , 'c'];
+						let letter = arr[0];
+						console.log(letter);
+
+						document.write('<br>');
+						document.write('<br>');
+
+						// ######  6  ######
+
+
+						function bike(){
+							console.log(this.name6);
+						}
+
+						var name6 = 'Ninja';
+						var obj1 = {name6 : 'Pulsar' , bike : bike};
+						var obj2 = {name6 : 'Nada' , bike : bike};
+
+						bike();
+						obj1.bike();
+						obj2.bike();
+
+
+						// ######  7  ######
+
+						function Person(first, last, age, eyecolor){
+							this.firstName = first;
+							this.lastName = last;
+							this.age = age;
+							this.eyeColor = eyecolor;
+						}
+
+						Person.prototype.name = function(){
+							return this.firstName + "   " + this.lastName;
+						};
+
+						var p = new Person('Sara', 'Alhunaiti', 23, 'Brown');
+
+						// we have to add () So it's treated as a state
+						// if not it will pring the funtion it self ' behavior '
+
+						console.log(p.name());
+
+						document.write(p.name());
+
+
+						// ######  8  ######
+
+						const car = {}
+						const list = []
+
+						 console.log(Object.getPrototypeOf(car) === Object.prototype);
+
+						 console.log(Object.prototype.isPrototypeOf(car));
+
+						 console.log(Object.getPrototypeOf(list) === Array.prototype);
+
+						 console.log(Array.prototype.isPrototypeOf(list));
+
+
+
+				</script>
+		</body>
+</html>
