@@ -1,0 +1,59 @@
+
+<html>
+    <body>
+        
+        <h2>Unordered List</h2>
+        
+        <ul id="cr"></ul>
+
+        <ul id="re">
+            <li>LI Read</li>
+        </ul>
+        
+        <ul id="up">
+            <li>Li Update</li>
+        </ul>
+        
+        <ul id="de">
+            <li>LI Delete</li>
+        </ul>
+
+        <script language=javascript 
+                type="text/javascript">
+            
+            // CREATE
+            let text = document.createTextNode("'li' element.");
+            let li = document.createElement("LI");
+            li.appendChild(text);
+
+            let ul = document.getElementsByTagName("ul")[0];
+            ul.appendChild(li);
+
+            // READ
+            let read = document.getElementById("re");
+            console.log( read.textContent );
+            console.log( read.innerHTML );
+            
+            
+            // UPDATE
+            let update = document.getElementById("update");
+            update.childNodes = li.innerHTML;
+            console.log( update.innerHTML );
+            
+            // DELETE
+            let del = document.getElementsByTagName("ul")[3];
+            
+            if (del.parentNode) {
+                del.parentNode.removeChild(del);
+            }
+            console.log( del.innerHTML );
+            
+            
+            
+        </script>
+
+    </body>
+</html>
+
+
+
