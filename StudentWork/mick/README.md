@@ -1,4 +1,4 @@
 # Mick's Student Files
 
 ## HTML
-[HTML Section](./html)
+[HTML Section](./html/)
