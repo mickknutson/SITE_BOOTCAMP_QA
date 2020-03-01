@@ -1,23 +1,38 @@
 package com.company.core.animal;
 
 public class Animal {
+private String name;
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public  Animal()
+    {
+         this.name = "generic";
+
+    }
+
+    public  Animal(String name)
+    {
+        this.name = name;
+
+    }
 
     public void eat()
     {
-        System.out.println("Eating ...");
+        System.out.println(name+" is Eating ...");
     }
 
     public static void main(String[] args) {
-
-        Animal animal = new Animal();
-        animal.eat();
-
-        Dog dog = new Dog();
-        dog.talk();
-        dog.eat();
-
         //down-casting
-        Animal cat = new Cat();
+        Animal cat = new Cat("Cimba");
         cat.eat();
 
         //way 1
