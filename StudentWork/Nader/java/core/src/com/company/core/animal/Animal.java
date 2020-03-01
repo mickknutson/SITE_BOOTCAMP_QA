@@ -4,7 +4,7 @@ public interface Animal {
 
     public void eat();
 
-    public void talk(String voice);
+    public void talk(String name);
 
 
 } // The End...
