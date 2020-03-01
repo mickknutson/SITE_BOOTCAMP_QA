@@ -1,23 +1,29 @@
 package com.site.core.animal;
 
-public class Dog extends Animal {
+public class Dog implements Animal{
 
-    public Dog() {
-        setName("mutt");
+    private String name;
+
+    public Dog(String name){
+        this.name = name;
     }
 
-    public Dog(String name) {
-        setName(name);
+    @Override
+    public void eat(){
+        System.out.println("nom, nom,nom");
     }
 
-
-    public void talk() {
-        System.out.println("bark");
-    }
-
-    public void talk(String voice) {
+    @Override
+    public void talk(String voice){
         System.out.println(voice);
     }
 
+    // Accessor:
+    // Override:
+    // Animal.getName / Dog.getName
+    public String getName() {
+        System.out.println("2. inside Dog.getName");
+        return this.name;
+    }
 
 }

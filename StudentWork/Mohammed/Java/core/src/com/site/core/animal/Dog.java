@@ -1,12 +1,13 @@
 package com.site.core.animal;
 
-public class Dog extends Animal {
+public class Dog implements Animal {
 
+    private String name;
     public Dog (){
 
     }
     public Dog (String name){
-        setName(name);
+        this.name = name;
     }
 
     public void talk(){
@@ -19,6 +20,11 @@ public class Dog extends Animal {
 
     public String getName(){
         System.out.println("Dog.getName");
-        return  super.getName();
+        return  this.name;
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(" Hum hum hum!!");
     }
 }
