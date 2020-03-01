@@ -15,14 +15,16 @@ public class Main {
 
         //basic();
 
-        Animal animal = new Animal();
-        Dog dog = new Dog("dogee");
-        Cat cat = new Cat("kitty");
+
+        Animal animal = new Puppy("pup");
+
+        Animal dog = new Dog("Dogee");
+        Animal cat = new Cat("kitty");
 
         animal.eat();
 
-        dog.talk();
         dog.talk("woof");
+        cat.talk("meow");
 
 
     } // end main()
