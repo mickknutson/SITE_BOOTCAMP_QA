@@ -5,4 +5,4 @@
 ## JS
 [JS Section](./JS/)
 ## JAVA
-[JS Section](./JAVA/)
+[JAVA Section](./JAVA/)

@@ -18,6 +18,7 @@ public interface Animal {
 //    }
 
     public void eat();
+    public void talk();
     String getName();
     void setName(String name);
 //    {
