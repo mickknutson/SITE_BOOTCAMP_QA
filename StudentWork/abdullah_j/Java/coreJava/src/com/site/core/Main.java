@@ -1,5 +1,10 @@
 package com.site.core;
 
+import com.site.core.animal.Animal;
+import com.site.core.animal.Cat;
+import com.site.core.animal.Dog;
+import com.site.core.animal.Puppy;
+
 public class Main {
 
     private String anInstance;
@@ -7,9 +12,17 @@ public class Main {
     public static void main(String[] args) {
 
         String aLocalVariable;
-        System.out.println("Hello Abdullah");
 
         //basic();
+
+        Animal animal = new Animal();
+        Dog dog = new Dog("dogee");
+        Cat cat = new Cat("kitty");
+
+        animal.eat();
+
+        dog.talk();
+        dog.talk("woof");
 
 
     } // end main()

@@ -1,4 +1,9 @@
 package com.company.core;
+import com.company.core.animal.Animal;
+import com.company.core.animal.Cat;
+import com.company.core.animal.Dog;
+import com.company.core.animal.Puppy;
+
 import java.util.*;
 public class Main {
 
@@ -7,10 +12,24 @@ public class Main {
     public static String aStaticVar = "Static";
 
     public static void main(String[] args) {
+        Animal animal = new Animal();
 
-        System.out.println("Hello World");
+        Animal wolf = new Animal("wolf");
+        Dog dog = new Dog("zippy");
+        Puppy pup = new Puppy("pup");
+        Cat cat = new Cat("Cimba");
 
-        basic();
+
+
+        animal.eat();
+        wolf.eat();
+        dog.eat();
+        pup.eat();
+        cat.eat();
+
+        System.out.println(dog.getName());
+
+//        basic();
 
 
     }
