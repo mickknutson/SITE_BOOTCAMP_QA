@@ -1,4 +1,4 @@
-package com.baselogic.core.animal;
+package com.company.core.animal;
 
 public class Cat implements Animal{
 
@@ -8,11 +8,9 @@ public class Cat implements Animal{
         this.name = name;
     }
 
-    @Override
     public void talk(String voice){
         System.out.println(voice);
     }
-
 
     @Override
     public void eat() {
