@@ -1,15 +1,14 @@
-package Animal;
+package com.company.core.animal;
 
+public class Cat implements Animal{
 
-public class Cat implements Animal {
     private String name;
 
     public Cat(String name) {
         this.name = name;
     }
 
-    @Override
-    public void talk(String voice) {
+    public void talk(String voice){
         System.out.println(voice);
     }
 
@@ -17,5 +16,4 @@ public class Cat implements Animal {
     public void eat() {
         System.out.println("sip, sip, sip");
     }
-
 }

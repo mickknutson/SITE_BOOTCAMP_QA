@@ -1,32 +1,49 @@
 package Animal;
 
-public class Animal {
+//public class Animal {
+public interface Animal {
 
-    public Animal(){
+    // Vars
+    //   private String name;
+    //   private static String label ="Gen";
 
-        this.name="Generic";
-    }
+    /* // Constructors
+     public Animal(){
 
-    public Animal(String name){
+         this.name="Generic";
+     }
 
-        this.name=name;
-    }
+     public Animal(String name){
 
+         this.name=name;
+     }
+     // Setter and Getter
+     public String getName() {
+         System.out.println("Animal.getName");
+         return name;
+     }
 
-    private String name;
+     public void setName(String name) {
+         this.name = name;
+     }*/
+    // Methods
+    public void eat();
 
-    private static String label ="Gen";
+    public void talk(String voice);
 
+    // Main
+    /*public static void main(String[] args) {
 
+        Animal animal = new Animal();
+        Dog dog = new Dog("DeeOhGee");
+        Puppy puppy = new Puppy("pup");
 
-    public void eat(){
-        System.out.println(name + " is eating nom, nom...");
+        animal.eat();
+        dog.talk();
+        dog.eat();
+        puppy.eat();
 
-    }
-
-    public static void main(String[] args) {
-
-        Animal generic = new Animal();
+       /* Animal generic = new Animal();
         Animal wolf = new Animal("Wolf");
 
         generic.eat();
@@ -34,13 +51,13 @@ public class Animal {
         System.out.println("Label: " + Animal.label);
 
         Animal animal = new Animal();
-        Animal dog = new Dog();
+        Animal dog = new Dog("DeeOhGee");
         Animal cat = new Cat();
 
         animal.eat();
         ((Dog)dog).talk();
         ((Cat)cat).talk();
 
-    }
+    }*/
 
 }

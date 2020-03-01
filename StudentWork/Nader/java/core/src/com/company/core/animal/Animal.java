@@ -1,4 +1,4 @@
-package com.site.core.animal;
+package com.company.core.animal;
 
 public interface Animal {
 
