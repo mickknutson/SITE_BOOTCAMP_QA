@@ -1,8 +1,9 @@
 package com.baselogic.core.animal;
 
-public class Cat extends Animal{
+public class Puppy extends Dog{
 
-    public Cat(String name) {
+    public Puppy(String name) {
         super(name);
     }
+
 }

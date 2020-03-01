@@ -15,7 +15,18 @@ public class Animal {
 
     // Methods / Behavior
     public void eat(){
-        System.out.println(name + " is eating [nom, nom, nom...]");
+        System.out.println(name + " is eating.");
+    }
+
+    // Accessor:
+    public String getName() {
+        System.out.println("1. inside animal.getName");
+        return name;
+    }
+
+    // Mutator:
+    public void setName(String name) {
+        this.name = name;
     }
 
 } // The End...
