@@ -1,4 +1,4 @@
-package com.baselogic.core.animal;
+package com.company.core.animal;
 
 public class Cat implements Animal{
 
