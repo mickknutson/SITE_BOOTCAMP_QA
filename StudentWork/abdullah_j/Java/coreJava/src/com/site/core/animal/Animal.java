@@ -17,9 +17,17 @@ public class Animal {
 
     // Methods / Behavior
     public void eat() {
-        System.out.println(name + " is eating [nom, nom, nom...]");
+        System.out.println(name + " is eating");
     }
 
+    public String getName() {
+        System.out.println("inside animal.getName");
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public static void main(String[] args) {
 
