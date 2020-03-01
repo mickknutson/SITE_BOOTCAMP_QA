@@ -1,6 +1,24 @@
 package com.company.animal;
 
-public class Dog extends Animal{
+public class Dog implements Animal{
+    private String name;
+
+    public Dog(String name){
+        this.name=name;
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("nom,nom, mo,");
+    }
+
+    @Override
+    public void talk(String voice) {
+        System.out.println("sip,sip,sip");
+    }
+}
+
+/* public class Dog extends Animal{
 
     public Dog(){
         setName("mutt");
@@ -27,4 +45,4 @@ public class Dog extends Animal{
     public void talk(String voice){
         System.out.println(voice);
     }
-}
+} */
