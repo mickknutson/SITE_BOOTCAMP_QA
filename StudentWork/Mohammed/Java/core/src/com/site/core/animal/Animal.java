@@ -5,7 +5,7 @@ public class Animal {
     private String name;
 
     public Animal (){
-        this.name = "generic name!";
+        this.name = " Animal!";
     }
 
     public Animal (String name){
@@ -15,6 +15,16 @@ public class Animal {
     public void eat(){
         System.out.println( name + " nom, nom, nom");
     }
+
+    public String getName() {
+        System.out.println("Animal getName!");
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public static void main (String[] args){
 
         /*
