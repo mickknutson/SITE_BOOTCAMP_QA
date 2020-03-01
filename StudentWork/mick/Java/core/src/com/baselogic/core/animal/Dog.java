@@ -1,13 +1,15 @@
 package com.baselogic.core.animal;
 
-public class Dog extends Animal{
+public class Dog implements Animal{
+
+    private String name;
 
     public Dog(String name){
-        setName(name);
+        this.name = name;
     }
 
-    public void talk(){
-        System.out.println("bark");
+    public void eat(){
+        System.out.println("nom, nom,nom");
     }
 
     public void talk(String voice){
@@ -19,7 +21,7 @@ public class Dog extends Animal{
     // Animal.getName / Dog.getName
     public String getName() {
         System.out.println("2. inside Dog.getName");
-        return super.getName();
+        return this.name;
     }
 
 }
