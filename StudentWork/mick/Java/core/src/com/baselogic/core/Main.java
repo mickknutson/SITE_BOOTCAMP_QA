@@ -1,29 +1,27 @@
 package com.baselogic.core;
 
-public class Main {
+import com.baselogic.core.animal.Animal;
+import com.baselogic.core.animal.Cat;
+import com.baselogic.core.animal.Dog;
+import com.baselogic.core.animal.Puppy;
 
-    private String anInstanceVariable = "instance";
-    public static String aStaticVariable = "static";
+import java.util.ArrayList;
+import java.util.List;
 
+public class Main { // extends Object
 
     // Method Block of code:
     public static void main(String[] args) {
 
-        String aLocalVariable = "local";
+        Animal animal = new Animal();
+        Dog dog = new Dog("Dogee");
+        Cat cat = new Cat("kitty");
 
-        int variableA = 1;
+        animal.eat();
 
-	    // write your code here
-        System.out.println("variableA: " + variableA);
-
-        System.out.println("Hello Mick!");
-        System.out.println("local: " + aLocalVariable);
-
-//        System.out.println("instance: " + anInstanceVariable);
-
-        System.out.println("Static: " + aStaticVariable);
-
+        dog.talk();
+        dog.talk("woof");
 
     } // end main() BLOCK
 
-} // The End...
+} // The End Main...
