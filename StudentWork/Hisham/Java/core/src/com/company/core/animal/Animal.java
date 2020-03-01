@@ -1,7 +1,18 @@
 package com.company.core.animal;
 
 public class Animal {
-private  String name;
+private String name;
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
     public  Animal()
     {
          this.name = "generic";
@@ -20,18 +31,8 @@ private  String name;
     }
 
     public static void main(String[] args) {
-
-        Animal animal = new Animal();
-        Animal wolf = new Animal("wolf");
-        animal.eat();
-        wolf.eat();
-
-        Dog dog = new Dog();
-        dog.talk();
-        dog.eat();
-
         //down-casting
-        Animal cat = new Cat();
+        Animal cat = new Cat("Cimba");
         cat.eat();
 
         //way 1

@@ -1,5 +1,8 @@
 package com.company.core;
 import com.company.core.animal.Animal;
+import com.company.core.animal.Cat;
+import com.company.core.animal.Dog;
+import com.company.core.animal.Puppy;
 
 import java.util.*;
 public class Main {
@@ -10,12 +13,23 @@ public class Main {
 
     public static void main(String[] args) {
         Animal animal = new Animal();
+
         Animal wolf = new Animal("wolf");
+        Dog dog = new Dog("zippy");
+        Puppy pup = new Puppy("pup");
+        Cat cat = new Cat("Cimba");
+
+
+
         animal.eat();
         wolf.eat();
-        System.out.println("Hello World");
+        dog.eat();
+        pup.eat();
+        cat.eat();
 
-        basic();
+        System.out.println(dog.getName());
+
+//        basic();
 
 
     }
