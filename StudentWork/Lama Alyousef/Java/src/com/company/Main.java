@@ -10,7 +10,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-     Animal animal = new Animal();
+
+        Animal animal = new Puppy("pup");
+        Animal dog = new Dog("Dogee");
+        Animal cat = new Cat("kitty");
+
+        animal.eat();
+
+        dog.talk("woof");
+        cat.talk("meow");
+
+    /*  Animal animal = new Animal();
      Dog dog = new Dog("DeeOhGee");
      Cat cat = new Cat("kitty");
 

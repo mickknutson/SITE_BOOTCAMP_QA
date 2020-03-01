@@ -1,7 +1,13 @@
 package com.company.animal;
 
 // Scope:  Type:   ClassName:
- public    class    Animal {
+ // public    class    Animal {
+    public    interface     Animal {
+
+     public void eat();
+     public void talk(String voice);
+ }
+
     // public, protected, DEFAULT, private
 
     // body of my class:
@@ -10,7 +16,7 @@ package com.company.animal;
     // encapswlayion
     //private static String name;
 
-    private String name;
+    /* private String name;
     private static String label = "generic";
 
     // Constructor
@@ -37,7 +43,7 @@ package com.company.animal;
         this.name = name;
     }
 }
-
+*/
 
 
     /*public static void main(String[] args) {
