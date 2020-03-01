@@ -1,12 +1,17 @@
 package Animal;
 
-public class Animal {
+public interface Animal {
 
-    public Animal(){
+
+    public void eat();
+    public void talk(String voice);
+
+   /* public Animal(){
 
         this.name="Generic";
 
     }
+
     public Animal(String name){
         this.name=name;
     }
@@ -16,27 +21,37 @@ public class Animal {
     private static String lable;
 
     public void eat(){
-        System.out.println(name+ " nom, nom, nom");
+     //   System.out.println(name+ " Is eating ");
+    }
 
+    public String getName() {
+        System.out.println("animal.getName");
+        return name;
+    }
+// Accessor
+    public void setName(String name) {
+        this.name = name;
     }
 
     public static void main (String[] args){
 
         Animal generic = new Animal();
         Animal wolf = new Animal( "Wolf");
+        Dog dog = new Dog("DeeOhGee");
+        Puppy puppy = new Puppy("pup");
 
         generic.eat();
         wolf.eat();
+        dog.eat();
+        puppy.eat();
 
 
-        Animal animal = new Animal();
-        Animal cat = new Cat();
-        Animal dog = new Dog();
 
-        animal.eat();
-        ((Dog)dog).talk();
-        ((Cat)cat).talk();
 
-        System.out.println("Lable:" + Animal.lable);
-    }
+
+    }*/
+
+
+
+
 }

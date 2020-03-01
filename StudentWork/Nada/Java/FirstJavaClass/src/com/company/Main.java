@@ -1,5 +1,14 @@
 package com.company;
 
+import Animal.Animal;
+import Animal.Dog;
+import Animal.Puppy;
+import Animal.Cat;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     private String anInstanceVariable = "instance";
@@ -9,19 +18,18 @@ public class Main {
     // Method Block of code:
     public static void main(String[] args) {
 
-        String aLocalVariable = "local";
+        //Animal animal = new Animal();
+        Dog dog = new Dog("DeeOhGee");
+        Cat cat = new Cat("Kitty");
 
-        int variableA = 1;
 
-        // write your code here
-        System.out.println("variableA: " + variableA);
+       // animal.eat();
+        cat.talk("meow!!");
+        dog.talk("Woof");
 
-        System.out.println("Hello Mick!");
-        System.out.println("local: " + aLocalVariable);
+        List<Animal> things = new ArrayList();
 
-//        System.out.println("instance: " + anInstanceVariable);
 
-        System.out.println("Static: " + aStaticVariable);
 
 
 
