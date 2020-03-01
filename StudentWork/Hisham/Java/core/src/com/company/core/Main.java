@@ -1,10 +1,12 @@
 package com.company.core;
-import com.company.core.animal.Animal;
-import com.company.core.animal.Cat;
-import com.company.core.animal.Dog;
-import com.company.core.animal.Puppy;
+import com.company.core.animalClass.Animal;
+import com.company.core.animalClass.Cat;
+import com.company.core.animalClass.Dog;
+import com.company.core.animalClass.Puppy;
+import com.company.core.animalInterface.AnimalInterface;
+import com.company.core.animalInterface.CatInter;
+import com.company.core.animalInterface.DogInter;
 
-import java.util.*;
 public class Main {
 
 
@@ -28,6 +30,13 @@ public class Main {
         cat.eat();
 
         System.out.println(dog.getName());
+
+        AnimalInterface dog2 = new DogInter("doggy");
+        AnimalInterface cat2 = new CatInter("kitty");
+
+        dog2.eat();
+        cat2.talk("meow");
+
 
 //        basic();
 
