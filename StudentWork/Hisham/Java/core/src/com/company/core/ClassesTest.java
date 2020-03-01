@@ -7,7 +7,8 @@ import com.company.core.animalInterface.AnimalInterface;
 import com.company.core.animalInterface.CatInter;
 import com.company.core.animalInterface.DogInter;
 
-public class Main {
+public class ClassesTest
+{
 
 
     private String anInstanceVar = "instance";
@@ -36,6 +37,8 @@ public class Main {
 
         dog2.eat();
         cat2.talk("meow");
+
+
 
 
 //        basic();
