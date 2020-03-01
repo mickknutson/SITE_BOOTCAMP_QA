@@ -8,10 +8,12 @@ public class Dog implements Animal{
         this.name = name;
     }
 
+    @Override
     public void eat(){
         System.out.println("nom, nom,nom");
     }
 
+    @Override
     public void talk(String voice){
         System.out.println(voice);
     }
