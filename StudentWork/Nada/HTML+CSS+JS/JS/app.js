@@ -9,3 +9,12 @@ if (confirm("Confirm!")) {
 document.getElementById("demo").innerHTML = txt;
 }
 
+
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Please fill out all the fields");
+    return false;
+  }
+  myFunction();
+}
