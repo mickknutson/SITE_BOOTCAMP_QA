@@ -10,10 +10,19 @@ public class Animal {
     public Animal(String name){
         this.name = name;
     }
-    //method -> behavior
+
+    public String getName() {
+        System.out.println("inside animal getName");
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void eat()
     {
-        System.out.println(name + " is eating [nom,nom,nom,...]");
+        System.out.println(name + " is eating.");
     }
 
     }
