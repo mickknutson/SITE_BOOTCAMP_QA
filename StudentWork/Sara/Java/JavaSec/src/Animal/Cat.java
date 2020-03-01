@@ -2,9 +2,11 @@ package Animal;
 
 
 public class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
 
-
-        public void talk(){
+    public void talk(){
             System.out.println("mew");
         }
 
