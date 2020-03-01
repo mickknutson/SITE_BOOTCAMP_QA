@@ -1,22 +1,43 @@
 package com.site.core;
 
+import com.site.core.animal.Animal;
+import com.site.core.animal.Cat;
+import com.site.core.animal.Dog;
+import com.site.core.animal.Puppy;
+
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Main {
 
+    /*
     private String anInstanceVariable = "instatnce";
-
     public static String aStaticVariable = "static";
+     */
 
     // Block of Code :
     public static void main(String[] args) {
-        basic();
+       // basic();
         // Next Section ()
         // Public / private / protected - static scopes!
+        Animal animal = new Animal();
+        Dog dog = new Dog("dog");
+        Puppy puppy = new Puppy("pup");
+        Cat cat = new Cat("cat");
 
-
+        animal.eat();
+        dog.talk();
+        dog.talk("woof");
+        /*
+        List<Animal> things = new ArrayList<>();
+        things.add(dog);
+        animal.eat();
+        dog.eat();
+        puppy.eat();
+        cat.eat();
+         */
 
     } // end main()
 

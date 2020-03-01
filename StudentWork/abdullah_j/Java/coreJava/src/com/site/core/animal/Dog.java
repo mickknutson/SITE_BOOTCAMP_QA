@@ -1,9 +1,23 @@
 package com.site.core.animal;
 
-public class Dog extends Animal{
+public class Dog extends Animal {
 
-    public void talk(){
-        System.out.println("park");
+    public Dog() {
+        setName("mutt");
     }
+
+    public Dog(String name) {
+        setName(name);
+    }
+
+
+    public void talk() {
+        System.out.println("bark");
+    }
+
+    public void talk(String voice) {
+        System.out.println(voice);
+    }
+
 
 }
