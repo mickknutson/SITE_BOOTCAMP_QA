@@ -1,15 +1,15 @@
 package com.company.core.Animal;
 
-public class Puppy extends Dog {
+public class Puppy{
     public Puppy(String name) {
-        super(name);
+       // super(name);
     }
-    public String getName() {
+    public void getName() {
         System.out.println("Puppy.getName");
-        return super.getName();
+        //return super.getName();
     }
 
     public void setName(String name) {
-        super.setName(name);
+       // super.setName(name);
     }
 }

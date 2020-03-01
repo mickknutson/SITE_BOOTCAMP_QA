@@ -9,13 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Animal animal=new Animal();
+       // Animal animal=new puppy("pub");
         Dog dog=new Dog("DeeOgGee");
         Cat cat=new Cat("kitty");
 
-        animal.eat();
-        dog.talk();
-        dog.talk("woof");
+
+        dog.eat();
+        cat.eat();
+        dog.talk("bark");
+        cat.talk("meow");
 
     }
 }

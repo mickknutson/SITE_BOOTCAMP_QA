@@ -1,8 +1,8 @@
 package com.company.core.Animal;
 //scope  type  classname
-public class Animal {
+public interface Animal {
     //Default Constructer
-    public Animal(){
+    /*public Animal(){
 
         this.name="GENERIC";
     }
@@ -27,9 +27,10 @@ public class Animal {
 
     public void setName(String name) {
         this.name = name;
-    }
+    }*/
 
-
+    public void eat();
+    public void talk(String voice);
 
 
 }

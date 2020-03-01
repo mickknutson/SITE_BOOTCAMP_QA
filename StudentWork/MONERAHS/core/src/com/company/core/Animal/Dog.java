@@ -1,11 +1,19 @@
 package com.company.core.Animal;
 
-public class Dog extends Animal {
+public class Dog implements Animal {
+    private String name;
     public Dog(String name) {
        // super(name);
-        setName(name);
+        this.name=name;
     }
-   //overloading
+    public void eat(){
+        System.out.println("Num,Num,Num...");
+    }
+    public void talk(String voice){
+        System.out.println(voice);
+    }
+}
+   /*//overloading
     public void talk(){
         System.out.println("bark");
     }
@@ -19,7 +27,7 @@ public class Dog extends Animal {
     }
 
 }
-
+*/
 //No Need for Setter as the constructer can do its work
 //public void setName(String name) {
 //   super.setName(name);
