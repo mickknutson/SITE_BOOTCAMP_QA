@@ -6,13 +6,13 @@ public class Main {
     //Main method
     public static void main(String[]args) {
         Animal animal1;
-        animal1 = new Animal();
+//        animal1 = new Animal();
         Animal dog = new Dog("dogee");
         Animal cat = new Cat("kitty");
         Animal puppy = new Puppy("pop");
 
         //Examining the two different type of constructors
-        animal1.eat();
+//        animal1.eat();
 
 
         //extends objects
@@ -32,7 +32,7 @@ public class Main {
         //array list
 
         List<Animal> things = new ArrayList<>();
-        things.add(animal1);
+//        things.add(animal1);
         things.add(dog);
         things.add(cat);
         things.add(puppy);

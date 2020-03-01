@@ -11,15 +11,20 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args){
-        Animal animal = new Animal();
-        Dog dog = new Dog("DeeOhGee");
-        Puppy puppy = new Puppy("pup");
-        Cat cat = new Cat("KITTY");
-
+        //Animal animal = new Animal();
+        Animal dog = new Dog("dogee");
+        Animal cat = new Cat("kitty");
+        Animal puppy = new Puppy("pup");
+        puppy.eat();
+        dog.talk("woof");
+        cat.talk("mewo");
+       // Dog dog = new Dog("DeeOhGee");
+        //Cat cat = new Cat("KITTY");
+/*
         animal.eat();
         dog.talk();
         dog.talk("woof");
-
+*/
 
 
       // dog.talk();

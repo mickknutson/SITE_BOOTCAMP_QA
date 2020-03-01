@@ -13,14 +13,15 @@ public class Main { // extends Object
     // Method Block of code:
     public static void main(String[] args) {
 
-        Animal animal = new Animal();
-        Dog dog = new Dog("Dogee");
-        Cat cat = new Cat("kitty");
+        Animal animal = new Puppy("pup");
+
+        Animal dog = new Dog("Dogee");
+        Animal cat = new Cat("kitty");
 
         animal.eat();
 
-        dog.talk();
         dog.talk("woof");
+        cat.talk("meow");
 
     } // end main() BLOCK
 
