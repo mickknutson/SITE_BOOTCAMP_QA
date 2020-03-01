@@ -1,32 +1,13 @@
 package com.baselogic.core.animal;
 
-public class Animal {
+/**
+ * This is my contract obligation
+ */
+public interface Animal {
 
-    // Default Constructor
-    public Animal(){
-        this.name = "generic";
-    }
+    public void eat();
 
-    public Animal(String name){
-        this.name = name;
-    }
+    public void talk(String voice);
 
-    private String name;
-
-    // Methods / Behavior
-    public void eat(){
-        System.out.println(name + " is eating.");
-    }
-
-    // Accessor:
-    public String getName() {
-        System.out.println("1. inside animal.getName");
-        return name;
-    }
-
-    // Mutator:
-    public void setName(String name) {
-        this.name = name;
-    }
 
 } // The End...
