@@ -6,6 +6,11 @@ public class Main {
     public static String aStaticVariable = "static";
 
 
+    /*
+
+    */
+
+
     // Method Block of code:
     public static void main(String[] args) {
 
