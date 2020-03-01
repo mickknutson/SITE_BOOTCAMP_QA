@@ -4,25 +4,25 @@
 
  		<title>TEMPLATE</title>
 
-	  	<script>
+	  	<script type="text/javascript" src="FormResult.js">
            /* 
+           
+           First attempt ...
+           
            function myFunction(var fname,lname,email,password){
                 //console.log(" name : " + fname + " " + lname + " email : " + email + ", password : " + password);
                 var tx = document.createTextNode(" name : " + fname + " " + lname + " email : " + email + ", password : " + password);
             }
-            */
+            */        
         </script>
-
-	  	<style> 
-            
-	   	</style>
-
+        
  	</head>
+    
   	<body>
 
 	   	<h1>A Heading</h1>
 
-        <form action="formResult.html">
+        <form onSubmit="resultFunction()">
             
             <label for="fname">First name:</label>
             <br>
@@ -39,14 +39,13 @@
             <input type="email" id="email" name="email">
             <br>
             
-            <label for= "password"> Password</label>
+            <label for= "password">Password</label>
             <br>
-            <input type="password" id="pass" name="pass">
+            <input type="password" id="password" name="pass">
             <br>
             
             <input type="submit" value="Submit">
         </form>
-        <label></label>
 
 	</body>
 </html>
