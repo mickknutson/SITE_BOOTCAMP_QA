@@ -1,4 +1,4 @@
 package com.baselogic.core.fruit;
 
-public class Fruit {
+public class Apple {
 }
