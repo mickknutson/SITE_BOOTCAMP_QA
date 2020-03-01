@@ -1,8 +1,12 @@
+package Mains;
+
 import Animal.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import Animal.Animal;
+
 import Animal.Dog;
 import Animal.*;
 
@@ -19,16 +23,16 @@ public class Main {
 
     // Method Block of code:
     public static void main(String[] args) {
-        Animal animal = new Animal();
+        //   Animal animal = new Puppy("puppy");
         Dog dog = new Dog("DeeOhGee");
-        Puppy puppy = new Puppy("pup");
+        //    Puppy puppy = new Puppy("pup");
         Cat cat = new Cat("kitty");
 
 
+        //    animal.eat();
 
-        animal.eat();
 
-        dog.talk();
+        cat.talk("meow");
         dog.talk("Woof");
 
        /* List<Animal> things = new ArrayList();
@@ -74,7 +78,6 @@ public class Main {
         System.out.println("number :" + number++);
         System.out.println("number :" + --number);
         System.out.println("number :" + number--);*/
-
 
 
     } // end main() BLOCK

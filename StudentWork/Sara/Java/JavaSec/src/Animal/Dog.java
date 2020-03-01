@@ -1,23 +1,31 @@
 package Animal;
 
-public class Dog extends Animal {
+public class Dog implements Animal {
 
-    public Dog (String name){
-        setName(name);
+    private String name;
+
+    public Dog(String name) {
+        this.name = name;
     }
 
-    public String getName(){
-        System.out.println("Dog.getName");
-        return super.getName();
+    public String getName() {
+
+        return this.name;
     }
 
-    public void talk(){
+    public void talk() {
 
-    System.out.println( "Bark");
+        System.out.println("Bark");
     }
 
-    public void talk(String voice){
+    @Override
+    public void eat() {
+        System.out.println(name + " is eating nom, nom, nom");
+    }
 
-        System.out.println( voice);
+    @Override
+    public void talk(String voice) {
+
+        System.out.println(voice);
     }
 }
