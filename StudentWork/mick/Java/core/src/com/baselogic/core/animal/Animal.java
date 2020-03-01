@@ -1,7 +1,6 @@
 package com.baselogic.core.animal;
 
-// Scope:     type:  ClassName:
-public        class  Animal {
+public class Animal {
 
     // Default Constructor
     public Animal(){
@@ -12,24 +11,22 @@ public        class  Animal {
         this.name = name;
     }
 
-    // body of my class:
-    //1. fields / variables --> STATE
     private String name;
 
     // Methods / Behavior
     public void eat(){
-        System.out.println(name + " is eating [nom, nom, nom...]");
+        System.out.println(name + " is eating.");
     }
 
+    // Accessor:
+    public String getName() {
+        System.out.println("1. inside animal.getName");
+        return name;
+    }
 
-    // Method Block of code:
-    public static void main(String[] args) {
-        Animal generic = new Animal();
-        Animal wolf = new Animal("Wolf");
-
-        generic.eat();
-        wolf.eat();
-
-    } // end main() BLOCK
+    // Mutator:
+    public void setName(String name) {
+        this.name = name;
+    }
 
 } // The End...

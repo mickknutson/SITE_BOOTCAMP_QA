@@ -1,4 +1,4 @@
-package site.classes;
+package Animal;
 
 
 
