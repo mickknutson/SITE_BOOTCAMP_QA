@@ -1,6 +1,4 @@
-## EXERCIE 2
-
- -- person TABLE ..
+-- person TABLE ..
 CREATE TABLE person (
 id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 name VARCHAR (60) NOT NULL,
@@ -18,6 +16,7 @@ PRIMARY KEY (id)
 );
 
 INSERT INTO person VALUES (NULL, 'Antonio Paz');
+
 SELECT @last := LAST_INSERT_ID();
 INSERT INTO shirt VALUES
 (NULL , 'polo' , 'blue', @last),
@@ -27,14 +26,8 @@ INSERT INTO shirt VALUES
 INSERT INTO person VALUES (NULL , 'Lilliana Angelovska');
 
 SELECT @last := LAST_INSERT_ID();
-
 INSERT INTO shirt VALUES
 (NULL , 'dress' , 'orange', @last),
 (NULL , 'polo' , 'red' , @last),
 (NULL , 'dress' , 'blue' , @last),
 (NULL , 't-shirt' , 'white' , @last);
-
-##Find out person names containing  “Lilliana” as a string and having a shirt  of any color but not white
-SELECT s.*
-FROM person p INNER JOIN shirt s ON s.owner =  p.id
-WHERE p.name LIKE '%Lilliana%' AND s.color <>  'white';
