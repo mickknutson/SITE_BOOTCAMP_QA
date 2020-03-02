@@ -1,4 +1,4 @@
-package com.company.core.animal;
+package com.company.core.animalClass;
 
 public class Puppy extends Dog
 {

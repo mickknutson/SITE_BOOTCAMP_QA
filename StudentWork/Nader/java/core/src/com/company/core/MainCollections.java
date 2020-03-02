@@ -24,6 +24,7 @@ public class MainCollections {
         for (Dog dog : dogs){
             //dog.talk("I am the : ");
             dog.eat();
+            dog.getName();
         }
 
     }

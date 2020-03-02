@@ -14,18 +14,24 @@ public class Main {
         String aLocalVariable;
 
         //basic();
+        //oop();
 
-        Animal animal = new Animal();
-        Dog dog = new Dog("dogee");
-        Cat cat = new Cat("kitty");
 
-        animal.eat();
-
-        dog.talk();
-        dog.talk("woof");
 
 
     } // end main()
+
+    private static void oop() {
+        Animal animal = new Puppy("pup");
+
+        Animal dog = new Dog("Dogee");
+        Animal cat = new Cat("kitty");
+
+        animal.eat();
+
+        dog.talk("woof");
+        cat.talk("meow");
+    }
 
     private static void basic() {
         int number = 1;
