@@ -1,35 +1,24 @@
 package com.company.core;
 
+import com.company.core.animal.Animal;
+import com.company.core.animal.Cat;
+
+import javax.smartcardio.CardTerminal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-     String s = "ff";
 
-    public String getS() {
-        return s;
-    }
-
-    public void setS(String s) {
-        this.s = s;
-    }
 
     public static void main(String[] args) {
         // write your code here
-        WriteYourCodeHere();
+
+        Animal animal= new Animal();
+        Cat cat= new Cat("kitty");
+
+
     } // end main()
 
-    private static void WriteYourCodeHere() {
-        System.out.println("hello Talal!");
 
-        int number = 1;
-        String output= (number%2==0)? " even number": " odd number";
-        System.out.println( "output : "+number);
-        System.out.println( "output : "+ number);
-        System.out.println( "output : "+ ++number);
-        System.out.println( "output : "+number++);
-        System.out.println( "output : "+ number--);
-        System.out.println( "output : "+ --number);
-    }
 
 } // The End

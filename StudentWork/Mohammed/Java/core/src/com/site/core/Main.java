@@ -22,14 +22,15 @@ public class Main {
        // basic();
         // Next Section ()
         // Public / private / protected - static scopes!
-        Animal animal = new Animal();
-        Dog dog = new Dog("dog");
-        Puppy puppy = new Puppy("pup");
-        Cat cat = new Cat("cat");
 
-        animal.eat();
-        dog.talk();
-        dog.talk("woof");
+        Animal dog = new Dog("dog");
+        Animal puppy = new Puppy("pup");
+        Animal cat = new Cat("cat");
+
+        dog.eat();
+        cat.eat();
+        puppy.eat();
+        cat.talk("MEOW!!!!!!");
         /*
         List<Animal> things = new ArrayList<>();
         things.add(dog);

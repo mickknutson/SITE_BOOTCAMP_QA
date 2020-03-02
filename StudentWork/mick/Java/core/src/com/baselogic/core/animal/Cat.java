@@ -1,8 +1,21 @@
 package com.baselogic.core.animal;
 
-public class Cat extends Animal{
+public class Cat implements Animal{
+
+    private String name;
 
     public Cat(String name) {
-        super(name);
+        this.name = name;
+    }
+
+    @Override
+    public void talk(String voice){
+        System.out.println(voice);
+    }
+
+
+    @Override
+    public void eat() {
+        System.out.println("sip, sip, sip");
     }
 }

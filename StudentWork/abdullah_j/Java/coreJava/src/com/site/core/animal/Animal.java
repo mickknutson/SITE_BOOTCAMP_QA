@@ -1,21 +1,10 @@
 package com.site.core.animal;
 
-public class Animal {
+public interface Animal {
 
-    public void eat(){
-        System.out.println("nom, nom...");
-    }
+    public void eat();
 
-    public static void main(String[] args) {
+    public void talk(String voice);
 
-        Animal animal = new Animal();
-        Animal dog = new Dog();
-        Animal cat = new Cat();
 
-        animal.eat();
-        ((Dog)dog).talk();
-        ((Cat)cat).talk();
-
-    }
-
-}
+} // The End...

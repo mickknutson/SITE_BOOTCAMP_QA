@@ -1,7 +1,12 @@
 package com.company.core.animal;
 
 public class Cat extends Animal {
-    public void talk(){
 
+    public Cat(String name) {
+        super(name);
+    }
+
+    public void talk(){
+        System.out.println("meow..meow");
     }
 }

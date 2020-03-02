@@ -1,7 +1,11 @@
 package com.site.core.animal;
 
-public class Animal {
+public interface Animal {
 
+    public void eat();
+    public void talk(String voice);
+
+    /*
     private String name;
 
     public Animal (){
@@ -27,7 +31,7 @@ public class Animal {
 
     public static void main (String[] args){
 
-        /*
+
         Animal animal = new Animal();
         Animal cat = new Cat();
         Animal dog = new Dog();
@@ -35,11 +39,12 @@ public class Animal {
         animal.eat();
         ((Dog)dog).talk();
         ((Cat)cat).talk();
-        */
 
         Animal generic = new Animal();
         Animal lion = new Animal("lion");
         generic.eat();
         lion.eat();
     }
+
+     */
 }
