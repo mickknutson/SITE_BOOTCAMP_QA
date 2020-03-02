@@ -27,8 +27,14 @@ INSERT INTO shirt VALUES
 INSERT INTO person VALUES (NULL , 'Lilliana Angelovska');
 
 SELECT @last := LAST_INSERT_ID();
+
 INSERT INTO shirt VALUES
 (NULL , 'dress' , 'orange', @last),
 (NULL , 'polo' , 'red' , @last),
-(NULL , 'dress' , 'blue' , @last);
+(NULL , 'dress' , 'blue' , @last),
 (NULL , 't-shirt' , 'white' , @last);
+
+##Find out person names containing  “Lilliana” as a string and having a shirt  of any color but not white
+SELECT s.*
+FROM person p INNER JOIN shirt s ON s.owner =  p.id
+WHERE p.name LIKE '%Lilliana%' AND s.color <>  'white';
