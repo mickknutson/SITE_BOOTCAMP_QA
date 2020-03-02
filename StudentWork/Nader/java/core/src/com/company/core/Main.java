@@ -1,8 +1,9 @@
 package com.company.core;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Calendar;
+import com.company.core.animal.Animal;
+import com.company.core.animal.Cat;
+import com.company.core.animal.Dog;
+import com.company.core.animal.Puppy;
 
 public class Main {
 
@@ -11,8 +12,24 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        basic();
+        //call the basic function -- //basic();
         //the next section
+
+        //This is the casting example given in class
+        //Animal animal = new Animal("Pear");
+        //Animal cat = new Cat();
+        Dog dog = new Dog("BeeOHGee");
+        Puppy puppy = new Puppy("The Puppy");
+        //animal.Eat();
+        //cat.Eat();
+//
+//        ((Cat)cat).Talk(); // This is known as down casting Animal --> Cat
+//        ((Dog)dog).Talk(); // (Type of) Animal --> (Type of)Dog
+        System.out.println(dog.getName());
+        //System.out.println(animal.getName());
+        System.out.println(puppy.getName());
+        dog.talk("This is my voice");
+        dog.talk("This is another voice");
     }
 
     private static void basic() {
@@ -23,16 +40,5 @@ public class Main {
         System.out.println(number++);
         System.out.println(--number);
         System.out.println(number--);
-
-
-        //This is the casting example given in class
-            Animal animal = new Animal();
-            Animal cat = new Cat();
-            Animal dog = new Dog();
-            animal.Eat();
-            cat.Eat();
-
-        ((Cat)cat).Talk(); // This is known as down casting Animal --> Cat
-        ((Dog)dog).Talk(); // (Type of) Animal --> (Type of)Dog
-        }
+    }
 }

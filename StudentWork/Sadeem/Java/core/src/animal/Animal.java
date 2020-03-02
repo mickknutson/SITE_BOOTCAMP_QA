@@ -1,8 +1,15 @@
 package animal;
 //scoop(public, protected,default,private)  type  className
-public class Animal {
+
+//this is my contract application
+  //interface converted
+   public interface Animal{
+       public void eat();
+       public void talk (String voice);
+
+/* public class Animal {
     // variables-> state
-    private String name;
+   private String name;
 
     public Animal(){
         this.name ="generic";
@@ -23,6 +30,6 @@ public class Animal {
     public void eat()
     {
         System.out.println(name + " is eating.");
-    }
+    }*/
 
     }
