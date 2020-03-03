@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import sa.site.lab.petstore.controller.AnimalController;
+import sa.site.lab.petstore.controller.AnimalControllerImpl;
 import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
@@ -20,7 +22,7 @@ public class PetstoreApplication
 //	private AnimalDao dao;
 
 	@Autowired
-	private AnimalService service;
+	private AnimalController controller;
 
 
 	public static void main(String[] args)
@@ -44,7 +46,7 @@ public class PetstoreApplication
 //         AnimalDao daoByName = (AnimalDao) ctx.getBean("animalDao");
 
 //			Animal animal = dao.findPet(2);
-			Animal animal = service.findPet(2);
+			Animal animal = controller.findPet(2);
 
 			animal.eat();
 		};
