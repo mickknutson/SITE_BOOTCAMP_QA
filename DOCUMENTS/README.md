@@ -6,16 +6,13 @@
 
 [Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 
-[**Status Codes**]
-(https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+[**HTTP Status Codes**](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 
-[**Request Methods**]
-(https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+[**HTTP Request Methods**](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
 
 
-[**Header Fields**]
-(https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+[**HTTP Header Fields**](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
 
 
 
