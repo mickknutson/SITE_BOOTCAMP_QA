@@ -25,7 +25,7 @@ public class PetstoreApplication{
             System.out.println("*** Animal DAO output: ***");
 
             //AnimalDao dao = new AnimalDao();
-            AnimaDao dao = ctx.getBean(AnimalDao.class);
+            AnimalDao dao = ctx.getBean(AnimalDao.class);
 
             Animal animal = dao.findPet(1);
             animal.eat();
