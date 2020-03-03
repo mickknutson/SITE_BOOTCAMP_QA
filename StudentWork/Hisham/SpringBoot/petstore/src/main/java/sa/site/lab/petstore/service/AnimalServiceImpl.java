@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
 
+import java.util.List;
+
 @Service
 public class AnimalServiceImpl implements AnimalService
 {
@@ -16,5 +18,11 @@ public class AnimalServiceImpl implements AnimalService
     public Animal findPet(int id)
     {
         return dao.findPet(id);
+    }
+
+    @Override
+    public List<Animal> findAll()
+    {
+        return dao.findAll();
     }
 }

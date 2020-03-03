@@ -13,6 +13,8 @@ import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+import java.util.List;
+
 @SpringBootApplication
 public class PetstoreApplication
 {
@@ -47,6 +49,9 @@ public class PetstoreApplication
 
 //			Animal animal = dao.findPet(2);
 			Animal animal = controller.findPet(2);
+
+			List<Animal> animals = controller.findAll();
+			System.out.println("### Animals: "+ animals);
 
 			animal.eat();
 		};
