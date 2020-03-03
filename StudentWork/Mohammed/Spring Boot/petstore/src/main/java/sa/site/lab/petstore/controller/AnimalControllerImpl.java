@@ -20,7 +20,7 @@ public class AnimalControllerImpl implements AnimalController {
 
     @Override
     public List<Animal> findAll() {
-        return null;
+        return service.findAll();
     }
 
     @Override

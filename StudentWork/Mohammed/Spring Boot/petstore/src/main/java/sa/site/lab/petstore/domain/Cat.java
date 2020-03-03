@@ -1,8 +1,12 @@
 package sa.site.lab.petstore.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Cat implements Animal {
 
-   private String name ;
+    private String name ;
+    public Cat(){}
     public Cat (String name){
         this.name = name;
     }
