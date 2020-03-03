@@ -1,17 +1,13 @@
 package com.baselogic.core;
 
-import com.baselogic.core.animal.Animal;
-import com.baselogic.core.animal.Cat;
-import com.baselogic.core.animal.Dog;
-
-public class ExcpetionTest {
+public class ExceptionTest {
 
 
 
     public static void main(String[] args)
     throws ArithmeticException{
 
-        ExcpetionTest test = new ExcpetionTest();
+        ExceptionTest test = new ExceptionTest();
 
         try{
             // attempt to exe code that can fail:
