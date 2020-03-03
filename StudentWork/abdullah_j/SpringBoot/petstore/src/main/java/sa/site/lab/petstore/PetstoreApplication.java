@@ -1,17 +1,30 @@
 package sa.site.lab.petstore;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import sa.site.lab.petstore.dao.AnimalDao;
+import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
+import sa.site.lab.petstore.service.AnimalService;
+
+import java.util.List;
 
 @SpringBootApplication
 public class PetstoreApplication{
 
     // Only Fields / Variables go here...
+
+//    @Autowired
+//    private AnimalDao dao;
+
+//    @Autowired
+//    private AnimalService service;
+
+    @Autowired
+    private AnimalController controller;
 
 	public static void main(String[] args) { // Start of MAIN method
 		SpringApplication.run(PetstoreApplication.class, args);
@@ -25,12 +38,16 @@ public class PetstoreApplication{
             System.out.println("*** Animal DAO output: ***");
 
             //AnimalDao dao = new AnimalDao();
-            AnimalDao dao = ctx.getBean(AnimalDao.class);
+            //AnimalDao dao = ctx.getBean(AnimalDao.class);
 
-            Animal animal = dao.findPet(1);
+
+            Animal animal = controller.findPet(1);
             animal.eat();
 
-            // Animal DAO Goes here
+
+            List<Animal> animals = controller.findAll();
+            System.out.println("*** Animals: " + animals);
+            
         };
     }
 

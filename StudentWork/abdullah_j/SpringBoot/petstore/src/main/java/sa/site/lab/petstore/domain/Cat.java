@@ -18,4 +18,11 @@ public class Cat implements Animal{
     public void eat() {
         System.out.println("sip, sip, sip");
     }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

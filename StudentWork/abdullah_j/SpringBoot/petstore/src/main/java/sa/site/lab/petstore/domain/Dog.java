@@ -26,4 +26,10 @@ public class Dog implements Animal{
         return this.name;
     }
 
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
