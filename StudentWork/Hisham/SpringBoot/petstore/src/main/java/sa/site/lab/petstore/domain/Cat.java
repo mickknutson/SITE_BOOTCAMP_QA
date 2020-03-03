@@ -13,7 +13,7 @@ public class Cat implements Animal
     @Override
     public void eat()
     {
-        System.out.println("Nom , nom , nom");
+        System.out.println("Sip , Sip , Sip");
     }
 
     public void talk(String voice)

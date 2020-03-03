@@ -1,11 +1,9 @@
-package sa.site.lab.petstore.dao;
+package sa.site.lab.petstore.service;
 
 
 import sa.site.lab.petstore.domain.Animal;
 
-public interface AnimalDao
+public interface AnimalService
 {
     public Animal findPet(int id);
 }
-
-
