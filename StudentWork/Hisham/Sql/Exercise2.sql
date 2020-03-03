@@ -9,7 +9,6 @@ CREATE TABLE person
     PRIMARY KEY
     (id)
 );
-
     CREATE TABLE shirt
     (
         id SMALLINT
