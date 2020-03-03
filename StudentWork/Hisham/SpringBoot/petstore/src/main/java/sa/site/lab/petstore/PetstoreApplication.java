@@ -5,29 +5,36 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import sa.site.lab.petstore.dao.AnimalDao;
+import sa.site.lab.petstore.domain.Animal;
 
 @SpringBootApplication
-public class PetstoreApplication {
+public class PetstoreApplication
+{
 
 	// Only fields(methods) / Variables go here ...
 
 
-
-	public static void main(String[] args) {
-		System.out.println("Started");
+	public static void main(String[] args)
+	{
 		SpringApplication.run(PetstoreApplication.class, args);
-		System.out.println("Stopped");
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner (ApplicationContext ctx)
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx)
 	{
-		return args -> {
+		return args ->
+		{
 			// Runnable Code Will be Here ...
-			System.out.println("Command Runner");
+			System.out.println("### Command Runner ###");
+			System.out.println("### Animal Dao output is : ###");
 
+			AnimalDao dao = ctx.getBean(AnimalDao.class);
+			Animal animal = dao.findPet(2);
+			animal.eat();
 		};
-	}
 
+
+	}
 }
 
