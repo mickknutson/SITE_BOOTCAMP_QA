@@ -18,7 +18,7 @@ public class AnimalControllerImpl implements AnimalController {
         return service.findPet(id);
     } //End findPet method
     @Override
-    public Map findAll(){
+    public List<Animal> findAll(){
         System.out.println("AnimalController.findAll()");
 
         return service.findAll();

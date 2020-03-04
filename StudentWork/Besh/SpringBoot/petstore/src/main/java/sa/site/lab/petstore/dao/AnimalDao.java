@@ -7,5 +7,5 @@ import java.util.Map;
 
 public interface AnimalDao {
     public Animal findPet (int id);
-    Map<Integer, Animal> findAll();
+    List<Animal> findAll();
 }

@@ -38,10 +38,22 @@ public class PetstoreApplication {
             System.out.println("*** Animal DAO output ***");
 
             // Animal DAO Goes here
-
-            Map<Integer, Animal> animals = controller.findAll();
-            System.out.println("Animals:" + animals);
+            List<Animal> animals = controller.findAll();
+            if (animals != null){
+                System.out.println(" Animals: " + animals);
+            }
+            else{
+                System.out.println("Not Found");
+            }
+            //Map<Integer, Animal> animals = controller.findAll();
+            //System.out.println("Animals:" + animals);
             Animal animal = controller.findPet(2);
+            if (animals != null){
+                System.out.println(" Animals: " + animals);
+            }
+            else{
+                System.out.println("Not Found");
+            }
             animal.eat();
             System.out.println("* End CommandLine Runner");
             // AnimalDao dao = new AnimalDao();
