@@ -1,6 +1,5 @@
 package sa.site.lab.petstore;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -18,19 +17,16 @@ import java.util.List;
 @SpringBootApplication
 public class PetstoreApplication {
 
-  /*  @Autowired
-    private AnimalDao dao;
-	@Autowired
-    private AnimalService service;*/
-
 
     @Autowired
-	private AnimalController controller;
+    private AnimalController controller;// Automatically wire
 
 
     public static void main(String[] args) {
-
+        System.out.println("*Start main()");
         SpringApplication.run(PetstoreApplication.class, args);
+        System.out.println("*end main()");
+
 
     }
 
@@ -38,20 +34,23 @@ public class PetstoreApplication {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-            System.out.println("Runnable Code");
-            System.out.println("Animal DAO output: ");
-            //AnimalDao dao = new AnimalDao();
+            System.out.println("* commandLineRunner");
 
-            //	AnimalDao dao = ctx.getBean(AnimalDao.class);
+            List<Animal> animals = controller.findAll();
 
-            //AnimalDao dao1 = (AnimalDao) ctx.getBean("animalDao");
+            System.out.println("*****Animals" + animals);
 
+            for (int i = 0; i < animals.size(); i++) {
 
-            List<Animal> animals =controller.findAll();
-            System.out.println("*****Animals"+ animals);
+                animals.get(i).eat();
+            }
 
             Animal animal = controller.findPet(1);
             animal.eat();
+
+
+            System.out.println("end commandLineRunner");
+
         };
     }
 

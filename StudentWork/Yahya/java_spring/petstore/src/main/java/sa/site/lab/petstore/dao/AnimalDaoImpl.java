@@ -5,45 +5,57 @@ import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.domain.Cat;
 import sa.site.lab.petstore.domain.Dog;
 
-import java.security.Key;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
+/**
+ * Data access for Pet Domain Object
+ * <p>
+ * CRUD
+ * <p>
+ * Stereotype:
+ * <p>
+ * Component
+ * Service
+ * Repository
+ * Controller
+ */
 @Repository
 public class AnimalDaoImpl implements AnimalDao {
 
-    Map<Integer , Animal> map = new HashMap<>();
+    // LAB: Create Map<?, Animal> of Animals.
+    private Map<Integer, Animal> animals;
 
-    // Create a MAP of animals
     public AnimalDaoImpl() {
-        map.put(1 , new Cat("first cat from the map"));
-        map.put(2 , new Dog("first dog from the map"));
-        map.put(3 , new Dog("another dog from the map"));
+        // LAB: Populate Map with 3+ Animals.
+        animals = new HashMap<>();
+
+        animals.put(1, new Dog("Fido"));
+        animals.put(2, new Cat("Kitty"));
     }
 
-    public Animal findPet(int id){
+    // Method level
+    public Animal findPet(int id) {
+        System.out.println("* AnimalDao: " + id);
 
-        // pull animal from the MAP
+        // LAB: pull SINGLE animal from Map
+        if(animals.containsKey(id)) {
+            return animals.get(id);
+        } else {
+            return null;
+        }
+    } // end findPet method
 
-        //System.out.println("*Animal Dao* " + id);
-        Animal res = map.get(id);
-        return res;
+
+    public List<Animal> findAll() {
+        System.out.println("* AnimalDao.findAll()");
+        // LAB: return List<Animal> from Map
+        return animals.values() // List of Keys
+                .stream() // Java 8 Stream API
+                .collect(Collectors.toList()); // converting steam to a List
     }
 
-    public List<Animal> findAll(){
-
-        // return a MAP
-        List<Animal> animals = new ArrayList<>();
-        map.forEach((k , v) -> {
-            animals.add(v);
-                });
-//        System.out.println("* In Dao FindAll() * ");
-//        List<Animal> animals = new ArrayList<>();
-//        Cat cat = new Cat("foo");
-//        Dog dog = new Dog("bar");
-//        Cat anotherCat = new Cat("FooBinBar");
-//        animals.add(anotherCat);
-//        animals.add(cat);
-//        animals.add(dog);
-        return new ArrayList<>(map.values());
-    }
-}
+} // The End..

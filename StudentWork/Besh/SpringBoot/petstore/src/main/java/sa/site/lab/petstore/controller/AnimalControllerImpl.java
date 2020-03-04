@@ -20,7 +20,7 @@ public class AnimalControllerImpl implements AnimalController{
     }
 
     @Override
-    public  Map<Integer, Animal>findAll(){
+    public  List<Animal>findAll(){
         System.out.println("* finaAll()");
         return service.findAll();
     }
