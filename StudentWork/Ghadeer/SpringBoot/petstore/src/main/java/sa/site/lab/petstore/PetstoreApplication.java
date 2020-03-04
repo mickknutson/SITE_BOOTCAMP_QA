@@ -25,7 +25,7 @@ public class PetstoreApplication {
 //    @Autowired
 //    private AnimalService service;
     @Autowired
-   private AnimalController controller;
+    private AnimalController controller;
 
 
     public static void main(String[] args) {//start of main method
@@ -46,14 +46,17 @@ public class PetstoreApplication {
             //Animal DAO goes here
             Animal animal = controller.findPet(4);
             System.out.println("Animal founded:");
-            if (animal!=null){
- animal.eat();}
-            else out.println("animal has not founded");
-            Map animals = controller.findAll();
-            for (int i=0;i<animals.size();i++){
-                Animal animal2=(Animal)animals.get(i);
-                animal2.eat();
-            }
+
+            if (animal != null) {
+                animal.eat();
+            } else out.println("animal has not founded");
+
+            List<Animal> animals = controller.findAll();
+            out.println(animals.size());
+//            for (int i = 0; i < animals.size(); i++) {
+////                Animal animal2 = (Animal) animals.get(i);
+////                animal2.eat();
+//            }
 
             out.println("*End commandLineRunner");
 

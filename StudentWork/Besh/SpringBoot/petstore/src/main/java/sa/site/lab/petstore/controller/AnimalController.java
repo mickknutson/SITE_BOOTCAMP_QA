@@ -7,6 +7,6 @@ import java.util.Map;
 
 public interface AnimalController {
     Animal findPet(int id);
-    Map<Integer, Animal> findAll();
+    List<Animal> findAll();
 
 } // The end of class...

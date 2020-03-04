@@ -9,7 +9,7 @@ import sa.site.lab.petstore.service.AnimalService;
 import java.util.List;
 
 @Controller
-public class AnimalControllerImpl implements Animalcontroller {
+public class AnimalControllerImpl implements AnimalController {
 
     @Autowired
     private AnimalService animalService;

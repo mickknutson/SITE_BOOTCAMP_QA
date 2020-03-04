@@ -8,6 +8,6 @@ import java.util.List;
 public interface AnimalService {
     public Animal findPet(int id);
 
-    public  Map<Integer, Animal> findAll();
+    public  List<Animal> findAll();
 
 }
