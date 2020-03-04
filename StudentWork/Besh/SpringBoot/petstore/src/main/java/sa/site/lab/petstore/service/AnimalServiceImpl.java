@@ -6,16 +6,21 @@ import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AnimalServiceImpl implements AnimalService{
     @Autowired
     private AnimalDao dao;
 
+    @Override
     public Animal findPet (int id){
+        System.out.println("* AnimalService.findPet: " + id);
         return dao.findPet(id);
     }
-    public List<Animal> findAll (){
+    @Override
+    public List<Animal>findAll(){
+        System.out.println("* AnimalService.findAll");
         return dao.findAll();
     }
 }
