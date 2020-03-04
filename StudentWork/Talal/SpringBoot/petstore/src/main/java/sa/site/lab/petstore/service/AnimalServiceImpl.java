@@ -10,16 +10,27 @@ import java.util.List;
 
 @Service
 public class AnimalServiceImpl implements AnimalService {
-    @Autowired @Qualifier("animalDaoDatabaseImpl")
+    @Autowired
+    @Qualifier("animalDaoStubImpl") // small  first letter of the class
     private AnimalDao dao;
+
+
+    public Animal findById(int id) {
+        System.out.println(" * AnimalService.findPet: " + id);
+        return dao.findById(id);
+    }
+
     @Override
     public List<Animal> findAll() {
 
         return dao.findAll();
     }
 
-    public Animal findPet(int id) {
-        System.out.println(" * AnimalService.findPet: "+id);
-        return dao.findPet(id);
+    @Override
+    public void add(Animal animal) {
+
+        System.out.println("AnimalServiceImpl.add()");
+        dao.add(animal);
+
     }
 }
