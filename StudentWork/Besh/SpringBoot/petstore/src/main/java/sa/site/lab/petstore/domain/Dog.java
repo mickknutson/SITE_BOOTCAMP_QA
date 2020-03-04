@@ -8,13 +8,16 @@ public class Dog implements Animal {
     //public Dog(){
        // setName("Mutt");
    // }
+    private int id;
     private String name;
+    public Dog() {}
     public Dog (String name){
         this.name = name;
     }
     //public Dog(String name) {
        // setName(name);
     //}
+    @Override
     public void eat (){
         System.out.println("nom, nom, mom");
     }
