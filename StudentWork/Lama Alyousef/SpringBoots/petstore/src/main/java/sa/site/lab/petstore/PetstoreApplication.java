@@ -29,17 +29,17 @@ public class PetstoreApplication {
 
 
     public static void main(String[] args) {
-
+        System.out.println("* Start main()");
         SpringApplication.run(PetstoreApplication.class, args);
+        System.out.println("* End main()");
 
-    }
+    } // End of MAIN Method
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-            System.out.println("Runnable Code");
-            System.out.println("Animal DAO output: ");
+            System.out.println("* Start CommandLineRunner *");
             //AnimalDao dao = new AnimalDao();
 
             //	AnimalDao dao = ctx.getBean(AnimalDao.class);
@@ -50,8 +50,14 @@ public class PetstoreApplication {
             List<Animal> animals =controller.findAll();
             System.out.println("*****Animals"+ animals);
 
-            Animal animal = controller.findPet(1);
-            animal.eat();
+            Animal animal = controller.findPet(42);
+            if(animal != null){
+                animal.eat();
+            } else {
+                System.out.println("No an");
+            }
+
+            System.out.println("* End CommandLineRunner *");
         };
     }
 

@@ -6,6 +6,9 @@ import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.dao.AnimalDaoImpl;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.domain.Dog;
+
+import java.util.List;
+
 @Service
 public class AnimalServiceImpl implements AnimalService {
 
@@ -14,6 +17,14 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public Animal findPet(int id) {
-        return new Dog("fido");
+        System.out.println("* AnimalService.findPet: " + id);
+        return dao.findPet(id);
     }
+
+    @Override
+    public List<Animal> findAll(){
+        System.out.println("* AnimalService.findAll()");
+        return dao.findAll();
+    };
+
 }
