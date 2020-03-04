@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface AnimalService
 {
-     Animal findPet(int id);
+     Animal findById(int id);
      List<Animal> findAll();
+     void add(Animal animal);
+
 
 }

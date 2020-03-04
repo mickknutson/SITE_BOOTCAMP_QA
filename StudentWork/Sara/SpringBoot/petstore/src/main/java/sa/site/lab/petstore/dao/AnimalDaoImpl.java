@@ -21,18 +21,19 @@ public class AnimalDaoImpl implements AnimalDao {
     //LAB: Create Map of Animals
     private Map<Integer, Animal> animalMap;
 
+    private int counter = 0;
     public AnimalDaoImpl() {
 
         animalMap = new HashMap<>();
 
-        animalMap.put(0, cat1);
-        animalMap.put(1, cat2);
-        animalMap.put(2, dog1);
+        animalMap.put(++counter, cat1);
+        animalMap.put(++counter, cat2);
+        animalMap.put(++counter, dog1);
 
     }
 
     @Override
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
 
         System.out.println("* AnimalDao: " + id);
         // LAB: pull Animal from Map
@@ -60,5 +61,11 @@ public class AnimalDaoImpl implements AnimalDao {
 ////        allAnimals.add(cat1);
 //        allAnimals.add(cat2);
 //        allAnimals.add(dog1);
+    }
+
+    @Override
+    public void add(Animal animal) {
+        System.out.println("*  AnimalDaoImpl.add() ");
+        animalMap.put(++counter,animal);
     }
 }
