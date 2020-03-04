@@ -1,6 +1,6 @@
 package sa.site.lab.petstore;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
+import sa.site.lab.petstore.domain.Dog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,12 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.dao.AnimalDaoImpl;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
-import java.util.Map;
 
 @SpringBootApplication
 public class PetstoreApplication {
@@ -47,14 +44,21 @@ public class PetstoreApplication {
             }
             //Map<Integer, Animal> animals = controller.findAll();
             //System.out.println("Animals:" + animals);
-            Animal animal = controller.findPet(2);
+            Animal animal = controller.findById(2);
             if (animals != null){
-                System.out.println(" Animals: " + animals);
+                animal.eat();
             }
             else{
-                System.out.println("Not Found");
+                System.out.println("Animal 2 is Not Found");
             }
-            animal.eat();
+            //---------------------------
+            System.out.println("Number of animals: " + animals.size());
+            //create a new Animal:
+            controller.add(new Dog ("Bob"));
+            List<Animal> updatedAnimal = controller.findAll();
+            System.out.println("* POST Number of animals " + updatedAnimal.size());
+            //---------------------------
+            //animal.eat();
             System.out.println("* End CommandLine Runner");
             // AnimalDao dao = new AnimalDao();
             // Map<String, Object> context;

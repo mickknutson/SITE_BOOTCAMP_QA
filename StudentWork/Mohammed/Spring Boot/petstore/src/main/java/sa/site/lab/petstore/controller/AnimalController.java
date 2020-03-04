@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AnimalController {
 
-    public Animal findPet(int id);
+    public Animal findById(int id);
     List<Animal> findAll();
-    void addAnimal(Animal animal);
+    void add(Animal animal);
 }

@@ -4,8 +4,10 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
-public interface AnimalController
-{
-    Animal findPet(int id);
+public interface AnimalController {
+    Animal findById(int id);
+
     List<Animal> findAll();
+
+    void add(Animal animal);
 }

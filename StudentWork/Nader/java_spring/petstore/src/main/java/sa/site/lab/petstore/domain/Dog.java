@@ -1,8 +1,22 @@
 package sa.site.lab.petstore.domain;
 
+
+import org.springframework.context.annotation.Primary;
+
+import javax.persistence.Entity;
+
+//stereotypes
+@Entity
 public class Dog implements Animal {
 
+    // map fields to DB columns
+
+    
+    private int id;
     private String name;
+
+    public Dog() {
+    }
 
     public Dog(String name) {
         this.name = name;

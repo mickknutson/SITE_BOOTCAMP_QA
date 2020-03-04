@@ -8,4 +8,6 @@ public interface AnimalDao {
 
     Animal findPet(int id);
     List<Animal> findAll();
+
+    void add(Animal animal);
 }
