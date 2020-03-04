@@ -9,7 +9,7 @@ import java.util.List;
 public class AnimalDaoDatabaseImpl  implements AnimalDao{
 
     @Override
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
         System.out.println("## AniamlDaoDatabaseImpl.findPet: " + id);
         throw new RuntimeException("* findPet() Not available!");
     }
@@ -21,7 +21,8 @@ public class AnimalDaoDatabaseImpl  implements AnimalDao{
     }
 
     @Override
-    public void addAnimal(Animal animal) {
-
+    public void add(Animal animal) {
+        System.out.println("AnimalDaoDatabaseImpl.add()");
+        throw  new RuntimeException("*AnimalDaoDatabaseImpl not available!");
     }
 } // end class ...
