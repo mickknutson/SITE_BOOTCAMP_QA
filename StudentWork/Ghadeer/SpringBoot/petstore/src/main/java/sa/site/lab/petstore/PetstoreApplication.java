@@ -12,6 +12,7 @@ import sa.site.lab.petstore.service.AnimalService;
 
 
 import java.util.List;
+import java.util.Map;
 
 import static java.lang.System.*;
 
@@ -28,9 +29,9 @@ public class PetstoreApplication {
 
 
     public static void main(String[] args) {//start of main method
-        out.println("Starting SpringBoot");
+        out.println("**Start Main()**");
         SpringApplication.run(PetstoreApplication.class, args);
-        out.println("Stopped SpringBoot....");
+        out.println("**End main**");
 
 
     }//end of main method
@@ -38,14 +39,23 @@ public class PetstoreApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
+            System.out.println("commanLinearRunner");
+
             //runnable code goes here
-            System.out.println("Spring Command Runner");
             System.out.println("Animal DAO output:");
             //Animal DAO goes here
-            Animal animal = controller.findPet(1);
-            animal.eat();
-            List<Animal> animals = controller.findAll();
-            out.println("Anamils "+animals);
+            Animal animal = controller.findPet(4);
+            System.out.println("Animal founded:");
+            if (animal!=null){
+ animal.eat();}
+            else out.println("animal has not founded");
+            Map animals = controller.findAll();
+            for (int i=0;i<animals.size();i++){
+                Animal animal2=(Animal)animals.get(i);
+                animal2.eat();
+            }
+
+            out.println("*End commandLineRunner");
 
 
         };
