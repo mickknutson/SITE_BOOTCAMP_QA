@@ -24,8 +24,7 @@ import java.util.stream.Collectors;
      * Controller
      *
      * */
-    @Repository
-
+    @Repository("animalService")
     public class AnimalDaoImpl implements AnimalDao {
         Cat cat1 = new Cat("Kitty");
         Cat cat2 = new Cat("Lulu");
