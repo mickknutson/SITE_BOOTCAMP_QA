@@ -1,13 +1,15 @@
 package sa.site.lab.petstore.service;
 
-import java.util.Map;
-import sa.site.lab.petstore.domain.Animal;
+import org.springframework.stereotype.Repository;
+import sa.site.lab.petstore.Animal.Animal;
 
 import java.util.List;
 
+@Repository
 public interface AnimalService {
+
     public Animal findPet(int id);
 
-    public  Map<Integer, Animal> findAll();
 
+    List<Animal> findAll();
 }
