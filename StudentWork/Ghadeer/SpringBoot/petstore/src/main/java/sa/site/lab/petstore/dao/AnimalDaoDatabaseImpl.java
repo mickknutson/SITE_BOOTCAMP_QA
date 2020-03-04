@@ -7,6 +7,7 @@ import java.util.List;
 
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao{
+    //hard code
     public Animal findById(int id) {
         System.out.println("AnimalDaoDatabaseImpl.findPet"+id);
        throw new RuntimeException("not available yet");

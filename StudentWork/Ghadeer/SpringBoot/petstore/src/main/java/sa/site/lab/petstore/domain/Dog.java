@@ -1,5 +1,9 @@
 package sa.site.lab.petstore.domain;
 
+import javax.persistence.Entity;
+
+//storyType
+@Entity
 public class Dog implements Animal {
     private String name;
     Dog (){
