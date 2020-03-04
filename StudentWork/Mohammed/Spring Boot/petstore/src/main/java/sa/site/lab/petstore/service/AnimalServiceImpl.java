@@ -20,7 +20,7 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public List<Animal> findAll() {
-        return null;
+        return dao.findAll();
     }
 
     @Override
