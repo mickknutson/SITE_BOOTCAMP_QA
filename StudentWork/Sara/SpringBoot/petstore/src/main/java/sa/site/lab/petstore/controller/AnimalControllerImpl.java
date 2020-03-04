@@ -9,21 +9,18 @@ import java.util.List;
 
 
 @Controller
-public class AnimalControllerImpl implements AnimalController
-{
+public class AnimalControllerImpl implements AnimalController {
     @Autowired
     private AnimalService service;
 
     @Override
-    public Animal findPet(int id)
-    {
-        System.out.println("* AnimalController.findPet: "+id );
+    public Animal findPet(int id) {
+        System.out.println("* AnimalController.findPet: " + id);
         return service.findPet(id);
     }
 
     @Override
-    public List<Animal> findAll()
-    {
+    public List<Animal> findAll() {
         System.out.println("* AnimalController.findAll()");
         return service.findAll();
     }

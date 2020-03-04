@@ -4,20 +4,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.domain.Cat;
+import sa.site.lab.petstore.domain.Dog;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
-    Map<Integer, Animal> map = new HashMap<>();
+    Map<Integer, Animal> map;
 
-    public AnimalDaoImpl() {
-        map.put(1, new Animal("Dog"));
-        map.put(2, new Animal("Cat"));
+    public AnimalDaoStubImpl() {
+        map = new HashMap<>();
+        map.put(1, new Dog("Dog"));
+        map.put(2, new Cat("Cat"));
         map.put(3, new Animal("Rabbit"));
     }
 
@@ -25,6 +28,8 @@ public class AnimalDaoImpl implements AnimalDao {
     public List<Animal> findAll() {
         System.out.println("* AnimalDao.findAll()");
         return new ArrayList<>(map.values());
+
+        // return map.values().stream().collect(Collectors.toList());      Another way
     }
 
     public Animal findPet(int id) {

@@ -24,8 +24,8 @@ import java.util.stream.Collectors;
  * Repository
  * Controller
  */
-@Repository
-public class AnimalDaoImpl implements AnimalDao {// animalDao
+@Repository("animalServiceStub")
+public class AnimalDaoStubImpl implements AnimalDao {// animalDao
 
     // Map
 /*    Map <Object, Animal> animals = new HashMap<>();
@@ -33,7 +33,7 @@ public class AnimalDaoImpl implements AnimalDao {// animalDao
 
     public static Map<Integer, Animal> animals;
 
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
         animals = new HashMap<>();
         animals.put(1, new Cat("kitty"));
         animals.put(2, new Dog("Puppy"));

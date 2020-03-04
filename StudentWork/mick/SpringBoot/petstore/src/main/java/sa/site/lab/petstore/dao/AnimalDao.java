@@ -8,5 +8,5 @@ public interface AnimalDao {
 
     public Animal findPet(int id);
 
-    List<Animal> findAll();
+    public List<Animal> findAll();
 }
