@@ -10,8 +10,8 @@ import java.util.Map;
  */
 
 public interface AnimalDao {
-    public List<Animal> findAll();
-    public Animal findPet (int id );
+     List<Animal> findAll();
+     Animal findPet (int id );
 
 
     }

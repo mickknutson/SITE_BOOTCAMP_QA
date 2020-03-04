@@ -13,11 +13,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
     Map<Integer, Animal> map;
 
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
         map = new HashMap<>();
         map.put(1, new Dog("Dog"));
         map.put(2, new Cat("Cat"));
