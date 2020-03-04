@@ -9,15 +9,18 @@ import java.security.Key;
 import java.util.*;
 
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
-    Map<Integer , Animal> map = new HashMap<>();
+
+    private int counter = 0;
+    private Map<Integer , Animal> map;
 
     // Create a MAP of animals
-    public AnimalDaoImpl() {
-        map.put(1 , new Cat("first cat from the map"));
-        map.put(2 , new Dog("first dog from the map"));
-        map.put(3 , new Dog("another dog from the map"));
+    public AnimalDaoStubImpl() {
+        map = new HashMap<>();
+        map.put(++counter , new Cat("first cat from the map"));
+        map.put(++counter , new Dog("first dog from the map"));
+        map.put(++counter , new Dog("another dog from the map"));
     }
 
     public Animal findPet(int id){
@@ -25,8 +28,13 @@ public class AnimalDaoImpl implements AnimalDao {
         // pull animal from the MAP
 
         //System.out.println("*Animal Dao* " + id);
-        Animal res = map.get(id);
-        return res;
+        if (map.containsKey(id)) {
+            Animal res = map.get(id);
+            return res;
+        }
+        else {
+            return null;
+        }
     }
 
     public List<Animal> findAll(){
@@ -45,5 +53,11 @@ public class AnimalDaoImpl implements AnimalDao {
 //        animals.add(cat);
 //        animals.add(dog);
         return new ArrayList<>(map.values());
+    }
+
+    @Override
+    public void add(Animal animal) {
+        System.out.println("* AnimalDataabaseImpl.add()");
+        map.put(++counter , animal);
     }
 }

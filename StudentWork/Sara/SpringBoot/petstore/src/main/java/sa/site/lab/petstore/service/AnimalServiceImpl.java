@@ -9,23 +9,28 @@ import sa.site.lab.petstore.domain.Animal;
 import java.util.List;
 
 @Service
-public class AnimalServiceImpl implements AnimalService
-{
+public class AnimalServiceImpl implements AnimalService {
 
-    @Autowired @Qualifier("animalDaoDatabaseImpl")
+    @Autowired
+    @Qualifier("animalDaoImpl")
     private AnimalDao dao;
 
     @Override
-    public Animal findPet(int id)
-    {
-        System.out.println("* AnimalService.findPet: "+id );
-        return dao.findPet(id);
+    public Animal findById(int id) {
+        System.out.println("* AnimalService.findPet: " + id);
+        return dao.findById(id);
     }
 
     @Override
-    public List<Animal> findAll()
-    {
-        System.out.println("* AnimalService.findAll()" );
+    public List<Animal> findAll() {
+        System.out.println("* AnimalService.findAll()");
         return dao.findAll();
+    }
+
+    @Override
+    public void add(Animal animal) {
+        System.out.println("* AnimalService.add()");
+        dao.add(animal);
+
     }
 }
