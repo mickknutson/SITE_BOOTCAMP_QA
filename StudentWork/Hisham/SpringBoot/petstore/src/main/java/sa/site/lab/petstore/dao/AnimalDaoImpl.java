@@ -57,6 +57,6 @@ public class AnimalDaoImpl implements AnimalDao
 //        allAnimals.add(dog1);
 
 
-        return new ArrayList<Animal>(allAnimals.values());
+        return new ArrayList<>(allAnimals.values());
     }
 }
