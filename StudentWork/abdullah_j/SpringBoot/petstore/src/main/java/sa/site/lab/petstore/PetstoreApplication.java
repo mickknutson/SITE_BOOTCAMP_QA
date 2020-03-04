@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
+import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class PetstoreApplication {
             //AnimalDao dao = ctx.getBean(AnimalDao.class);
 
 
-            Animal animal = controller.findPet(1);
+            Animal animal = controller.findById(1);
             if (animal != null) {
                 animal.eat();
             }
@@ -57,6 +57,19 @@ public class PetstoreApplication {
                 System.out.println("No animals found");
             }
 
+
+            //---------------------------------------------------
+
+            if (animal != null && animals.size() != 0) {
+                System.out.println("*** Number of Animals: " + animals.size());
+            }
+
+            //Create new animal
+            controller.add(new Dog("Bob"));
+
+            List<Animal> updatedAnimals = controller.findAll();
+
+            System.out.println("*** POST Number of Animals: " + updatedAnimals.size());
 
             System.out.println("*** end Spring Command Line Runner ***");
         };
