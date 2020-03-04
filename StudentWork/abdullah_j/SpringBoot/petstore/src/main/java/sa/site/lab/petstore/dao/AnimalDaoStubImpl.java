@@ -21,13 +21,18 @@ import java.util.Map;
  * Service
  * Repository
  * Controller
+ *
+ *
+ * Stub: Brut Force / Hard coded
+ * Mock: Mockito / EasyMock
+ *
  */
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
     private Map<Integer, Animal> map;
 
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
 
         map = new HashMap<>();
 

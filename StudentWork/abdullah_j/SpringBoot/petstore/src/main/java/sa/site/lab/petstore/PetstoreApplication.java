@@ -43,14 +43,19 @@ public class PetstoreApplication {
             //AnimalDao dao = ctx.getBean(AnimalDao.class);
 
 
-            Animal animal = controller.findPet(42);
+            Animal animal = controller.findPet(1);
             if (animal != null) {
                 animal.eat();
             }
 
 
             List<Animal> animals = controller.findAll();
-            System.out.println("*** Animals: " + animals);
+            if (animal != null && animals.size() != 0) {
+                System.out.println("*** Animals: " + animals);
+            }
+            else{
+                System.out.println("No animals found");
+            }
 
 
             System.out.println("*** end Spring Command Line Runner ***");
