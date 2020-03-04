@@ -16,10 +16,7 @@ public class Dog implements Animal
     {
         System.out.println("Nom , nom , nom");
     }
-    public String getName()
-    {
-        return this.name;
-    }
+
     public void talk(String voice)
     {
         System.out.println(voice);

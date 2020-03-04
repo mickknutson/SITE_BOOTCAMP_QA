@@ -15,7 +15,7 @@ public class AnimalControllerImpl implements AnimalController {
 
     @Override
     public Animal findPet(int id) {
-
+        System.out.println("* AnimalControllerImpl.findPet:"+id);
         return  service.findPet(id);
 
 
@@ -23,7 +23,8 @@ public class AnimalControllerImpl implements AnimalController {
 
     @Override
     public List<Animal> findAll() {
-        return null;
+        System.out.println("* AnimalControllerImpl.findAll");
+        return service.findAll();
     }
 
 
