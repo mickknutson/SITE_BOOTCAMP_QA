@@ -19,10 +19,14 @@ public class AnimalServiceImpl implements AnimalService {
     private AnimalDao dao;
     @Override
     public Animal findPet(int id) {
+        System.out.println("** AnimalService.FindPet():"+ id);
+
         return dao.findPet(id);
     }
 
     public List<Animal> findAll() {
+        System.out.println("** AnimalService.FindAll():");
+
         return dao.findAll();
     }
 }

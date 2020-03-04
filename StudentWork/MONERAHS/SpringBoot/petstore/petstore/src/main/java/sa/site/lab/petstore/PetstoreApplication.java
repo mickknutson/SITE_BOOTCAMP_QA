@@ -26,8 +26,12 @@ public class PetstoreApplication {
     private AnimalController controller;
 
     public static void main(String[] args) {
+        System.out.println(" ** Start Main **");
 
         SpringApplication.run(PetstoreApplication.class, args);
+
+        System.out.println(" ** End Main **");
+
     }
 
     @Bean
@@ -41,13 +45,16 @@ public class PetstoreApplication {
             //Animal animal = service.findPet(1);
             //animal.eat();
             //mytrial
+            System.out.println(" ** Start CommandLine Runner **");
 
-            System.out.println("** animal dao output: **");
+            //System.out.println("** animal dao output: **");
 
             List<Animal> animals = controller.findAll();
             System.out.println(" **** Animals: "+ animals);
             Animal animal = controller.findPet(1);
             animal.eat();
+            System.out.println(" ** End CommandLine Runner **");
+
 
         };
     }
