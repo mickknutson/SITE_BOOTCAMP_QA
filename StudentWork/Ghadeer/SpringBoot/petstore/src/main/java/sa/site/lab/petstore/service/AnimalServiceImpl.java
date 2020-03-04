@@ -13,12 +13,13 @@ import java.util.Map;
 public class AnimalServiceImpl implements AnimalService {
         @Autowired
 private AnimalDao dao;
+
     public Animal findPet(int id){
         System.out.println("AnimalService.findPet:"+id);
 
         return dao.findPet(id);
     } //End findPet method
-    public Map findAll() {
+    public List<Animal> findAll() {
         System.out.println("AnimalService.findAll()");
 
         return dao.findAll();
