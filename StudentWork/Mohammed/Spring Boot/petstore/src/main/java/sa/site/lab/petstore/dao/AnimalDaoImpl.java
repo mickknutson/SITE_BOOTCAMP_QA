@@ -6,10 +6,13 @@ import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.domain.Cat;
 import sa.site.lab.petstore.domain.Dog;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class AnimalDaoImpl implements AnimalDao {
+
+    private List<Animal> animalList = new ArrayList<>();
 
     @Override
     public Animal findPet(int id) {
@@ -18,11 +21,11 @@ public class AnimalDaoImpl implements AnimalDao {
 
     @Override
     public List<Animal> findAll() {
-        return null;
+        return animalList;
     }
 
     @Override
     public void addAnimal(Animal animal) {
-         animal = new Dog();
+         animalList.add(animal);
     }
 }
