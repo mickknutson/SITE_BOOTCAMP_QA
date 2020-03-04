@@ -13,13 +13,13 @@ public class AnimalServiceImpl implements AnimalService{
 
     @Autowired
 //    @Qualifier("animalDaoDatabaseImpl")
-    @Qualifier("animalServiceStub")
+    @Qualifier("animalDaoStubImpl")
     private AnimalDao dao;
 
     @Override
-    public Animal findPet(int id){
+    public Animal findById(int id){
         System.out.println("* AnimalService.findPet: " + id);
-        return dao.findPet(id);
+        return dao.findById(id);
     }
 
     @Override
@@ -27,4 +27,13 @@ public class AnimalServiceImpl implements AnimalService{
         System.out.println("* AnimalService.findAll()");
         return dao.findAll();
     }
+
+    @Override
+    public void add(Animal animal){
+        System.out.println("* AnimalService.add()");
+        dao.add(animal);
+    }
+
+
+
 } // The End...
