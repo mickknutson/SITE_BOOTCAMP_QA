@@ -7,6 +7,12 @@ import java.util.List;
 
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao {
+    // hard code
+    // H2-
+
+
+
+
     @Override
     public Animal findById(int id) {
         System.out.println("*  AnimalDaoDatabaseImpl.findPet: " + id);
