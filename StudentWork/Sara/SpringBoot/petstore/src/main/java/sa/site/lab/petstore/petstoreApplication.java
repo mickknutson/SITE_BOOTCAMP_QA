@@ -3,20 +3,16 @@ package sa.site.lab.petstore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.controller.AnimalControllerImpl;
-import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
 
 @SpringBootApplication
-public class PetstoreApplication
+public class petstoreApplication
 {
 
 	// Only fields(methods) / Variables go here ...
@@ -29,7 +25,10 @@ public class PetstoreApplication
 
 	public static void main(String[] args)
 	{
-		SpringApplication.run(PetstoreApplication.class, args);
+		System.out.println("* Start Main()");
+
+		SpringApplication.run(petstoreApplication.class, args);
+		System.out.println("* End Main()");
 	}
 
 	@Bean
@@ -38,7 +37,7 @@ public class PetstoreApplication
 		return args ->
 		{
 			// Runnable Code Will be Here ...
-			System.out.println("### Command Runner ###");
+			System.out.println("### Start Command Runner ###");
 			System.out.println("### Animal Dao output is : ###");
 
 			// Map<String,Object> context ...
@@ -48,12 +47,18 @@ public class PetstoreApplication
 //         AnimalDao daoByName = (AnimalDao) ctx.getBean("animalDao");
 
 //			Animal animal = dao.findPet(2);
-			Animal animal = controller.findPet(2);
+
+			Animal animal = controller.findPet(1);
 
 			List<Animal> animals = controller.findAll();
 			System.out.println("### Animals: "+ animals);
+			/*for(int i=0; i<animals.size(); i++){
+				animals.get(i).eat();
+			}*/
 
 			animal.eat();
+
+			System.out.println("### End Command Runner ###");
 		};
 
 
