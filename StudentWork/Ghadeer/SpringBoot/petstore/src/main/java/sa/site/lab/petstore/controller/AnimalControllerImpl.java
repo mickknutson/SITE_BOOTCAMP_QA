@@ -12,10 +12,10 @@ import java.util.Map;
 public class AnimalControllerImpl implements AnimalController {
     @Autowired
     private AnimalService service;
-    public Animal findPet(int id){
+    public Animal findById(int id){
         System.out.println("AnimalController.findPet:"+id);
 
-        return service.findPet(id);
+        return service.findById(id);
     } //End findPet method
     @Override
     public List<Animal> findAll(){
@@ -23,6 +23,10 @@ public class AnimalControllerImpl implements AnimalController {
 
         return service.findAll();
     }
+    public void add(Animal animal){
+        service.add(animal);
+    }
+
 //    public void fillMethod(){
 //        service.fillMethod();
 //    }

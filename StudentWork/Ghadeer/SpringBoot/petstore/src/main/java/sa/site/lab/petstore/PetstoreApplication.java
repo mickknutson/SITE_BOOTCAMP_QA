@@ -8,11 +8,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
+import sa.site.lab.petstore.domain.Dog;
 
 
 import java.util.List;
-import java.util.Map;
 
 import static java.lang.System.*;
 
@@ -44,7 +43,7 @@ public class PetstoreApplication {
             //runnable code goes here
             System.out.println("Animal DAO output:");
             //Animal DAO goes here
-            Animal animal = controller.findPet(4);
+            Animal animal = controller.findById(4);
             System.out.println("Animal founded:");
 
             if (animal != null) {
@@ -52,11 +51,16 @@ public class PetstoreApplication {
             } else out.println("animal has not founded");
 
             List<Animal> animals = controller.findAll();
-            out.println(animals.size());
-//            for (int i = 0; i < animals.size(); i++) {
-////                Animal animal2 = (Animal) animals.get(i);
-////                animal2.eat();
-//            }
+
+            out.println("Number of animals: "+animals.size());
+
+            controller.add(new Dog("Bob"));
+
+            List<Animal> animals2 = controller.findAll();
+
+            out.println("Number of animals: "+animals2.size());
+
+
 
             out.println("*End commandLineRunner");
 
