@@ -10,18 +10,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Repository
-public class AnimalDaoImpl<cat1> implements AnimalDao
-{
+public class AnimalDaoImpl<cat1> implements AnimalDao {
     Cat cat1 = new Cat("Bella");
     Cat cat2 = new Cat("Caramella");
     Dog dog1 = new Dog("Lusy");
 
     //LAB: Create Map of Animals
+    private Map<Integer, Animal> animalMap;
 
-    Map<Integer, Animal> animalMap = new HashMap<>();
-    public AnimalDaoImpl(){
+    public AnimalDaoImpl() {
+
+        animalMap = new HashMap<>();
+
         animalMap.put(0, cat1);
         animalMap.put(1, cat2);
         animalMap.put(2, dog1);
@@ -29,22 +32,27 @@ public class AnimalDaoImpl<cat1> implements AnimalDao
     }
 
     @Override
-    public Animal findPet(int id)
-    {
+    public Animal findPet(int id) {
 
-        System.out.println("* AnimalDao: "+id );
+        System.out.println("* AnimalDao: " + id);
         // LAB: pull Animal from Map
+        if (animalMap.containsKey(id)) {
+            return animalMap.get(id); //new Cat("Kitty");
+        } else {
+            return null;
 
-        return animalMap.get(id); //new Cat("Kitty");
+        }
     }
 
     @Override
-    public List<Animal> findAll()
-    {
+    public List<Animal> findAll() {
         System.out.println("* AnimalDao.findAll()");
         // LAB: return List
-        List<Animal> allAnimals = new ArrayList<> (animalMap.values());
+        List<Animal> allAnimals = new ArrayList<>(animalMap.values());
 
+       //return  animalMap.values().stream().collect(Collectors.toList());
+        
+        return allAnimals;
 
 //        Cat cat1 = new Cat("Bella");
 //        Cat cat2 = new Cat("Caramella");
@@ -52,7 +60,5 @@ public class AnimalDaoImpl<cat1> implements AnimalDao
 ////        allAnimals.add(cat1);
 //        allAnimals.add(cat2);
 //        allAnimals.add(dog1);
-
-        return allAnimals;
     }
 }

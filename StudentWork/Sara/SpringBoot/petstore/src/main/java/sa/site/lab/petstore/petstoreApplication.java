@@ -12,22 +12,17 @@ import sa.site.lab.petstore.domain.Animal;
 import java.util.List;
 
 @SpringBootApplication
-public class petstoreApplication
-{
-
-	// Only fields(methods) / Variables go here ...
-//	@Autowired
-//	private AnimalDao dao;
+public class PetstoreApplication {
 
 	@Autowired
 	private AnimalController controller;
 
+	public static void main(String[] args) {
 
-	public static void main(String[] args)
-	{
 		System.out.println("* Start Main()");
 
-		SpringApplication.run(petstoreApplication.class, args);
+		SpringApplication.run(PetstoreApplication.class, args);
+
 		System.out.println("* End Main()");
 	}
 
@@ -52,11 +47,17 @@ public class petstoreApplication
 
 			List<Animal> animals = controller.findAll();
 			System.out.println("### Animals: "+ animals);
-			/*for(int i=0; i<animals.size(); i++){
-				animals.get(i).eat();
-			}*/
-
-			animal.eat();
+			if(animals != null) {
+				for (int i = 0; i < animals.size(); i++)
+					animals.get(i).eat();
+			}else{
+				System.out.println("No Animals found");
+			}
+				if(animal != null) {
+		    	animal.eat();}
+				else{
+						System.out.println("No Animals found");
+					}
 
 			System.out.println("### End Command Runner ###");
 		};
@@ -64,4 +65,3 @@ public class petstoreApplication
 
 	}
 }
-
