@@ -19,7 +19,7 @@ public class AnimalServiceImpl implements AnimalService{
         return dao.findPet(id);
     }
     @Override
-    public Map<Integer, Animal> findAll (){
+    public List<Animal>findAll(){
         System.out.println("* AnimalService.findAll");
         return dao.findAll();
     }

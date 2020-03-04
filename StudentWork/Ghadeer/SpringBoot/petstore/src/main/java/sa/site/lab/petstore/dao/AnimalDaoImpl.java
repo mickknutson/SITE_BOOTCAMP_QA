@@ -4,10 +4,7 @@ import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.domain.Cat;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /*
 Data access for pet domain Objects
@@ -24,7 +21,7 @@ public class AnimalDaoImpl implements AnimalDao { //animalDao
     // Method level
     //create map
 
-    Map animals = new HashMap();
+    Map<Object,Animal> animals = new HashMap<>();
 
     //    List<Animal> animals=new ArrayList<>();
     public AnimalDaoImpl() {
@@ -43,8 +40,10 @@ public class AnimalDaoImpl implements AnimalDao { //animalDao
 
     } //End findPet method
 
-    public Map findAll() {
+    public List<Animal> findAll() {
         System.out.println("AnimalDao.findAll()");
-        return animals;
+        ArrayList<Animal> animalsList = new ArrayList<Animal>(animals.values());
+        return animalsList;
+        //return null;
     }//end find all method
 }//the end..

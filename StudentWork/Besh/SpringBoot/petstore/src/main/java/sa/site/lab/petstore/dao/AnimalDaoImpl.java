@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Data access for pet domain object
@@ -30,21 +31,20 @@ public class AnimalDaoImpl implements AnimalDao {// animalDao
 /*    Map <Object, Animal> animals = new HashMap<>();
     animals.put ("foo","foo");*/
 
-    public static Map<Integer, Animal> animalMap;
+    public static Map<Integer, Animal> animals;
 
     public AnimalDaoImpl() {
-        animalMap = new HashMap<>();
-        animalMap.put(1, new Cat("kitty"));
-        animalMap.put(2, new Dog("bubby"));
+        animals = new HashMap<>();
+        animals.put(1, new Cat("kitty"));
+        animals.put(2, new Dog("Puppy"));
     }
 
     // Method Level
     public Animal findPet(int id) {
         System.out.println("* AnimalDao: " + id);
 
-        if (animalMap.containsKey(id)) {
-            System.out.println("Animal Found");
-            return animalMap.get(id);
+        if (animals.containsKey(id)) {
+            return animals.get(id);
         } else {
             return null;
         }
@@ -52,9 +52,10 @@ public class AnimalDaoImpl implements AnimalDao {// animalDao
     }//End findPet method
 
     @Override
-    public Map<Integer, Animal> findAll() {
+    public List<Animal> findAll() {
         System.out.println(" *AnimalDao.findAll()");
-        return animalMap;
+        return animals.values().stream().collect(Collectors.toList());
+        //return (List<Animal>)animals.values();
         // from map
 
     }

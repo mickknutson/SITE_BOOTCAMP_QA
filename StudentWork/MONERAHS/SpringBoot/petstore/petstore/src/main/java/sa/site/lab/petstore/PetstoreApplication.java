@@ -7,19 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.Animal.Animal;
-import sa.site.lab.petstore.Dao.AnimalDao;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
 
 @SpringBootApplication
 public class PetstoreApplication {
 
-   //@Autowired
-   // private AnimalDao dao;
+    //@Autowired
+    // private AnimalDao dao;
 
-   // @Autowired
+    // @Autowired
     //private AnimalService service;
 
     @Autowired
@@ -50,9 +48,18 @@ public class PetstoreApplication {
             //System.out.println("** animal dao output: **");
 
             List<Animal> animals = controller.findAll();
-            System.out.println(" **** Animals: "+ animals);
+            if (animals != null) {
+                System.out.println(" **** Animals: " + animals);
+            } else {
+                System.out.println("No Animals Found 1!!");
+            }
             Animal animal = controller.findPet(1);
-            animal.eat();
+            if (animal != null) {
+                animal.eat();
+            } else {
+                System.out.println("No Animal found at 1");
+
+            }
             System.out.println(" ** End CommandLine Runner **");
 
 

@@ -15,7 +15,10 @@ public class Cat implements Animal
     {
         System.out.println("Sip , Sip , Sip");
     }
-
+    public String getName()
+    {
+        return this.name;
+    }
     public void talk(String voice)
     {
         System.out.println(voice);

@@ -48,11 +48,15 @@ public class PetstoreApplication
 //         AnimalDao daoByName = (AnimalDao) ctx.getBean("animalDao");
 
 //			Animal animal = dao.findPet(2);
-			Animal animal = controller.findPet(2);
+			Animal animal = controller.findPet(42);
 
 			List<Animal> animals = controller.findAll();
-			System.out.println("### Animals: "+ animals);
-
+			System.out.println("### All Animals: "+ animals);
+			for (Animal a:animals)
+			{
+				System.out.println("## animal name :" + a.getName());
+			}
+			if(animal!=null)
 			animal.eat();
 		};
 
