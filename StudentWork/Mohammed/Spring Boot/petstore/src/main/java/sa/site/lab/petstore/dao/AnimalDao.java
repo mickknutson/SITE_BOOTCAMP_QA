@@ -11,9 +11,11 @@ import java.util.List;
 
 public interface AnimalDao {
 
-     Animal findPet (int id);
+    Animal findById(int id);
+
     List<Animal> findAll();
-    void addAnimal(Animal animal);
+
+    void add(Animal animal);
 
 
 } // END CLASS ..

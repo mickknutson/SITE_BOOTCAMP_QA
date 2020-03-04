@@ -2,7 +2,6 @@ package sa.site.lab.petstore.dao;
 
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-
 import java.util.List;
 
 @Repository
