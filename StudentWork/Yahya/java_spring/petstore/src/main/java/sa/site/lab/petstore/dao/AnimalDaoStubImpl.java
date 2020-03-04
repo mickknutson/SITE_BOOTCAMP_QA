@@ -22,23 +22,28 @@ import java.util.stream.Collectors;
  * Service
  * Repository
  * Controller
+ *
+ * Stub: Brut Force / Hard Coded
+ * Mock: Mockito / EasyMock
  */
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
     // LAB: Create Map<?, Animal> of Animals.
     private Map<Integer, Animal> animals;
 
-    public AnimalDaoImpl() {
+    private int counter = 0;
+
+    public AnimalDaoStubImpl() {
         // LAB: Populate Map with 3+ Animals.
         animals = new HashMap<>();
 
-        animals.put(1, new Dog("Fido"));
-        animals.put(2, new Cat("Kitty"));
+        animals.put(++counter, new Dog("Fido"));
+        animals.put(++counter, new Cat("Kitty"));
     }
 
     // Method level
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
         System.out.println("* AnimalDao: " + id);
 
         // LAB: pull SINGLE animal from Map
@@ -57,5 +62,12 @@ public class AnimalDaoImpl implements AnimalDao {
                 .stream() // Java 8 Stream API
                 .collect(Collectors.toList()); // converting steam to a List
     }
+
+
+    public void add(Animal animal){
+        System.out.println("* AnimalDaoDatabaseImpl.add()");
+        animals.put(++counter, animal);
+    }
+
 
 } // The End..
