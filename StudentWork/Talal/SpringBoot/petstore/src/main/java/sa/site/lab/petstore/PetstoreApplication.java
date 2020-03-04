@@ -4,24 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.config.AnsiOutputApplicationListener;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import sa.site.lab.petstore.controller.Animalcontroller;
+import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.dao.AnimalDao;
-import sa.site.lab.petstore.service.AnimalService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @SpringBootApplication
 public class PetstoreApplication {
 
     // the best way of object
     @Autowired
-    private Animalcontroller controller;
+    private AnimalController controller;
 
     public static void main(String[] args) {
         System.out.println("* Start main()");
@@ -39,9 +34,14 @@ public class PetstoreApplication {
             // By type (value) Best way
             //AnimalDao dao = ctx.getBean(AnimalDao.class);
 
-//
-//            Animal animal = controller.findPet(1);
-//            animal.eat();
+
+            Animal animal = controller.findPet(1);
+            if(animal != null){
+                animal.eat();
+            }else {
+                System.out.println("there is no animal with ID 1");
+            }
+
             List<Animal> animals = controller.findAll();
 
             //animals.forEach((k, v) -> System.out.println("id: " + k + " Animal" +v.getName() ));
