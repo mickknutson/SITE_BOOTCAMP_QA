@@ -43,10 +43,9 @@ public class AnimalDaoImpl implements AnimalDao {
     public Animal findPet(int id) {
         System.out.println("*** AnimalDao.FindPet(" + id + ") ***");
 
-        if (map.containsKey(id)){
+        if (map.containsKey(id)) {
             return map.get(id);
-        }
-        else{
+        } else {
             System.out.println("****** no animal with this id ******");
             return null;
         }
