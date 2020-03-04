@@ -11,8 +11,7 @@ import java.util.List;
 
 public interface AnimalDao {
 
-    public Animal findPet (int id);
-
+     Animal findPet (int id);
     List<Animal> findAll();
     void addAnimal(Animal animal);
 

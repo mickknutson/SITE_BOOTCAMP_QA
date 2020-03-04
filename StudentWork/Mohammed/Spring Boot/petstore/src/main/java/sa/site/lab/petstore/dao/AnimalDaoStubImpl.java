@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository
+@Repository("animalServiceStub")
 public class AnimalDaoStubImpl implements AnimalDao {
 
     private List<Animal> animalList = new ArrayList<>();
