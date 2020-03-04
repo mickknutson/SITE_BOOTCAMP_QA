@@ -31,7 +31,7 @@ public class petstoreApplication {
         return args ->
         {
             // Runnable Code Will be Here ...
-            System.out.println("### Start Command Runner ###");
+            System.out.println((char)27 + "[34m ### Start Command Runner ###");
             System.out.println("### Animal Dao output is : ###");
 
             // Map<String,Object> context ...
@@ -59,6 +59,7 @@ public class petstoreApplication {
             }
 
             System.out.println("### End Command Runner ###");
+            System.out.println((char)27 + "[30m");
         };
 
 

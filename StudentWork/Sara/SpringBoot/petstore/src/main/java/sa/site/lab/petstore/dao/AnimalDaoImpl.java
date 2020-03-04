@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Repository
-public class AnimalDaoImpl<cat1> implements AnimalDao {
+public class AnimalDaoImpl implements AnimalDao {
     Cat cat1 = new Cat("Bella");
     Cat cat2 = new Cat("Caramella");
     Dog dog1 = new Dog("Lusy");
