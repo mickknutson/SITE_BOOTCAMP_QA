@@ -27,27 +27,34 @@ public class PetstoreApplication{
     private AnimalController controller;
 
 	public static void main(String[] args) { // Start of MAIN method
+        System.out.println("*** Start main() ***");
 		SpringApplication.run(PetstoreApplication.class, args);
+
+        System.out.println("*** End main() ***");
 	} // End of MAIN method
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             // Runnable code goes here
-            System.out.println("*** Spring Command Runner ***");
-            System.out.println("*** Animal DAO output: ***");
+            System.out.println("*** start Spring Command Line Runner ***");
 
             //AnimalDao dao = new AnimalDao();
             //AnimalDao dao = ctx.getBean(AnimalDao.class);
 
 
             Animal animal = controller.findPet(1);
-            animal.eat();
+            if (animal != null){
+                animal.eat();
+            }
+
 
 
             List<Animal> animals = controller.findAll();
             System.out.println("*** Animals: " + animals);
-            
+
+
+            System.out.println("*** end Spring Command Line Runner ***");
         };
     }
 
