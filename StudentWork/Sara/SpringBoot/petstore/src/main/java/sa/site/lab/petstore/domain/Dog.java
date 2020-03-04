@@ -14,7 +14,7 @@ public class Dog implements Animal
     @Override
     public void eat()
     {
-        System.out.println("Nom , nom , nom");
+        System.out.println(name + " is eating : Nom , nom , nom");
     }
 
     public void talk(String voice)

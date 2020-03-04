@@ -50,8 +50,8 @@ public class AnimalDaoImpl<cat1> implements AnimalDao {
         // LAB: return List
         List<Animal> allAnimals = new ArrayList<>(animalMap.values());
 
-       //return  animalMap.values().stream().collect(Collectors.toList());
-        
+        //return  animalMap.values().stream().collect(Collectors.toList());
+
         return allAnimals;
 
 //        Cat cat1 = new Cat("Bella");
