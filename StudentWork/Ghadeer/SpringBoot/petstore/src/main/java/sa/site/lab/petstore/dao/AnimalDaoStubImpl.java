@@ -15,8 +15,8 @@ Services
 Repository
 Controller
  */
-@Repository
-public class AnimalDaoImpl implements AnimalDao { //animalDao
+@Repository("animalServiceStub")
+public class AnimalDaoStubImpl implements AnimalDao { //animalDao
 
     // Method level
     //create map
@@ -24,7 +24,7 @@ public class AnimalDaoImpl implements AnimalDao { //animalDao
     Map<Object,Animal> animals = new HashMap<>();
 
     //    List<Animal> animals=new ArrayList<>();
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
         for (int i = 0; i < 3; i++) {
             animals.put(i, new Cat("kitty" + i + 1));
         }

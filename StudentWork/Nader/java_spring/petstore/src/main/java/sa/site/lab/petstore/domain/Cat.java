@@ -16,4 +16,8 @@ public class Cat implements Animal{
     public void eat() {
         System.out.println("sip, sip, sip");
     }
+
+    public String getName(){
+        return name;
+    }
 }

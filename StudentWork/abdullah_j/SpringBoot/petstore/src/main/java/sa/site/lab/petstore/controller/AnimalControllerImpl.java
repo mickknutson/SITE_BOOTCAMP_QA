@@ -3,7 +3,6 @@ package sa.site.lab.petstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
@@ -17,9 +16,9 @@ public class AnimalControllerImpl implements AnimalController {
     private AnimalService service;
 
     @Override
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
         System.out.println("*** AnimalController.FindPet(" + id + ") ***");
-        return service.findPet(id);
+        return service.findById(id);
     }
 
     @Override
@@ -28,5 +27,9 @@ public class AnimalControllerImpl implements AnimalController {
         return service.findAll();
     }
 
-
+    @Override
+    public void add(Animal animal) {
+        System.out.println("*** AnimalController.add() ***");
+        service.add(animal);
+    }
 }
