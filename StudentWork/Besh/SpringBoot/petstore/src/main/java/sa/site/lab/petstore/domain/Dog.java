@@ -1,4 +1,9 @@
 package sa.site.lab.petstore.domain;
+
+import javax.persistence.Entity;
+
+// Stereotype:
+@Entity
 public class Dog implements Animal {
     //public Dog(){
        // setName("Mutt");
