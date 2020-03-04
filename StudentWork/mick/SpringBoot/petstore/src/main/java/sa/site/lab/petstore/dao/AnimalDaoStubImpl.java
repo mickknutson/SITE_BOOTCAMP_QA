@@ -22,14 +22,17 @@ import java.util.stream.Collectors;
  * Service
  * Repository
  * Controller
+ *
+ * Stub: Brut Force / Hard Coded
+ * Mock: Mockito / EasyMock
  */
-@Repository
-public class AnimalDaoImpl implements AnimalDao {
+@Repository("animalServiceStub")
+public class AnimalDaoStubImpl implements AnimalDao {
 
     // LAB: Create Map<?, Animal> of Animals.
     private Map<Integer, Animal> animals;
 
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
         // LAB: Populate Map with 3+ Animals.
         animals = new HashMap<>();
 
