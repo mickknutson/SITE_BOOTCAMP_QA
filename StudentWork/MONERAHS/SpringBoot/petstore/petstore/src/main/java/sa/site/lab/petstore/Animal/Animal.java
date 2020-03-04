@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:StudentWork/MONERAHS/SpringBoot/petstore/petstore/src/main/java/sa/site/lab/petstore/Animal/Animal.java
 package sa.site.lab.petstore.Animal;
 //scope  type  classname
 public interface Animal {
@@ -34,3 +35,15 @@ public interface Animal {
 
 
 }
+=======
+package sa.site.lab.petstore.domain;
+//scoop(public, protected,default,private)  type  className
+
+//this is my contract application
+  //interface converted
+   public interface Animal{
+       public void eat();
+       public void talk(String voice);
+
+    }
+>>>>>>> Stashed changes:StudentWork/Sadeem/SpringBoot/petstore/src/main/java/sa/site/lab/petstore/domain/Animal.java
