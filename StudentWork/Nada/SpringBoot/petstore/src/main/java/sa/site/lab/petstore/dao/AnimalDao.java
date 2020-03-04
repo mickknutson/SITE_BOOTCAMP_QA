@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AnimalDao {
 
-    public Animal findPet(int id);
-    List findAll();
+     Animal findPet(int id);
+    List<Animal>findAll();
 
 }
