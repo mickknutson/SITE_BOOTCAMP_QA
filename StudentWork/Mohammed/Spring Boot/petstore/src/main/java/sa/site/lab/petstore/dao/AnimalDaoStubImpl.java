@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
     private List<Animal> animalList = new ArrayList<>();
 
     //LAB: Create Map<?, Animal> of Animals.
     private Map<Integer, Animal> animalMap = new HashMap<>();
 
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
         // BETTER to insnlie the LIST and Map here ..
 
         animalMap.put(1, new Cat("kitty"));
