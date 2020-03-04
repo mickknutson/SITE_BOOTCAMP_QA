@@ -22,24 +22,27 @@ import java.util.Map;
  * Repository
  * Controller
  *
+ * Stub: Brut Force / Hard Coded
+ * Mock: Mockito / EasyMock
  * */
 
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
         // LAP: Creat Map of Animals.
     private Map <Integer,Animal> animals = new HashMap<>();
 
-    public AnimalDaoImpl(){
+    private int counter = 0;
+
+    public AnimalDaoStubImpl(){
         // LAB: Populate Map with 3+ Animals.
-        animals.put(1, new Cat("Bella"));
-        animals.put(2, new Cat("Kitty"));
-        animals.put(3, new Dog("Fido"));
-        animals.put(4, new Cat("Katy"));
+        animals.put(++counter, new Cat("Bella"));
+        animals.put(++counter, new Cat("Kitty"));
+        animals.put(++counter, new Dog("Fido"));
     }
 
 
      // Method level
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
         System.out.println("* AnimalDao: " + id);
          // LAB: pull SINGLE animal from Map
         if(animals.containsKey(id)){
@@ -56,5 +59,11 @@ public class AnimalDaoImpl implements AnimalDao {
         ArrayList<Animal> valueList = new ArrayList<Animal>(animals.values());
 
         return valueList;
+    }
+
+    @Override
+    public void add(Animal animal){
+        System.out.println("* AnimalDaoDatabaseImpl.add() ");
+        animals.put(++counter, animal);
     }
 }
