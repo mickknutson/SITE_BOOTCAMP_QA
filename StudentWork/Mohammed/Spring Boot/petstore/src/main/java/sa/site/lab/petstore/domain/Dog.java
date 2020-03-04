@@ -2,7 +2,6 @@ package sa.site.lab.petstore.domain;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Dog implements Animal {
 
     private String name;
