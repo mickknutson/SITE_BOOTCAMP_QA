@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao {
     @Override
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
         System.out.println("* AnimalDaoDatabaseImpl.findPet: "+id);
         throw new RuntimeException("Not available yet");
 
@@ -16,6 +16,13 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
 
     @Override
     public List<Animal> findAll() {
+        System.out.println("* AnimalDaoDatabaseImpl.findAll() " );
+        throw new RuntimeException("Not available yet");
+
+    }
+
+    @Override
+    public void add(Animal animal) {
         System.out.println("* AnimalDaoDatabaseImpl.findAll() " );
         throw new RuntimeException("Not available yet");
 
