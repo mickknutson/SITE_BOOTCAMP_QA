@@ -31,6 +31,6 @@ public class AnimalDaoImpl implements AnimalDao{ //animalDao
         for(int i=0;i<3;i++) {
             animals.add(new Cat("kitty"+i+1));
         }
-       return null;
+       return animals;
     }//end find all method
 }//the end..

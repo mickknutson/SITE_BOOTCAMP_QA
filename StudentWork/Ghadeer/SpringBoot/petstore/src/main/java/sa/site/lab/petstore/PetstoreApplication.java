@@ -45,6 +45,9 @@ public class PetstoreApplication {
             Animal animal = controller.findPet(1);
             animal.eat();
             List<Animal> animals = controller.findAll();
+            for (int i=0;i<animals.size();i++){
+                animals.get(i).eat();
+            }
             out.println("Anamils "+animals);
 
 
