@@ -48,14 +48,22 @@ public class PetstoreApplication {
 
 
             List<Animal> animals =controller.findAll();
+
+            if(animals != null){
             System.out.println("*****Animals"+ animals);
+           } else {
+            System.out.println("No animal found");
+            }
+
 
             Animal animal = controller.findPet(42);
             if(animal != null){
                 animal.eat();
-            } else {
-                System.out.println("No an");
             }
+            else{
+                System.out.println(" No animal");
+            }
+
 
             System.out.println("* End CommandLineRunner *");
         };

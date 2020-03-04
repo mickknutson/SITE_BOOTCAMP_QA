@@ -5,7 +5,10 @@ import sa.site.lab.petstore.Animal.Animal;
 import sa.site.lab.petstore.Animal.Cat;
 import sa.site.lab.petstore.Animal.Dog;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Repository
 public class AnimalDaoImpl implements AnimalDao {
@@ -13,19 +16,22 @@ public class AnimalDaoImpl implements AnimalDao {
     Map<Integer, Animal> animals;
 
     public AnimalDaoImpl() {
-        animals= new HashMap<>();
-        animals.put(1,new Cat("Charlie"));
-        animals.put(2,new Dog("Simon"));
-        animals.put(3,new Cat("Phepee"));
+        animals = new HashMap<>();
+        animals.put(1, new Cat("Charlie"));
+        animals.put(2, new Dog("Simon"));
+        animals.put(3, new Cat("Phepee"));
 
     }
 
     public Animal findPet(int id) {
 
-        System.out.println("** AnimalDao.FindPet():"+ id);
-
-        return new Cat("Kitty");
-     }
+        System.out.println("** AnimalDao.FindPet():" + id);
+        if (animals.containsKey(id)) {
+            return animals.get(id);
+        } else {
+            return null;
+        }
+    }
 
     public List<Animal> findAll() {
         //create a list of elements and then return it back at least 2
@@ -40,12 +46,12 @@ public class AnimalDaoImpl implements AnimalDao {
         );*/
 
 
+        //ArrayList<Animal> listOfValues = new ArrayList<Animal>(animals.values());
+        // return listOfValues;
+        return animals.values()
+                .stream()
+                .collect(Collectors.toList()); //converting stream to list
+    }
 
-                //List<Animal> list = new AnimalDaoImpl(<key,value>);
-                //return list;
-                ArrayList<Animal> listOfValues = new ArrayList<Animal>(animals.values());
-                return listOfValues;
-            }
-
-        }
+}
 
