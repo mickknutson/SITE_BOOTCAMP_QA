@@ -12,13 +12,13 @@ import java.util.List;
 public class AnimalServiceImpl implements AnimalService {
 
     @Autowired
-    @Qualifier("animalDaoStubImpl")
+    @Qualifier("animalDaoDatabaseImpl")
     private AnimalDao dao;
 
     @Override
     public Animal findById(int id){
         System.out.println("* In Service findById:* " +id);
-        return dao.findPet(id);
+        return dao.findById(id);
     }
 
     @Override

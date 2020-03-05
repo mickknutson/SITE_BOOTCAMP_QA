@@ -29,10 +29,12 @@ public class AnimalDaoDatabaseImpl  implements AnimalDao {
     // TODO : MUST implement !
     public List<Animal> findAll() {
         System.out.println("## AniamlDaoDatabaseImpl.findAll: ");
+        Iterable<Animal> result = repository.findAll();
         List<Animal> animals = new ArrayList<>();
-       // animals.addAll(repository.findAll());
-       //return
-        return null;
+        for( Animal animal: result){
+            animals.add(animal);
+        }
+        return animals;
     }
 
     // TODO : MUST implement !
