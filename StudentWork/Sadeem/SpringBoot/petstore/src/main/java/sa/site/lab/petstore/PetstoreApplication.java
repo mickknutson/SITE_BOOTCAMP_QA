@@ -35,17 +35,23 @@ public class PetstoreApplication {
             dog.setSound("woof");
             dog.setType("DOG"); //DOG or CAT for the type
 
-            Animal animal1 = controller.findById(1);
-            if(animal1 == null){
-                System.out.println("animal is null");
-            }
+            //_____________________________________________________//
+           List<Animal> animals = controller.findAll();
+            System.out.println("Animals: " +animals);
+            //______________________________________________________//
             controller.add(dog);
+            //______________________________________________________//
+
             Animal animal2 = controller.findById(1);
             if(animal2 == null){
                 System.out.println("animal is null");
             } else{
                 System.out.println("animals: " +animal2.getName());
             }
+            //______________________________________________________//
+
+            animals = controller.findAll();
+            System.out.println("Animal: " + animals);
             System.out.println(" ** End CommandLine Runner **");
         };
     }
