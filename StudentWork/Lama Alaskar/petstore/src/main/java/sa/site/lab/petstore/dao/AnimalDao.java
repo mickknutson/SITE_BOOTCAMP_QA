@@ -1,7 +1,11 @@
 package sa.site.lab.petstore.dao;
 
 import sa.site.lab.petstore.domain.Animal;
+import java.util.Map;
+
 
 public interface AnimalDao {
-  public Animal findPet(int id);
+   Animal findbyid(int id);
+   Map<Integer, Animal> findAll();
+   void add(Animal animal);
 }
