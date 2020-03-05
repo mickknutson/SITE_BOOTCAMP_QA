@@ -40,7 +40,7 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
             dog.setType("DOG"); // DOG , CAT ..
 
             List<Animal> animals = controller.findAll();
-            System.out.println("Animals : " + animals);
+            System.out.println("List of Animals : " + animals);
             controller.add(dog);
 
             Animal animal2 = controller.findById(1);
@@ -51,7 +51,8 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
             }
 
             animals = controller.findAll();
-            System.out.println("Aniamsls : " + animals);
+            System.out.println(" List of Animals : " + animals);
+
 
             System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> End Commmand RUNNER" +
                     " <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
