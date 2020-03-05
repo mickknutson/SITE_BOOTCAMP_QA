@@ -34,10 +34,20 @@ public class Animal {
 
         throw new RuntimeException("not yet implemented");
     }
-
+    @Transient
     public void talk(String voice) {
         throw new RuntimeException("not yet implemented");
 
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
     }
 
     // Setters & Getters --------------------/
