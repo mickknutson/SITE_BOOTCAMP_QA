@@ -49,6 +49,9 @@ public class PetstoreApplication {
                 System.out.println("Animal is null");
             }
 
+            List<Animal> animals = controller.findAll();
+            System.out.println("Animals: " + animals);
+
             controller.add(dog);
 
             Animal animal2 = controller.findById(1);
@@ -60,6 +63,8 @@ public class PetstoreApplication {
                 System.out.println("Animal: " + animal2.getName());
             }
 
+            animals = controller.findAll();
+            System.out.println("Animals: " + animals);
 
             System.out.println("*** end Spring Command Line Runner ***");
         };
