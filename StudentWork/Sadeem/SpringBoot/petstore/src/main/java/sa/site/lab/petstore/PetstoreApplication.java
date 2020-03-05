@@ -7,11 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.dao.AnimalDaoImp;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
+import sa.site.lab.petstore.domain.Dog;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.List;
 
 @SpringBootApplication
@@ -30,20 +28,32 @@ public class PetstoreApplication {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx){
         return args ->{
-          //Runnable code goes here
-            System.out.println("***animal dao output: ***");
-
-            // map<string, object> context;
-        //    AnimalDao dao = ctx.getBean(AnimalDao.class);
-
+            System.out.println(" ** Start CommandLine Runner **");
 
             List<Animal> animals = controller.findAll();
+            if (animals != null) {
+                System.out.println(" **** Animals: " + animals);
+            } else {
+                System.out.println("No Animals Found 1!!");
+            }
 
-            if (animals !=null)
-            System.out.println("***animalS:  " + animals);
+            Animal animal = controller.findById(1);
+            if (animal != null) {
+                animal.eat();
+            } else {
+                System.out.println("No Animal found at 1");
 
-            Animal animal = controller.findPet(1);
-            animal.eat();
+            }
+            // ----------------------------------------------------------------
+            System.out.println("Number of animals: "+animals.size());
+
+            //Create New Animal
+            controller.add(new Dog("Bob"));
+            List<Animal> updatedAnimal= controller.findAll();
+            System.out.println("POST Number of animals: "+updatedAnimal.size());
+
+            // -----------------------------------------------------------------
+            System.out.println(" ** End CommandLine Runner **");
         };
     }
 
