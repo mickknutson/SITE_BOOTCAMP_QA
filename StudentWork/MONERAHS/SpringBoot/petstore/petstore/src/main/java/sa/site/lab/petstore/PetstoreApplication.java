@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
 
+import java.util.List;
+
 @SpringBootApplication
 public class PetstoreApplication {
 
@@ -43,13 +45,17 @@ public class PetstoreApplication {
             dog.setName("Fido");
             dog.setSound("woof");
             dog.setType("DOG");
-            Animal animal1 = controller.findById(1);
+           /* Animal animal1 = controller.findById(1);
             if (animal1 == null) {
                 System.out.println("Animal is NULL");
-            }
-
-
+            }*/
+            //_____________________________________________________________________________________//
+            List<Animal> animals = controller.findAll();
+            System.out.println("List of Animals: "+animals);
+            //_____________________________________________________________________________________//
             controller.add(dog);
+
+            //_____________________________________________________________________________________//
             Animal animal2 = controller.findById(1);
 
             if (animal2 == null) {
@@ -57,6 +63,10 @@ public class PetstoreApplication {
             } else {
                 System.out.println("Animal: " + animal2.getName());
             }
+            // toString method is assumed here (animals.toString())
+
+            animals =controller.findAll();
+            System.out.println("List of Animals: "+animals);
 
             System.out.println(" ** End CommandLine Runner **");
 

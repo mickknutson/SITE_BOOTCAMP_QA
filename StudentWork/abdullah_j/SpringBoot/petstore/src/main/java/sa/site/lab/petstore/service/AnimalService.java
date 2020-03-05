@@ -8,8 +8,10 @@ import java.util.List;
 //@Service //illegal
 public interface AnimalService {
 
-    Animal findPet(int id);
+    Animal findById(int id);
 
     List<Animal> findAll();
+
+    void add(Animal animal);
 
 }

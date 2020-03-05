@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface AnimalDao {
-    public Animal findPet (int id);
-    Map<Integer, Animal> findAll();
+    Animal findByID (int id);
+    List<Animal> findAll();
+
+    void add(Animal animal);
 }

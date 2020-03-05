@@ -1,12 +1,11 @@
 package sa.site.lab.petstore.Dao;
 
 
-import com.sun.xml.bind.v2.TODO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
 
-import javax.persistence.Id;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,10 +19,10 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
     @Override
     public Animal findById(int id) {
         System.out.println("* AnimalDaoDatabaseImpl.findPet: " + id);
-       Optional<Animal> result= repository.findById(id); //search about Optional, it relates on null
-        if (result.isPresent()){
+        Optional<Animal> result = repository.findById(id); //search about Optional, it relates on null
+        if (result.isPresent()) {
             return result.get();
-        }else{
+        } else {
             return null;
         }
 
@@ -33,7 +32,13 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
     @Override
     public List<Animal> findAll() {
         System.out.println("* AnimalDaoDatabaseImpl.findAll()");
-        throw new RuntimeException("DAO not available yet");
+        Iterable<Animal> result = repository.findAll(); //type of list to go through all the element
+
+        List<Animal> animals = new ArrayList<>();
+        for (Animal animal : result) {
+            animals.add(animal);
+        }
+        return animals;
 
     }
     //TODO::Must Implemenet
