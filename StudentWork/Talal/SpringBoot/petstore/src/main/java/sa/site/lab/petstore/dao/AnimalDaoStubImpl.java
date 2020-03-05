@@ -15,13 +15,14 @@ import java.util.stream.Collectors;
 @Repository
 public class AnimalDaoStubImpl implements AnimalDao {
 
-    Map<Integer, Animal> map;
+    private Map<Integer, Animal> map;
 
+    private int counter=0;
     public AnimalDaoStubImpl() {
         map = new HashMap<>();
-        map.put(1, new Dog("Dog"));
-        map.put(2, new Cat("Cat"));
-        map.put(3, new Animal("Rabbit"));
+        map.put(++counter, new Dog("Dog"));
+        map.put(++counter, new Cat("Cat"));
+        map.put(++counter, new Animal("Rabbit"));
     }
 
     @Override
@@ -32,13 +33,19 @@ public class AnimalDaoStubImpl implements AnimalDao {
         // return map.values().stream().collect(Collectors.toList());      Another way
     }
 
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
         System.out.println("* AnimalDao: " + id);
         if (map.containsKey(id)) {
             return map.get(id);
         } else {
             return null;
         }
+
+    }
+
+    public void add(Animal animal) {
+        System.out.println("* AnimalDaoDatabaseImpl.findAll() ");
+        map.put(++counter,animal);
 
     }
 }

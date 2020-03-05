@@ -1,5 +1,8 @@
 package sa.site.lab.petstore.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Dog extends Animal {
     public Dog() {
     }

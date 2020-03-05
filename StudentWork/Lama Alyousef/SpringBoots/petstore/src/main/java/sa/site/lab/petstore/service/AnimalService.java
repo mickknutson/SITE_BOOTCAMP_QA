@@ -6,11 +6,12 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
-@Repository // stereotype
-
 public interface AnimalService {
 
-    public Animal findPet(int id);
+    Animal findById(int id);
+
     List<Animal> findAll();
+
+    void add(Animal animal);
 
 }

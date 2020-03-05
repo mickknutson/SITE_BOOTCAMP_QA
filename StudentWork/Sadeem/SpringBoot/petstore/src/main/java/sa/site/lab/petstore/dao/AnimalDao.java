@@ -5,7 +5,8 @@ import sa.site.lab.petstore.domain.Animal;
 import java.util.List;
 
 public interface AnimalDao {
-    public Animal findPet(int id);
+    Animal findById(int id);
+    List<Animal> findAll();
+    void add(Animal animal);
 
-   public List<Animal> findAll();
 }
