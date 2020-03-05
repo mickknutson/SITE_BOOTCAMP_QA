@@ -11,20 +11,21 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
     // H2-
 
 
-
-
+    // TODO: must implement
     @Override
     public Animal findById(int id) {
         System.out.println("*  AnimalDaoDatabaseImpl.findPet: " + id);
         throw new RuntimeException("NOT Available Yet.");
     }
 
+    // TODO: must implement
     @Override
     public List<Animal> findAll() {
         System.out.println("*  AnimalDaoDatabaseImpl.findAll() ");
         throw new RuntimeException("NOT Available Yet.");
     }
 
+    // TODO: must implement
     @Override
     public void add(Animal animal) {
         System.out.println("*  AnimalDaoDatabaseImpl.add() ");

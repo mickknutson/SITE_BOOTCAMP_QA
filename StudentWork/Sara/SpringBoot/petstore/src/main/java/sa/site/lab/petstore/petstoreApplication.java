@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class petstoreApplication {
         return args ->
         {
             // Runnable Code Will be Here ...
-            System.out.println((char)27 + "[34m ### Start Command Runner ###");
+            System.out.println((char) 27 + "[34m ### Start Command Runner ###");
             System.out.println("### Animal Dao output is : ###");
 
             // Map<String,Object> context ...
@@ -59,20 +58,20 @@ public class petstoreApplication {
                 System.out.println("No Animals found");
             }
             // ----------------------------------------------------------------
-            System.out.println("Nuber of animals: "+animals.size());
+            System.out.println("Nuber of animals: " + animals.size());
 
             //Create New Animal
-            controller.add(new Dog("Bob"));
+            controller.add(new Animal("Bob"));
 
-           animals = controller.findAll();
-           List<Animal> updatedAnimal= controller.findAll();
+            animals = controller.findAll();
+            List<Animal> updatedAnimal = controller.findAll();
 
-            System.out.println("Number of animals: "+animals.size());
-            System.out.println("Number of animals: "+updatedAnimal.size());
+            System.out.println("Number of animals: " + animals.size());
+            System.out.println("Number of animals: " + updatedAnimal.size());
 
             // -----------------------------------------------------------------
             System.out.println("### End Command Runner ###");
-            System.out.println((char)27 + "[30m");
+            System.out.println((char) 27 + "[30m");
         };
 
 
