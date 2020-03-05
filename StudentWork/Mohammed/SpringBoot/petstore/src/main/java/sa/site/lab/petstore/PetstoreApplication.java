@@ -39,11 +39,8 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
             dog.setSound("Woof");
             dog.setType("DOG"); // DOG , CAT ..
 
-            Animal animal1 = controller.findById(1);
-            if (animal1 == null ){
-                System.out.println("Animal is null!");
-            }
-
+            List<Animal> animals = controller.findAll();
+            System.out.println("Animals : " + animals);
             controller.add(dog);
 
             Animal animal2 = controller.findById(1);
@@ -52,6 +49,9 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
             } else {
                 System.out.println("Animal : " + animal2.getName());
             }
+
+            animals = controller.findAll();
+            System.out.println("Aniamsls : " + animals);
 
             System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> End Commmand RUNNER" +
                     " <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
