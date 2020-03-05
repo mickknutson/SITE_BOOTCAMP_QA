@@ -27,13 +27,12 @@ public class Animal {
         this.name = name;
     }
 
-    // TODO: Ignore these methods in JPA
+    //  Ignore these methods in JPA
     @Transient
     public void eat() {
         throw new RuntimeException("not yet implemented");
     }
 
-    // TODO: Ignore these methods in JPA
     @Transient
     public void talk(String voice) {
         throw new RuntimeException("not yet implemented");
@@ -72,5 +71,16 @@ public class Animal {
 
     public void setSound(String sound) {
         this.sound = sound;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
     }
 } // The End...
