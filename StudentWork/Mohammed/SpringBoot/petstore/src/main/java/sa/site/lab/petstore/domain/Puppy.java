@@ -1,9 +1,9 @@
 package sa.site.lab.petstore.domain;
 
-public class Puppy extends Dog {
+public class Puppy {
 
     public Puppy ( String name){
-        super(name);
+        super();
     }
 
 

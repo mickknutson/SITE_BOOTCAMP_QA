@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -31,32 +30,28 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             // Runnable code goes here
-            System.out.println("<<<<<<<<<<<>>>>>>>>>>> Spring command RUNNER!! <<<<<<<<<<<>>>>>>>>>>>>");
+            System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> Spring command RUNNER!!" +
+                    " <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
 
-            Animal cat = controller.findById(42);
-            if (cat != null){
-                System.out.println(" Cat printed : " + cat.toString());
+            System.out.println("Add new Dog : ");
+            Animal dog = new Animal();
+            dog.setName("Mooo");
+            dog.setSound("Woof");
+            dog.setType("DOG"); // DOG , CAT ..
+
+            Animal animal1 = controller.findById(1);
+            if (animal1 == null ){
+                System.out.println("Animal is null!");
+            }
+
+            controller.add(dog);
+
+            Animal animal2 = controller.findById(1);
+            if (animal2 == null ){
+                System.out.println("Animal is null!");
             } else {
-                System.out.println(" PET DOSNT EXIT IN DATABASE");
+                System.out.println("Animal : " + animal2.getName());
             }
-
-            Animal cat2 = controller.findById(2);
-            Animal cat3 = controller.findById(3);
-
-            System.out.println(" Cat printed : " + cat2.toString());
-            System.out.println(" Cat printed : " + cat3.toString());
-
-            if (controller.findAll() != null) {
-                System.out.println(" all of them : " + controller.findAll());
-            }
-
-            // ------------------------------------
-            System.out.println("Number of animals : " + controller.findAll().size() );
-            // Create New Animal :
-            controller.add(new Dog("wussap"));
-            List<Animal> updtaedAnimals = controller.findAll();
-            System.out.println(" size of updated : " + updtaedAnimals.size());
-
 
             System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> End Commmand RUNNER" +
                     " <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
