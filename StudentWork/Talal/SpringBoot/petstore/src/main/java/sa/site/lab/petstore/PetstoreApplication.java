@@ -36,6 +36,8 @@ public class PetstoreApplication {
             dog.setSound("woof");
             dog.setType("DOG");
 
+            List<Animal> animals= controller.findAll();
+            System.out.println(" Animal: "+animals);
             Animal animal1= controller.findById(1);
             if(animal1== null){
                 System.out.println("animal is null");
@@ -48,6 +50,10 @@ public class PetstoreApplication {
             }else {
                 System.out.println("Animal: "+ animal2.getName());
             }
+
+
+             animals= controller.findAll();
+            System.out.println(" Animal: "+animals);
 
 
 
