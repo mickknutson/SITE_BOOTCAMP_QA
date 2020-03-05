@@ -8,11 +8,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
 
 
 import java.util.List;
-import java.util.Map;
 
 import static java.lang.System.*;
 
@@ -40,23 +38,26 @@ public class PetstoreApplication {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             System.out.println("commanLinearRunner");
+            out.println("Add a new dog");
+            Animal dog= new Animal();
+            dog.setName("Fido");
+            dog.setSound("woof");
+            dog.setType("DOG");
 
-            //runnable code goes here
-            System.out.println("Animal DAO output:");
-            //Animal DAO goes here
-            Animal animal = controller.findPet(4);
-            System.out.println("Animal founded:");
+           Animal animal1=controller.findById(1);
+           if(animal1==null){
+               System.out.println("animal is null");
+           }
+            controller.add(dog);
+            Animal animal2=controller.findById(1);
+            if(animal2==null){
+                System.out.println("animal is null");
+            }else{
+                out.println("Animals: "+animal2.getName());
+            }
 
-            if (animal != null) {
-                animal.eat();
-            } else out.println("animal has not founded");
 
-            List<Animal> animals = controller.findAll();
-            out.println(animals.size());
-//            for (int i = 0; i < animals.size(); i++) {
-////                Animal animal2 = (Animal) animals.get(i);
-////                animal2.eat();
-//            }
+
 
             out.println("*End commandLineRunner");
 

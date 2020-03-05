@@ -1,8 +1,76 @@
 package sa.site.lab.petstore.domain;
 
-public interface Animal
-{
-    
-    public void eat();
-    public void talk(String voice);
+import javax.persistence.*;
+
+
+@Entity
+public class Animal {
+
+    // Map filed to database columns:
+    // Primary key
+    @Id
+    @GeneratedValue
+    private int id;
+    // Database columns name, type, sound
+    @Column
+    private String name;
+    @Column
+    private String type;
+    @Column
+    private String sound;
+
+    public Animal() {
+    }
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+
+    //These are behavior -------------------/
+    // TODO: Ignore these methods in JPA
+    @Transient
+    public void eat() {
+
+        throw new RuntimeException("not yet implemented");
+    }
+
+    public void talk(String voice) {
+        throw new RuntimeException("not yet implemented");
+
+    }
+
+    // Setters & Getters --------------------/
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
 }

@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
 
 import java.util.List;
 
@@ -32,31 +31,33 @@ public class PetstoreApplication{
         return args -> {
             System.out.println("* start commandLineRunner");
 
+            System.out.println("Add a new Dog:");
+
+            Animal dog = new Animal();
+            dog.setName("Fido");
+            dog.setSound("woof");
+            dog.setType("DOG"); // DOG, CAT
+
+
+            //---------------------------------------------------------------//
             List<Animal> animals = controller.findAll();
+            System.out.println("Animal: " + animals);
 
-            if(animals != null) {
-                System.out.println("*** Animals: " + animals);
-            } else{
-                System.out.println("No animals found");
-            }
+            //---------------------------------------------------------------//
+            controller.add(dog);
 
-            Animal animal = controller.findById(1);
-            if(animal != null) {
-                animal.eat();
+            //---------------------------------------------------------------//
+            Animal animal2 = controller.findById(1);
+            if(animal2 == null){
+                System.out.println("animal is null");
             } else {
-                System.out.println("Animal 1 is not found");
+                System.out.println("Animal: " + animal2.getName());
             }
 
-            //------------------------------------------------------
-            System.out.println("* Number of animals: " + animals.size());
 
-            // Create New Animal:
-            controller.add(new Cat("Bob"));
-
-            List<Animal> updatedAnimal = controller.findAll();
-
-            System.out.println("* POST Number of animals: " + updatedAnimal.size());
-            //------------------------------------------------------
+            //---------------------------------------------------------------//
+            animals = controller.findAll();
+            System.out.println("Animal: " + animals);
 
 
 
