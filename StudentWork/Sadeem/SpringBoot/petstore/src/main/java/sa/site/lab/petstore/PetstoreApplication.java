@@ -37,7 +37,7 @@ public class PetstoreApplication {
 
             //_____________________________________________________//
            List<Animal> animals = controller.findAll();
-            System.out.println("Animals: " +animals);
+            System.out.println(" List of Animals: " +animals);
             //______________________________________________________//
             controller.add(dog);
             //______________________________________________________//
@@ -51,7 +51,7 @@ public class PetstoreApplication {
             //______________________________________________________//
 
             animals = controller.findAll();
-            System.out.println("Animal: " + animals);
+            System.out.println("List of Animal: " + animals);
             System.out.println(" ** End CommandLine Runner **");
         };
     }
