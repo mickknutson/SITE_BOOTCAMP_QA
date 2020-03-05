@@ -40,8 +40,8 @@ public class PetstoreApplication {
             System.out.println("commanLinearRunner");
             out.println("Add a new dog");
             Animal dog= new Animal();
-            dog.setName("Fido");
-            dog.setSound("woof");
+            dog.setName("goofy");
+            dog.setSound("hhh");
             dog.setType("DOG");
 
             List<Animal> animals=controller.findAll();
