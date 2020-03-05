@@ -35,7 +35,7 @@ public class PetstoreApplication {
             //AnimalDao dao = ctx.getBean(AnimalDao.class);
 
 
-            Animal animal = controller.findPet(1);
+            Animal animal = controller.findById(1);
             if(animal != null){
                 animal.eat();
             }else {
@@ -50,7 +50,16 @@ public class PetstoreApplication {
            for(int i =0;i<animals.size();i++){
                System.out.println(animals.get(i).getName());
            }
+
+            System.out.println("Number of animals: "+animals.size());
+
+            controller.add(new Animal("Bob"));
+
+            List<Animal> updatedAnimls= controller.findAll();
+            System.out.println("POST number of animals: "+updatedAnimls.size());
+
             System.out.println("* End CommandLineRunner *");
+
         };
 
     }

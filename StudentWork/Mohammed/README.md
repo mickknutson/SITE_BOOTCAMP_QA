@@ -18,4 +18,4 @@
 [SQL Section](./SQL)
 
 ## Spring Boot
-[SpringBoot Section](./Spring Boot)
+[SpringBoot Section](./SpringBoot)

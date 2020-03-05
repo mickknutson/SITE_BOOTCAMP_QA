@@ -11,7 +11,8 @@ import java.util.Map;
 
 public interface AnimalDao {
      List<Animal> findAll();
-     Animal findPet (int id );
+     Animal findById(int id );
+     void add (Animal animal);
 
 
     }

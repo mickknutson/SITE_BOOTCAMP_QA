@@ -24,23 +24,24 @@ import java.util.stream.Collectors;
  * Repository
  * Controller
  */
-@Repository("animalServiceStub")
+@Repository
 public class AnimalDaoStubImpl implements AnimalDao {// animalDao
 
     // Map
 /*    Map <Object, Animal> animals = new HashMap<>();
     animals.put ("foo","foo");*/
 
-    public static Map<Integer, Animal> animals;
+    private Map<Integer, Animal> animals;
+    private int counter = 0;
 
     public AnimalDaoStubImpl() {
         animals = new HashMap<>();
-        animals.put(1, new Cat("kitty"));
-        animals.put(2, new Dog("Puppy"));
+        animals.put(++counter, new Cat("kitty"));
+        animals.put(++counter, new Dog("Puppy"));
     }
 
     // Method Level
-    public Animal findPet(int id) {
+    public Animal findByID(int id) {
         System.out.println("* AnimalDao: " + id);
 
         if (animals.containsKey(id)) {
@@ -57,7 +58,12 @@ public class AnimalDaoStubImpl implements AnimalDao {// animalDao
         return animals.values().stream().collect(Collectors.toList());
         //return (List<Animal>)animals.values();
         // from map
+    }
+    @Override
+    public void add (Animal animal) {
+        System.out.println(" *AnimalDao.add()");
+        animals.put(++counter, animal);
+        //throw new RuntimeException("Not Available Yet");
 
     }
-
 }// The End..

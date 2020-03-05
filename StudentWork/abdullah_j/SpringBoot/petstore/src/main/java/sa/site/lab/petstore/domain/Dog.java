@@ -1,20 +1,31 @@
 package sa.site.lab.petstore.domain;
 
-public class Dog implements Animal{
+
+import javax.persistence.Entity;
+
+//Stereotype
+@Entity
+public class Dog implements Animal {
+
+    
+    private int id;
 
     private String name;
 
-    public Dog(String name){
+    public Dog() {
+    }
+
+    public Dog(String name) {
         this.name = name;
     }
 
     @Override
-    public void eat(){
+    public void eat() {
         System.out.println("nom, nom,nom");
     }
 
     @Override
-    public void talk(String voice){
+    public void talk(String voice) {
         System.out.println(voice);
     }
 

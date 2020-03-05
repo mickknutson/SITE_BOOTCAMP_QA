@@ -1,8 +1,18 @@
 package sa.site.lab.petstore.domain;
 
+import javax.persistence.Entity;
+
+// Stereotype:
+@Entity
+
 public class Dog implements Animal {
 
+    // Map field to DB columns:
+    private int id;
+
     private String name;
+
+    public Dog(){ }
 
     public Dog(String name) {
         this.name = name;

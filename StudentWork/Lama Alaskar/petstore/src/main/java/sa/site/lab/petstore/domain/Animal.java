@@ -7,6 +7,8 @@ public interface Animal {
     public void setName(String name);
 
     public String getName();
+
+    public void talk();
 }
 //    public static void main (String[] args){
 //        Animal animal = new Animal();
