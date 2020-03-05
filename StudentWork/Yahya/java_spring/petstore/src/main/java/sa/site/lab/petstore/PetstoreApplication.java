@@ -38,14 +38,14 @@ public class PetstoreApplication{
 			dog.setType("DOG");
 
 
-			Animal animal1 = controller.findById((1));
-			if (animal1 == null)
-			{
-				System.out.println("animal is null");
-			}
+//			---------------------------
+			List<Animal> animals = controller.findAll();
+			System.out.println("Animal: " + animals);
 
+//--------------------------------------------
 			controller.add(dog);
-
+			
+//------------------------------------------------
 			Animal animal2 = controller.findById((1));
 			if (animal2 == null)
 			{
@@ -55,6 +55,11 @@ public class PetstoreApplication{
 			{
 				System.out.println("Animal: " +  animal2.getName());
 			}
+
+//			------------------------------------------------
+
+			 animals = controller.findAll();
+			System.out.println("Animal: " + animals);
 
 
 
