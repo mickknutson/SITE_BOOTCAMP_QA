@@ -11,14 +11,15 @@ import java.util.List;
 @Service
 public class AnimalServiceImpl implements AnimalService {
 
-    @Autowired @Qualifier("animalService")
+    @Autowired
+    @Qualifier("animalDaoDatabaseImpl")
     private AnimalDao dao;
 
     @Override
-    public Animal findPet(int id)
+    public Animal findById(int id)
     {
         System.out.println("AnimalServiceImpl.findPet: "+id);
-        return  dao.findPet(id);
+        return  dao.findById(id);
     }
 
 
@@ -28,4 +29,12 @@ public class AnimalServiceImpl implements AnimalService {
         System.out.println("AnimalServiceImpl.findAll()");
         return  dao.findAll();
     }
+
+    @Override
+    public void add(Animal animal){
+        System.out.println("I AnimalService.add");
+        dao.add(animal);
+    }
+
+
 }
