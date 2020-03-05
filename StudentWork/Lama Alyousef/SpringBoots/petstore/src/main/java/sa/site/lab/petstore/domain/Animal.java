@@ -5,7 +5,7 @@ package sa.site.lab.petstore.domain;
 import javax.persistence.*;
 
 @Entity
-public class Animal {
+public class Animal extends Object{
 
     // Map field to DB columns:
     // Primary Key;
@@ -40,6 +40,16 @@ public class Animal {
     @Transient
     public void talk(String voice){
         throw new RuntimeException("not yet implemented");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
     }
 
     /// Setter & Getter ---------------------------------- //

@@ -20,13 +20,14 @@ public class PetstoreApplication {
     private AnimalController controller;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { // Start of MAIN method
         System.out.println("* Start main()");
         SpringApplication.run(PetstoreApplication.class, args);
         System.out.println("* End main()");
 
     } // End of MAIN Method
 
+    // CLIENT CODE
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -59,7 +60,7 @@ public class PetstoreApplication {
             //----------------------------------------------------------------------------------
 
             animals = controller.findAll();
-            System.out.println("Animal: " + animals);
+            System.out.println("List of Animal: " + animals);
 
 
             System.out.println("* End CommandLineRunner *");
