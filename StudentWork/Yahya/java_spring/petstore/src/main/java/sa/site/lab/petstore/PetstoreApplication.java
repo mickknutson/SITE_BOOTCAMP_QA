@@ -40,16 +40,16 @@ public class PetstoreApplication{
 
 //			---------------------------
 			List<Animal> animals = controller.findAll();
-			System.out.println("Animal: " + animals);
+			System.out.println("List Of Animal: " + animals);
 
 //--------------------------------------------
 			controller.add(dog);
-			
+
 //------------------------------------------------
 			Animal animal2 = controller.findById((1));
 			if (animal2 == null)
 			{
-				System.out.println("animal is null");
+				System.out.println(" List Of animal is null");
 			}
 			else
 			{
