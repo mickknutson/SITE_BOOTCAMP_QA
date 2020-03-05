@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
 
 import javax.swing.text.html.Option;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,27 +20,33 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
     @Override
     public Animal findById(int id) {
         System.out.println("** AnimalDaoDatabaseImpl.findById: " + id);
-       // throw new RuntimeException("Dao not available yet"); // Runtime exception is Special beaucase its not checked exception
-       Optional<Animal> result = repository.findById(id); // Beacuse it may don't find any value of the provided id, so we need to check first
-       if(result.isPresent()){
-          return result.get();
-       } else{
-           return null;
-       }
+        Optional<Animal> result = repository.findById(id); // Beacuse it may don't find any value of the provided id, so we need to check first
+        if (result.isPresent()) {
+            return result.get();
+        } else {
+            return null;
+        }
     }
 
     // TODO: Must implement
     @Override
     public List<Animal> findAll() {
-        System.out.println("** AnimalDaoDatabaseImpl.findAll()" );
-        throw new RuntimeException("Dao not available yet");
+        System.out.println("** AnimalDaoDatabaseImpl.findAll()");
+        Iterable<Animal> result = repository.findAll();
+
+        List<Animal> animals = new ArrayList<>();
+
+        for(Animal animal: result){
+            animals.add(animal);
+        }
+        return animals;
     }
 
-    // TODO: Must implement
-    @Override
-    public void add(Animal animal){
-        System.out.println("* AnimalDaoDatabaseImpl.add() ");
-        // use Spring Data Repository to access the Animal TABLE
-        repository.save(animal);
-    }
-} // The End..
+        // TODO: Must implement
+        @Override
+        public void add (Animal animal){
+            System.out.println("* AnimalDaoDatabaseImpl.add() ");
+            // use Spring Data Repository to access the Animal TABLE
+            repository.save(animal);
+        }
+    } // The End..
