@@ -11,7 +11,8 @@ import java.util.List;
 @Service
 public class AnimalServiceImpl implements AnimalService {
     @Autowired
-    @Qualifier("animalDaoStubImpl") // small  first letter of the class
+    @Qualifier("animalDaoDatabaseImpl")// Lower case of the first letter of the class
+  //  @Qualifier("animalDaoStubImpl")
     private AnimalDao dao;
 
 
