@@ -2,16 +2,13 @@ package sa.site.lab.petstore.dao;
 
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
-    /*
+/*
      * Data Access for Pet Domain Object
      *
      * CRUD
@@ -24,39 +21,39 @@ import java.util.stream.Collectors;
      * Controller
      *
      * */
-    @Repository("animalService")
+    @Repository
     public class AnimalDaoImpl implements AnimalDao {
-        Cat cat1 = new Cat("Kitty");
-        Cat cat2 = new Cat("Lulu");
-        Dog dog = new Dog("Puppy");
+        Animal cat1 = new Animal("Kitty");
+        Animal cat2 = new Animal("Lulu");
+        Animal dog = new Animal("Puppy");
 
 
         Map<Integer, Animal> animalMap = new HashMap<>();
-
+private int counter=0;
         public AnimalDaoImpl() {
-            animalMap.put(1, cat1);
-            animalMap.put(2, cat2);
-            animalMap.put(3, dog);
+            animalMap.put(++counter, cat1);
+            animalMap.put(++counter, cat2);
+            animalMap.put(++counter, dog);
         }
 
         @Override
-        public Animal findPet(int id) {
+        public Animal findById(int id) {
             System.out.println("* AnimalDao:" + id);
 
-
             return animalMap.get(id);
-
-            // new Cat ("Kitty");
         }
-
 
         @Override
         public List<Animal> findAll() {
             List<Animal> allAnimals=new ArrayList<>(animalMap.values());
 
-            
             return allAnimals;
+        }
 
+        public void add(Animal animal){
+            System.out.println( "AinmalDaoDatabaseImpl.add()");
+         //   throw new RuntimeException(("Not Available yet"));
+            animalMap.put(++counter,animal);
         }
     }
 
