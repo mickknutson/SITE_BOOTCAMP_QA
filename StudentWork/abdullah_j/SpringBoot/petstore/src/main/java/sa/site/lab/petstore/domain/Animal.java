@@ -1,10 +1,7 @@
 package sa.site.lab.petstore.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 public class Animal {
@@ -12,6 +9,7 @@ public class Animal {
 
     //primary key
     @Id
+    @GeneratedValue
     private int id;
 
     @Column

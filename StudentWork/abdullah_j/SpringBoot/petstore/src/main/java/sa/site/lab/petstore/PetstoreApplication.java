@@ -38,37 +38,28 @@ public class PetstoreApplication {
             // Runnable code goes here
             System.out.println("*** start Spring Command Line Runner ***");
 
-            //AnimalDao dao = new AnimalDao();
-            //AnimalDao dao = ctx.getBean(AnimalDao.class);
+            System.out.println("*** Add new Dog");
+            Animal dog = new Animal();
+            dog.setName("Fido");
+            dog.setSound("woof");
+            dog.setType("DOG");
 
-
-            Animal animal = controller.findById(1);
-            if (animal != null) {
-                animal.eat();
+            Animal animal1 = controller.findById(1);
+            if (animal1 == null){
+                System.out.println("Animal is null");
             }
 
+            controller.add(dog);
 
-            List<Animal> animals = controller.findAll();
-            if (animal != null && animals.size() != 0) {
-                System.out.println("*** Animals: " + animals);
+            Animal animal2 = controller.findById(1);
+            if (animal2 == null){
+                System.out.println("Animal is null");
             }
-            else{
-                System.out.println("No animals found");
-            }
-
-
-            //---------------------------------------------------
-
-            if (animal != null && animals.size() != 0) {
-                System.out.println("*** Number of Animals: " + animals.size());
+            else
+            {
+                System.out.println("Animal: " + animal2.getName());
             }
 
-            //Create new animal
-            controller.add(new Animal("Bob"));
-
-            List<Animal> updatedAnimals = controller.findAll();
-
-            System.out.println("*** POST Number of Animals: " + updatedAnimals.size());
 
             System.out.println("*** end Spring Command Line Runner ***");
         };
