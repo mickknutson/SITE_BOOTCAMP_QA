@@ -47,7 +47,7 @@ public class PetstoreApplication {
             //-------------------------------------------
 
             List <Animal> animals = controller.findAll();
-            System.out.println("Animal: " +animals);
+            System.out.println("List of Animal: " +animals);
 
             //-------------------------------------------
             controller.add(dog);
@@ -61,7 +61,7 @@ public class PetstoreApplication {
             }
             //-------------------------------------------
             animals= controller.findAll();
-            System.out.println("Animal: " +animals);
+            System.out.println("List of Animal: " +animals);
 
 
 
