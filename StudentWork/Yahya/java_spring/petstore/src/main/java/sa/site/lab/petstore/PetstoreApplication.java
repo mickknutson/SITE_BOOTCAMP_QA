@@ -31,34 +31,30 @@ public class PetstoreApplication{
 		return args -> {
 			System.out.println("* start commandLineRunner");
 
-			List<Animal> animals = controller.findAll();
+			System.out.println("Add a new Dog");
+			Animal dog = new Animal();
+			dog.setName("Fido");
+			dog.setSound("Woof");
+			dog.setType("DOG");
 
-			if(animals != null) {
-				System.out.println("*** Animals: " + animals);
-			} else{
-				System.out.println("No animals found");
+
+			Animal animal1 = controller.findById((1));
+			if (animal1 == null)
+			{
+				System.out.println("animal is null");
 			}
 
-			Animal animal = controller.findById(1);
-			if(animal != null) {
-				animal.eat();
-			} else {
-				System.out.println("Animal 1 is not found");
+			controller.add(dog);
+
+			Animal animal2 = controller.findById((1));
+			if (animal2 == null)
+			{
+				System.out.println("animal is null");
 			}
-
-			//------------------------------------------------------
-			System.out.println("* Number of animals: " + animals.size());
-
-			// Create New Animal:
-			controller.add(new Animal("Bob") {
-			});
-
-			List<Animal> updatedAnimal = controller.findAll();
-
-			System.out.println("* POST Number of animals: " + updatedAnimal.size());
-			//------------------------------------------------------
-
-
+			else
+			{
+				System.out.println("Animal: " +  animal2.getName());
+			}
 
 
 
