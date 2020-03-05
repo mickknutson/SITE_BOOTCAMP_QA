@@ -12,7 +12,7 @@ import java.util.List;
 public class AnimalServiceImpl implements AnimalService {
 
     @Autowired
-    @Qualifier("animalDaoStubImpl")
+    @Qualifier("animalDaoDatabaseImpl") // Name of the class but with the lower case of the first letter
     private AnimalDao dao;
 
     @Override

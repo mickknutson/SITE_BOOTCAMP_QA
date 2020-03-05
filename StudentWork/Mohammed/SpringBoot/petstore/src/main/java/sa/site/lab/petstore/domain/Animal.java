@@ -1,27 +1,54 @@
 package sa.site.lab.petstore.domain;
 
-public interface Animal {
 
-    public void eat();
-    public void talk(String voice);
+import javax.persistence.*;
 
-    /*
+
+@Entity
+public class Animal {
+
+    //Map field to BD columns;
+    // Primary KEY
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @Column
     private String name;
 
-    public Animal (){
-        this.name = " Animal!";
-    }
+    @Column
+    private String type;
 
-    public Animal (String name){
+    @Column
+    private String sound;
+
+    public Animal(){}
+
+    public Animal(String name){
         this.name = name;
     }
 
-    public void eat(){
-        System.out.println( name + " nom, nom, nom");
+    // These are behaviors ..
+    // TODO : ignore these methods in JPA:
+    @Transient
+    public void eat() {
+       throw new RuntimeException("Not yet Implemented!");
+    }
+
+    @Transient
+    public void talk(String voice) {
+        throw new RuntimeException("Not yet Implemented!");
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        System.out.println("Animal getName!");
         return name;
     }
 
@@ -29,22 +56,19 @@ public interface Animal {
         this.name = name;
     }
 
-    public static void main (String[] args){
-
-
-        Animal animal = new Animal();
-        Animal cat = new Cat();
-        Animal dog = new Dog();
-
-        animal.eat();
-        ((Dog)dog).talk();
-        ((Cat)cat).talk();
-
-        Animal generic = new Animal();
-        Animal lion = new Animal("lion");
-        generic.eat();
-        lion.eat();
+    public String getType() {
+        return type;
     }
 
-     */
-}
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+} // End of Class .. 
