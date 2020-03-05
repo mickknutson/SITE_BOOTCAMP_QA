@@ -77,16 +77,12 @@ public class petstoreApplication {
             dog.setName("Lusy");
             dog.setSound("woof");
             dog.setType("DOG");// DOG / CAT / FISH / ...
-
-            Animal animal1 = controller.findById(1);
-            if(animal1 == null){
-                System.out.println(" animal 1 is null");
-            }else{
-                System.out.println("Animal 1 : "+animal1.getName());
-            }
-
+            // -----------------------------------
+            List<Animal> animals = controller.findAll();
+            System.out.println("Animls: "+animals);
+            //----------------------------------
             controller.add(dog);
-
+            // --------------------------------
             Animal animal2 = controller.findById(1);
 
             if(animal2 == null){
@@ -94,6 +90,9 @@ public class petstoreApplication {
             }else{
                 System.out.println("Animal 2 : "+animal2.getName());
             }
+            // -------------------------------------
+            animals = controller.findAll();
+            System.out.println("Animls: "+animals.get(0).getName());
 
 
             System.out.println("### End Command Runner ###");
