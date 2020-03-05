@@ -64,7 +64,7 @@ public class PetstoreApplication {
             }
 
             animals = controller.findAll();
-            System.out.println("Animals: " + animals);
+            System.out.println("List Animals: " + animals);
 
             System.out.println("*** end Spring Command Line Runner ***");
         };

@@ -1,63 +1,82 @@
 package sa.site.lab.petstore.domain;
 
-//public class Animal {
-public interface Animal {
+import javax.persistence.*;
 
-    // Vars
-    //   private String name;
-    //   private static String label ="Gen";
+@Entity
+public class Animal {
 
-    /* // Constructors
-     public Animal(){
 
-         this.name="Generic";
-     }
+    //Map Filed to DB column:
+    //Primary Key
 
-     public Animal(String name){
+    @Id
+    @GeneratedValue
+    private int id;
 
-         this.name=name;
-     }
-     // Setter and Getter
-     public String getName() {
-         System.out.println("Animal.getName");
-         return name;
-     }
+    @Column
+    private String name;
+    private String type;
+    private String sound;
 
-     public void setName(String name) {
-         this.name = name;
-     }*/
-    // Methods
-    public void eat();
+    public Animal(){}
 
-    public void talk(String voice);
+    public Animal(String name) {
+        this.name = name;
+    }
 
-    // Main
-    /*public static void main(String[] args) {
+    //These are behavior:
+    //TODO: Ignore these methods in JPA
 
-        Animal animal = new Animal();
-        Dog dog = new Dog("DeeOhGee");
-        Puppy puppy = new Puppy("pup");
+    @Transient
+    public void eat() {
+        throw new RuntimeException("not yest Implemented");
+    }
+    @Transient
+    public void talk(String voice) {
+        throw new RuntimeException("not yest Implemented");
 
-        animal.eat();
-        dog.talk();
-        dog.eat();
-        puppy.eat();
+    }
 
-       /* Animal generic = new Animal();
-        Animal wolf = new Animal("Wolf");
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
+    }
+    // Setter & Getter -------------------------------------------------------------
 
-        generic.eat();
-        wolf.eat();
-        System.out.println("Label: " + Animal.label);
+    public int getId() {
+        return id;
+    }
 
-        Animal animal = new Animal();
-        Animal dog = new Dog("DeeOhGee");
-        Animal cat = new Cat();
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        animal.eat();
-        ((Dog)dog).talk();
-        ((Cat)cat).talk();
+    public String getName() {
+        return name;
+    }
 
-    }*/
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
 }

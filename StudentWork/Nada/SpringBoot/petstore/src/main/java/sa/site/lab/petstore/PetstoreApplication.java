@@ -31,23 +31,66 @@ public class PetstoreApplication {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-            System.out.println("* commandLineRunner");
+            System.out.println("* Start commandLineRunner");
+            System.out.println("Add a new Dog");
+            Animal dog = new Animal();
+            dog.setName("fido");
+            dog.setSound("woof");
+            dog.setType("DOG");
+            
 
-            List<Animal> animals = controller.findAll();
+            //--------------------------------------------------------
+            Animal animal1 = controller.findById(1);
+            if(animal1==null){
+                System.out.println("animal is null");
+            }
+            //___________________________________________________
+            List<Animal>animals=controller.findAll();
+            System.out.println("Animal: "+ animals);
+            //___________________________________________________
+            controller.add(dog);
+            //___________________________________________________
+            Animal animal2=controller.findById(1);
+            if (animal2==null){
+                System.out.println("animal is null");
 
-            System.out.println("*****Animals" + animals);
-
-            for (int i = 0; i < animals.size(); i++) {
-
-                animals.get(i).eat();
             }
 
-            Animal animal = controller.findPet(1);
-            animal.eat();
+            else {
+                System.out.println("Animal " + animal2.getName());
+            }
+
+            //___________________________________________________
+            animals= controller.findAll();
+            System.out.println("Animal: "+ animals);
+
+
+//            List<Animal> animals = controller.findAll();
+//
+//            System.out.println("*****Animals" + animals);
+//
+//            for (int i = 0; i < animals.size(); i++) {
+//                animals.get(i)./eat();
+//            }
+//
+//            Animal animal = controller.findById(1);
+//            animal.eat();
 
 
             System.out.println("end commandLineRunner");
 
+            //----------------------------------------------------
+//            System.out.println("Number of animals:" + animals.size());
+//
+//            controller.add(new Animal("Poppy"));
+//
+//            animals=controller.findAll();
+//
+//            System.out.println("* POST Number of animals" + animals.size());
+//            //----------------------------------------------------
+//
+//
+//            System.out.println("* end commandLineRunner");
         };
     }
 
