@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao {
 
+    // TODO: MUST implement
     @Override
     public Animal findById(int id) {
         System.out.println("*** AnimalDao.FindPet(" + id + ") ***");
@@ -16,6 +17,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         throw new RuntimeException("Not available yet");
     }
 
+    // TODO: MUST implement
     @Override
     public List<Animal> findAll() {
         System.out.println("*** AnimalDao.findAll() ***");
@@ -23,6 +25,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         throw new RuntimeException("Not available yet");
     }
 
+    // TODO: MUST implement
     @Override
     public void add(Animal animal) {
         System.out.println("*** AnimalDao.add() ***");

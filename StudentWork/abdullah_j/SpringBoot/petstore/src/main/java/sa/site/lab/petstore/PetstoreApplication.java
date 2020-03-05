@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -65,7 +64,7 @@ public class PetstoreApplication {
             }
 
             //Create new animal
-            controller.add(new Dog("Bob"));
+            controller.add(new Animal("Bob"));
 
             List<Animal> updatedAnimals = controller.findAll();
 
