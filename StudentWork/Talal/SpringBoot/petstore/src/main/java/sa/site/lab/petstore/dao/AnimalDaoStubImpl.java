@@ -1,16 +1,12 @@
 package sa.site.lab.petstore.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Repository
 public class AnimalDaoStubImpl implements AnimalDao {
@@ -20,8 +16,8 @@ public class AnimalDaoStubImpl implements AnimalDao {
     private int counter=0;
     public AnimalDaoStubImpl() {
         map = new HashMap<>();
-        map.put(++counter, new Dog("Dog"));
-        map.put(++counter, new Cat("Cat"));
+        map.put(++counter, new Animal("Dog"));
+        map.put(++counter, new Animal("Cat"));
         map.put(++counter, new Animal("Rabbit"));
     }
 
