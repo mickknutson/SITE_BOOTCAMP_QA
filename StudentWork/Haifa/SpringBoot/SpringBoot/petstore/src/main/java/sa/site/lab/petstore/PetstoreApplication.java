@@ -25,28 +25,48 @@ public class PetstoreApplication {
         System.out.println("*end main()");
 
 
-    }
+    } //END MAIN
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-            System.out.println("* commandLineRunner");
+            System.out.println("*Start  commandLineRunner");
+            System.out.println("Add a new Dog:");
 
-            List<Animal> animals = controller.findAll();
-
-            System.out.println("*****Animals" + animals);
-
-            for (int i = 0; i < animals.size(); i++) {
-
-                animals.get(i).eat();
+            //-------------------------------------------
+            Animal dog = new Animal ();
+            dog.setName("Fido");
+            dog.setSound("Woof");
+            dog.setType("DOG");  //DOG, CAT
+            //-------------------------------------------
+            Animal animal1= controller.findById(1);
+            if(animal1==null){
+                System.out.println("Animals: ");
             }
+            //-------------------------------------------
 
-            Animal animal = controller.findPet(1);
-            animal.eat();
+            List <Animal> animals = controller.findAll();
+            System.out.println("List of Animal: " +animals);
+
+            //-------------------------------------------
+            controller.add(dog);
+            //-------------------------------------------
+
+            Animal animal2 = controller.findById(1);
+            if (animal2 == null){
+                System.out.println("Animal is null");
+            } else {
+                System.out.println("Animal:" + animal2.getName());
+            }
+            //-------------------------------------------
+            animals= controller.findAll();
+            System.out.println("List of Animal: " +animals);
+
 
 
             System.out.println("end commandLineRunner");
+
 
         };
     }

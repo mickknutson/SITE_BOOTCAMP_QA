@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -39,37 +38,33 @@ public class PetstoreApplication {
             // Runnable code goes here
             System.out.println("*** start Spring Command Line Runner ***");
 
-            //AnimalDao dao = new AnimalDao();
-            //AnimalDao dao = ctx.getBean(AnimalDao.class);
+            System.out.println("*** Add new Dog");
+            Animal dog = new Animal();
+            dog.setName("Fido");
+            dog.setSound("woof");
+            dog.setType("DOG");
 
-
-            Animal animal = controller.findById(1);
-            if (animal != null) {
-                animal.eat();
+            Animal animal1 = controller.findById(1);
+            if (animal1 == null){
+                System.out.println("Animal is null");
             }
-
 
             List<Animal> animals = controller.findAll();
-            if (animal != null && animals.size() != 0) {
-                System.out.println("*** Animals: " + animals);
+            System.out.println("Animals: " + animals);
+
+            controller.add(dog);
+
+            Animal animal2 = controller.findById(1);
+            if (animal2 == null){
+                System.out.println("Animal is null");
             }
-            else{
-                System.out.println("No animals found");
+            else
+            {
+                System.out.println("Animal: " + animal2.getName());
             }
 
-
-            //---------------------------------------------------
-
-            if (animal != null && animals.size() != 0) {
-                System.out.println("*** Number of Animals: " + animals.size());
-            }
-
-            //Create new animal
-            controller.add(new Dog("Bob"));
-
-            List<Animal> updatedAnimals = controller.findAll();
-
-            System.out.println("*** POST Number of Animals: " + updatedAnimals.size());
+            animals = controller.findAll();
+            System.out.println("List Animals: " + animals);
 
             System.out.println("*** end Spring Command Line Runner ***");
         };

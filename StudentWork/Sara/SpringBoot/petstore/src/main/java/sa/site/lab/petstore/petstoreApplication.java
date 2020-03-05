@@ -25,14 +25,18 @@ public class petstoreApplication {
 
         System.out.println("* End Main()");
     }
-
+    //CLIENT CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args ->
         {
             // Runnable Code Will be Here ...
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
             System.out.println((char) 27 + "[34m ### Start Command Runner ###");
-            System.out.println("### Animal Dao output is : ###");
+            //System.out.println("### Animal Dao output is : ###");
 
             // Map<String,Object> context ...
             // so you either get a map item either by its key (name) or the value (object) itself
@@ -77,27 +81,29 @@ public class petstoreApplication {
             dog.setName("Lusy");
             dog.setSound("woof");
             dog.setType("DOG");// DOG / CAT / FISH / ...
-
-            Animal animal1 = controller.findById(1);
-            if(animal1 == null){
-                System.out.println(" animal 1 is null");
-            }else{
-                System.out.println("Animal 1 : "+animal1.getName());
-            }
-
+            // -----------------------------------------------------
+            List<Animal> animals = controller.findAll();
+            System.out.println("Animls: " + animals);
+            //-------------------------------------------------------
             controller.add(dog);
-
+            // ------------------------------------------------------
             Animal animal2 = controller.findById(1);
 
-            if(animal2 == null){
+            if (animal2 == null) {
                 System.out.println(" animal 2 is null");
-            }else{
-                System.out.println("Animal 2 : "+animal2.getName());
+            } else {
+                System.out.println("Animal 2 : " + animal2.getName());
             }
+            // -------------------------------------
+            animals = controller.findAll();
+            System.out.println("List of Animals: " + animals.toString());
 
 
             System.out.println("### End Command Runner ###");
-            System.out.println((char) 27 + "[30m");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
         };
 
 
