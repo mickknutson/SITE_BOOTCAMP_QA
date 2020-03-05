@@ -1,13 +1,42 @@
 package sa.site.lab.petstore.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Animal {
-    private String name ;
+    // primary key
+    @Id
+    @GeneratedValue
+    private int id ;
+
+    @Column
+    private String name;
+    private String type;
+    private String sound;
+
     public Animal() {
-        this.name="generic";
     }
 
     public Animal(String name) {
         this.name = name;
+    }
+
+    // TODO: Ignore these methods in JPA
+    @Transient //ignore
+    public void eat() {
+       throw  new RuntimeException("Not yet implemented");
+    }
+    @Transient
+    public void talk(String voice){
+        throw new RuntimeException("Not yet implemented");
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -18,24 +47,19 @@ public class Animal {
         this.name = name;
     }
 
-    public void eat(){
-
-
-        System.out.println( name+ " is eating [nom, nom, nom....]");
+    public String getType() {
+        return type;
     }
 
-    public static void main(String[] args) {
-        Animal animal= new Animal();
+    public void setType(String type) {
+        this.type = type;
+    }
 
-        animal.eat();
+    public String getSound() {
+        return sound;
+    }
 
-//        Dog dog= new Dog();
-//        Animal cat = new Cat();
-//
-//
-//        animal.eat();
-//        dog.talk();
-//
-//        ((Cat)cat).talk(); // down Casting
+    public void setSound(String sound) {
+        this.sound = sound;
     }
 }

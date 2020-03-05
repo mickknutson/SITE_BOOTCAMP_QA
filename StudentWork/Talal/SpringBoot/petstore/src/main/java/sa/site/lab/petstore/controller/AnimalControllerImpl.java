@@ -15,14 +15,20 @@ public class AnimalControllerImpl implements AnimalController {
     private AnimalService animalService;
 
     @Override
+    public Animal findById(int id) {
+        System.out.println("* find By Id: "+id);
+        return animalService.findById(id);
+    }
+
+    @Override
     public List<Animal> findAll() {
         System.out.println("Animal Controller: ");
         return animalService.findAll();
     }
 
     @Override
-    public Animal findPet(int id) {
-        System.out.println("* findPet: "+id);
-        return animalService.findPet(id);
+    public void add(Animal animal) {
+        System.out.println("AnimalControllerImpl.add()");
+        animalService.add(animal );
     }
 }
