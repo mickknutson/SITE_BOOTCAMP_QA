@@ -42,34 +42,60 @@ public class petstoreApplication {
 
 //			Animal animal = dao.findPet(2);
 
-            Animal animal = controller.findById(1);
+//            Animal animal = controller.findById(1);
+//
+//            List<Animal> animals = controller.findAll();
+//            System.out.println("### Animals: " + animals);
+//            if (animals != null) {
+//                for (int i = 0; i < animals.size(); i++)
+//                    animals.get(i).eat();
+//            } else {
+//                System.out.println("No Animals found");
+//            }
+//            if (animal != null) {
+//                animal.eat();
+//            } else {
+//                System.out.println("No Animals found");
+//            }
+//            // ----------------------------------------------------------------
+//            System.out.println("Nuber of animals: " + animals.size());
+//
+//            //Create New Animal
+//            controller.add(new Animal("Bob"));
+//
+//            animals = controller.findAll();
+//            List<Animal> updatedAnimal = controller.findAll();
+//
+//            System.out.println("Number of animals: " + animals.size());
+//            System.out.println("Number of animals: " + updatedAnimal.size());
+//
+//            // -----------------------------------------------------------------
 
-            List<Animal> animals = controller.findAll();
-            System.out.println("### Animals: " + animals);
-            if (animals != null) {
-                for (int i = 0; i < animals.size(); i++)
-                    animals.get(i).eat();
-            } else {
-                System.out.println("No Animals found");
+
+            System.out.println("Add a new Dog: ");
+            Animal dog = new Animal();
+            dog.setName("Lusy");
+            dog.setSound("woof");
+            dog.setType("DOG");// DOG / CAT / FISH / ...
+
+            Animal animal1 = controller.findById(1);
+            if(animal1 == null){
+                System.out.println(" animal 1 is null");
+            }else{
+                System.out.println("Animal 1 : "+animal1.getName());
             }
-            if (animal != null) {
-                animal.eat();
-            } else {
-                System.out.println("No Animals found");
+
+            controller.add(dog);
+
+            Animal animal2 = controller.findById(1);
+
+            if(animal2 == null){
+                System.out.println(" animal 2 is null");
+            }else{
+                System.out.println("Animal 2 : "+animal2.getName());
             }
-            // ----------------------------------------------------------------
-            System.out.println("Nuber of animals: " + animals.size());
 
-            //Create New Animal
-            controller.add(new Animal("Bob"));
 
-            animals = controller.findAll();
-            List<Animal> updatedAnimal = controller.findAll();
-
-            System.out.println("Number of animals: " + animals.size());
-            System.out.println("Number of animals: " + updatedAnimal.size());
-
-            // -----------------------------------------------------------------
             System.out.println("### End Command Runner ###");
             System.out.println((char) 27 + "[30m");
         };

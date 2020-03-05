@@ -12,7 +12,8 @@ import java.util.List;
 public class AnimalServiceImpl implements AnimalService {
 
     @Autowired
-    @Qualifier("animalDaoImpl")
+    @Qualifier("animalDaoDatabaseImpl")
+  //  @Qualifier("animalDaoImpl")
     private AnimalDao dao;
 
     @Override
