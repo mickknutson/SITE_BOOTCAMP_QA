@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
 
 import java.util.List;
 
@@ -32,41 +31,30 @@ public class PetstoreApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
-			//AnimalDao animalDao = ctx.getBean(AnimalDao.class);
-//
-//			List<Animal> animals = controller.findAll();
-//			System.out.println(animals);
-//			Animal animal = animalDao.findPet(10);
-//			animal.talk("Nader  is not an animal");
-//			animal.eat();
-			Animal animal = controller.findById(42);
-			if (animal != null) {
-				animal.eat();
+
+			System.out.println("Start commandLine Runner");
+			System.out.println("Add new Dog: ");
+			Animal dog = new Animal();
+
+
+			dog.setName("Fidgo Dog");
+			dog.setSound("Whooooaaaw");
+			dog.setType("DOG"); // DOG , CAT
+			Animal animal2 = controller.findById(1);
+			if (animal2 == null){
+				System.out.println("###  animal is null");
+			}
+
+			controller.add(dog);
+			Animal animal1 = controller.findById(1);
+			if (animal1 == null){
+				System.out.println("###  animal is null");
 			}
 			else {
-				System.out.println("No animals found");
+				System.out.println("## Animal: " + animal1.getName());
 			}
 
-
-			List<Animal> animals = controller.findAll();
-
-			if (animals.size() > 0) {
-				System.out.println("### Animals: "+ animals);
-			}
-			else {
-				System.out.println("No animals found");
-			}
-			//animal.eat();
-
-
-			//---------------------------------
-			//create a new animal
-			System.out.println("Pre add number of animals " + animals.size());
-			controller.add(new Cat("Bob"));
-
-			animals = controller.findAll();
-			System.out.println("Post add number of animals " + animals.size());
-
+			System.out.println("End commandLine Runner");
 		};
 	}
 }

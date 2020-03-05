@@ -3,25 +3,23 @@ package sa.site.lab.petstore.dao;
 
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Repository
 public class AnimalDaoImpl implements AnimalDao {
-    Cat cat1 = new Cat("Bella");
-    Cat cat2 = new Cat("Caramella");
-    Dog dog1 = new Dog("Lusy");
+    Animal cat1 = new Animal("Bella");
+    Animal cat2 = new Animal("Caramella");
+    Animal dog1 = new Animal("Lusy");
 
     //LAB: Create Map of Animals
     private Map<Integer, Animal> animalMap;
 
     private int counter = 0;
+
     public AnimalDaoImpl() {
 
         animalMap = new HashMap<>();
@@ -58,7 +56,7 @@ public class AnimalDaoImpl implements AnimalDao {
 //        Cat cat1 = new Cat("Bella");
 //        Cat cat2 = new Cat("Caramella");
 //        Dog dog1 = new Dog("Lusy");
-////        allAnimals.add(cat1);
+//        allAnimals.add(cat1);
 //        allAnimals.add(cat2);
 //        allAnimals.add(dog1);
     }
@@ -66,6 +64,6 @@ public class AnimalDaoImpl implements AnimalDao {
     @Override
     public void add(Animal animal) {
         System.out.println("*  AnimalDaoImpl.add() ");
-        animalMap.put(++counter,animal);
+        animalMap.put(++counter, animal);
     }
 }

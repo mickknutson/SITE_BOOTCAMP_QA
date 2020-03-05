@@ -12,7 +12,7 @@ import java.util.List;
 public class AnimalServiceImpl implements AnimalService {
 
     @Autowired
-    @Qualifier("animalDaoStubImpl")
+    @Qualifier("animalDaoDatabaseImpl")
     //@Qualifier("animalDaoDatabaseImpl")
     private AnimalDao dao;
 

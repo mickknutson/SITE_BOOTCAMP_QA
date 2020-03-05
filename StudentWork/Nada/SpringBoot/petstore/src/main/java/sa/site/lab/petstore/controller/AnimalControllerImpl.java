@@ -3,7 +3,6 @@ package sa.site.lab.petstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
@@ -14,9 +13,9 @@ public class AnimalControllerImpl implements AnimalController {
     private AnimalService service;
 
     @Override
-    public Animal findPet(int id) {
-        System.out.println("* AnimalControllerImpl.findPet:"+id);
-        return  service.findPet(id);
+    public Animal findById(int id) {
+        System.out.println("* AnimalControllerImpl.findById:"+id);
+        return  service.findById(id);
 
 
     }
@@ -26,6 +25,10 @@ public class AnimalControllerImpl implements AnimalController {
         System.out.println("* AnimalControllerImpl.findAll");
         return service.findAll();
     }
-
+@Override
+    public void add(Animal animal){
+    System.out.println("* AnimalController .add()");
+     service.add(animal);
+}
 
 }

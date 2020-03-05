@@ -2,18 +2,13 @@ package sa.site.lab.petstore;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
-import sa.site.lab.petstore.domain.Dog;
-import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
 
@@ -37,32 +32,35 @@ public class PetstoreApplication {
         return args -> {
 
             System.out.println("* Start CommandLineRunner *");
+
+            System.out.println("Add a new Dog: ");
+            Animal dog = new Animal(); // To add new dog
+            dog.setName("Fido");
+            dog.setSound("woof");
+            dog.setType("DOG"); // DOG or CAT
+
+            //-----------------------------------------------------------------------------------
+
             List<Animal> animals = controller.findAll();
 
-            if (animals != null) {
-                System.out.println("*****Animals" + animals);
+            System.out.println(" Animal: " + animals);
+
+            //--------------------------------------------------------------------------------
+            controller.add(dog);
+
+            //---------------------------------------------------------------------------------
+            Animal animal2 = controller.findById(1);
+
+            if (animal2 == null) {
+                System.out.println("animal is null");
             } else {
-                System.out.println("No animal found");
+                System.out.println("Animal: " + animal2.getName());
             }
+            //----------------------------------------------------------------------------------
 
+            animals = controller.findAll();
+            System.out.println("Animal: " + animals);
 
-            Animal animal = controller.findById(1);
-            if (animal != null) {
-                animal.eat();
-            } else {
-                System.out.println(" No animal");
-            }
-            // -----------------------------------------------------
-
-            System.out.println(" * POST Number of animals: " + animals.size()); // Print size BEFORE add new animal
-
-            // Create New Animal
-            controller.add(new Cat("Bob"));
-
-            List<Animal> updatedAnimal = controller.findAll();
-
-            System.out.println(" * POST Number of animals: " + updatedAnimal.size()); // Print size AFTER add new animal
-            //----------------------------------------------------------
 
             System.out.println("* End CommandLineRunner *");
 
@@ -71,3 +69,4 @@ public class PetstoreApplication {
     }
 
 }
+

@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class petstoreApplication {
         return args ->
         {
             // Runnable Code Will be Here ...
-            System.out.println((char)27 + "[34m ### Start Command Runner ###");
+            System.out.println((char) 27 + "[34m ### Start Command Runner ###");
             System.out.println("### Animal Dao output is : ###");
 
             // Map<String,Object> context ...
@@ -43,36 +42,61 @@ public class petstoreApplication {
 
 //			Animal animal = dao.findPet(2);
 
-            Animal animal = controller.findById(1);
+//            Animal animal = controller.findById(1);
+//
+//            List<Animal> animals = controller.findAll();
+//            System.out.println("### Animals: " + animals);
+//            if (animals != null) {
+//                for (int i = 0; i < animals.size(); i++)
+//                    animals.get(i).eat();
+//            } else {
+//                System.out.println("No Animals found");
+//            }
+//            if (animal != null) {
+//                animal.eat();
+//            } else {
+//                System.out.println("No Animals found");
+//            }
+//            // ----------------------------------------------------------------
+//            System.out.println("Nuber of animals: " + animals.size());
+//
+//            //Create New Animal
+//            controller.add(new Animal("Bob"));
+//
+//            animals = controller.findAll();
+//            List<Animal> updatedAnimal = controller.findAll();
+//
+//            System.out.println("Number of animals: " + animals.size());
+//            System.out.println("Number of animals: " + updatedAnimal.size());
+//
+//            // -----------------------------------------------------------------
 
+
+            System.out.println("Add a new Dog: ");
+            Animal dog = new Animal();
+            dog.setName("Lusy");
+            dog.setSound("woof");
+            dog.setType("DOG");// DOG / CAT / FISH / ...
+            // -----------------------------------
             List<Animal> animals = controller.findAll();
-            System.out.println("### Animals: " + animals);
-            if (animals != null) {
-                for (int i = 0; i < animals.size(); i++)
-                    animals.get(i).eat();
-            } else {
-                System.out.println("No Animals found");
+            System.out.println("Animls: "+animals);
+            //----------------------------------
+            controller.add(dog);
+            // --------------------------------
+            Animal animal2 = controller.findById(1);
+
+            if(animal2 == null){
+                System.out.println(" animal 2 is null");
+            }else{
+                System.out.println("Animal 2 : "+animal2.getName());
             }
-            if (animal != null) {
-                animal.eat();
-            } else {
-                System.out.println("No Animals found");
-            }
-            // ----------------------------------------------------------------
-            System.out.println("Nuber of animals: "+animals.size());
+            // -------------------------------------
+            animals = controller.findAll();
+            System.out.println("Animls: "+animals.get(0).getName());
 
-            //Create New Animal
-            controller.add(new Dog("Bob"));
 
-           animals = controller.findAll();
-           List<Animal> updatedAnimal= controller.findAll();
-
-            System.out.println("Number of animals: "+animals.size());
-            System.out.println("Number of animals: "+updatedAnimal.size());
-
-            // -----------------------------------------------------------------
             System.out.println("### End Command Runner ###");
-            System.out.println((char)27 + "[30m");
+            System.out.println((char) 27 + "[30m");
         };
 
 
