@@ -40,6 +40,16 @@ public class Animal {
         throw new RuntimeException("Not yet Implemented!");
     }
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+        '}';
+    }
+
     public int getId() {
         return id;
     }
@@ -71,4 +81,5 @@ public class Animal {
     public void setSound(String sound) {
         this.sound = sound;
     }
-} // End of Class .. 
+
+} // End of Class ..

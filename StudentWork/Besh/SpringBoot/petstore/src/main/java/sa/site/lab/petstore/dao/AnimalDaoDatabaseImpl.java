@@ -1,23 +1,44 @@
 package sa.site.lab.petstore.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao{
+
+    @Autowired
+    private AnimalRepository repository;
+
+    // TODO: MUST Implement
+
     public Animal findByID(int id){
-        System.out.println("AnimalDaoDatabaseImpl.findPet");
-        throw new RuntimeException("Not Available Yet");
+        System.out.println("AnimalDaoDatabaseImpl.findByID" + id);
+        Optional<Animal> result = repository.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }else{
+            return null;
+        }
+        //throw new RuntimeException("Not Available Yet");
     }
-    @Override
+    // TODO: Must implement
     public List<Animal> findAll(){
         System.out.println("AnimalDaoDatabaseImpl.findAll");
-        throw new RuntimeException("Not Available Yet");
+        Iterable<Animal> result = repository.findAll();
+        List<Animal> animals = new ArrayList<>();
+        for (Animal animal : result){
+            animals.add(animal);
+        }
+        return animals;
     }
-    @Override
+    // TODO: Must implement
     public void add (Animal animal){
-        System.out.println("AnimalDaoDatabaseImpl.add");
-        throw new RuntimeException("Not Available Yet");
+        System.out.println("AnimalDaoDatabaseImpl.add()");
+        repository.save(animal);
     }
 }

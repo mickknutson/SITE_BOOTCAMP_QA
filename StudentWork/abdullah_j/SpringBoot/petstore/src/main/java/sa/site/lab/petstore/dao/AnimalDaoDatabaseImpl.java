@@ -30,7 +30,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         }
     }
 
-    // TODO: MUST implement
+    // MUST implement
     @Override
     public List<Animal> findAll() {
         System.out.println("*** AnimalDao.findAll() ***");
@@ -44,7 +44,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         return animals;
     }
 
-    // TODO: MUST implement
+    //  MUST implement
     @Override
     public void add(Animal animal) {
         System.out.println("*** AnimalDao.add() ***");

@@ -1,50 +1,77 @@
 package sa.site.lab.petstore.domain;
-// Scope Type
-public interface Animal {
-    // Default Constructor
-    //public Animal(){
-        //this.name = "Generic";
-    //}
 
-    //public  Animal (String name){
-        //this.name = name;
-    //}
-    //Body of the class
-    // field / variables (State)
-    //private String name;
-    //private static String label = "generic";
+import javax.persistence.*;
 
-    //Methods / Behavior
-    public void eat();
-    String getName();
-    void setName(String name);
-        //System.out.println(name + " " + "is eating");
-        //System.out.println("Label " + label);
-    //}
-    //Accessor
-    //public String getName() {
-        //System.out.println("1. Unside animal.getName");
-        //return name;
+/**
+ * This is my contract obligation
+ */
+@Entity
+public class Animal {
 
-    //
-    //public void setName(String name) {
-       // this.name = name;
-   // }
+    // Map field to DB columns:
+    // Primary Key:
+    @Id
+    @GeneratedValue
+    private int id;
 
-    public static void main(String[] args){
-        //Animal animal = new Animal();
-        //Animal Dog = new Dog();
-        //Animal Cat = new Cat();
-        //animal.eat();
-        //Animal Generic = new Animal();
-        //Animal wolf = new Animal( "Wolf");
-        //Generic.eat();
-        //wolf.eat();
-        //System.out.println("Label " + Animal.label);
+    @Column
+    private String name;
+    @Column
+    private String type;
+    @Column
+    private String sound;
 
-        //((Dog)Dog).talk();
-        //((Cat)Cat).talk();
-        //((Dog)Dog).talk();
-        //((Cat)Cat).talk();
+    public Animal() {
     }
-}
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    // These are behavior:
+    // TODO: Ignore these methods in JPA:
+
+    @Transient
+    public void eat() {
+        throw new RuntimeException("not yet implemented");
+    }
+
+    @Transient
+    public void talk(String voice) {
+        throw new RuntimeException("not yet implemented");
+    }
+
+    // Setter & Getter ------------------------------//
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+} // The End...

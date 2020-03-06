@@ -27,8 +27,18 @@ public class Animal {
        throw  new RuntimeException("Not yet implemented");
     }
     @Transient
-    public void talk(String voice){
+    public void talk(String voice) {
         throw new RuntimeException("Not yet implemented");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
     }
 
     public int getId() {

@@ -40,9 +40,12 @@ public class PetstoreApplication {
             System.out.println("commanLinearRunner");
             out.println("Add a new dog");
             Animal dog= new Animal();
-            dog.setName("Fido");
-            dog.setSound("woof");
+            dog.setName("goofy");
+            dog.setSound("hhh");
             dog.setType("DOG");
+
+            List<Animal> animals=controller.findAll();
+            System.out.println("Animals: "+animals);
 
            Animal animal1=controller.findById(1);
            if(animal1==null){
@@ -55,6 +58,8 @@ public class PetstoreApplication {
             }else{
                 out.println("Animals: "+animal2.getName());
             }
+             animals=controller.findAll();
+            System.out.println("Animals: "+animals);
 
 
 
