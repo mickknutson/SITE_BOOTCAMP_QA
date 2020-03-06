@@ -1,3 +1,4 @@
+/*
 package sa.site.lab.petstore.domain;
 
 public class Cat implements Animal {
@@ -23,4 +24,4 @@ public class Cat implements Animal {
         setName(name);
     }
 
-}
+}*/
