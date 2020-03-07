@@ -51,12 +51,14 @@ public class ItemDaoImpl implements ItemDao {
         if (item != null){
             String oldName = item.getName();
             item.setName(newName);
+            repository.save(item);
             System.out.println("Item's name with id #" + id + " has been updated from '"
                     + oldName + "' to '" + newName + "'");
         }
         else{
             System.out.println("No item with this id!");
         }
+
 
     }
 
@@ -68,6 +70,7 @@ public class ItemDaoImpl implements ItemDao {
         if (item != null){
             String oldDescription = item.getDescription();
             item.setDescription(newDescription);
+            repository.save(item);
             System.out.println("Item's description with id #" + id + " has been updated from '"
                     + oldDescription + "' to '" + newDescription + "'");
         }
@@ -84,6 +87,7 @@ public class ItemDaoImpl implements ItemDao {
         if (item != null){
             float oldCost = item.getCost();
             item.setCost(newCost);
+            repository.save(item);
             System.out.println("Item's cost with id #" + id + " has been updated from '$"
                     + oldCost + "' to '$" + newCost + "'");
         }

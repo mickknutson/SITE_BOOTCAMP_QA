@@ -89,7 +89,7 @@ public class MystoreApplication {
                 System.out.println("No items found");
             }
 
-            controller.deleteAll();
+            //controller.deleteAll();
             list = controller.findAll();
 
             if (list != null && list.size() != 0){
