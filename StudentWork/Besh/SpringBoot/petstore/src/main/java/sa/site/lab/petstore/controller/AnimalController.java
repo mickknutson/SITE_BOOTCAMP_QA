@@ -7,7 +7,6 @@ import java.util.List;
 public interface AnimalController {
     Animal findById(int id);
     List<Animal> findAll();
-
     void add(Animal animal);
 
 } // The end of class...

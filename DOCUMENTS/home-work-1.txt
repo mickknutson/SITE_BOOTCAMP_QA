@@ -1,0 +1,49 @@
+
+
+Home work:
+
+
+Create Spring boot project from InitializR (http://start.spring.io)
+
+	group: com.coolcompany
+
+	artifact: mystore
+
+	Dependencies: Web, JPA, H2, Devtools
+
+	Artifacts to create and display in commandLineRunner:
+
+* Item
+---------
+id
+name
+description
+cost
+
+
+
+Create 5+ Items
+
+* Support:
+-> Create
+-> Read
+-> Update
+-> Delete
+
+
+
+*** Run SQL Queries to verify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
