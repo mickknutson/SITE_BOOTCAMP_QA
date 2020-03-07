@@ -17,17 +17,6 @@ public class Animal {
     @Id
     @GeneratedValue
     private int id;
-    // toString method is specified by me
-    @Override
-    public String toString() {
-        return "Animal{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", sound='" + sound + '\'' +
-                '}';
-    }
-
     @Column
     private String name;
     @Column
@@ -40,6 +29,16 @@ public class Animal {
 
     public Animal(String name) {
         this.name = name;
+    }
+    // toString method is specified by me
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
     }
 
     //These are behavior UNLIKE setters and getters

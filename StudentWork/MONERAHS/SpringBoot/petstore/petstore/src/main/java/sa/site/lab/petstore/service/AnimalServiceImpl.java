@@ -13,8 +13,8 @@ import java.util.List;
  * AnimalService service =new AnimalService();
  * Because interface
  */
-@Service
 
+@Service
 //OUR BUFFER
 public class AnimalServiceImpl implements AnimalService {
     @Autowired
@@ -38,7 +38,7 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public void add(Animal animal) {
-        System.out.println("** AnimalService.add() ");
+        System.out.println("** AnimalService.add()");
 
         dao.add(animal);
     }
