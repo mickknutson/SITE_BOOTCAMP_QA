@@ -25,6 +25,7 @@ public class petstoreApplication {
 
         System.out.println("* End Main()");
     }
+
     //CLIENT CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
@@ -95,6 +96,7 @@ public class petstoreApplication {
                 System.out.println("Animal 2 : " + animal2.getName());
             }
             // -------------------------------------
+
             animals = controller.findAll();
             System.out.println("List of Animals: " + animals.toString());
 
