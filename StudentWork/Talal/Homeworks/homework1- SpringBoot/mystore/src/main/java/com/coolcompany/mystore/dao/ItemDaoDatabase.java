@@ -15,59 +15,45 @@ public class ItemDaoDatabase {
 
     public Item findById(int id) {
 
-        Optional<Item> result =repositry.findById(id);
-        if(result.isPresent()){
+        Optional<Item> result = repositry.findById(id);
+        if (result.isPresent()) {
             return result.get();
-        }else {
+        } else {
             return null;
         }
     }
 
-    public List<Item> findAll(){
-       Iterable<Item> result= repositry.findAll();
+    public List<Item> findAll() {
+        Iterable<Item> result = repositry.findAll();
 
-       List <Item> items= new ArrayList<>();
-       for (Item item: result){
-           items.add(item);
-       }
-       return items;
+        List<Item> items = new ArrayList<>();
+        for (Item item : result) {
+            items.add(item);
+        }
+        return items;
     }
 
 
     public void add(Item item) {
 
-
         repositry.save(item);
-
 
     }
 
-    public Item updatePrice(int id, double price) {
+    public void updatePrice(int id, double price) {
 
-        if(repositry.findById(id).isPresent()) {
+        if (repositry.findById(id).isPresent()) {
             Item itemInDB = repositry.findById(id).get();
             itemInDB.setPrice(price);
             repositry.save(itemInDB);
 
-        }else {
-            return null;
+        } else {
+            System.out.println("There is no item with id: "+id );
         }
-
-
-
-
-            Item item =findById(id);
-         if(item!=null){
-             item.setPrice(price);
-             return item;
-         } else {
-             return null;
-         }
-
 
     }
 
-    public void deleteById(int id ){
+    public void deleteById(int id) {
         repositry.deleteById(id);
     }
 
