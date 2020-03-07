@@ -4,24 +4,24 @@
 <head>
     <link rel="stylesheet" href="../loginForm/style.css">
     <script src="../loginForm/script.js"></script>
-    <title>Nader's Login form</title>
+    <title>Login Page</title>
 </head>
 
 <body>
-    <form method="/">
+    
+   
+    <form >
         <div class="container">
-            <label for="uname"><b>Username</b></label>
-            <input id="nameID" type="text" placeholder="Enter Username" name="uname" required>
-            <label for="uemail"><b>Email</b></label>
-            <input id="emailID" type="text" placeholder="Enter Email" name="uemail" required>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw">
-            <button type="submit" onclick="enterInfo()">Enter your damn info</button>
+            <label id="name"><b>Username</b></label>
+            <input type="text" name="fname" placeholder="User Name">
+            <label id="email"><b>Email</b></label>
+            <input type="text" name="Email" placeholder="Email">
+            <label id="Password"><b>Password</b></label>
+            <input type="text" name="Password" placeholder="Password">
+            <button type="submit" onclick="enterInfo()">Submit</button>
         </div>
     </form>
-    <p id='name'></p>
-    <p id='password'></p>
-    <p id='email'></p>
+    
 </body>
 
 </html>
