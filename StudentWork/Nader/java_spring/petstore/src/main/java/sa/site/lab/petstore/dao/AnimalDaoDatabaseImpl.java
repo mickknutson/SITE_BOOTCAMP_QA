@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +34,13 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
     @Override
     public List<Animal> findAll() {
         System.out.println("## AnimalDaoDatabaseImpl findPet()");
-        throw  new RuntimeException("Dao not available yet");
+        Iterable<Animal> result = repository.findAll();
+        List<Animal> animals = new ArrayList<>();
+        for (Animal animal : result){
+            //System.out.println("## animal: " + animal.getName());
+            animals.add(animal);
+        }
+        return animals;
     }
 
 

@@ -1,3 +1,4 @@
+/*
 package sa.site.lab.petstore.domain;
 
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ public class Dog implements Animal {
        // setName(name);
     //}
     @Override
-    public void eat (){
+    public void eat System(){
         System.out.println("nom, nom, mom");
     }
     public void talk(String voice) {
@@ -34,4 +35,4 @@ public class Dog implements Animal {
     public void setName(String name){
         this.name=name;
     }
-}
+}*/

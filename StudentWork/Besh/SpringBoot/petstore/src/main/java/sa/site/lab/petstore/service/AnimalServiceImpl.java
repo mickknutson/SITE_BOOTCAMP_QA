@@ -5,19 +5,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
-
 import java.util.List;
 
 @Service
 public class AnimalServiceImpl implements AnimalService{
     @Autowired
-    @Qualifier("animalDaoStubImpl")
+    @Qualifier("animalDaoDatabaseImpl")
     private AnimalDao dao;
 
     @Override
-    public Animal findByID(int id){
+    public Animal findById(int id){
         System.out.println("* AnimalService.findPet: " + id);
-        return dao.findByID(id);
+        return dao.findById(id);
     }
     @Override
     public List<Animal>findAll(){
