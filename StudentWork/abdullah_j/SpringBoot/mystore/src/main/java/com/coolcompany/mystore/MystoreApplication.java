@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class MystoreApplication {
 
@@ -36,24 +38,66 @@ public class MystoreApplication {
             controller.add(item4);
             controller.add(item5);
 
+            Item item = controller.findById(6);
 
-            System.out.println(controller.findById(6));
-            System.out.println(controller.findById(3));
+            if (item != null){
+                System.out.println(item);
+            }
+            else{
+                System.out.println("No item with this id");
+            }
 
-            System.out.println(controller.findAll());
+            item = controller.findById(3);
+
+            if (item != null){
+                System.out.println(item);
+            }
+            else{
+                System.out.println("No item with this id");
+            }
+
+            List<Item> list = controller.findAll();
+
+            if (list != null && list.size() != 0){
+                System.out.println(list);
+            }
+            else{
+                System.out.println("No items found");
+            }
 
 
             controller.updateName(1 , "updated name");
             controller.updateDescription(1 , "updated Description");
             controller.updateCost(1 , 10000.5f);
 
-            System.out.println(controller.findById(1));
+            item = controller.findById(1);
+
+            if (item != null){
+                System.out.println(item);
+            }
+            else{
+                System.out.println("No item with this id");
+            }
 
             controller.deleteById(3);
-            System.out.println(controller.findAll());
+            list = controller.findAll();
+
+            if (list != null && list.size() != 0){
+                System.out.println(list);
+            }
+            else{
+                System.out.println("No items found");
+            }
 
             controller.deleteAll();
-            System.out.println(controller.findAll());
+            list = controller.findAll();
+
+            if (list != null && list.size() != 0){
+                System.out.println(list);
+            }
+            else{
+                System.out.println("No items found");
+            }
 
 
 
