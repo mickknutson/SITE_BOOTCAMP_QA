@@ -26,22 +26,24 @@ public class PetstoreApplication{
 
 	} // End of MAIN method
 
+    // CLIENT CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
+
             System.out.println("* start commandLineRunner");
 
             System.out.println("Add a new Dog:");
 
             Animal dog = new Animal();
-            dog.setName("Fido");
-            dog.setSound("woof");
+            dog.setName("Goofy");
+            dog.setSound("bark bark");
             dog.setType("DOG"); // DOG, CAT
 
 
             //---------------------------------------------------------------//
             List<Animal> animals = controller.findAll();
-            System.out.println("Animal: " + animals);
+            System.out.println("List of Animals: " + animals);
 
             //---------------------------------------------------------------//
             controller.add(dog);
@@ -57,7 +59,7 @@ public class PetstoreApplication{
 
             //---------------------------------------------------------------//
             animals = controller.findAll();
-            System.out.println("Animal: " + animals);
+            System.out.println("List of Animals: " + animals);
 
 
 
