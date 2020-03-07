@@ -34,8 +34,8 @@ public class PetstoreApplication {
 
             Animal dog = new Animal();
             dog.setName("Fido");
-            dog.setName("Woof");
-            dog.setName("Dog");
+            dog.setSound("Woof");
+            dog.setType("Dog");
 
             // Animal DAO Goes here
             List<Animal> animals = controller.findAll();
@@ -43,7 +43,7 @@ public class PetstoreApplication {
             controller.add(dog);
 
             Animal animal2 = controller.findById(1);
-            if (animal2 != null){
+            if (animal2 == null){
                 System.out.println("Animals is Null");
             }
             else{

@@ -28,6 +28,7 @@ public class Animal {
         this.name = name;
     }
 
+
     // These are behavior:
     // TODO: Ignore these methods in JPA:
 
@@ -39,6 +40,15 @@ public class Animal {
     @Transient
     public void talk(String voice) {
         throw new RuntimeException("not yet implemented");
+    }
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
     }
 
     // Setter & Getter ------------------------------//
