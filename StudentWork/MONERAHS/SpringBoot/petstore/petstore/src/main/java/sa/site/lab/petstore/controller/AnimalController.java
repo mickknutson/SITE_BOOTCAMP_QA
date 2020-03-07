@@ -1,13 +1,15 @@
 package sa.site.lab.petstore.controller;
 
-import sa.site.lab.petstore.Animal.Animal;
+import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
 public interface AnimalController {
 
-     public Animal findPet(int id);
+    public Animal findById(int id);
 
-     List<Animal> findAll();
+    List<Animal> findAll();
+
+    void add(Animal animal);
 
 }
