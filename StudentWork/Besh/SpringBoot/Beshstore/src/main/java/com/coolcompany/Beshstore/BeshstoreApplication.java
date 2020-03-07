@@ -28,7 +28,7 @@ public class BeshstoreApplication {
 			System.out.println("*** Add new item ***");
 			Product item = new Product();
 			item.setName("Bag");
-			item.setType("Dior");
+			item.setDesc("Dior");
 			item.setPrice("$ 50");
 			List<Product> products = controller.findAll();
 			System.out.println("Products" + products);

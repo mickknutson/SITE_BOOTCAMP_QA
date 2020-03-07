@@ -10,7 +10,7 @@ public class Product {
     @Column
     private String name;
     @Column
-    private String type;
+    private String Desc;
     @Column
     private String price;
     public Product(){
@@ -29,10 +29,10 @@ public class Product {
     }
     @Override
     public String toString() {
-        return "Animal{" +
+        return "Product{" +
                 "Id=" + id +
                 ", Name='" + name + '\'' +
-                ", Type='" + type + '\'' +
+                ", Type='" + Desc + '\'' +
                 ", Price='" + price + '\'' +
                 '}';
     }
@@ -52,12 +52,12 @@ public class Product {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getDesc() {
+        return Desc;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDesc(String desc) {
+        this.Desc = desc;
     }
 
     public String getPrice() {
