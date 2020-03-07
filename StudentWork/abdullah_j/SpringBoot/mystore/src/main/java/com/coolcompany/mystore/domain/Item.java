@@ -70,7 +70,7 @@ public class Item {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", cost=" + cost +
+                ", cost=$" + cost +
                 "}\n";
     }
 }// end of class
