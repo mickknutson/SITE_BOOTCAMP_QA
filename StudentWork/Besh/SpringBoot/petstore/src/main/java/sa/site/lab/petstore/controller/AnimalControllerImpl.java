@@ -10,9 +10,10 @@ import java.util.List;
 public class AnimalControllerImpl implements AnimalController {
     @Autowired
     private AnimalService service;
+    @Override
     public Animal findById(int id) {
         System.out.println("* AnimalController.findById: " + id);
-        return service.findByID(id);
+        return service.findById(id);
     }
 
     @Override

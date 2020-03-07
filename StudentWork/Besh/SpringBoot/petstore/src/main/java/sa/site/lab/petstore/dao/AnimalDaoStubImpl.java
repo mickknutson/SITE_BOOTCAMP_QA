@@ -36,7 +36,7 @@ public class AnimalDaoStubImpl implements AnimalDao {// animalDao
     }
 
     // Method Level
-    public Animal findByID(int id) {
+    public Animal findById(int id) {
         System.out.println("* AnimalDao: " + id);
 
         if (animals.containsKey(id)) {

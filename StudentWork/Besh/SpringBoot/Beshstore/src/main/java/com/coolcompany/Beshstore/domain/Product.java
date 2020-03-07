@@ -1,58 +1,41 @@
-package sa.site.lab.petstore.domain;
+package com.coolcompany.Beshstore.domain;
 
 import javax.persistence.*;
 
-/**
- * This is my contract obligation
- */
 @Entity
-public class Animal {
-
-    // Map field to DB columns:
-    // Primary Key:
+public class Product {
     @Id
     @GeneratedValue
     private int id;
-
     @Column
     private String name;
     @Column
     private String type;
     @Column
-    private String sound;
-
-    public Animal() {
+    private String price;
+    public Product(){
     }
-
-    public Animal(String name) {
+    public Product(String name){
         this.name = name;
     }
-
-
-    // These are behavior:
-    // TODO: Ignore these methods in JPA:
-
     @Transient
-    public void eat() {
+    public void type() {
         throw new RuntimeException("not yet implemented");
     }
 
     @Transient
-    public void talk(String voice) {
+    public void price(String price) {
         throw new RuntimeException("not yet implemented");
     }
     @Override
     public String toString() {
         return "Animal{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", sound='" + sound + '\'' +
+                "Id=" + id +
+                ", Name='" + name + '\'' +
+                ", Type='" + type + '\'' +
+                ", Price='" + price + '\'' +
                 '}';
     }
-
-    // Setter & Getter ------------------------------//
-
     public int getId() {
         return id;
     }
@@ -77,11 +60,13 @@ public class Animal {
         this.type = type;
     }
 
-    public String getSound() {
-        return sound;
+    public String getPrice() {
+        return price;
     }
 
-    public void setSound(String sound) {
-        this.sound = sound;
+    public void setPrice(String price) {
+        this.price = price;
     }
 } // The End...
+
+
