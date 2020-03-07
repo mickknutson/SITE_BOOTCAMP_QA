@@ -1,0 +1,18 @@
+myHero {
+    display: block;
+    background-color: #dddddd;
+    padding: 30px;
+    font-size: 30px;
+}
+
+#div
+{
+  background-color: navajowhitel;
+  border: 1px solid black;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  margin-right: 500px;
+  margin-left: 500px;
+  background-color: lightblue;
+        
+}
