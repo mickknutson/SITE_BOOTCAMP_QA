@@ -1,6 +1,5 @@
-package main.java.com.coolcompany.mystore.domain;
+package com.coolcompany.mystore.domain;
 
-import com.sun.javafx.beans.IDProperty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

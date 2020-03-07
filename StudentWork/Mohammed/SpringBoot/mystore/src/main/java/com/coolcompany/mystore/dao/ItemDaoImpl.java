@@ -1,11 +1,10 @@
 package com.coolcompany.mystore.dao;
 
-import main.java.com.coolcompany.mystore.domain.Item;
+import com.coolcompany.mystore.domain.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 

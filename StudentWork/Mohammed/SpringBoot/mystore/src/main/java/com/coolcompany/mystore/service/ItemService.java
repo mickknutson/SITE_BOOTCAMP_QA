@@ -1,10 +1,10 @@
-package com.coolcompany.mystore.dao;
+package com.coolcompany.mystore.service;
 
 import com.coolcompany.mystore.domain.Item;
 
 import java.util.List;
 
-public interface ItemDao {
+public interface ItemService {
 
     void addItem(Item item);
     Item findItemById(int id);

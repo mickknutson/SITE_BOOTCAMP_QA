@@ -1,6 +1,6 @@
 package com.coolcompany.mystore.dao;
 
-import main.java.com.coolcompany.mystore.domain.Item;
+import com.coolcompany.mystore.domain.Item;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
