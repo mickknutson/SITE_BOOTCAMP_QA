@@ -1,29 +1,33 @@
 package sa.site.lab.petstore.Dao;
 
 import org.springframework.stereotype.Repository;
-import sa.site.lab.petstore.Animal.Animal;
-import sa.site.lab.petstore.Animal.Cat;
-import sa.site.lab.petstore.Animal.Dog;
+import sa.site.lab.petstore.domain.Animal;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Stub: Brut Force / Hard Coded
+ * Mock:
+ */
+
 @Repository
-public class AnimalDaoImpl implements AnimalDao {
+public class AnimalDaoStubImpl implements AnimalDao {
 
     Map<Integer, Animal> animals;
+    private int counter=0;
 
-    public AnimalDaoImpl() {
+    public AnimalDaoStubImpl() {
         animals = new HashMap<>();
-        animals.put(1, new Cat("Charlie"));
-        animals.put(2, new Dog("Simon"));
-        animals.put(3, new Cat("Phepee"));
+        animals.put(++counter, new Animal("Charlie"));
+        animals.put(++counter, new Animal("Simon"));
+        animals.put(++counter, new Animal("Phepee"));
 
     }
 
-    public Animal findPet(int id) {
+    public Animal findById(int id) {
 
         System.out.println("** AnimalDao.FindPet():" + id);
         if (animals.containsKey(id)) {
@@ -51,6 +55,12 @@ public class AnimalDaoImpl implements AnimalDao {
         return animals.values()
                 .stream()
                 .collect(Collectors.toList()); //converting stream to list
+    }
+
+    @Override
+    public void add(Animal animal) {
+        System.out.println("* AnimalDaoDatabaseImpl.add()");
+        animals.put(++counter,animal);
     }
 
 }
