@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class MystoreApplication {
 
@@ -41,6 +43,19 @@ public class MystoreApplication {
 				System.out.println(test.toString());
 			}
 			System.out.println("End of CommandLineRunner");
+
+			Item updatedItem = daoDatabase.updatePrice(1,35);
+
+			if(updatedItem!=null){
+				System.out.println(updatedItem.toString());
+			}
+
+			daoDatabase.deleteById(3);
+
+			List<Item> items=daoDatabase.findAll();
+			System.out.println(items.toString());
+
+
 
 
 

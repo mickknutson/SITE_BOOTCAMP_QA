@@ -57,7 +57,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return " \n Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
