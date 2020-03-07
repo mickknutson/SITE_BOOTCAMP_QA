@@ -1,4 +1,4 @@
-package sa.site.lab.petstore.domain;
+/*package sa.site.lab.petstore.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,4 +19,4 @@ public class MainCollections {
             animal.eat();
         }
     }
-}
+}*/

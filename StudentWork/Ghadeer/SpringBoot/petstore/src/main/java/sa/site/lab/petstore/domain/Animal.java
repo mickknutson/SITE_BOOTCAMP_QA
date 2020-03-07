@@ -75,5 +75,13 @@ public class Animal {
         throw new RuntimeException("Not yet implemented");
     }
 
-
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
+    }
 }

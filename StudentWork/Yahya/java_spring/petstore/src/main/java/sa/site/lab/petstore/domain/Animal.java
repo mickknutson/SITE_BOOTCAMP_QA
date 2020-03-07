@@ -40,7 +40,17 @@ public class   Animal {
       throw new RuntimeException("not yet Implemented");
     }
 
-//------------------------------Setter And Getter
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
+    }
+
+    //------------------------------Setter And Getter
     public int getId() {
         return id;
     }

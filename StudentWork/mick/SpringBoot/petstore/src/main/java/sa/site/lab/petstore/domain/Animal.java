@@ -6,7 +6,7 @@ import javax.persistence.*;
  * This is my contract obligation
  */
 @Entity
-public class Animal {
+public class Animal{
 
     // Map field to DB columns:
     // Primary Key:
@@ -39,6 +39,17 @@ public class Animal {
     public void talk(String voice){
         throw new RuntimeException("not yet implemented");
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
+    }
+
 
     // Setter & Getter ------------------------------//
 

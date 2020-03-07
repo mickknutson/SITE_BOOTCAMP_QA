@@ -54,6 +54,9 @@ public class PetstoreApplication {
 				System.out.println("## Animal: " + animal1.getName());
 			}
 
+			List<Animal> animals = controller.findAll();
+			System.out.println("##Animals: " +animals);
+
 			System.out.println("End commandLine Runner");
 		};
 	}
