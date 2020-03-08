@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal Information</title>
+</head>
+<body>
+
+    <h1> Animal Information </h1>
+    <table border="2">
+        <thead>
+        <tr bgcolor="red">
+            <th>Name</th>
+            <th>Type</th>
+            <th>Sound</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td th:text="${animal.name}"></td>
+            <td th:text="${animal.type}"></td>
+            <td th:text="${animal.sound}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+        <h3> <a href="/animal/list.html">List</a></h3>
+
+</body>
+</html>
