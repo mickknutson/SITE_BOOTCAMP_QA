@@ -54,7 +54,5 @@ public class AnimalControllerImpl implements AnimalController {
         //todo: add proper logic
     }
 
-//    public void fillMethod(){
-//        service.fillMethod();
-//    }
+
 }
