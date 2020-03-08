@@ -26,7 +26,7 @@ public class PetstoreApplication{
 
 	} // End of MAIN method
 
-    // CLIENT CODE:
+    // RUN THIS CODE FIRST AS TEST CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -42,13 +42,16 @@ public class PetstoreApplication{
 
 
             //---------------------------------------------------------------//
+            // Should have ZERO pets in DB:
             List<Animal> animals = controller.findAll();
             System.out.println("List of Animals: " + animals);
 
             //---------------------------------------------------------------//
-            controller.add(dog);
+            // Add single pet to DB PK=1 :
+//            controller.add(dog);
 
             //---------------------------------------------------------------//
+            // Find first pet from DB:
             Animal animal2 = controller.findById(1);
             if(animal2 == null){
                 System.out.println("animal is null");
@@ -58,6 +61,7 @@ public class PetstoreApplication{
 
 
             //---------------------------------------------------------------//
+            // Should have one pet in DB:
             animals = controller.findAll();
             System.out.println("List of Animals: " + animals);
 

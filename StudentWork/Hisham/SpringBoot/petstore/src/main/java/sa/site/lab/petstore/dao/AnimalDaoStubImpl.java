@@ -3,8 +3,6 @@ package sa.site.lab.petstore.dao;
 
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,15 +14,15 @@ public class AnimalDaoStubImpl implements AnimalDao
 {
     private Map<Integer,Animal> animals;
     private int count = 0;
-    public AnimalDaoStubImpl()
-    {
-        animals = new HashMap<>();
-        animals.put(++count,new Cat("kitten"));
-        animals.put(++count,new Cat("Cimba"));
-        animals.put(++count,new Dog("Foo"));
-        animals.put(++count,new Dog("Bar"));
-
-    }
+//    public AnimalDaoStubImpl()
+//    {
+//        animals = new HashMap<>();
+//        animals.put(++count,new Cat("kitten"));
+//        animals.put(++count,new Cat("Cimba"));
+//        animals.put(++count,new Dog("Foo"));
+//        animals.put(++count,new Dog("Bar"));
+//
+//    }
 
     @Override
     public Animal findById(int id)
