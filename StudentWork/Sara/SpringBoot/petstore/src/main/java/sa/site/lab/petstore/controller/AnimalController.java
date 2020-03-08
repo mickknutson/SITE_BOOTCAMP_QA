@@ -8,5 +8,5 @@ public interface AnimalController {
 
     String findAll(Model model);
 
-    void add(Animal animal);
+    String add(Model model);
 }
