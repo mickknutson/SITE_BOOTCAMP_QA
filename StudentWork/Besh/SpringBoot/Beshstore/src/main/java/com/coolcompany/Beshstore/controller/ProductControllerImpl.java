@@ -26,4 +26,9 @@ public class ProductControllerImpl implements ProductController{
         System.out.println("* ProductController..add");
         service.add(product);
     }
+
+    @Override
+    public void updateName (String name, int id){
+        service.updateName (name, id);
+    }
 }

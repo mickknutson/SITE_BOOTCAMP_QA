@@ -39,9 +39,9 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
             dog.setSound("Woof");
             dog.setType("DOG"); // DOG , CAT ..
 
-            List<Animal> animals = controller.findAll();
-            System.out.println("List of Animals : " + animals);
-            controller.add(dog);
+//            List<Animal> animals = controller.findAll();
+//            System.out.println("List of Animals : " + animals);
+//            controller.add(dog);
 
             Animal animal2 = controller.findById(1);
             if (animal2 == null ){
@@ -50,8 +50,8 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
                 System.out.println("Animal : " + animal2.getName());
             }
 
-            animals = controller.findAll();
-            System.out.println(" List of Animals : " + animals);
+//            animals = controller.findAll();
+//            System.out.println(" List of Animals : " + animals);
 
 
             System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> End Commmand RUNNER" +

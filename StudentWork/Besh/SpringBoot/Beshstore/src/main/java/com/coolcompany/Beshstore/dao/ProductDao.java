@@ -7,4 +7,5 @@ public interface ProductDao {
     Product findById (int id);
     List<Product> findAll();
     void add(Product product);
+    void updateName (String name, int id);
 }

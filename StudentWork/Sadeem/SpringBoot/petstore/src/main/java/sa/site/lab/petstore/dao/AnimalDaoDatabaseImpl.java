@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao{
-    @Autowired
+        @Autowired
     private  AnimalRepository repository;
 
     // TODO: Must implement
