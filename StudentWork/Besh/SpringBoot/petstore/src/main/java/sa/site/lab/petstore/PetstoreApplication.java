@@ -38,8 +38,8 @@ public class PetstoreApplication {
             dog.setType("Dog");
 
             // Animal DAO Goes here
-            List<Animal> animals = controller.findAll();
-            System.out.println("Animals" + animals);
+            //List<Animal> animals = controller.findAll();
+            //System.out.println("Animals" + animals);
 
             //Adding single pet to DB
 //            controller.add(dog);
@@ -53,8 +53,8 @@ public class PetstoreApplication {
                 System.out.println("Animal: " + animal2.getName());
             }
             //Should have one pet at least in DB
-            animals = controller.findAll();
-            System.out.println("Animal: " + animals);
+            //animals = controller.findAll();
+            //System.out.println("Animal: " + animals);
             //---------------------------
            /* System.out.println("Number of animals: " + animals.size());
             //            //create a new Animal:
