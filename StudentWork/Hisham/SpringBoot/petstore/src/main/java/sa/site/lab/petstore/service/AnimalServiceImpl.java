@@ -13,7 +13,7 @@ public class AnimalServiceImpl implements AnimalService
 {
 
     @Autowired
-    @Qualifier("animalDaoStubImpl")
+    @Qualifier("animalDaoDatabaseImpl")
     private AnimalDao dao;
 
     @Override
