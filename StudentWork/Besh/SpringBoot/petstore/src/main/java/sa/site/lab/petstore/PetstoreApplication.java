@@ -11,18 +11,22 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
+/**
+ * 1. Add ADD, DELETE functions for Thymeleaf
+ * 2. Add REST Support
+ */
 @SpringBootApplication
 public class PetstoreApplication {
 
     //Only fields / Variables go here...
-    @Autowired
-    private AnimalController controller;
+    //@Autowired
+    //private AnimalController controller;
     //private AnimalService service;
 
     public static void main(String[] args) {// Start of MAIN method
-        System.out.println("*** Start Main() ***");
+        //System.out.println("*** Start Main() ***");
         SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("*** End Main() ***");
+        //System.out.println("*** End Main() ***");
 
     }// End of MAIN method
     @Bean
@@ -30,31 +34,31 @@ public class PetstoreApplication {
         return args -> {
             // Runnable code goes here
             System.out.println("*** Start CommandLineRunner ***");
-            System.out.println("*** Add a new Dog ***");
+            //System.out.println("*** Add a new Dog ***");
 
-            Animal dog = new Animal();
-            dog.setName("Fido");
-            dog.setSound("Woof");
-            dog.setType("Dog");
+            //Animal dog = new Animal();
+            //dog.setName("Fido");
+            //dog.setSound("Woof");
+           // dog.setType("Dog");
 
             // Animal DAO Goes here
-            List<Animal> animals = controller.findAll();
-            System.out.println("Animals" + animals);
+            //List<Animal> animals = controller.findAll();
+            //System.out.println("Animals" + animals);
 
             //Adding single pet to DB
 //            controller.add(dog);
 
             //Find first oet from DB
-            Animal animal2 = controller.findById(1);
-            if (animal2 == null){
-                System.out.println("Animals is Null");
-            }
-            else{
-                System.out.println("Animal: " + animal2.getName());
-            }
+            //Animal animal2 = controller.findById(1);
+            //if (animal2 == null){
+              //  System.out.println("Animals is Null");
+            //}
+            //else{
+              //  System.out.println("Animal: " + animal2.getName());
+            //}
             //Should have one pet at least in DB
-            animals = controller.findAll();
-            System.out.println("Animal: " + animals);
+            //animals = controller.findAll();
+            //System.out.println("Animal: " + animals);
             //---------------------------
            /* System.out.println("Number of animals: " + animals.size());
             //            //create a new Animal:
