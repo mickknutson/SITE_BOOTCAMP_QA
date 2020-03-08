@@ -30,4 +30,8 @@ public class ProductServiceImpl implements ProductService{
         System.out.println("* ProductService.add");
         dao.add(product);
     }
+    @Override
+    public void updateName (String name, int id) {
+        dao.updateName(name, id);
+    }
 }
