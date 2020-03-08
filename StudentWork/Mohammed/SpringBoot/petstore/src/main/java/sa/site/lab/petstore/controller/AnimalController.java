@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface AnimalController {
 
-    public Animal findById(int id);
+     String findById(int id, Model model);
     String findAll(Model model);
-    void add(Animal animal);
+    String add(Model model);
 }
