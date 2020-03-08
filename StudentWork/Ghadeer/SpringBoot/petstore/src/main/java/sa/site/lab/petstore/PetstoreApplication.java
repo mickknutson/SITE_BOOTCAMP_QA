@@ -51,7 +51,7 @@ public class PetstoreApplication {
            if(animal1==null){
                System.out.println("animal is null");
            }
-            controller.add(dog);
+//            controller.add(dog);
             Animal animal2=controller.findById(1);
             if(animal2==null){
                 System.out.println("animal is null");
