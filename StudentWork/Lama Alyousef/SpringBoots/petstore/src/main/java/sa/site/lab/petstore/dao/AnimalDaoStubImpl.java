@@ -48,7 +48,6 @@ public class AnimalDaoStubImpl implements AnimalDao {
             return null;
         }
     }
-
     public List<Animal> findAll(){
         System.out.println(" * AnimalDao.findAll()");
 

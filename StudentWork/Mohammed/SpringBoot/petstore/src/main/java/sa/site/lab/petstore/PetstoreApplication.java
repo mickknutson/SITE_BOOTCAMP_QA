@@ -11,6 +11,11 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
+/*
+ TODO :
+ 1.Add ADD, DELETE functional for Thymeleaf
+ 2.Add REST Support
+ */
 @SpringBootApplication
 public class PetstoreApplication { // BEGINING OF CLASS ..
 
@@ -32,33 +37,32 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
             // Runnable code goes here
             System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> Spring command RUNNER!!" +
                     " <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
-
-            System.out.println("Add new Dog : ");
-            Animal dog = new Animal();
-            dog.setName("Mooo");
-            dog.setSound("Woof");
-            dog.setType("DOG"); // DOG , CAT ..
-
-//            List<Animal> animals = controller.findAll();
-//            System.out.println("List of Animals : " + animals);
-//            controller.add(dog);
-
-            Animal animal2 = controller.findById(1);
-            if (animal2 == null ){
-                System.out.println("Animal is null!");
-            } else {
-                System.out.println("Animal : " + animal2.getName());
-            }
-
-//            animals = controller.findAll();
-//            System.out.println(" List of Animals : " + animals);
-
-
             System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>> End Commmand RUNNER" +
                     " <<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
         };
     }
 
+    private void oldFunctions() {
+        System.out.println("Add new Dog : ");
+        Animal dog = new Animal();
+        dog.setName("Mooo");
+        dog.setSound("Woof");
+        dog.setType("DOG"); // DOG , CAT ..
+
+//            List<Animal> animals = controller.findAll();
+//            System.out.println("List of Animals : " + animals);
+//            controller.add(dog);
+
+//        Animal animal2 = controller.findById(1);
+//        if (animal2 == null ){
+//            System.out.println("Animal is null!");
+//        } else {
+//            System.out.println("Animal : " + animal2.getName());
+//        }
+
+//            animals = controller.findAll();
+//            System.out.println(" List of Animals : " + animals);
+    }
 //    private void mySolution() {
 //        // Add animals ..
 //        controller.addAnimal(animal);
@@ -120,7 +124,4 @@ public class PetstoreApplication { // BEGINING OF CLASS ..
 //
 //
 //    }
-
 } //  END OF CLASS ..
-
-// Create a list of animals .. then return that list of animals

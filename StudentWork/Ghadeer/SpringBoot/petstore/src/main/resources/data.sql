@@ -1,0 +1,5 @@
+INSERT INTO animal (ID,NAME,SOUND,TYPE) VALUES(1,'dog1','bark1','DOG');
+INSERT INTO animal (ID,NAME,SOUND,TYPE) VALUES(2,'dog2','bark2','DOG');
+INSERT INTO animal (ID,NAME,SOUND,TYPE) VALUES(3,'dog3','bark3','DOG');
+INSERT INTO animal (ID,NAME,SOUND,TYPE) VALUES(4,'cat1','meow','CAT');
+INSERT INTO animal (ID,NAME,SOUND,TYPE) VALUES(5,'cat2','meow','CAT');
