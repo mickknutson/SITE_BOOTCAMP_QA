@@ -8,10 +8,10 @@
 		<version>2.2.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>sa.site.lab</groupId>
-	<artifactId>petstore</artifactId>
+	<groupId>com.coolcompany</groupId>
+	<artifactId>mystore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>petstore</name>
+	<name>mystore</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -23,22 +23,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-
-		<!-- Web support-->
-
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.2.5.RELEASE</version>
-		</dependency>
-
-		<!-- Thymeleaf support-->
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-			<version>2.2.5.RELEASE</version>
 		</dependency>
 
 		<dependency>

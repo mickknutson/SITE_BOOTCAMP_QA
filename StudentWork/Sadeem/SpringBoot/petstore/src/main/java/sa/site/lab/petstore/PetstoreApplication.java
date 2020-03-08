@@ -36,10 +36,10 @@ public class PetstoreApplication {
             dog.setType("DOG"); //DOG or CAT for the type
 
             //_____________________________________________________//
-           List<Animal> animals = controller.findAll();
-            System.out.println(" List of Animals: " +animals);
+         //  List<Animal> animals = controller.findAll();
+           // System.out.println(" List of Animals: " +animals);
             //______________________________________________________//
-            controller.add(dog);
+           // controller.add(dog);
             //______________________________________________________//
 
             Animal animal2 = controller.findById(1);
@@ -50,8 +50,8 @@ public class PetstoreApplication {
             }
             //______________________________________________________//
 
-            animals = controller.findAll();
-            System.out.println("List of Animal: " + animals);
+            //animals = controller.findAll();
+            //System.out.println("List of Animal: " + animals);
             System.out.println(" ** End CommandLine Runner **");
         };
     }
