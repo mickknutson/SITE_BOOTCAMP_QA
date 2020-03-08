@@ -6,27 +6,34 @@ import org.springframework.stereotype.Service;
 import sa.site.lab.petstore.dao.AnimalDao;
 import sa.site.lab.petstore.domain.Animal;
 
-import java.util.Map;
+import java.util.List;
 
 @Service
-public class AnimalServiceImpl implements AnimalService {
+public class AnimalServiceImpl implements AnimalService{
 
     @Autowired
-    @Qualifier("AnimalDaoStubImpl")
-
+    @Qualifier("animalDaoDatabaseImpl")
+//    @Qualifier("animalDaoStubImpl")
     private AnimalDao dao;
 
-    public Animal findPet(int id) {
-        return dao.findbyid(id);
+    @Override
+    public Animal findById(int id){
+        System.out.println("* AnimalService.findPet: " + id);
+        return dao.findById(id);
     }
 
     @Override
-    public Map<Integer, Animal> findAll() {
-        return null;
+    public List<Animal> findAll(){
+        System.out.println("* AnimalService.findAll()");
+        return dao.findAll();
     }
 
     @Override
-    public void add(Animal animal) {
-
+    public void add(Animal animal){
+        System.out.println("* AnimalService.add()");
+        dao.add(animal);
     }
-}
+
+
+
+} // The End...
