@@ -10,29 +10,24 @@ public class Product {
     @Column
     private String name;
     @Column
-    private String Desc;
+    private String desc;
     @Column
-    private String price;
+    private double price;
+
+
     public Product(){
     }
-    public Product(String name){
+    public Product(String name, String desc, double price){
         this.name = name;
-    }
-    @Transient
-    public void type() {
-        throw new RuntimeException("not yet implemented");
-    }
-
-    @Transient
-    public void price(String price) {
-        throw new RuntimeException("not yet implemented");
+        this.desc = desc;
+        this.price = price;
     }
     @Override
     public String toString() {
         return "Product{" +
                 "Id=" + id +
                 ", Name='" + name + '\'' +
-                ", Type='" + Desc + '\'' +
+                ", Type='" + desc + '\'' +
                 ", Price='" + price + '\'' +
                 '}';
     }
@@ -53,18 +48,18 @@ public class Product {
     }
 
     public String getDesc() {
-        return Desc;
+        return desc;
     }
 
     public void setDesc(String desc) {
-        this.Desc = desc;
+        this.desc = desc;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 } // The End...
