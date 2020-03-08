@@ -8,56 +8,65 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
-import java.util.Map;
 
 @SpringBootApplication
-public class PetstoreApplication {
+public class PetstoreApplication{
 
-    //only fields / variables goes here
+    // Only Fields / Variables go here...
+
     @Autowired
     private AnimalController controller;
 
-    //System.out.print('not valid');
-    public static void main(String[] args) { //start of Main method
-        // all our code should goes inside main
-        System.out.println("Starting Spring boot");
-        SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("Stopped Spring boot");
-    }
+	public static void main(String[] args) { // Start of MAIN method
+        System.out.println("* Start main()");
+		SpringApplication.run(PetstoreApplication.class, args);
+        System.out.println("* end main()");
 
+	} // End of MAIN method
+
+    // CLIENT CODE:
     @Bean
-    public CommandLineRunner CommandLineRunner(ApplicationContext ctx) {
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-            //runnable code goes here
-            System.out.println("Bean is here");
-            System.out.println("Animal DAO :");
-            //animaldao dao= new animaldao();
 
-            Map<Integer, Animal> animals = controller.findAll();
-            System.out.println("Animals:" + animals);
-            Animal animal = controller.findbyid(2);
-            animal.eat();
+            System.out.println("* start commandLineRunner");
 
-            //=======================
-            System.out.println("Number of Animals:" + animals.size());
-            //crete new Animal:
-            controller.add(new Dog("Bob"));
-            List<Animal> updateAnimal = (List<Animal>) controller.findAll();
-            System.out.println("*Post Number of animals:" + animals.size());
-            //======================
+            System.out.println("Add a new Dog:");
+
+            Animal dog = new Animal();
+            dog.setName("Goofy");
+            dog.setSound("bark bark");
+            dog.setType("DOG"); // DOG, CAT
 
 
-            System.out.println("* End CommandLine Runner");
+            //---------------------------------------------------------------//
+            //String animals = controller.findAll();
+            //System.out.println("List of Animals: " + animals);
 
-            // List<Animal> animals= (List<Animal>) controller.findAll();
-            //System.out.printf("## animals:%s%n", animals.get(0).getName());
-            //Animal animal = controller.findPet(1);
-            //animal.eat();
+            //---------------------------------------------------------------//
+//            controller.add(dog);
+
+            //---------------------------------------------------------------//
+            //Animal animal2 = controller.findById(1);
+            //if(animal2 == null){
+              //  System.out.println("animal is null");
+//            } else {
+//                System.out.println("Animal: " + animal2.getName());
+//            }
+
+
+            //---------------------------------------------------------------//
+//            animals = controller.findAll();
+//            System.out.println("List of Animals: " + animals);
+
+
+
+
+
+            System.out.println("* end commandLineRunner");
         };
     }
 
-
-}
+} // End of Class

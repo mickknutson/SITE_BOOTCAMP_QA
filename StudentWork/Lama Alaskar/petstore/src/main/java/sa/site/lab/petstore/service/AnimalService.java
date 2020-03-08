@@ -1,13 +1,24 @@
 package sa.site.lab.petstore.service;
 
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import sa.site.lab.petstore.domain.Animal;
 
-import java.util.Map;
+import java.util.List;
 
-public interface AnimalService { //interface Driven design
-    public Animal findPet(int id);
+/**
+ * Illegal:
+ * AnimalService service = new AnimalService();
+ *
+ *
+ * Interface Driven Design
+ */
+public interface AnimalService {
 
-    Map<Integer, Animal> findAll();
+    Animal findById(int id);
+
+    List<Animal> findAll();
 
     void add(Animal animal);
+
 }
