@@ -13,7 +13,11 @@ import sa.site.lab.petstore.domain.Animal;
 import java.util.List;
 
 import static java.lang.System.*;
-
+/*
+todo:
+1. Add ADD, Delete function for thymeleaf
+2. Add Rest Support
+ */
 @SpringBootApplication
 public class PetstoreApplication {
 
@@ -23,7 +27,7 @@ public class PetstoreApplication {
 //    @Autowired
 //    private AnimalService service;
     @Autowired
-    private AnimalController controller;
+//    private AnimalController controller;
 
 
     public static void main(String[] args) {//start of main method
@@ -38,31 +42,31 @@ public class PetstoreApplication {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             System.out.println("commanLinearRunner");
-            out.println("Add a new dog");
-            Animal dog= new Animal();
-            dog.setName("goofy");
-            dog.setSound("hhh");
-            dog.setType("DOG");
-
-            List<Animal> animals=controller.findAll();
-            System.out.println("Animals: "+animals);
-
-           Animal animal1=controller.findById(1);
-           if(animal1==null){
-               System.out.println("animal is null");
-           }
-            controller.add(dog);
-            Animal animal2=controller.findById(1);
-            if(animal2==null){
-                System.out.println("animal is null");
-            }else{
-                out.println("Animals: "+animal2.getName());
-            }
-             animals=controller.findAll();
-            System.out.println("Animals: "+animals);
-
-
-
+            out.println("sand box code only");
+//            Animal dog= new Animal();
+//            dog.setName("goofy");
+//            dog.setSound("hhh");
+//            dog.setType("DOG");
+//
+////            List<Animal> animals=controller.findAll();
+////            System.out.println("Animals: "+animals);
+//
+//           Animal animal1=controller.findById(1);
+//           if(animal1==null){
+//               System.out.println("animal is null");
+//           }
+////            controller.add(dog);
+//            Animal animal2=controller.findById(1);
+//            if(animal2==null){
+//                System.out.println("animal is null");
+//            }else{
+//                out.println("Animals: "+animal2.getName());
+//            }
+////             animals=controller.findAll();
+////            System.out.println("Animals: "+animals);
+//
+//
+//
 
             out.println("*End commandLineRunner");
 

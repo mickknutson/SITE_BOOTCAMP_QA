@@ -21,12 +21,23 @@
 
     <tbody>
         <tr th:each="animal: ${allAnimals}">
-            <td th:text="${animal.name}">Bob</td>
-            <td th:text="${animal.type}">Cat</td>
-            <td th:text="${animal.sound}">Meow</td>
+
+
+
+            <td th:width="100px">
+                <a th:href="@{'/animal/{id}' (id=${animal.id})}"
+                   th:text="${animal.name}">BOB</a>
+            </td>
+
+            <td th:width="100px" th:text="${animal.type}">Cat</td>
+            <td th:width="100px" th:text="${animal.sound}">Meow</td>
         </tr>
     </tbody>
 </table>
+
+
+
+<h3><a href="/">Home</a> </h3>
 
 </body>
 </html>
