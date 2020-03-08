@@ -4,10 +4,7 @@ package sa.site.lab.petstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
@@ -49,9 +46,27 @@ public class AnimalControllerImpl implements AnimalController {
         return "List";
     }
 
+    @GetMapping("add")
     @Override
-    public void add(Animal animal) {
+    public String add(Model model) {
         System.out.println("*** AnimalController.add() ***");
-        service.add(animal);
+
+        model.addAttribute(new Animal());
+        //service.add(animal);
+        return "add";
+
+        //return "redirect:/animal/list.html";
+
     }
+
+
+    @PostMapping("new")
+    public String create(Animal animal){
+
+        System.out.println("create() - " + animal);
+
+        //service.add(animal);
+        return "redirect:/animal/list.html";
+    }
+
 }
