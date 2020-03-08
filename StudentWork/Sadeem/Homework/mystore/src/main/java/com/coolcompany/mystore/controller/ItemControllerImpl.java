@@ -17,9 +17,9 @@ public class ItemControllerImpl implements ItemController {
         service.add(item);
     }
 
-    public void delete(int id){
+    public void deleteById(int id){
         System.out.println("** ItemController.delete():");
-        service.delete(id);
+        service.deleteById(id);
     }
 
     public Item findById(int id){

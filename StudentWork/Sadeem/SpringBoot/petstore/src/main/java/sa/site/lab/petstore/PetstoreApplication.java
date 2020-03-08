@@ -11,6 +11,11 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
+/**
+ * TODO:
+ * 1. Add ADD, DELETE, functional for Thymeleaf
+ * 2. Add REST Support
+ */
 @SpringBootApplication
 public class PetstoreApplication {
 
@@ -19,40 +24,17 @@ public class PetstoreApplication {
     private AnimalController controller;
 
     public static void main(String[] args) { //start of MAIN method
-        System.out.println("* start main()");
         SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("* end main()");
     } // end of MAIN method
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx){
         return args ->{
             System.out.println(" ** Start CommandLine Runner **");
+            System.out.println(" ** Sand box code only **");
 
-            System.out.println(" ** Add a new Dog **");
-            Animal dog = new Animal();
-            dog.setName("Fido");
-            dog.setSound("woof");
-            dog.setType("DOG"); //DOG or CAT for the type
 
-            //_____________________________________________________//
-         //  List<Animal> animals = controller.findAll();
-           // System.out.println(" List of Animals: " +animals);
-            //______________________________________________________//
-           // controller.add(dog);
-            //______________________________________________________//
 
-            Animal animal2 = controller.findById(1);
-            if(animal2 == null){
-                System.out.println("animal is null");
-            } else{
-                System.out.println("animals: " +animal2.getName());
-            }
-            //______________________________________________________//
-
-            //animals = controller.findAll();
-            //System.out.println("List of Animal: " + animals);
-            System.out.println(" ** End CommandLine Runner **");
         };
     }
 
