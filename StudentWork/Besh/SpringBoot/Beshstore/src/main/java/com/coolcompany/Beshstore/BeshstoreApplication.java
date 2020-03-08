@@ -26,13 +26,19 @@ public class BeshstoreApplication {
 		return args -> {
 			System.out.println("*** START commandLineRunner ***");
 			System.out.println("*** Add new item ***");
-			Product item = new Product();
-			item.setName("Bag");
-			item.setDesc("Dior");
-			item.setPrice("$ 50");
+			Product item1 = new Product("Bag","Dior",50);
+			Product item2 = new Product("Dress","TH",200);
+			Product item3 = new Product("Bag","MK",150);
+			Product item4 = new Product("Wallet","MANGO",70);
+			Product item5 = new Product("Pants","H&M",99);
+
 			List<Product> products = controller.findAll();
 			System.out.println("Products" + products);
-			controller.add(item);
+			controller.add(item1);
+			controller.add(item2);
+			controller.add(item3);
+			controller.add(item4);
+			controller.add(item5);
 			Product product2 = controller.findById(1);
 			if (product2 == null){
 				System.out.println("Product is Null");

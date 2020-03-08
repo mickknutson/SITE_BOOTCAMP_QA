@@ -40,8 +40,11 @@ public class PetstoreApplication {
             // Animal DAO Goes here
             List<Animal> animals = controller.findAll();
             System.out.println("Animals" + animals);
-            controller.add(dog);
 
+            //Adding single pet to DB
+//            controller.add(dog);
+
+            //Find first oet from DB
             Animal animal2 = controller.findById(1);
             if (animal2 == null){
                 System.out.println("Animals is Null");
@@ -49,7 +52,7 @@ public class PetstoreApplication {
             else{
                 System.out.println("Animal: " + animal2.getName());
             }
-
+            //Should have one pet at least in DB
             animals = controller.findAll();
             System.out.println("Animal: " + animals);
             //---------------------------
