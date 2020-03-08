@@ -1,10 +1,18 @@
 form {
     width: 100%;
-    border: 3px solid #f1f1f1;
+    border: 3px solid black;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-right: 200px;
+    margin-left: 50px;
 }
 
 .container {
-    padding: 16px;
+  padding: 16px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 500px;
+  margin-left: 500px;
 }
 
 input {
@@ -15,10 +23,10 @@ input {
 }
 
 button {
-    background-color: gray;
+    background-color: black;
     color: white;
     padding: 14px 20px;
-    margin: 8px 530px;
+    margin: 50px 100px 100px 180px ;
     width: 180px;
 
 

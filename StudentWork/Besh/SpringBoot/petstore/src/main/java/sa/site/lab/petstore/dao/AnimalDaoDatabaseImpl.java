@@ -3,7 +3,6 @@ package sa.site.lab.petstore.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,8 +15,8 @@ public class AnimalDaoDatabaseImpl implements AnimalDao{
 
     // TODO: MUST Implement
 
-    public Animal findByID(int id){
-        System.out.println("AnimalDaoDatabaseImpl.findByID" + id);
+    public Animal findById(int id){
+        System.out.println("AnimalDaoDatabaseImpl.findByID: " + id);
         Optional<Animal> result = repository.findById(id);
         if(result.isPresent()){
             return result.get();
