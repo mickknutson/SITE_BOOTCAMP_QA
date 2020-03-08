@@ -12,10 +12,8 @@
 
 <h1>Welcome to the PetStore</h1>
 
-<H2><a  href=" /h2-cosole"> H2 Admin Console </a></H2>
+<h1>List Of Animals...</h1>
 
-<h2>List Of Animals...</h2>
-<b>Animals...</b>
 
 <table>
     <thead>
@@ -26,7 +24,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="aniaml: ${allAnimal}">
+    <tr th:each="animal: ${allAnimals}">
         <td th:text="${animal.name}">Bob</td>
         <td th:text="${animal.type}">Cat</td>
         <td th:text="${animal.sound}">Meow</td>
@@ -34,7 +32,9 @@
     </tr>
     </tbody>
 </table>
+<h3><a href="/animal/list.html">Animals List</a> </h3>
 
+<h3><a href="/">Home</a> </h3>
 
 </body>
 </html>
