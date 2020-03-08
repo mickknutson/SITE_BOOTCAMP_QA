@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Welcome to the Petstore!</title>
+</head>
+
+
+
+<body>
+<h>Welcome to the Petstore</h>
+<h2>list of animals</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Sound</th>
+    </tr>
+    </thead>
+    <tbody>
+       <tr th:each="animal: ${allAnimals}">
+         <td th:text="${animal.name}">Bob</td>
+         <td th:text="${animal.type}">cat</td>
+         <td th:text="${animal.sound}">meow</td>
+       </tr>
+    </tbody>
+  </table>
+</body>
+</html>
