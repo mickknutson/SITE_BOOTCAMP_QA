@@ -21,9 +21,9 @@
 
     <tbody>
         <tr th:each="animal: ${allAnimals}">
-            <td th:text="${animal.name}">Bob</td>
-            <td th:text="${animal.type}">Cat</td>
-            <td th:text="${animal.sound}">Meow</td>
+            <td th:width="100px" th:text="${animal.name}">Bob</td>
+            <td th:width="100px" th:text="${animal.type}">Cat</td>
+            <td th:width="100px" th:text="${animal.sound}">Meow</td>
         </tr>
     </tbody>
 </table>
