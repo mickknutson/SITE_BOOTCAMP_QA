@@ -44,8 +44,8 @@ public class PetstoreApplication {
             dog.setSound("hhh");
             dog.setType("DOG");
 
-            List<Animal> animals=controller.findAll();
-            System.out.println("Animals: "+animals);
+//            List<Animal> animals=controller.findAll();
+//            System.out.println("Animals: "+animals);
 
            Animal animal1=controller.findById(1);
            if(animal1==null){
@@ -58,8 +58,8 @@ public class PetstoreApplication {
             }else{
                 out.println("Animals: "+animal2.getName());
             }
-             animals=controller.findAll();
-            System.out.println("Animals: "+animals);
+//             animals=controller.findAll();
+//            System.out.println("Animals: "+animals);
 
 
 
