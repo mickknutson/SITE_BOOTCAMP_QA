@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome to the Petstore </title>
 </head>
+
+
+
+
 <body>
 
-<h1>PetStore</h1>
+<h1>Welcome to the PetStore</h1>
+
+<H2><a  href=" /h2-cosole"> H2 Admin Console </a></H2>
+
+<h2>List Of Animals...</h2>
+<b>Animals...</b>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Sound</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="aniaml: ${allAnimal}">
+        <td th:text="${animal.name}">Bob</td>
+        <td th:text="${animal.type}">Cat</td>
+        <td th:text="${animal.sound}">Meow</td>
+
+    </tr>
+    </tbody>
+</table>
+
 
 </body>
 </html>

@@ -1,0 +1,11 @@
+package com.coolcompany.mystore.dao;
+
+import com.coolcompany.mystore.domain.Item;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ItemRepository extends CrudRepository <Item, Integer> {
+
+    //voodoo magic
+}
