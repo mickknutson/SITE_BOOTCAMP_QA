@@ -7,9 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.domain.Animal;
 
-import java.util.List;
+/**
+ * TODO:
+ *
+ * 1. Add ADD, DELETE functional for Thymeleaf
+ *
+ * 2. Add REST Support
+ *
+ *  * */
 
 @SpringBootApplication
 public class petstoreApplication {
@@ -19,18 +25,27 @@ public class petstoreApplication {
 
     public static void main(String[] args) {
 
-        System.out.println("* Start Main()");
+        //   System.out.println("* Start Main()");
 
         SpringApplication.run(petstoreApplication.class, args);
 
-        System.out.println("* End Main()");
+        //   System.out.println("* End Main()");
     }
 
     //THIS CODE RUNS FIRST AS TEST CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args ->
+
         {
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println("####################################################");
+            System.out.println((char) 27 + "[34m ### Start Command Runner ###");
+            System.out.println("### sand box code only ###");
+
+            /*
             // Runnable Code Will be Here ...
             System.out.println("####################################################");
             System.out.println("####################################################");
@@ -106,6 +121,7 @@ public class petstoreApplication {
             System.out.println("####################################################");
             System.out.println("####################################################");
             System.out.println("####################################################");
+        */
         };
 
 

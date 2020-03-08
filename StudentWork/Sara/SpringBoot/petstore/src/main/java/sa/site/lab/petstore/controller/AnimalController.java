@@ -1,11 +1,12 @@
 package sa.site.lab.petstore.controller;
 
+import org.springframework.ui.Model;
 import sa.site.lab.petstore.domain.Animal;
 
 public interface AnimalController {
-    Animal findById(int id);
+    String findById(int id,Model model);
 
-    String findAll();
+    String findAll(Model model);
 
     void add(Animal animal);
 }
