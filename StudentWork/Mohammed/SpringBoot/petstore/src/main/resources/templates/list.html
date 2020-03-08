@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PetStore</title>
+</head>
+<body>
+
+    <h2>List of Animals :</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Sound</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="animal: ${allAnimals}">
+            <td th:text="${animal.name}">BOB</td>
+            <td th:text="${animal.type}">CAT</td>
+            <td th:text="${animal.sound}">Meow</td>
+        </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
