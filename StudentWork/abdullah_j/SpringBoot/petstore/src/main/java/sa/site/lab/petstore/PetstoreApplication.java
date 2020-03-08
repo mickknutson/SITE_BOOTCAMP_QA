@@ -49,10 +49,10 @@ public class PetstoreApplication {
                 System.out.println("Animal is null");
             }
 
-            List<Animal> animals = controller.findAll();
-            System.out.println("Animals: " + animals);
+           // List<Animal> animals = controller.findAll();
+           // System.out.println("Animals: " + animals);
 
-            controller.add(dog);
+            //controller.add(dog);
 
             Animal animal2 = controller.findById(1);
             if (animal2 == null){
@@ -63,8 +63,8 @@ public class PetstoreApplication {
                 System.out.println("Animal: " + animal2.getName());
             }
 
-            animals = controller.findAll();
-            System.out.println("List Animals: " + animals);
+            //animals = controller.findAll();
+            //System.out.println("List Animals: " + animals);
 
             System.out.println("*** end Spring Command Line Runner ***");
         };
