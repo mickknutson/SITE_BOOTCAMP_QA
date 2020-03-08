@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.List;
 
@@ -43,24 +42,57 @@ public class PetstoreApplication
 //         AnimalDao daoByName = (AnimalDao) ctx.getBean("animalDao");
 
 //			Animal animal = dao.findPet(2);
-			Animal animal = controller.findById(2);
+			Animal dog = new Animal();
+			dog.setName("Goofy");
+			dog.setSound("bark bark");
+			dog.setType("DOG"); // DOG, CAT
 
+			//---------------------------------------------------------------//
+			// Should Have Zero Pets in DB
 			List<Animal> animals = controller.findAll();
-			System.out.println("### All Animals: "+ animals);
-			for (Animal a:animals)
-			{
-				System.out.println("## animal name :" + a.getName());
-			}
-			if(animal!=null)
-			animal.eat();
-			//-----------------------------------------
-			System.out.println("Before Addition Number of animals : "+animals.size());
-			//Create new Animal
-			controller.add(new Dog("doge"));
-			List<Animal> updatedAnimals = controller.findAll();
-			System.out.println("After Addition Number of animals : "+updatedAnimals.size());
+			System.out.println("List of Animals: " + animals);
 
-			System.out.println("** end commandLineRunner **");
+			//---------------------------------------------------------------//
+			// Add Single pet to DB
+//			controller.add(dog);
+
+			//---------------------------------------------------------------//
+
+			Animal animal2 = controller.findById(1);
+			if(animal2 == null){
+				System.out.println("animal is null");
+			} else {
+				System.out.println("Animal: " + animal2.getName());
+			}
+
+
+			//---------------------------------------------------------------//
+			animals = controller.findAll();
+			System.out.println("List of Animals: " + animals);
+
+
+
+
+
+			System.out.println("* end commandLineRunner");
+
+//			Animal animal = controller.findById(2);
+////
+////			List<Animal> animals = controller.findAll();
+////			System.out.println("### All Animals: "+ animals);
+////			for (Animal a:animals)
+////			{
+////				System.out.println("## animal name :" + a.getName());
+////			}
+////			if(animal!=null)
+////			animal.eat();
+////			//-----------------------------------------
+////			System.out.println("Before Addition Number of animals : "+animals.size());
+////			//Create new Animal
+////			List<Animal> updatedAnimals = controller.findAll();
+////			System.out.println("After Addition Number of animals : "+updatedAnimals.size());
+////
+////			System.out.println("** end commandLineRunner **");
 		};
 
 	}
