@@ -20,11 +20,17 @@
     </thead>
     <tbody>
        <tr th:each="animal: ${allAnimals}">
-         <td th:text="${animal.name}">Bob</td>
-         <td th:text="${animal.type}">cat</td>
+           <td>
+               <a th:href="@{'/animal/{id}' (id=${animal.id})}"
+                  th:text="${animal.name}">BOB</a>
+           </td>
+           <td th=text="${animal.name}">BOB</td>
+           <td th:text="${animal.type}">cat</td>
          <td th:text="${animal.sound}">meow</td>
        </tr>
     </tbody>
   </table>
+
+<h3><a href="/">Home</a></h3>
 </body>
 </html>
