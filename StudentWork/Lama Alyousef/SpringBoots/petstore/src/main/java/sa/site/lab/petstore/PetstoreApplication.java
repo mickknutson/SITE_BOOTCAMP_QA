@@ -12,12 +12,14 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
+/**
+ * TODO:
+ * 1. Add REST Support
+ * 2. Add ADD, Delete function for Thymeleaf
+ */
+
 @SpringBootApplication
 public class PetstoreApplication {
-
-
-    @Autowired
-    private AnimalController controller;
 
 
     public static void main(String[] args) { // Start of MAIN method
@@ -33,8 +35,10 @@ public class PetstoreApplication {
         return args -> {
 
             System.out.println("* Start CommandLineRunner *");
+            System.out.println("* Sand box code only *");
 
-            System.out.println("Add a new Dog: ");
+
+            /* System.out.println("Add a new Dog: ");
             Animal dog = new Animal(); // To add new dog
             dog.setName("Fido");
             dog.setSound("woof");
@@ -42,12 +46,12 @@ public class PetstoreApplication {
 
             //-----------------------------------------------------------------------------------
 
-            List<Animal> animals = controller.findAll();
-
-            System.out.println(" Animal: " + animals);
+           // List<Animal> animals = controller.findAll();
+           // System.out.println(" Animal: " + animals);
 
             //--------------------------------------------------------------------------------
-            controller.add(dog);
+
+            // controller.add(dog);
 
             //---------------------------------------------------------------------------------
             Animal animal2 = controller.findById(1);
@@ -59,11 +63,11 @@ public class PetstoreApplication {
             }
             //----------------------------------------------------------------------------------
 
-            animals = controller.findAll();
-            System.out.println("List of Animal: " + animals);
+            // animals = controller.findAll();
+            // System.out.println("List of Animal: " + animals);
 
 
-            System.out.println("* End CommandLineRunner *");
+            System.out.println("* End CommandLineRunner *"); */
 
 
         };
