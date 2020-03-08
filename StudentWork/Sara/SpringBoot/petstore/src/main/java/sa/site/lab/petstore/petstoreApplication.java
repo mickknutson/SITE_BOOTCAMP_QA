@@ -26,7 +26,7 @@ public class petstoreApplication {
         System.out.println("* End Main()");
     }
 
-    //CLIENT CODE:
+    //THIS CODE RUNS FIRST AS TEST CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args ->
@@ -83,10 +83,10 @@ public class petstoreApplication {
             dog.setSound("woof");
             dog.setType("DOG");// DOG / CAT / FISH / ...
             // -----------------------------------------------------
-            List<Animal> animals = controller.findAll();
-            System.out.println("Animls: " + animals);
+        //    List<Animal> animals = controller.findAll();
+        //    System.out.println("Animls: " + animals);
             //-------------------------------------------------------
-            controller.add(dog);
+            //controller.add(dog);
             // ------------------------------------------------------
             Animal animal2 = controller.findById(1);
 
@@ -97,8 +97,8 @@ public class petstoreApplication {
             }
             // -------------------------------------
 
-            animals = controller.findAll();
-            System.out.println("List of Animals: " + animals.toString());
+        //    animals = controller.findAll();
+        //    System.out.println("List of Animals: " + animals.toString());
 
 
             System.out.println("### End Command Runner ###");
