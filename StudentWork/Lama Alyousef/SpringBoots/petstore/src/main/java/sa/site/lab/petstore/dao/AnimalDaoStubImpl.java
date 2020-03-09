@@ -26,29 +26,30 @@ import java.util.Map;
 
 @Repository
 public class AnimalDaoStubImpl implements AnimalDao {
-        // LAP: Creat Map of Animals.
-    private Map <Integer,Animal> animals = new HashMap<>();
+    // LAP: Creat Map of Animals.
+    private Map<Integer, Animal> animals = new HashMap<>();
 
     private int counter = 0;
 
-    public AnimalDaoStubImpl(){
+    public AnimalDaoStubImpl() {
         // LAB: Populate Map with 3+ Animals.
         animals.put(++counter, new Animal("Bella"));
         animals.put(++counter, new Animal("Fido"));
     }
 
 
-     // Method level
+    // Method level
     public Animal findById(int id) {
         System.out.println("* AnimalDao: " + id);
-         // LAB: pull SINGLE animal from Map
-        if(animals.containsKey(id)){
-        return animals.get(id); }
-        else{
+        // LAB: pull SINGLE animal from Map
+        if (animals.containsKey(id)) {
+            return animals.get(id);
+        } else {
             return null;
         }
     }
-    public List<Animal> findAll(){
+
+    public List<Animal> findAll() {
         System.out.println(" * AnimalDao.findAll()");
 
         // LAB: return List<Animal> from Map
@@ -58,8 +59,19 @@ public class AnimalDaoStubImpl implements AnimalDao {
     }
 
     @Override
-    public void add(Animal animal){
+    public void add(Animal animal) {
         System.out.println("* AnimalDaoDatabaseImpl.add() ");
         animals.put(++counter, animal);
     }
-}
+
+    public boolean delete (int id){
+        if(animals.containsKey(id)){
+            animals.remove(id);
+            return true;}
+        else{
+            return false;
+        }
+
+    }
+
+   }

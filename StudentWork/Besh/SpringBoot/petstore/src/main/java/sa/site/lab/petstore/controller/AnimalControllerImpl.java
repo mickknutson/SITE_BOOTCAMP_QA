@@ -61,6 +61,7 @@ public class AnimalControllerImpl implements AnimalController {
         //service.add(animal);
     }
     @PostMapping("new")
+    @Override
     public String create (Animal animal){
         System.out.println("* AnimalController.create() -" + animal);
 
@@ -68,6 +69,13 @@ public class AnimalControllerImpl implements AnimalController {
         // NOTE: Add Validated animal to DB
 
         service.add(animal);
+        return "redirect:/animal/list.html";
+    }
+    @Override
+    @GetMapping("/delete/{id}")
+    public String delete (@PathVariable int id){
+        System.out.println("* AnimalController.delete() -" + id);
+        service.delete(id);
         return "redirect:/animal/list.html";
     }
 }
