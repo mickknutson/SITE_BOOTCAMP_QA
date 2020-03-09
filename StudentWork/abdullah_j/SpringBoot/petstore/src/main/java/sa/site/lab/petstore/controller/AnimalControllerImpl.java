@@ -16,6 +16,16 @@ import java.util.List;
 public class AnimalControllerImpl implements AnimalController {
 
 
+    @Override
+    public Animal findById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Animal> findAll() {
+        return null;
+    }
+
     @Autowired
     private AnimalService service;
 

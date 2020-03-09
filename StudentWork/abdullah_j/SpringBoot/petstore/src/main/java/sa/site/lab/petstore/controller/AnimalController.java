@@ -10,7 +10,11 @@ public interface AnimalController {
 
     String findById(int id , Model model);
 
+    Animal findById(int id);
+
     String findAll(Model model);
+
+    List<Animal> findAll();
 
     String add(Model model);
 
