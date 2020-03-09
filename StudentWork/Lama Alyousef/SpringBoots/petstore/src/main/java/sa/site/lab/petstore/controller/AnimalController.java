@@ -14,5 +14,7 @@ public interface AnimalController {
 
     String add(Model model);
 
+    public String create(Animal animal);
+
 
 }
