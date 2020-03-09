@@ -51,5 +51,15 @@ private int counter=0;
         animals.put(++counter, animal);
 
     }
+    @Override
+    public boolean delete (int id){
+        if(animals.containsKey(id)){
+            animals.remove(id);
+            return true;}
+        else{
+            return false;
+        }
+
+    }
 
 }//the end..
