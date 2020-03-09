@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.List;
 
 @Controller
@@ -50,10 +52,18 @@ public class AnimalControllerImp implements AnimalController {
         return "list"; // name of the page i want to send back //send back "list.html"
     }
 
-    // Add http Mapping
+    // view add animal html page
+    @GetMapping("add")
     @Override
-    public void add(Animal animal){
+    public String add(Model model){
         System.out.println("* AnimalController.add()");
-        // TODO: ADD PROPER LOGIC
+        model.addAttribute(new Animal());
+        return "add";
+    }
+
+    @PostMapping("new")
+    public String create(Animal animal){
+        System.out.println("*AnimalController.create() -" + animal);
+        return "redirect:/animal/list.html";
     }
 }
