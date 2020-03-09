@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Store</title>
+    <style>
+
+
+        h1{
+            text-align: center;
+        }
+        table {
+            width:50%;
+            margin-left: 25%;
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        table {
+            background-color: #eee;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<h1>🐹🐢🐣 WELCOME TO THE PET STORE 🐹🐢🐣 </h1>
+
+<h2> List of aimals:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sound</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="animal: ${allAnimals}">
+
+
+                <td>
+                  <a  th:href="@{'/animal/{id}'(id=${animal.id})}"
+                      th:text="${animal.name}">BOB</a>
+                </td>
+
+                <td th:text="${animal.type}">CAT</td>
+                <td th:text="${animal.sound}">Meow</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<h3><a href="/">HOME</a></h3>
+
+</body>
+</html>
