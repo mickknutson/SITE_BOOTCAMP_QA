@@ -1,5 +1,5 @@
 
--- Add SQL Imports here:
+-- Add SQL INSERTS here:
 -- INSERT INTO animal
 -- User Data
 
