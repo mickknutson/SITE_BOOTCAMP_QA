@@ -52,20 +52,25 @@ public class AnimalControllerImpl implements AnimalController {
         System.out.println("*** AnimalController.add() ***");
 
         model.addAttribute(new Animal());
-        //service.add(animal);
+
         return "add";
-
-        //return "redirect:/animal/list.html";
-
     }
 
 
+
+
     @PostMapping("new")
+    @Override
     public String create(Animal animal){
 
         System.out.println("create() - " + animal);
 
-        //service.add(animal);
+        // NOTE: VALIDATION
+        // TODO: VALIDATION
+        // FIXME: VALIDATION!!!
+
+        service.add(animal);
+
         return "redirect:/animal/list.html";
     }
 
