@@ -17,10 +17,8 @@ public class AnimalEndPointImpl implements AnimalController {
     private AnimalService service;
 
 
-
-
     @Override
-    public String findById( int id, Model model) {
+    public String findById(int id, Model model) {
 
         return null;
     }
@@ -59,4 +57,18 @@ public class AnimalEndPointImpl implements AnimalController {
     public String delete(int id) {
         throw new RuntimeException("Not implemented yet");
     }
+
+
+    /* public boolean delete(int id){
+         throw new RuntimeException("Not implemented yet");
+     }
+    */
+    public boolean add(int id) {
+        throw new RuntimeException("Not implemented yet");
+    }
+
+    public boolean update(int id) {
+        throw new RuntimeException("Not implemented yet");
+    }
+
 }

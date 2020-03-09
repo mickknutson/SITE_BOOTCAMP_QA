@@ -20,8 +20,8 @@ public interface AnimalController {
 
     String create(Animal animal);
 
-
     String delete(int id);
+
 
 
 }
