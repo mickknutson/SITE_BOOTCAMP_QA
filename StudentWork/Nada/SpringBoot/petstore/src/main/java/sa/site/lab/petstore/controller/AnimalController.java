@@ -1,16 +1,16 @@
 package sa.site.lab.petstore.controller;
 
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import sa.site.lab.petstore.domain.Animal;
-
-import java.util.List;
 
 public interface AnimalController {
 
-    public Animal findById(int id);
+   String findById(int id, Model model);
 
-    List<Animal> findAll();
+    String findAll(Model model);
 
-    void add(Animal animal);
+    String add(Model model);
 }
 

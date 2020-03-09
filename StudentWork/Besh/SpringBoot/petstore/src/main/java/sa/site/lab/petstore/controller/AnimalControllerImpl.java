@@ -3,12 +3,10 @@ package sa.site.lab.petstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
+
 import java.util.List;
 
 @Controller
@@ -39,7 +37,7 @@ public class AnimalControllerImpl implements AnimalController {
      * http://localhost:8080/animal/list.html
      *
      */
-    @GetMapping ("/list.html")
+    @GetMapping("/list.html")
     @Override
     public String findAll(Model model) {
         System.out.println("* AnimalController.findAll()");
@@ -52,10 +50,24 @@ public class AnimalControllerImpl implements AnimalController {
     }
 
     // Add HTTP mapping
+    // View Add Animal HTML Page
+    @GetMapping("add")
     @Override
-    public void add(Animal animal) {
+    public String add(Model model) {
         System.out.println("* AnimalController.add()");
+        model.addAttribute(new Animal());
+        //return "redirect: /animal/list.html";
+        return "add";
+        //service.add(animal);
+    }
+    @PostMapping("new")
+    public String create (Animal animal){
+        System.out.println("* AnimalController.create() -" + animal);
+
+        //FIXME: Need Validation !!!!
+        // NOTE: Add Validated animal to DB
+
         service.add(animal);
-        //TODO: Add PROPER
+        return "redirect:/animal/list.html";
     }
 }
