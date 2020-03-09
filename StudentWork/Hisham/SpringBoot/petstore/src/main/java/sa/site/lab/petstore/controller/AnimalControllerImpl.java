@@ -32,6 +32,26 @@ public class AnimalControllerImpl implements AnimalController
         return "/animal";
     }
 
+    @GetMapping("/edit/{id}")
+    @Override
+    public String edit(@PathVariable int id, Model model)
+    {
+        Animal animal = service.findById(id);
+
+        model.addAttribute("animal",animal);
+
+        return "/edit";
+    }
+
+    @PostMapping("/update/{id}")
+    @Override
+    public String update (@PathVariable int id , Animal animal)
+    {
+        service.update(id,animal);
+
+        return "redirect:/animals/list";
+    }
+
     // accept requests on /list
     @GetMapping("/list")
     @Override
@@ -80,6 +100,8 @@ public class AnimalControllerImpl implements AnimalController
 
         return "redirect:/animals/list";
     }
+
+
 
 
 

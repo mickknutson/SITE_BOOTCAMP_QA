@@ -12,7 +12,8 @@ public interface AnimalController
     String add(Model model);
     String create(Animal animal);
     String delete (@PathVariable int id);
-//    void update(@PathVariable int id);
+    String edit(@PathVariable int id, Model model);
+    String update(@PathVariable int id, Animal animal);
 
 
 }
