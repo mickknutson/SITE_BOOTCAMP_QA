@@ -14,4 +14,5 @@ public interface AnimalService {
 
     void add(Animal animal);
 
+    boolean delete(int id);
 }
