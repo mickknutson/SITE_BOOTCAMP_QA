@@ -19,7 +19,7 @@
         <td th:text="${animal.type}">Cat</td>
         <td th:text="${animal.sound}">Meow</td>
         <td>
-            <a th:href="@{'/delete/{id}'(id=${animal.id})}"
+            <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
                th:text="DELETE"></a>
         </td>
     </tr>
