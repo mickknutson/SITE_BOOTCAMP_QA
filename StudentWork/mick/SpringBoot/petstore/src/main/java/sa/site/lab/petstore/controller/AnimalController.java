@@ -12,5 +12,7 @@ public interface AnimalController {
 
     String add(Model model);
 
+    String create(Animal animal);
+
 
 } // The End...
