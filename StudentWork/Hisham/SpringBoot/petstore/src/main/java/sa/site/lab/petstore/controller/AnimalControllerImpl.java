@@ -52,16 +52,17 @@ public class AnimalControllerImpl implements AnimalController
 
         model.addAttribute(new Animal());
 
-//        service.add(animal);
 
 
         return "add";
     }
 
     @PostMapping("new")
+    @Override
     public String create(Animal animal)
     {
         System.out.println(animal);
+        service.add(animal);
 
         return "redirect:/animals/list";
 

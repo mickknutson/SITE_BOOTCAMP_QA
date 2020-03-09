@@ -11,8 +11,8 @@ public class Animal{
     // Map field to DB columns:
     // Primary Key:
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column
     private String name;
@@ -53,11 +53,11 @@ public class Animal{
 
     // Setter & Getter ------------------------------//
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
