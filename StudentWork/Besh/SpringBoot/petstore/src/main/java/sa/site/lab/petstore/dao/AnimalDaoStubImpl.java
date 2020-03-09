@@ -61,4 +61,16 @@ public class AnimalDaoStubImpl implements AnimalDao {// animalDao
         //throw new RuntimeException("Not Available Yet");
 
     }
+    @Override
+    public boolean delete(int id) {
+        System.out.println("* AnimalDao: " + id);
+
+        if (animals.containsKey(id)) {
+            animals.remove(id);
+            return true;
+        } else {
+            return false;
+        }
+        //return new Cat("Kitty");
+    }//En
 }// The End..

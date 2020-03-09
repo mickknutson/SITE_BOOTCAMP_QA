@@ -50,18 +50,29 @@ public class AnimalControllerImpl implements AnimalController {
         model.addAttribute("animal" , animal);
         return "add";
     }
-
-//    @PostMapping("/create")
-//    public String create (@ModelAttribute("animal")Animal animal){
-//        service.add(animal);
-//        return"redirect:/animal/list.html";
-//    }
-
+    
     @PostMapping("/create")
+    @Override
     public String create (Animal animal){
         System.out.println(animal);
+        // FIXME : NEED VALIDATION!!
+
+        // ADD VALIDATED Animal to Database !
         service.add(animal);
         return"redirect:/animal/list.html";
+    }
+
+    @GetMapping("/delete/{id}")
+    @Override
+    public String delete(@PathVariable int id) {
+
+        if (service.delete(id) == false) {
+            System.out.println(" Animal not deleted!");
+            return "redirect:/animal/list.html";
+        } else {
+            System.out.println("Animal is Deleted!");
+            return "redirect:/animal/list.html";
+        }
     }
 
 }

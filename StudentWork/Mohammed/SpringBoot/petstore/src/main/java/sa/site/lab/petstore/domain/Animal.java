@@ -10,7 +10,7 @@ public class Animal {
     //Map field to BD columns;
     // Primary KEY
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
