@@ -50,16 +50,14 @@ public class AnimalControllerImpl implements AnimalController {
         model.addAttribute("animal" , animal);
         return "add";
     }
-
-//    @PostMapping("/create")
-//    public String create (@ModelAttribute("animal")Animal animal){
-//        service.add(animal);
-//        return"redirect:/animal/list.html";
-//    }
-
+    
     @PostMapping("/create")
+    @Override
     public String create (Animal animal){
         System.out.println(animal);
+        // FIXME : NEED VALIDATION!!
+
+        // ADD VALIDATED Animal to Database !
         service.add(animal);
         return"redirect:/animal/list.html";
     }
