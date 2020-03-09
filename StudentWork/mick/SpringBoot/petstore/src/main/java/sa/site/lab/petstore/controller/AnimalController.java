@@ -10,7 +10,9 @@ public interface AnimalController {
 
     String findAll(Model model);
 
-    void add(Animal animal);
+    String add(Model model);
+
+    String create(Animal animal);
 
 
 } // The End...
