@@ -15,6 +15,12 @@
 [**HTTP Header Fields**](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
 
 
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded
+
+
 
 ## LANGUAGE:
 

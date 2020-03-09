@@ -1,15 +1,17 @@
 package sa.site.lab.petstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+import javax.validation.Valid;
+import java.util.Calendar;
 import java.util.List;
 
 @Controller
@@ -60,11 +62,30 @@ public class AnimalControllerImpl implements AnimalController{
         return "list"; // send back 'list.html'
     }
 
-    // Add HTTP Mapping
+
+    // View Add Animal HTML page
+    @GetMapping("add")
     @Override
-    public void add(Animal animal){
+    public String add(Model model){
         System.out.println("* AnimalController.add()");
-        // TODO: Add PROPER Logic
+
+        model.addAttribute(new Animal());
+
+        return "add";
     }
 
-}
+    @PostMapping("new")
+    @Override
+    public String create(Animal animal){
+        System.out.println("* AnimalController.create() - " + animal);
+
+        // FIXME: NEED VALIDATION !!!!!
+
+        // NOTE: Add validated Animal to Database
+        service.add(animal);
+
+        return "redirect:/animal/list.html";
+    }
+
+
+} // The End...
