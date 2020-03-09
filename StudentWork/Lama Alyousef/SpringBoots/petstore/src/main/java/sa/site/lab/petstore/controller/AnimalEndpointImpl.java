@@ -18,12 +18,14 @@ public class AnimalEndpointImpl{
     @Autowired
     private AnimalService service;
 
-    // Method:
+    // METHOD:
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.ALREADY_REPORTED)
-    public String findById(@PathVariable int id, Model model) {
-        return service.findById(id).toString();
+    public Animal findById(@PathVariable int id, Model model) {
+
+        // FIXME: Add Validation:
+        return service.findById(id);
     }
 
     @GetMapping()
@@ -31,6 +33,20 @@ public class AnimalEndpointImpl{
     List<Animal> animals = service.findAll();
         System.out.println("** REST Animals : " + animals);
         return animals;
+    }
+
+    // List<int> List<boolean List<Boolean>
+
+    public Boolean delete(int id){
+        throw new RuntimeException("Not implemented yer");
+    }
+
+    public Boolean add(Animal animal){
+        throw new RuntimeException("Not implemented yer");
+    }
+
+    public Boolean update(Animal animal){
+        throw new RuntimeException("Not implemented yer");
     }
 
 }
