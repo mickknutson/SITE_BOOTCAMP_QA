@@ -11,6 +11,7 @@ public interface AnimalDao
      List<Animal> findAll();
      void add(Animal animal);
      void delete(int id);
+     void update(int id,Animal animal);
 
 
 }

@@ -42,4 +42,10 @@ public class AnimalServiceImpl implements AnimalService
         System.out.println("* AnimalService.delete()");
         dao.delete(id);
     }
+
+    public void update(int id,Animal animal)
+    {
+        dao.update(id,animal);
+    }
+
 }

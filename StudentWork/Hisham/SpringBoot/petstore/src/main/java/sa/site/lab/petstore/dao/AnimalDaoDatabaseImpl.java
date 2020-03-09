@@ -55,4 +55,14 @@ public class AnimalDaoDatabaseImpl implements AnimalDao{
         repository.deleteById(id);
     }
 
+    public void update(int id, Animal animal)
+    {
+        Animal updatedAnimal = repository.findById(id).get();
+        updatedAnimal.setName(animal.getName());
+        updatedAnimal.setType(animal.getType());
+        updatedAnimal.setSound(animal.getSound());
+        repository.save(updatedAnimal);
+    }
+
+
 } // The End...

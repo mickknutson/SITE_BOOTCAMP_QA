@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+import javax.persistence.PostUpdate;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -40,8 +42,17 @@ public class AnimalEndpointImpl
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public void delete(@PathVariable int id)
     {
         service.delete(id);
     }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void update(@PathVariable int id,@RequestBody Animal animal)
+    {
+        service.update(id,animal);
+    }
+
 }
