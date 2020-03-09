@@ -75,7 +75,7 @@ public class AnimalControllerImpl implements AnimalController
     public String delete (@PathVariable int id)
     {
         System.out.println("deleted "+id);
-//        service.delete(id);
+        service.delete(id);
 
 
         return "redirect:/animals/list";
