@@ -4,12 +4,19 @@
     <title> Animal </title>
 </head>
 <body>
-<h1 th:text="${animal.id}">name</h1>
-<h1 th:text="${animal.name}">name</h1>
-<h1 th:text="${animal.type}">name</h1>
-<h1 th:text="${animal.sound}">name</h1>
+<div id="show">
+    <h1 th:text="${animal.id}">name</h1>
+    <h1 th:text="${animal.name}">name</h1>
+    <h1 th:text="${animal.type}">name</h1>
+    <h1 th:text="${animal.sound}">name</h1>
+    <button type="button" onclick="hideShow()">Edit</button>
+
+</div>
+
+
 <h2><a href="/animals/list">List</a> </h2>
 <h2><a href="/">Home</a> </h2>
+
 
 
 

@@ -22,6 +22,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Sound</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -39,6 +40,12 @@
                 <button type="button">Delete</button>
             </a>
         </td>
+        <td>
+            <a th:href="@{'/animals/{id}' (id=${animal.id})}">
+                <button type="button">Edit</button>
+            </a>
+        </td>
+
 
     </tr>
 
