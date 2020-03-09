@@ -34,6 +34,11 @@
         </td>
         <td th:text="${animal.type}">type holder</td>
         <td th:text="${animal.sound}">sound holder</td>
+        <td>
+            <a th:href="@{'/animals/delete/{id}' (id=${animal.id})}">
+                <button type="button">Delete</button>
+            </a>
+        </td>
 
     </tr>
 

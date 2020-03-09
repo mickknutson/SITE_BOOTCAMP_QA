@@ -61,11 +61,23 @@ public class AnimalControllerImpl implements AnimalController
     @Override
     public String create(Animal animal)
     {
-        System.out.println(animal);
+        System.out.println("added "+animal);
         service.add(animal);
 
         return "redirect:/animals/list";
 
 
+    }
+
+
+    @GetMapping("/delete/{id}")
+    @Override
+    public String delete (@PathVariable int id)
+    {
+        System.out.println("deleted "+id);
+//        service.delete(id);
+
+
+        return "redirect:/animals/list";
     }
 }
