@@ -51,4 +51,11 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         System.out.println("* AnimalDatabaseImpl.add()");
         repository.save(animal);
     }
+
+    @Override
+    public boolean delete(int id){
+        System.out.println("Animal is deleted");
+        repository.deleteById(id);
+        return true;
+    }
 }
