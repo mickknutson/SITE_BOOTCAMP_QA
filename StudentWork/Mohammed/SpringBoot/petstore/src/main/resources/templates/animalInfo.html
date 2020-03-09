@@ -7,6 +7,7 @@
 <body>
 
     <h1> Animal Information </h1>
+
     <table border="2">
         <thead>
         <tr bgcolor="red">
@@ -18,13 +19,18 @@
 
         <tbody>
         <tr>
+<!--            <td th:hidden="${animal.id}"></td>-->
             <td th:text="${animal.name}"></td>
             <td th:text="${animal.type}"></td>
             <td th:text="${animal.sound}"></td>
+            <td>
+               <a th:href="@{'/animal/delete/{id}' (id=${animal.id})}"
+               th:text="DELETE"
+               >DELETE</a>
+            </td>
         </tr>
-        </tbody>
-    </table>
 
+    </table>
         <h3> <a href="/animal/list.html">List</a></h3>
 
 </body>

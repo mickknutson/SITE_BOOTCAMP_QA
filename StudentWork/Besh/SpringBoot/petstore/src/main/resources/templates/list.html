@@ -1,29 +1,35 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://thymeleaf.org">
+
 <head>
-    <title> Welcome to the Petstore!</title>
+    <title> Welcome to the PetStore!</title>
 </head>
-<body>
-    <h1> List of Animals</h1>
-    <h2> Animals</h2>
-<table>
+
+
+<h1>List of animals</h1>
+<b>Animals...</b>
+
+<table style = "width:100%;border: 1px solid black">
     <thead>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Sound</th>
-        </tr>
+    <tr>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Name</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Type</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Sound</th>
+    </tr>
     </thead>
     <tbody>
-        <tr th:each="animal: ${allAnimals}">
-            <td>
-                <a th:href="@{'/animal/{id}'(id=${animal.id})}"
-                   th:text="${animal.name}">BOB</a>
-            </td>
-            <td th:text="${animal.type}">Cat</td>
-            <td th:text="${animal.sound}">Meow</td>
-        </tr>
+    <tr th:each="animal: ${allAnimals}">
+        <td style = "width:20%;border: 1px solid black; text-align:center">
+            <a th:href="@{'/animal/{id}'(id=${animal.id})}"
+               th:text="${animal.name}">Bob</a>
+        </td>
+        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${animal.type}">cat</td>
+        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${animal.sound}">meow</td>
+    </tr>
     </tbody>
 </table>
-    <h3> <a href="/">Home</a> </h3>
-</body>
+<style>
+body {background-color: powderblue;}
+h1 {color:blue;}
+p {color: red;}
+</style>
 </html>

@@ -3,10 +3,7 @@ package sa.site.lab.petstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
@@ -48,10 +45,38 @@ public class AnimalControllerImpl implements AnimalController {
         return "List"; //send back the client page
     }
     //add http mapping
+    @GetMapping("add")
     @Override
-    public void add(Animal animal){
-        service.add(animal);
+    public String add(Model model){
+//        service.add(animal);
+        model.addAttribute(new Animal());
+        return "add";
         //todo: add proper logic
+    }
+
+    @PostMapping("new")
+    @Override
+    public String create(Animal animal){
+        System.out.println("* AnimalController.create() - "+animal);
+        //fixme: need validation
+        //Note: add validated to my database
+        service.add(animal);
+        return "redirect:/animal/List.html";
+
+    }
+
+    @Override
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id){
+        System.out.println("* AnimalController.delete() - "+id);
+        boolean result=service.delete(id);
+        System.out.println("Delete result is: "+result);
+
+
+        return "redirect:/animal/List.html";
+
+
+
     }
 
 

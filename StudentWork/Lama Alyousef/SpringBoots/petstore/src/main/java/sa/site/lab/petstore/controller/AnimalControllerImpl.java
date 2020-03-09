@@ -9,7 +9,7 @@ import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
 
-@Controller
+@Controller // for web, return html page
 @RequestMapping("/animal")
 public class AnimalControllerImpl implements AnimalController {
 
@@ -72,10 +72,30 @@ public class AnimalControllerImpl implements AnimalController {
          // return "redirect:/animal/list.html";
     }
 
+    //
+
     @PostMapping("new")
+    @Override
     public String create(Animal animal){
         System.out.println("* AnimalController.create() - " + animal);
 
+        // FIXME: NEED VALIDATION !!
+        // NOTE: Add validated Animal to DataBase
+        service.add(animal);
+
         return "redirect:/animal/list.html";
     }
+
+    @Override
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id){
+        System.out.println("* AnimalController.delete() - "+id);
+        boolean result=service.delete(id);
+        System.out.println("Delete result is: "+result);
+
+
+        return "redirect:/animal/list.html";
+
+    }
+
 }

@@ -15,6 +15,7 @@
         <th >Name</th>
         <th >Type</th>
         <th >Sound</th>
+        <th >DELETE</th>
     </tr>
     </thead>
     <tbody>
@@ -26,6 +27,10 @@
         <td th:text="${animal.getName()}">Bob</td>
         <td th:text="${animal.getType()}">cat</td>
         <td th:text="${animal.getSound()}">meow</td>
+        <td>
+            <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
+               th:text="DELETE"></a>
+        </td>
 
     </tr>
     </tbody>

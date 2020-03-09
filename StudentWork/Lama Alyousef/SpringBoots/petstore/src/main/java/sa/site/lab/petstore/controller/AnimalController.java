@@ -14,5 +14,11 @@ public interface AnimalController {
 
     String add(Model model);
 
+    public String create(Animal animal);
+
+    /**
+     * Implement this method and print the boolean outcome to the sout.
+     */
+    String delete(int id);
 
 }

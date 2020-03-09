@@ -16,6 +16,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Sound</th>
+        <th>Delete</th>
     </tr>
     </thead>
 
@@ -24,6 +25,9 @@
         <td th:text="${animal.name}">Bob</td>
         <td th:text="${animal.type}">Cast</td>
         <td th:text="${animal.sound}">meow</td>
+
+        <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
+           th:text="DELETE"></a>
     </tr>
     </tbody>
 
@@ -36,3 +40,4 @@
 
 </body>
 </html>
+
