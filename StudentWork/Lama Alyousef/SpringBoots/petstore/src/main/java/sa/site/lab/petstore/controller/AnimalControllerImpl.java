@@ -73,8 +73,13 @@ public class AnimalControllerImpl implements AnimalController {
     }
 
     @PostMapping("new")
+    @Override
     public String create(Animal animal){
         System.out.println("* AnimalController.create() - " + animal);
+
+        // FIXME: NEED VALIDATION !!
+        // NOTE: Add validated Animal to DataBase
+        service.add(animal);
 
         return "redirect:/animal/list.html";
     }
