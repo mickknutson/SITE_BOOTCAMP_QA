@@ -65,4 +65,19 @@ public class AnimalControllerImpl implements AnimalController {
 
     }
 
+    @Override
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id){
+        System.out.println("* AnimalController.delete() - "+id);
+        boolean result=service.delete(id);
+        System.out.println("Delete result is: "+result);
+
+
+        return "redirect:/animal/List.html";
+
+
+
+    }
+
+
 }
