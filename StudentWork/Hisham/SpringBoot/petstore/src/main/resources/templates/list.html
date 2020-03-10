@@ -10,6 +10,7 @@
 <body>
 <h1>Welcome to the PetStore</h1>
 <h2><a href="/h2-console">H2 Admin Console</a> </h2>
+<h2><a href="/animals/add">Add New Animal</a> </h2>
 
 <h2>List Of Animals</h2>
 <b>Animals ...</b>
@@ -21,6 +22,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Sound</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -33,11 +35,24 @@
         </td>
         <td th:text="${animal.type}">type holder</td>
         <td th:text="${animal.sound}">sound holder</td>
+        <td>
+            <a th:href="@{'/animals/delete/{id}' (id=${animal.id})}">
+                <button type="button">Delete</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{'/animals/edit/{id}' (id=${animal.id})}">
+                <button type="button">Edit</button>
+            </a>
+        </td>
+
 
     </tr>
 
     </tbody>
 </table>
+
+<h2><a href="/">Home</a> </h2>
 
 </body>
 
