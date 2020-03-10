@@ -48,7 +48,8 @@ public class EmployeeControllerImpl implements EmployeeController {
     @Override
     public String add(Model model) {
         Employee employee = new Employee();
-        model.addAttribute("employee",employee);
+        System.out.println("Employee: " + employee);
+        model.addAttribute("employee", employee);
         return "addPage";
     }
 

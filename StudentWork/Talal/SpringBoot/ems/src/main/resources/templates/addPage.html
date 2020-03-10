@@ -1,113 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th= "http://www.thymeleaf.org">
 <head>
     <title>Employee Mangement System</title>
 </head>
 <body>
-
-
-<div class="main-block">
     <h1><b>Empolyee Mangment System</b></h1>
-    <form action="/">
-        <div class="info">
-            <div class="info-item">
-                <label class="icon" for="firstName"><i class="fas fa-user"></i></label>
-                <input type="text" name="firstName" id="firstName" placeholder="First Name" required/>
-            </div>
 
-            <div class="info">
-                <div class="info-item">
-                    <label class="icon" for="lastName"><i class="fas fa-user"></i></label>
-                    <input type="text" name="lastName" id="lastName" placeholder="Last Name" required/>
-                </div>
+        <form id="newEmployeeForm"
+              action="#"
+              th:action="@{/ems/create}"
+              th:object="${employee}"
+              method="post">
 
-                <div class="info">
-                    <div class="info-item">
-                        <label class="icon" for="EmpId"><i class="fas fa-user"></i></label>
-                        <input type="text" name="EmpId" id="EmpId" placeholder="Employee ID" required/>
-                    </div>
+                <label class="icon" for="firstName"></label>
+                <input th:field="*{firstName}" placeholder="First Name" id="firstName" required/>
 
-                    <div  class="info-item">
-                        <label class="icon" for="email"><i class="fas fa-envelope"></i></label>
-                        <input type="text" name="email" id="email" placeholder="Email" required/>
-                    </div>
+                <label class="icon" for="lastName"></label>
+                <input th:field= "*{lastName}" placeholder="Last Name" id="lastName" required/>
 
+                <label class="icon" for="email"></label>
+                <input th:field= "*{email}" placeholder="Email" id="email" required/>
 
+                <label class="icon" for="department"></label>
+                <input th:field= "*{department}" placeholder="First Name" id="department" required/>
 
+                <label class="icon" for="salary"></label>
+                <input th:field= "*{salary}" placeholder="First Name" id="salary" required/>
 
-                    <div  class="info-item">
-                        <label class="icon" for="age"><i class="fas fa-calendar"></i></label>
-                        <input type="text" name="age" id="age" placeholder="Age" required/>
-                    </div>
-
-                    <div  class="info-item">
-                        <label class="icon" for="hireDate"><i class="fas fa-calendar"></i></label>
-                        <input type="text" name="hireDate" id="hireDate" placeholder="HireDate" required/>
-                    </div>
-
-
-
-                    <div  class="info-item">
-                        <label class="icon" for="salary"><i class="fas fa-calendar"></i></label>
-                        <input type="text" name="salary" id="salary" placeholder="Salary" required/>
-                    </div>
-
-
-                    <div  class="info-item">
-                        <label class="icon" for="department"><i class="fas fa-calendar"></i></label>
-                        <input type="text" name="department" id="department" placeholder="Department" required/>
-
-                        <!--
-                                    <select>
-
-                                      <option selected value="" disabled selected></option>
-                                      <option value="m" >Information Technology</option>
-                                      <option value="a">HumanResource</option>
-                                      <option value="e">Doctors</option>
-                                    </select>
-                        -->
-                    </div>
-
-
-
-                    <div  class="info-item">
-                        <label class="icon" for="phone"><i class="fas fa-phone"></i></label>
-                        <input type="text" name="phone" id="phone" placeholder="Phone" required/>
-                    </div>
-
-
-
-
-                    <!--        <div class="grade-type">-->
-                    <!--
-                              <h3>Rate Our Website</h3>
-                              <div>
-                                <input type="radio" value="none" id="radioOne" name="grade" checked/>
-                                <label for="radioOne" class="radio">Excellent</label>
-                              </div>
-                              <div>
-                                <input type="radio" value="none" id="radioTwo" name="grade" />
-                                <label for="radioTwo" class="radio">Very Good</label>
-                              </div>
-                              <div>
-                                <input type="radio" value="none" id="radioThree" name="grade" />
-                                <label for="radioThree" class="radio">Good</label>
-                              </div>
-                              <div>
-                                <input type="radio" value="none" id="radioFour" name="grade" />
-                                <label for="radioFour" class="radio">Bad</label>
-                              </div>
-                              <div>
-                                <input type="radio" value="none" id="radioFive" name="grade" />
-                                <label for="radioFive" class="radio">Very Bad</label>
-                              </div>
-                            </div>
-                            <h3>Please Comment on Your Rating</h3>
-                            <textarea rows="4"></textarea>
-                    -->
-                    <button type="submit" href="/">Add</button>
+                <label class="icon" for="date"></label>
+                <input th:field= "*{date}" placeholder="First Name" id="date" required/>
 
     </form>
-</div>
 </body>
 </html>
