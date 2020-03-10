@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<body>
+
+<h1>Add New Employee</h1>
+
+<form id="newEmployeeForm"
+      action="#"
+      th:action="@{/employee/new}"
+      th:object="${employee}" method="post">
+
+    <fieldset>
+        <table>
+
+            <tr>
+                <th>
+                    <label for="firstName"> First Name </label>
+                </th>
+                <td>
+                    <input th:field="*{firstName}" id="firstName"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="lastName"> Last Name </label>
+                </th>
+                <td>
+                    <input th:field="*{lastName}" id="lastName"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="email"> email </label>
+                </th>
+                <td>
+                    <input th:field="*{email}" id="email"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="hireDate"> hireDate </label>
+                </th>
+                <td>
+                    <input th:field="*{hireDate}" id="hireDate"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="department"> department </label>
+                </th>
+                <td>
+                    <input th:field="*{department}" id="department"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="salary"> salary </label>
+                </th>
+                <td>
+                    <input th:field="*{salary}" id="salary"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th colspan="2">
+                    <button type="submit" id="submit"> Create </button>
+                </th>
+            </tr>
+
+        </table>
+    </fieldset>
+</form>
+
+</body>
+</html>
