@@ -1,0 +1,84 @@
+<html xmlns:th="http://thymeleaf.org">
+<!--<html xmlns:h1="http://thymeleaf.org">-->
+
+
+<head>
+    <title> Welcome to the EMPLOYEE MANAGEMENT SYSTEM !</title>
+</head>
+<body>
+<h1> Add New Employee</h1>
+*** ************** ***
+<form id="newEmployeeForm"
+      action="#"
+      th:action="@{/employee/create}"
+      th:object="${employee}" method="Post">
+    <fieldset>
+
+        <table>
+            <tr>
+                <th>
+                    <label for="employeeId">employeeId</label>
+                </th>
+                <td>
+                    <input th:field = "*{employeeId}" id="employeeId">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="firstName">First Name</label>
+                </th>
+                <td>
+                    <input th:field = "*{firstName}" id="firstName">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="lastName">Last Name</label>
+                </th>
+                <td>
+                    <input th:field = "*{lastName}" id="lastName">
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="hireDate">hireDate</label>
+                </th>
+                <td>
+                    <input type="date" th:field = "*{hireDate}" id="hireDate">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="email">email</label>
+                </th>
+                <td>
+                    <input type="email" th:field = "*{email}" id="email">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="department">department</label>
+                </th>
+                <td>
+                    <input th:field = "*{department}" id="department">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="salary">salary</label>
+                </th>
+                <td>
+                    <input th:field = "*{salary}" id="salary">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" id="submit">Create</button>
+                </th>
+            </tr>
+        </table>
+
+    </fieldset>
+</form>
+</body>
