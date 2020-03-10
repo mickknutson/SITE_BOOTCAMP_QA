@@ -1,4 +1,5 @@
-<html xmlns:th = "http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+
 <head>
     <title> Welcome to the EMS!</title>
 </head>
@@ -11,7 +12,7 @@
       th:action="@{/employee/create}"
       th:object="${employee}" method="post">
     <fieldset>
-        <table style = "width:25%;border: 1px solid black">
+        <table style = "width:25%;border: 1px solid blue">
             <tr>
                 <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="employeeId">Employee Id</label>
@@ -58,7 +59,7 @@
                 </th>
                 <td style = "width:25%">
                     <input th:field = "*{department}" id="department"/>
-                </td>
+                 </td>
             </tr>
             <tr>
                 <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
@@ -70,7 +71,7 @@
             </tr>
             <tr>
                 <th colspan="2">
-                    <button style = "width:25%;border: 1px solid black; background-color: #FA8072"; type="submit" id="submit">Create</button>
+                    <button style = "width:25%;border: 1px solid black; background-color: #483D8B"; type="submit" id="submit">Create</button>
                 </th>
             </tr>
         </table>

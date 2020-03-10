@@ -19,6 +19,15 @@ public class EmployeeControllerImpl implements EmployeeController {
     @Autowired
     private EmployeeService service;
 
+    @GetMapping("/list")
+    @Override
+    public String findAll(Model model) {
+        System.out.println("* EmployeeController.findAll:");
+        List<Employee> allEmployees = service.findAll();
+        model.addAttribute("allEmployees", allEmployees);
+        return "list";
+    }
+
     @GetMapping("{id}")
     @Override
     public String findById(@PathVariable long id, Model model) {
@@ -27,16 +36,6 @@ public class EmployeeControllerImpl implements EmployeeController {
         model.addAttribute("employee", employee);
         return "employee";
     }
-
-    @GetMapping("/list")
-    @Override
-    public String findAll(Model model) {
-        System.out.println("* EmployeeController.findAll()");
-        List<Employee> allEmployees = service.findAll();
-        model.addAttribute("allEmployees", allEmployees);
-        return "list";
-    }
-
     @GetMapping("add")
     @Override
     public String add(Model model) {
@@ -69,16 +68,11 @@ public class EmployeeControllerImpl implements EmployeeController {
         Employee employee = service.findById(id);
         if (employee != null) {
             model.addAttribute("employee", employee);
-            //model.addAttribute("employee",employee);
-            //return "employee";
         }
         return "update";
     }
-
-    // save
-
     @PostMapping("save")
-//    @Override
+    @Override
     public String save(Employee employee) {
         System.out.println("* EmployeeController.save() -" + employee);
         service.update(employee);
