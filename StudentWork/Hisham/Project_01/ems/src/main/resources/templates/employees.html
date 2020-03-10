@@ -35,6 +35,7 @@
                         <th>Department</th>
                         <th>Start Date</th>
                         <th>Salary</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
         
@@ -42,7 +43,7 @@
                     <tr th:each="emp: ${allEmployees}">
 
                         <td>
-                          <a  th:href="@{'/employee/{id}'(id=${emp.id})}"
+                          <a  th:href="@{'/employees/{id}'(id=${emp.id})}"
                               th:text="${emp.id}">1</a>
                         </td>
 
@@ -57,7 +58,7 @@
                        
                           <!-- TODO: fix the link -->
                         <td id="mod">
-                            <a href="/">Edit</a>
+                            <a th:href="@{'/employees/edit/{id}' (id=${emp.id})}">Edit</a>
                             <a th:href="@{'/employees/delete/{id}' (id=${emp.id})}"><i class="fa fa-trash-o" aria-hidden="true"></i></a> </td>
                     </tr>
                 </tbody>

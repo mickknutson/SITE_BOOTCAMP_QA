@@ -44,7 +44,7 @@ public class EmployeeControllerImpl implements EmployeeController
 
         model.addAttribute("employee",employee);
 
-        return "/edit";
+        return "/update";
     }
 
     @PostMapping("/update/{id}")

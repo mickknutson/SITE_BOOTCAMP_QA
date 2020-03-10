@@ -15,6 +15,8 @@ public interface EmployeeController {
 
     String update(long id , Model model);
 
+    String save(Employee employee);
+
     String delete(long id);
 
 }

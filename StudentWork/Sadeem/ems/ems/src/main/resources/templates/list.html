@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Petstore!</title>
+</head>
+
+
+<body>
+
+<h2>List of Employees</h2>
+
+<table>
+
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name </th>
+        <th>Email</th>
+        <th>Hire Date</th>
+        <th>Department</th>
+        <th>Salary</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="employee: ${allEmployees}">
+
+        <td> <a th:href="@{'/employee/{id}' (id=${employee.id})}"
+                th:text="${employee.firstName}"> not found </a>
+        </td>
+        <td th:text="${employee.lastName}">not found</td>
+        <td th:text="${employee.email}">not found</td>
+        <td th:text="${employee.hireDate}">not found</td>
+        <td th:text="${employee.department}">not found</td>
+        <td th:text="${employee.salary}">not found</td>
+
+    </tr>
+    </tbody>
+
+</table>
+
+<h3> <a href="/"> Home </a> </h3>
+
+</body>
+</html>
