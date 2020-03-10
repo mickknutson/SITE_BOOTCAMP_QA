@@ -1,9 +1,9 @@
 package com.example.site.ems.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -15,6 +15,8 @@ public class Employee {
     @Column
     private String firstName;
     private String lastName;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date hireDate;
     private String email;
     private String department;
