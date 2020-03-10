@@ -9,8 +9,8 @@ public class Animal {
     // Map filed to database columns:
     // Primary key
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     // Database columns name, type, sound
     @Column
     private String name;
@@ -34,6 +34,7 @@ public class Animal {
 
         throw new RuntimeException("not yet implemented");
     }
+
     @Transient
     public void talk(String voice) {
         throw new RuntimeException("not yet implemented");
@@ -52,11 +53,11 @@ public class Animal {
 
     // Setters & Getters --------------------/
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int Integer) {
         this.id = id;
     }
 

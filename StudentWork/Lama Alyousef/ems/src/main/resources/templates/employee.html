@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body>
+
+<title>Welcome to the EMS</title>
+
+<table>
+
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name </th>
+        <th>Email</th>
+        <th>Hire Date</th>
+        <th>Department</th>
+        <th>Salary</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td th:text="${employee.lastName}">not found</td>
+        <td th:text="${employee.email}">not found</td>
+        <td th:text="${employee.hireDate}">not found</td>
+        <td th:text="${employee.department}">not found</td>
+        <td th:text="${employee.salary}">not found</td>
+
+        <a th:href="@{'/employee/delete/{id}'(id=${employee.id})}"
+           th:text="DELETE"></a>
+    </tr>
+    </tbody>
+
+</table>
+
+<h3> <a href="/"> Home </a> </h3>
+<h3> <a href="/employee/list.html"> List of Employees </a> </h3>
+
+
+
+</body>
+</html>
+

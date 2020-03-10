@@ -13,6 +13,7 @@ public interface AnimalDao {
      List<Animal> findAll();
      Animal findById(int id );
      void add (Animal animal);
+     boolean delete(int id);
 
 
     }

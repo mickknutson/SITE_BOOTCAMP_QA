@@ -18,7 +18,7 @@ public class Animal extends Object{
     @Column
     private String type;
     @Column
-    private  String sound;
+    private String sound;
 
     // Constructor
 
