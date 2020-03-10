@@ -16,6 +16,7 @@ public class AnimalControllerImpl implements AnimalController {
     @Autowired
     private AnimalService service;
 
+
     @GetMapping("/{id}")
     @Override
     public String findById(@PathVariable int id,
@@ -57,9 +58,25 @@ public class AnimalControllerImpl implements AnimalController {
     }
 
     @PostMapping("new")
-    public String create(Animal animal){
-        System.out.println("* AnimalController.create() "+ animal );
+    @Override
+    public String create(Animal animal) {
+        System.out.println("* AnimalController.create() " + animal);
+        // NOTE : VALIDATION !!!!
+        service.add(animal);
+        // FIXME : VALIDATION !!!!
         return "redirect:/animal/list.html";
     }
 
+    @GetMapping("/delete/{id}")
+    @Override
+    public String delete(@PathVariable int id){
+        System.out.println("* AnimalController.delete() - "+id);
+        boolean result=service.delete(id);
+        System.out.println("Delete result is: "+result);
+        service.delete(id);
+
+
+        return "redirect:/animal/list.html";
+
+}
 }

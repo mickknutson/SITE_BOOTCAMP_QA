@@ -9,4 +9,14 @@ public interface AnimalController {
     String findAll(Model model);
 
     String add(Model model);
+
+    String create(Animal animal);
+    /**
+     *
+     * @return
+     */
+
+    String delete(int id);
+
+
 }

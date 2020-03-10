@@ -1,20 +1,17 @@
 package sa.site.lab.petstore.dao;
 
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Repository;
-        import sa.site.lab.petstore.domain.Animal;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import sa.site.lab.petstore.domain.Animal;
 
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Optional;
-
-        import static org.graalvm.compiler.phases.common.DeadCodeEliminationPhase.Optionality.Optional;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao {
     @Autowired
     private AnimalRepository repository;
-
 
 
     // TODO: must implement
@@ -25,7 +22,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         // return (repository.findById(id)).get();
 
         Optional<Animal> result = repository.findById(id);
-        if(result.isPresent()){
+        if (result.isPresent()) {
             return result.get();
         }
         return null;
@@ -39,7 +36,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
 
         List<Animal> animals = new ArrayList<>();
 
-        for(Animal animal: result){
+        for (Animal animal : result) {
             animals.add(animal);
         }
         return animals;
@@ -51,6 +48,24 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         System.out.println("*  AnimalDaoDatabaseImpl.add() ");
         // Use a Spring Data Repository to Access the Animal TABLE
         repository.save(animal);
+
+    }
+
+
+    @Override
+    public boolean delete (int id){
+        System.out.println("AnimalDaoDatabaseImpl.add()");
+
+        Optional<Animal> result = repository.findById(id);
+        if (result.isPresent()) {
+            Animal animal=result.get();
+            repository.deleteById(id);
+            return true;
+
+        }
+        else {
+            return false;
+        }
 
     }
 }

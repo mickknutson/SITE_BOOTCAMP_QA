@@ -11,15 +11,16 @@ background-color: #F8F9F9;
 padding: 50px;
 font-size: 30px;
 }
+
 </style>
 <body style="background-color: #E8F8F5 ">
 <h1>WELCOME TO THE PET STORE</h1>
 <h2>Add A New Animal:</h2>
 
 <form id="newAnimalForm"
-        action="#"
-th:action="@{/animal/new}"
-th:object="${animal}" method="post">
+      action="#"
+      th:action="@{/animal/new}"
+      th:object="${animal}" method="post">
 
     <fieldset>
         <table>
@@ -28,23 +29,24 @@ th:object="${animal}" method="post">
                     <label for="name">Name</label>
                 </th>
                 <td>
-                    <input th:field="*{name}"id="name"/>
+                    <input th:field="*{name}" id="name"/>
                 </td>
                 <th>
                     <label for="type">Type</label>
                 </th>
                 <td>
-                    <input th:field="*{type}"id="type"/>
+                    <input th:field="*{type}" id="type"/>
                 </td>
                 <th>
                     <label for="sound">Sound</label>
                 </th>
                 <td>
-                    <input th:field="*{sound}"id="sound"/>
+                    <input th:field="*{sound}" id="sound"/>
                 </td>
+                <br>
                 <th colspan="2">
-                <button type="submit" id="submit">Create</button>
-            </th>
+                    <button type="submit" id="submit">Create</button>
+                </th>
             </tr>
             <tr>
 
@@ -53,6 +55,6 @@ th:object="${animal}" method="post">
     </fieldset>
 
 </form>
-<h3><a href="/">Home</a> </h3>
+<h3><a href="/">Home</a></h3>
 </body>
 </html>

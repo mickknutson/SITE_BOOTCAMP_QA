@@ -1,11 +1,12 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="UTF-8">
+    <title>Pet Store</title>
+    <style>
 
-    <title>WELCOME TO THE PET STORE</title>
-</head>
-<style>
-h1 {
 
+       h1 {
 text-align : center;
 display: block;
 background-color: #F8F9F9;
@@ -13,48 +14,64 @@ padding: 50px;
 font-size: 30px;
 }
 
-table{
-width:50%;
-text-align: center;
-margin-left: 10%;
-}
-table ,th,td{
-border: 1px solid black;
-border-collapse: left;
-}
-th,td{
-	padding: 15px;
-}
-</style>
-<body style="background-color: #E8F8F5 ">
+        table {
+            width:50%;
+            margin-left: 25%;
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        table {
+            background-color: #F8F9F9;
+        }
 
-<h1>WELCOME TO THE PET STORE</h1>
+    </style>
 
-<h2>List of Animals</h2>
+</head>
+
+
+<body style="background-color: #E8F8F5">
+
+
+<h1>WELCOME TO THE PET STORE </h1>
+
+<h2> List of aimals:</h2>
 <table>
     <thead>
     <tr>
         <th>Name</th>
-        <th>Type</th>
         <th>Sound</th>
+        <th>Type</th>
+        <th >DELETE</th>
     </tr>
-    <head>
+    </thead>
+
     <tbody>
     <tr th:each="animal: ${allAnimals}">
+
         <td>
-               <a th:href="@{'/animal/{id}'(id=${animal.id})}"
-                  th:text="${animal.name}">Bob</a>
-
+            <a  th:href="@{'/animal/{id}'(id=${animal.id})}"
+                th:text="${animal.name}">BOB</a>
         </td>
-        <td th:text="${animal.type}">DOG</td>
-        <td th:text="${animal.sound}">woof</td>
 
+        <td th:text="${animal.type}">CAT</td>
+        <td th:text="${animal.sound}">Meow</td>
+
+        <td>
+            <button> <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}" th:text="DELETE"></a></button>
+        </td>
     </tr>
     </tbody>
-    </head>
-    </thead>
 </table>
 
-<h3><a href="/">Home</a> </h3>
+
+<h3><a href="/">HOME</a></h3>
+
 </body>
 </html>
