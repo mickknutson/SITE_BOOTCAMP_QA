@@ -9,12 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import java.sql.Date;
 
 @SpringBootApplication
 public class EmsApplication {
-//	@Autowired
-//	private EmployeeService service;
+	@Autowired
+	private EmployeeService service;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmsApplication.class, args);
