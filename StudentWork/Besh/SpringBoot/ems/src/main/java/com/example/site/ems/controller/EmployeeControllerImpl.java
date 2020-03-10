@@ -14,25 +14,29 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/employee")
-public class EmployeeControllerImpl implements EmployeeController{
+public class EmployeeControllerImpl implements EmployeeController {
+
     @Autowired
     private EmployeeService service;
+
     @GetMapping("{id}")
     @Override
     public String findById(@PathVariable long id, Model model) {
         System.out.println("* EmployeeController.findById(): " + id);
         Employee employee = service.findById(id);
-        model.addAttribute("employee",employee);
+        model.addAttribute("employee", employee);
         return "employee";
     }
+
     @GetMapping("/list")
     @Override
     public String findAll(Model model) {
         System.out.println("* EmployeeController.findAll()");
         List<Employee> allEmployees = service.findAll();
-        model.addAttribute("allEmployees",allEmployees);
+        model.addAttribute("allEmployees", allEmployees);
         return "list";
     }
+
     @GetMapping("add")
     @Override
     public String add(Model model) {
@@ -40,25 +44,44 @@ public class EmployeeControllerImpl implements EmployeeController{
         model.addAttribute(new Employee());
         return "add";
     }
+
     @PostMapping("create")
     @Override
-    public String create (Employee employee){
+    public String create(Employee employee) {
         System.out.println("* EmployeeController.create() -" + employee);
         service.add(employee);
-        return "redirect:/employee/list.html";
+        return "redirect:/employee/list";
     }
+
     @Override
     @GetMapping("/delete/{id}")
-    public String delete (@PathVariable long id){
+    public String delete(@PathVariable long id) {
         System.out.println("* EmployeeController.delete() -" + id);
         service.delete(id);
-        return "redirect:/employee/list.html";
+        return "redirect:/employee/list";
     }
+
     @GetMapping("/update/{id}")
     @Override
     public String update(@PathVariable long id, Model model) {
         System.out.println("* EmployeeController.update()");
-        //model.addAttribute(new Employee());
-        return "redirect:/employee/list.html";
+
+        Employee employee = service.findById(id);
+        if (employee != null) {
+            model.addAttribute("employee", employee);
+            //model.addAttribute("employee",employee);
+            //return "employee";
+        }
+        return "update";
+    }
+
+    // save
+
+    @PostMapping("save")
+//    @Override
+    public String save(Employee employee) {
+        System.out.println("* EmployeeController.save() -" + employee);
+        service.update(employee);
+        return "redirect:/employee/list";
     }
 }

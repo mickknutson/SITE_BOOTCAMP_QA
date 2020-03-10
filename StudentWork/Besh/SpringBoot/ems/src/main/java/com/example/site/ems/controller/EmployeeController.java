@@ -9,4 +9,5 @@ public interface EmployeeController {
     String findAll (Model model);
     String delete (long id);
     String update (long id, Model model);
+    String save(Employee employee);
 }

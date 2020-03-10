@@ -6,34 +6,61 @@
 
 
 <h1>List of Employees</h1>
-<b>Employees...</b>
+<b>Employee...</b>
 
-<table style = "width:20%;border: 1px solid black">
+<table>
     <thead>
     <tr>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Employee Id</th>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">First Name</th>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Last Name</th>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Hire Date</th>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Email</th>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Department</th>
-        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Salary</th>
+        <th>Link</th>
+
+        <th>Employee ID</th>
+
+        <th>First Name</th>
+
+        <th>Last Name</th>
+
+        <th>Hire Date</th>
+
+        <th>Department</th>
+
+        <th>Salary</th>
+
+        <th>DELETE</th>
+
+        <th>UPDATE</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="employee: ${allEmployees}">
-        <td style = "width:20%;border: 1px solid black; text-align:center">
-            <a th:href="@{'/employee/{id}'(id=${employee.id})}"
-               th:text="${employee.name}">Bob</a>
+        <td>
+            <a th:href="@{'/employee/{id}'(id=${employee.employeeId})}"
+               th:text="${employee.firstName}+' '+${employee.lastName}">Bob</a>
         </td>
-        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${employee.type}">cat</td>
-        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${employee.sound}">meow</td>
+        <td th:text="${employee.getEmployeeId()}">Bob</td>
+
+        <td th:text="${employee.getFirstName()}">Bob</td>
+        <td th:text="${employee.getLastName()}">cat</td>
+        <td th:text="${employee.getHireDate()}">meow</td>
+
+        <td th:text="${employee.getDepartment()}">meow</td>
+        <td th:text="${employee.getSalary()}">meow</td>
+
+        <td>
+            <a th:href="@{'/employee/delete/{id}'(id=${employee.employeeId})}"
+               th:text="DELETE"></a>
+        </td>
+        <td>
+            <a th:href="@{'/employee/update/{id}'(id=${employee.employeeId})}"
+               th:text="UPDATE"></a>
+        </td>
     </tr>
     </tbody>
 </table>
-<style>
-body {background-color: powderblue;}
-h1 {color:blue;}
-p {color: red;}
-</style>
+
+</html>
+</title>
+</head>
+<body>
+
+</body>
 </html>

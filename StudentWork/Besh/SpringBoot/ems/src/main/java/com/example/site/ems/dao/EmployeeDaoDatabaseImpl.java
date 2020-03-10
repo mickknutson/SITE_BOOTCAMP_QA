@@ -32,7 +32,9 @@ public class EmployeeDaoDatabaseImpl implements EmployeeDao{
     public boolean add (Employee employee){
         System.out.println("EmployeeDaoDatabaseImpl.add()");
         Optional<Employee> result = repository.findById(employee.getEmployeeId());
+
         repository.save(employee);
+
         if(!result.isPresent()){
             return true;
         }else {
