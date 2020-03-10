@@ -4,7 +4,6 @@
     <title>Employee Mangement System</title>
 </head>
 <body>
-    <h1><b>Empolyee Mangment System</b></h1>
 
         <form id="newEmployeeForm"
               action="#"
@@ -12,23 +11,26 @@
               th:object="${employee}"
               method="post">
 
-                <label class="icon" for="firstName"></label>
+            <div class="main-block">
+                <h1>Empolyee Mangment System</h1>
+
                 <input th:field="*{firstName}" placeholder="First Name" id="firstName" required/>
 
-                <label class="icon" for="lastName"></label>
+
                 <input th:field= "*{lastName}" placeholder="Last Name" id="lastName" required/>
 
-                <label class="icon" for="email"></label>
+
                 <input th:field= "*{email}" placeholder="Email" id="email" required/>
 
-                <label class="icon" for="department"></label>
+
                 <input th:field= "*{department}" placeholder="First Name" id="department" required/>
 
-                <label class="icon" for="salary"></label>
+
                 <input th:field= "*{salary}" placeholder="First Name" id="salary" required/>
 
-                <label class="icon" for="date"></label>
+
                 <input th:field= "*{date}" placeholder="First Name" id="date" required/>
+            </div>
 
     </form>
 </body>
