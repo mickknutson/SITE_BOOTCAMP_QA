@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("ems")
+@RequestMapping("/ems")
 public class EmployeeControllerImpl implements EmployeeController {
 
     @Autowired
