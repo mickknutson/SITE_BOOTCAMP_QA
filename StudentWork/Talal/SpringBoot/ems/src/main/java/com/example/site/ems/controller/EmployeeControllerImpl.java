@@ -31,16 +31,17 @@ public class EmployeeControllerImpl implements EmployeeController {
 
     @GetMapping("/employeesList")
     @Override
-    public String findALl() {
-        // TODO : HTML PAGE !!
-        return "";
+    public String findALl(Model model) {
+        List<Employee> employeeList = employeeService.findALl();
+        model.addAttribute("employeeList",employeeList);
+        return "mainPage";
     }
 
     // TODO : CHANGE METHOD NAME!!! We have 2 add() methods!!
     @PostMapping("/create")
     public String create(Employee employee){
         employeeService.add(employee);
-        return "redirect:/localhost8080:/employee/employeesList";
+        return "redirect:/ems/employeesList";
     }
 
     @PostMapping("/add")
@@ -61,6 +62,6 @@ public class EmployeeControllerImpl implements EmployeeController {
     @Override
     public String delete(int id) {
         employeeService.delete(id);
-        return "redirect:http:localhost:8080/employee/employeesList";
+        return "redirect:/ems/employeesList";
     }
 }

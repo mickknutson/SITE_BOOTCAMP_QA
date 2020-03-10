@@ -10,7 +10,7 @@ public interface EmployeeController {
      String findById(int id, Model model);
     // Employee findById(int id);
 
-    String findALl();
+    String findALl(Model model);
     //  List<employee> findALl();
 
     String add(Model Model);

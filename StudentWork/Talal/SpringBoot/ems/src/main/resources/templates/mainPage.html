@@ -1,95 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th= "http://www.thymeleaf.org">
 <head>
     <title>Employee Mangement System</title>
-    <link rel="stylesheet" type="text/css" href="EMS.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
 <div class="main-block">
     <h2>Employee Mangement System</h2>
     <form action="/">
+
+
+
+
         <table class="Table" style="width:100%">
+            <thead>
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>EmpolyeeID</th>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Email</th>
-                <th>MobileNumber</th>
-                <th>Age</th>
-                <th>Hiredate</th>
+                <th>Department</th>
                 <th>Salary</th>
-                <th>Departmetn</th>
+                <th>Hire Date</th>
                 <th>Delete</th>
             </tr>
+            </thead>
 
-
-            <tr>
-                <th>Mohammed</th>
-                <th>Alsalm</th>
-                <th>1</th>
-                <th>moh@gmila</th>
-                <th>0323425354</th>
-                <th>25</th>
-                <th>01/01/2020</th>
-                <th>2000</th>
-                <th>IT</th>
-                <th><button class="button" type="submit" href="/">Delete</button></th>
+            <tbody>
+            <tr th:each="employee: ${employeeList}">
+                <td th:text="${employee.id}">Id</td>
+                <td th:text="${employee.firstName}">firstName</td>
+                <td th:text="${employee.lastName}">lastName</td>
+                <td th:text="${employee.email}">email</td>
+                <td th:text="${employee.department}">Department</td>
+                <td th:text="${employee.salary}">Salary</td>
+                <td th:text="${employee.date}">Date</td>
+                <td>
+                    <a th:href="@{'/ems/delete/{id}' (id=${employee.id})}"
+                       th:text="delete">DELETE</a>
+                </td>
             </tr>
-
-            <tr>
-                <th>Tala</th>
-                <th>alkhalid</th>
-                <th>2</th>
-                <th>tal@gmail</th>
-                <th>0353728936</th>
-                <th>23</th>
-                <th>03/04/2019</th>
-                <th>3000</th>
-                <th>IT</th>
-                <th><button class="button" type="submit" href="/">Delete</button></th>
-            </tr>
-
-            <tr>
-                <th>Abdullah</th>
-                <th>AlDaiy</th>
-                <th>3</th>
-                <th>abd@gmail@gmail</th>
-                <th>0534032403</th>
-                <th>28</th>
-                <th>04/05/2018</th>
-                <th>7000</th>
-                <th>IT</th>
-                <th><button class="button" type="submit" href="/">Delete</button></th>
-            </tr>
-
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>EmpolyeeID</th>
-                <th>Email</th>
-                <th>MobileNumber</th>
-                <th>Age</th>
-                <th>Hiredate</th>
-                <th>Salary</th>
-                <th>Departmetn</th>
-                <th><button class="button" type="submit" href="/">Delete</button></th>
-            </tr>
-
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>EmpolyeeID</th>
-                <th>Email</th>
-                <th>MobileNumber</th>
-                <th>Age</th>
-                <th>Hiredate</th>
-                <th>Salary</th>
-                <th>Departmetn</th>
-                <th><button class="button" type="submit" href="/">Delete</button></th>
-            </tr>
-
-
+            </tbody>
 
         </table>
 
