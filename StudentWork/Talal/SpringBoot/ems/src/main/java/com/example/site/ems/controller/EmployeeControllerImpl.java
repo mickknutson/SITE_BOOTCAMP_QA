@@ -59,7 +59,7 @@ public class EmployeeControllerImpl implements EmployeeController {
 
     @GetMapping("/delete/{id}")
     @Override
-    public String delete(int id) {
+    public String delete( @PathVariable  int id) {
         employeeService.delete(id);
         return "redirect:/ems/employeesList";
     }

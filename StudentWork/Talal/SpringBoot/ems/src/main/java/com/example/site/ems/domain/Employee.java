@@ -3,6 +3,7 @@ package com.example.site.ems.domain;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
 
 
@@ -10,7 +11,7 @@ import java.util.Date;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id ;
+    private Integer id ;
     @Column
     private String firstName;
     private String lastName;
@@ -46,7 +47,7 @@ public class Employee {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
