@@ -32,6 +32,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         Iterable<Animal> result = repository.findAll();
 
         List <Animal> animals= new ArrayList<>();
+
         for(Animal animal: result){
         animals.add(animal);
         }
