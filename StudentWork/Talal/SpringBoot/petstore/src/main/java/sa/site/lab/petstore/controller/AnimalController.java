@@ -8,6 +8,13 @@ public interface AnimalController {
 
         public String findById(int id, Model model);
 
-        void add(Animal animal);
-    }
+        String add( Model model);
+
+        String create(Animal aninal);
+
+
+        String delete(int id);
+}
+
+
 

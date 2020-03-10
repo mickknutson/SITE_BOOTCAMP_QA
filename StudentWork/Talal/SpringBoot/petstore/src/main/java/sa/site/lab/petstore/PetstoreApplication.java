@@ -12,8 +12,8 @@ import sa.site.lab.petstore.controller.AnimalController;
 public class PetstoreApplication {
 
     // the best way of object
-    @Autowired
-    private AnimalController controller;
+//    @Autowired
+//    private AnimalController controller;
 
     public static void main(String[] args) {
         System.out.println("* Start main()");
