@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("ems")
+@RequestMapping("/ems")
 public class EmployeeControllerImpl implements EmployeeController {
 
     @Autowired
@@ -40,7 +40,7 @@ public class EmployeeControllerImpl implements EmployeeController {
     @PostMapping("/create")
     public String create(Employee employee){
         employeeService.add(employee);
-        return "redirect://employee/employeesList";
+        return "redirect:/localhost8080:/employee/employeesList";
     }
 
     @PostMapping("/add")

@@ -6,55 +6,73 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
-import sun.font.EAttribute;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/animal")
-public class AnimalControllerImpl implements AnimalController{
+public class AnimalControllerImpl implements AnimalController {
 
     @Autowired
     private AnimalService service;
 
     @GetMapping("/{id}")
     @Override
-    public String findById(@PathVariable int id, Model model){
-        System.out.println("* AnimalController.findById: " + id);
-        Animal animal =  service.findById(id);
+    public String findById(@PathVariable int id ,
+                           Model model) {
 
-        model.addAttribute("animal", animal);
-        return "animal";
+        System.out.println(" *AnimalController.findPet: " + id);
+        Animal animal = service.findById(id);
+        model.addAttribute("animal" , animal);
+        return "animalInfo";
+//        return service.findById(id);
     }
 
-    /**
-     * accept request :
-     * http:localhost:8080/list.html
+    /*
+    accept requests of:
+    http://localhost:8080/list.html
      */
     @GetMapping("/list.html")
     @Override
-    public String findAll(Model model){
-        System.out.println("* AnimalController.findAll()");
-
-       List<Animal> allAnimals = service.findAll();
-
-       model.addAttribute("allAnimals", allAnimals);
-
-
-        return  "list";
+    public String findAll(Model model) {
+        System.out.println("*AnimalController.findAll() ");
+        List<Animal> allAnimals = service.findAll();
+        model.addAttribute("allAnimals" , allAnimals);
+        return "list"; // send back 'list.html'
+//        return service.findAll();
     }
-//    View Add Animal HTML Page
-    @GetMapping("add")
-    @Override
-    public String add(Model model){
-        System.out.println("* AnimalController.add()");
-//        service.add(animal);
-        return  "add";
 
-        @PostMapping("new")
-                public String create(Animal animal)
-        {
-            System.out.println("* AnimalController.create()_" + animal);
+    @GetMapping("/add")
+    @Override
+    public String add(Model model) {
+        System.out.println("* AnimalController.add");
+        Animal animal = new Animal();
+        model.addAttribute("animal" , animal);
+        return "add";
+    }
+
+    @PostMapping("/create")
+    @Override
+    public String create (Animal animal){
+        System.out.println(animal);
+        // FIXME : NEED VALIDATION!!
+
+        // ADD VALIDATED Animal to Database !
+        service.add(animal);
+        return"redirect:/animal/list.html";
+    }
+
+    @GetMapping("/delete/{id}")
+    @Override
+    public String delete(@PathVariable int id) {
+
+        if (service.delete(id) == false) {
+            System.out.println(" Animal not deleted!");
+            return "redirect:/animal/list.html";
+        } else {
+            System.out.println("Animal is Deleted!");
+            return "redirect:/animal/list.html";
         }
     }
+
 }
