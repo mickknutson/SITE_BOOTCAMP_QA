@@ -44,7 +44,7 @@ public class EmployeeControllerImpl implements EmployeeController
 
         model.addAttribute("employee",employee);
 
-        return "/edit";
+        return "/update";
     }
 
     @PostMapping("/update/{id}")
@@ -62,10 +62,10 @@ public class EmployeeControllerImpl implements EmployeeController
     public String findAll(Model model)
     {
         System.out.println("* EmplpoyeeController.FindAll() : ");
-        List<Employee> allemployees = service.findAll();
+        List<Employee> allEmployees = service.findAll();
         // add the animals object to the view
-        model.addAttribute("allemployees",allemployees);
-        return "/list";
+        model.addAttribute("allEmployees",allEmployees);
+        return "/employees";
     }
 
     @GetMapping("/add")
