@@ -1,19 +1,22 @@
 package com.example.site.ems.controller;
 
 import com.example.site.ems.domain.Employee;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
 public interface EmployeeController {
 
-    Employee findById(int id);
+     String findById(int id, Model model);
+    // Employee findById(int id);
 
-    List<Employee> findALl();
+    String findALl();
+    //  List<employee> findALl();
 
-    String add(Employee employee);
+    String add(Model Model);
 
     String update(Employee employee);
 
-    void delete(int id);
+    String delete(int id);
 
 }
