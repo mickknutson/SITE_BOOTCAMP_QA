@@ -17,5 +17,8 @@ public interface AnimalDao {
 
     void add(Animal animal);
 
+    boolean delete(int id);
+
+
 
 } // END CLASS ..

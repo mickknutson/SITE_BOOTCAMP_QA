@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public class AnimalDaoDatabaseImpl implements AnimalDao{
-    @Autowired
+        @Autowired
     private  AnimalRepository repository;
 
     // TODO: Must implement
@@ -44,4 +44,18 @@ public class AnimalDaoDatabaseImpl implements AnimalDao{
         repository.save(animal);
     }
 
-} // The End...
+    public boolean delete (int id){
+        System.out.println("AnimalDaoDatabaseImpl.add()");
+        Optional<Animal> result = repository.findById(id);
+        if (result.isPresent()) {
+            Animal animal=result.get();
+            repository.deleteById(id);
+//                    delete(animal);
+            return true;
+
+        }
+        else {
+            return false;
+        }
+
+}}

@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Welcome to the Petstore!</title>
+</head>
+
+
+
+<body>
+<h>Welcome to the Petstore</h>
+<h2>list of animals</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Sound</th>
+        <th >DELETE</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="animal: ${allAnimals}">
+        <td>
+            <a th:href="@{'/animal/{id}'(id=${animal.id})}"
+               th:text="${animal.name}">Bob</a>
+        </td>
+        <td th:text="${animal.getName()}">Bob</td>
+        <td th:text="${animal.getType()}">cat</td>
+        <td th:text="${animal.getSound()}">meow</td>
+
+
+    </tr>
+    </tbody>
+  </table>
+
+<h3><a href="/">Home</a></h3>
+</body>
+</html>

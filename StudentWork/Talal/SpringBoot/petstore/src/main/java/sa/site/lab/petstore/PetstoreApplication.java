@@ -7,16 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.domain.Animal;
-
-import java.util.List;
 
 @SpringBootApplication
 public class PetstoreApplication {
 
     // the best way of object
-    @Autowired
-    private AnimalController controller;
+//    @Autowired
+//    private AnimalController controller;
 
     public static void main(String[] args) {
         System.out.println("* Start main()");
@@ -29,31 +26,31 @@ public class PetstoreApplication {
         return args -> {
 
             System.out.println("* Start CommandLineRunner *");
+//
+//            System.out.println("Add a new Dog");
+//            Animal dog = new Animal();
+//            dog.setName("Fido");
+//            dog.setSound("woof");
+//            dog.setType("DOG");
 
-            System.out.println("Add a new Dog");
-            Animal dog = new Animal();
-            dog.setName("Fido");
-            dog.setSound("woof");
-            dog.setType("DOG");
-
-            List<Animal> animals= controller.findAll();
-            System.out.println(" Animal: "+animals);
-            Animal animal1= controller.findById(1);
-            if(animal1== null){
-                System.out.println("animal is null");
-            }
-            controller.add(dog);
-
-            Animal animal2= controller.findById(1);
-            if(animal2== null){
-                System.out.println("animal is null");
-            }else {
-                System.out.println("Animal: "+ animal2.getName());
-            }
+//            List<Animal> animals= controller.findAll();
+          //  System.out.println(" Animal: "+animals);
+//            Animal animal1= controller.findById(1);
+//            if(animal1== null){
+//                System.out.println("animal is null");
+//            }
+//            controller.add(dog);
+//
+//            Animal animal2= controller.findById(1);
+//            if(animal2== null){
+//                System.out.println("animal is null");
+//            }else {
+//                System.out.println("Animal: "+ animal2.getName());
+//            }
 
 
-             animals= controller.findAll();
-            System.out.println(" List of Animal: "+animals);
+             //animals= controller.findAll();
+         //   System.out.println(" List of Animal: "+animals);
 
 
 

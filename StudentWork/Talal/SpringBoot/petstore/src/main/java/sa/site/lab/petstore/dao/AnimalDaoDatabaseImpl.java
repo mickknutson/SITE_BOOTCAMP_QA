@@ -32,6 +32,7 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
         Iterable<Animal> result = repository.findAll();
 
         List <Animal> animals= new ArrayList<>();
+
         for(Animal animal: result){
         animals.add(animal);
         }
@@ -49,5 +50,13 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
 
         //  use Spring Data Repo to access the Animal TABLE
 
+    }
+
+    public boolean delete(int id){
+        if(repository.existsById(id)){
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

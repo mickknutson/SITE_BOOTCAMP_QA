@@ -34,4 +34,9 @@ public class ProductDaoDatabaseImpl implements ProductDao{
         System.out.println("ProductDaoDatabaseImpl.add()");
         repository.save(product);
     }
+
+    @Override
+    public void updateName(String name, int id) {
+        System.out.println("ProductDaoDatabaseImpl.add()");
+    }
 }

@@ -1,33 +1,111 @@
 package sa.site.lab.petstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+import javax.validation.Valid;
+import java.util.Calendar;
 import java.util.List;
 
+/**
+ * URI, METHOD
+ *
+ * URI for entire Class is:
+ * http://localhost:8080/animal
+ *
+ * return
+ * MIME: text/html
+ */
 @Controller
+@RequestMapping("/animal")
 public class AnimalControllerImpl implements AnimalController{
 
     @Autowired
     private AnimalService service;
 
+    /**
+     * accept GET requests on:
+     * http://localhost:8080/animal/1
+     * http://localhost:8080/animal/2
+     * @RequestParam == QueryString variable
+     * @PathVariable = "/some/path"
+     */
+    @GetMapping("/{id}")
     @Override
-    public Animal findById(int id){
+    public String findById(   @PathVariable int id,
+                             Model model){
         System.out.println("* AnimalController.findById: " + id);
-        return service.findById(id);
+
+        Animal animal = service.findById(id);
+
+        model.addAttribute("animal", animal);
+
+        return "animal";
+
     }
 
+    /**
+     * accept GET requests on:
+     * http://localhost:8080/animal/list.html
+     *
+     */
+    @GetMapping("/list.html") // Should give us Model
     @Override
-    public List<Animal> findAll(){
+    public String findAll(Model model){
         System.out.println("* AnimalController.findAll()");
-        return service.findAll();
+
+        // Get List of Animals from DB
+        List<Animal> allAnimals = service.findAll();
+
+        // Add List to Response Model:
+        model.addAttribute("allAnimals", allAnimals);
+
+        // Return View Page:
+        return "list"; // send back 'list.html'
     }
 
+
+    // View Add Animal HTML page
+    @GetMapping("add")
     @Override
-    public void add(Animal animal){
+    public String add(Model model){
         System.out.println("* AnimalController.add()");
-        service.add(animal);
+
+        model.addAttribute(new Animal());
+
+        return "add";
     }
-}
+
+    // TODO: Set response status code to 201
+    @PostMapping("new")
+    @Override
+    public String create(Animal animal){
+        System.out.println("* AnimalController.create() - " + animal);
+
+        // FIXME: NEED VALIDATION !!!!!
+
+        // NOTE: Add validated Animal to Database
+        service.add(animal);
+
+        return "redirect:/animal/list.html";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id){
+        System.out.println("* AnimalController.delete() - " + id);
+
+        //FIXME: Implement:
+        // service.delete(id);
+
+        return "redirect:/animal/list.html";
+    }
+
+
+} // The End...

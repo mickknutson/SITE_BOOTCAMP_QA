@@ -1,0 +1,38 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Animal Details</title>
+</head>
+
+<body>
+    <h1>Animals Details</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Sound</th>
+                <th>nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td th:text="${animal.name}">BOB</td>
+                <td th:text="${animal.type}">CAT</td>
+                <td th:text="${animal.sound}">MEOW</td>
+                <td>
+                    <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
+                       th:text="DELETE">DELETE</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3><a href="/animal/list.html">List of Animals</a></h3>
+
+    <h3><a href="/">Home</a></h3>
+
+
+</body>
+</html>
