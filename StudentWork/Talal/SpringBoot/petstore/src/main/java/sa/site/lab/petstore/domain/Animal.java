@@ -6,8 +6,8 @@ import javax.persistence.*;
 public class Animal {
     // primary key
     @Id
-    @GeneratedValue
-    private int id ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id ;
 
     @Column
     private String name;
@@ -41,11 +41,11 @@ public class Animal {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

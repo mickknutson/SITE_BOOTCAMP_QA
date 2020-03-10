@@ -13,6 +13,7 @@
                 <th>Name</th>
                 <th>Type</th>
                 <th>Sound</th>
+                <th>nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,10 @@
                 <td th:text="${animal.name}">BOB</td>
                 <td th:text="${animal.type}">CAT</td>
                 <td th:text="${animal.sound}">MEOW</td>
+                <td>
+                    <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
+                       th:text="DELETE">DELETE</a>
+                </td>
             </tr>
         </tbody>
     </table>
