@@ -8,32 +8,28 @@
 <h1>List of animals</h1>
 <b>Animals...</b>
 
-<table>
+<table style = "width:100%;border: 1px solid black">
     <thead>
     <tr>
-        <th >Link </th>
-        <th >Name</th>
-        <th >Type</th>
-        <th >Sound</th>
-        <th >DELETE</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Name</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Type</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Sound</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="animal: ${allAnimals}">
-        <td>
+        <td style = "width:20%;border: 1px solid black; text-align:center">
             <a th:href="@{'/animal/{id}'(id=${animal.id})}"
                th:text="${animal.name}">Bob</a>
         </td>
-        <td th:text="${animal.getName()}">Bob</td>
-        <td th:text="${animal.getType()}">cat</td>
-        <td th:text="${animal.getSound()}">meow</td>
-        <td>
-            <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
-               th:text="DELETE"></a>
-        </td>
-
+        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${animal.type}">cat</td>
+        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${animal.sound}">meow</td>
     </tr>
     </tbody>
 </table>
-
+<style>
+body {background-color: powderblue;}
+h1 {color:blue;}
+p {color: red;}
+</style>
 </html>

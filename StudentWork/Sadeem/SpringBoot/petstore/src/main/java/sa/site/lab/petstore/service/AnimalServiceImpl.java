@@ -28,4 +28,9 @@ public class AnimalServiceImpl implements AnimalService {
     public void add(Animal animal){
         System.out.println("* AnimalService.add()");
         dao.add(animal);
-}}
+}
+    public boolean delete(int id){
+        return dao.delete(id);
+    }
+
+}

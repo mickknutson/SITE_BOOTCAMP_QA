@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -60,6 +61,30 @@ public class AnimalControllerImpl implements AnimalController {
         // ADD VALIDATED Animal to Database !
         service.add(animal);
         return"redirect:/animal/list.html";
+    }
+
+    @GetMapping("/delete/{id}")
+    @Override
+    public String delete(@PathVariable int id) {
+
+        if (!service.delete(id)) {
+            System.out.println(" Animal not deleted!");
+            return "redirect:/animal/list.html";
+        } else {
+            System.out.println("Animal is Deleted!");
+            return "redirect:/animal/list.html";
+        }
+    }
+
+    public Boolean delete(Animal animal){
+        throw new RuntimeException("Not implemented YET!");
+    }
+
+    public Boolean add(Animal animal){
+        throw new RuntimeException("Not implemented YET!");
+    }
+    public Boolean update(Animal animal){
+        throw new RuntimeException("Not implemented YET!");
     }
 
 }

@@ -9,12 +9,6 @@ public interface AnimalController {
     String findAll(Model model);
     String add(Model model);
     String create (Animal animal);
-
-    /** Implement this method and print the boolean outcome to the sout
-     *
-     *
-     * @return
-     */
     String delete (int id);
 
 } // The end of class...

@@ -8,9 +8,11 @@ import sa.site.lab.petstore.service.AnimalService;
 
 //@RestController
 //@RequestMapping("/animal")
+
 public class AnimalEndpoint {
     @Autowired
     private AnimalService service;
+
     @GetMapping
     public List<Animal> finsAll(){
         List<Animal> animals = service.findAll();

@@ -49,9 +49,24 @@ public class AnimalDaoDatabaseImpl implements AnimalDao {
     public void add(Animal animal) {
         System.out.println("AinmalDaoDatabaseImpl.add()");
         //  use Spring Data Repository access the Animal TABLE
-
         repository.save(animal);
     }
 
+    @Override
+    public boolean delete (int id){
+        System.out.println("AnimalDaoDatabaseImpl.add()");
+
+        Optional<Animal> result = repository.findById(id);
+        if (result.isPresent()) {
+            Animal animal=result.get();
+            repository.deleteById(id);
+            return true;
+
+        }
+        else {
+            return false;
+        }
+
+    }
 
 }

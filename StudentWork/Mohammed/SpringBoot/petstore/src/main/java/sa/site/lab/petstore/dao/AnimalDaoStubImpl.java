@@ -53,4 +53,9 @@ public class AnimalDaoStubImpl implements AnimalDao {
         animalMap.put(++conter, animal);
     }
 
+    @Override
+    public boolean delete(int id) {
+        return false;
+    }
+
 }
