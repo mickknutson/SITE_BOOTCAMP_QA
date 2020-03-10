@@ -29,16 +29,9 @@ header {
 
 .image-container {
     position: relative;
+    margin-top: -3%;
 }
 
-/*.image {*/
-/*    opacity: 1;*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    transition: .5s ease;*/
-/*    backface-visibility: hidden;*/
-/*}*/
 
 .middle {
     transition: .5s ease;
@@ -51,25 +44,23 @@ header {
     text-align: center;
 }
 
-.image-container:hover .image {
-    opacity: 0.3;
-}
 
 .image-container:hover .middle {
     opacity: 1;
 }
 
-
 .container{
     margin-top: 3%;
+    margin-left: 10%;
+
 }
 .card-body{
-    padding: 2% 2% 2%;
-    width: 50%;
+    width: 36%;
+    height: 60%;
     margin-left: 25%;
     border: 1px solid;
     border-color: #dddddd;
-
+    padding: 2%;
 
 }
 hr {
@@ -77,7 +68,7 @@ hr {
     border-color: #dddddd;
 }
 .row{
-    padding: 1%;
+    padding: 4%;
     display: inline;
 }
 
@@ -114,5 +105,30 @@ li a:hover {
 h4{
     color: #888888;
     margin-left: 20%;
-    margin-bottom: 2%;
+
+}
+
+.Empinfo{
+
+    height: 600px;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 5%;
+    text-align:center;
+}
+
+.info{
+    height: 3%;
+    width: 70%;
+    margin-top: 14px;
+    text-align: right;
+}
+
+label{
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    margin-right:15px;
+    float:left;
+
 }
