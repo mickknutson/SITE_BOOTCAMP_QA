@@ -44,13 +44,12 @@ public class EmployeeControllerImpl implements EmployeeController {
         return "redirect:/ems/employeesList";
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     @Override
     public String add(Model model) {
         Employee employee = new Employee();
         model.addAttribute("employee",employee);
-        // TODO : ADD HTML PAGE !!
-        return "";
+        return "addPage";
     }
 
     @Override
