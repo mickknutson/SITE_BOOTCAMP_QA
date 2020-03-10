@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
-import javax.persistence.PostUpdate;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
