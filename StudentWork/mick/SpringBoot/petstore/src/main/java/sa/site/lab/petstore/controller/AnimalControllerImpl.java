@@ -14,6 +14,15 @@ import javax.validation.Valid;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * URI, METHOD
+ *
+ * URI for entire Class is:
+ * http://localhost:8080/animal
+ *
+ * return
+ * MIME: text/html
+ */
 @Controller
 @RequestMapping("/animal")
 public class AnimalControllerImpl implements AnimalController{
@@ -74,6 +83,7 @@ public class AnimalControllerImpl implements AnimalController{
         return "add";
     }
 
+    // TODO: Set response status code to 201
     @PostMapping("new")
     @Override
     public String create(Animal animal){
@@ -83,6 +93,16 @@ public class AnimalControllerImpl implements AnimalController{
 
         // NOTE: Add validated Animal to Database
         service.add(animal);
+
+        return "redirect:/animal/list.html";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id){
+        System.out.println("* AnimalController.delete() - " + id);
+
+        //FIXME: Implement:
+        // service.delete(id);
 
         return "redirect:/animal/list.html";
     }
