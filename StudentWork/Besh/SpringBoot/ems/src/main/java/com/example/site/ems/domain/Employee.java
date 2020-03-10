@@ -1,8 +1,6 @@
 package com.example.site.ems.domain;
 
-
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Date;

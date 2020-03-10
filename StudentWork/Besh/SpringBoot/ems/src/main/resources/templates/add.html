@@ -11,70 +11,74 @@
       th:action="@{/employee/create}"
       th:object="${employee}" method="post">
     <fieldset>
-        <table>
+        <table style = "width:25%;border: 1px solid black">
             <tr>
-                <th>
+                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="employeeId">Employee Id</label>
                 </th>
-                <td>
+                <td style = "width:25%">
                     <input th:field = "*{employeeId}" id="employeeId"/>
                 </td>
             </tr>
             <tr>
-                <th>
+                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="firstName">First Name</label>
                 </th>
-                <td>
+                <td style = "width:25%">
                     <input th:field = "*{firstName}" id="firstName"/>
                 </td>
             </tr>
             <tr>
-            <th>
+            <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                 <label for="lastName">Last Name</label>
             </th>
-            <td>
+            <td style = "width:25%">
                 <input th:field = "*{lastName}" id="lastName"/>
             </td>
         </tr>
             <tr>
-                <th>
+                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="hireDate">Hire Date</label>
                 </th>
-                <td>
+                <td style = "width:25%">
                     <input type="date" th:field = "*{hireDate}" id="hireDate"/>
                 </td>
             </tr>
             <tr>
-                <th>
+                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="email">Email</label>
                 </th>
-                <td>
+                <td style = "width:25%">
                     <input type="email" th:field = "*{email}" id="email"/>
                 </td>
             </tr>
             <tr>
-                <th>
+                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="department">Department</label>
                 </th>
-                <td>
+                <td style = "width:25%">
                     <input th:field = "*{department}" id="department"/>
                 </td>
             </tr>
             <tr>
-                <th>
+                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
                     <label for="salary">Salary</label>
                 </th>
-                <td>
+                <td style = "width:25%">
                     <input th:field = "*{salary}" id="salary"/>
                 </td>
             </tr>
             <tr>
                 <th colspan="2">
-                    <button type="submit" id="submit">Create</button>
+                    <button style = "width:25%;border: 1px solid black; background-color: #FA8072"; type="submit" id="submit">Create</button>
                 </th>
             </tr>
         </table>
     </fieldset>
 </form>
+<style>
+body {background-color: #D8BFD8;}
+h1 {color:blue;}
+</style>
 </body>
 </html>

@@ -13,26 +13,26 @@
         <th>Last Name</th>
         <th>Hire Date</th>
         <th>Email</th>
-        <th>department</th>
+        <th>Department</th>
         <th>Salary</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td th:text="${employee.employeeId}">Bob</td>
-        <td th:text="${employee.firstName}">Cat</td>
+        <td th:text="${employee.employeeId">Bob</td>
+        <td th:text="${employee.firstName">Cat</td>
         <td th:text="${employee.lastName}">Meow</td>
-        <td th:text="${employee.hireDate}">Bob</td>
-        <td th:text="${employee.email}">Cat</td>
+        <td th:text="${employee.hireDate">Bob</td>
+        <td th:text="${employee.email">Cat</td>
         <td th:text="${employee.department}">Meow</td>
-        <td th:text="${employee.salary}">Cat</td>
-
-            <a th:href="@{'/employee/delete/{id}'(id=${employee.id})}"
+        <td th:text="${employee.salary}">Meow</td>
+        <td>
+            <a th:href="@{'/employee/delete/{id}'(id=${employee.employeeId})}"
                th:text="DELETE"></a>
         </td>
     </tr>
     </tbody>
 </table>
-<h3> <a href="/employee/list">List of Employees</a> </h3>
+<h3> <a href="/employee/list.html">List of Employees</a> </h3>
 </body>
 </html>
