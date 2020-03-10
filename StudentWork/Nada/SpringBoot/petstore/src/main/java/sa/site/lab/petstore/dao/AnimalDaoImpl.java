@@ -55,5 +55,17 @@ private int counter=0;
          //   throw new RuntimeException(("Not Available yet"));
             animalMap.put(++counter,animal);
         }
+
+
+        @Override
+        public boolean delete (int id){
+            if(animalMap.containsKey(id)){
+                animalMap.remove(id);
+                return true;}
+            else{
+                return false;
+        }
+
+    }
     }
 

@@ -32,5 +32,13 @@ public class AnimalEndpointImpl{
         System.out.println("REST Animals: " + animals);
         return animals;
     }
-
+    public Boolean delete (int id){
+        throw new RuntimeException("Not Implemented Yet");
+    }
+    public Boolean add (Animal animal){
+        throw new RuntimeException("Not Implemented Yet");
+    }
+    public Boolean update (Animal animal){
+        throw new RuntimeException("Not Implemented Yet");
+    }
 }

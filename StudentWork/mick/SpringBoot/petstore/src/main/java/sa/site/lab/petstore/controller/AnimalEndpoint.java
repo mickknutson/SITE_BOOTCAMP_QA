@@ -9,8 +9,8 @@ import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/animal")
+//@RestController
+//@RequestMapping("/animal")
 public class AnimalEndpoint {
 
     @Autowired

@@ -1,11 +1,11 @@
 <html xmlns:th="http://thymeleaf.org">
-<html xmlns:h1="http://thymeleaf.org">
 
 
 <head>
     <title> Welcome to the PetStore!</title>
 </head>
 
+<body>
 
 <h1>Animal
 <b>Information </b></h1>
@@ -25,8 +25,8 @@
         <td th:text="${animal.getType()}">cat</td>
         <td th:text="${animal.getSound()}">meow</td>
         <td>
-            <a th:href="@{'/delete/{id}'(id=${delete.id})}"
-               th:text="Delete ${animal.name}"></a>
+            <a th:href="@{'/animal/delete/{id}'(id=${animal.id})}"
+               th:text="Delete"></a>
         </td>
     </tr>
     </tbody>
@@ -34,5 +34,6 @@
 <h3><a href="/">Home</a></h3>
 <h3><a href="/animal/List.html">List</a></h3>
 
-
+</body>
+</html>
 

@@ -18,10 +18,14 @@ public class AnimalEndPointImpl {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.ALREADY_REPORTED)
-    public String findById(@PathVariable int id, Model model) {
+    public String findById(@PathVariable int id,
+                           Model model) {
 //        Animal animal = service.findById(id);
 //        model.addAttribute("animal" , animal);
-        return service.findById(id).toString();
+        if (service.findById(id) == null)
+            return "";
+        else
+            return service.findById(id).toString();
     }
 
     @GetMapping
@@ -29,5 +33,22 @@ public class AnimalEndPointImpl {
         List<Animal> animalList = service.findAll();
        return animalList;
     }
-    
+
+    @GetMapping("/add")
+    public String add(Model model) {
+        Animal animal = new Animal();
+        model.addAttribute("animal" , animal);
+        return "add";
+    }
+
+    @PostMapping("/create")
+    public String create (Animal animal){
+        System.out.println(animal);
+        // FIXME : NEED VALIDATION!!
+
+        // ADD VALIDATED Animal to Database !
+        service.add(animal);
+        return"redirect:api/animal/list.html";
+    }
+
 }
