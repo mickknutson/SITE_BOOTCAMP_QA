@@ -1,8 +1,12 @@
 package sa.site.lab.petstore.dao;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import sa.site.lab.petstore.domain.Animal;
+import sa.site.lab.petstore.service.AnimalService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,14 +19,14 @@ public class AnimalDaoImpl implements AnimalDao {
     Animal cat2 = new Animal("Caramella");
     Animal dog1 = new Animal("Lusy");
 
+
+
     //LAB: Create Map of Animals
-    private Map<Integer, Animal> animalMap;
+    Map<Integer, Animal> animalMap = new HashMap<>();
 
     private int counter = 0;
 
     public AnimalDaoImpl() {
-
-        animalMap = new HashMap<>();
 
         animalMap.put(++counter, cat1);
         animalMap.put(++counter, cat2);
@@ -66,4 +70,16 @@ public class AnimalDaoImpl implements AnimalDao {
         System.out.println("*  AnimalDaoImpl.add() ");
         animalMap.put(++counter, animal);
     }
+
+    @Override
+    public boolean delete (int id){
+        if(animalMap.containsKey(id)){
+            animalMap.remove(id);
+            return true;}
+        else{
+            return false;
+        }
+
+    }
+
 }

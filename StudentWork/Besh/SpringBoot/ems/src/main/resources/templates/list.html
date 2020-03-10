@@ -1,0 +1,68 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title> Welcome to the EMS!</title>
+</head>
+
+
+<h1>List of Employees</h1>
+<h2 style = "color: #800000">Employee...</h2>
+
+<table style = "width:50%;border: 1px solid black">
+    <thead>
+    <tr>
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">Link</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">Employee ID</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">First Name</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">Last Name</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">Hire Date</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">Department</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">Salary</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">DELETE</th>
+
+        <th style = "width:20%;border: 1px solid black; background-color: #2F4F4F">UPDATE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${allEmployees}">
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1">
+            <a th:href="@{'/employee/{id}'(id=${employee.employeeId})}"
+               th:text="${employee.firstName}+' '+${employee.lastName}">Bob</a>
+        </td>
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1"; th:text="${employee.getEmployeeId()}">Bob</td>
+
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1"; th:text="${employee.getFirstName()}">Bob</td>
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1"; th:text="${employee.getLastName()}">cat</td>
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1"; th:text="${employee.getHireDate()}">meow</td>
+
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1"; th:text="${employee.getDepartment()}">meow</td>
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1"; th:text="${employee.getSalary()}">meow</td>
+
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1">
+            <a th:href="@{'/employee/delete/{id}'(id=${employee.employeeId})}"
+               th:text="DELETE"></a>
+        </td>
+        <td style = "width:20%;border: 1px solid black; text-align:center; background-color: #f1f1c1">
+            <a th:href="@{'/employee/update/{id}'(id=${employee.employeeId})}"
+               th:text="UPDATE"></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</html>
+</title>
+</head>
+<style>
+body {background-color: powderblue;}
+h1 {color:blue;}
+p {color: red;}
+</style>
+</html>
