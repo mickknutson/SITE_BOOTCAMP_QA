@@ -1,0 +1,39 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title> Welcome to the EMS!</title>
+</head>
+
+
+<h1>List of Employees</h1>
+<b>Employees...</b>
+
+<table style = "width:20%;border: 1px solid black">
+    <thead>
+    <tr>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Employee Id</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">First Name</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Last Name</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Hire Date</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Email</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Department</th>
+        <th style = "width:20%;border: 1px solid black; background-color: #f1f1c1">Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${allEmployees}">
+        <td style = "width:20%;border: 1px solid black; text-align:center">
+            <a th:href="@{'/employee/{id}'(id=${employee.id})}"
+               th:text="${employee.name}">Bob</a>
+        </td>
+        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${employee.type}">cat</td>
+        <td style = "width:20%;border: 1px solid black; text-align:center"; th:text="${employee.sound}">meow</td>
+    </tr>
+    </tbody>
+</table>
+<style>
+body {background-color: powderblue;}
+h1 {color:blue;}
+p {color: red;}
+</style>
+</html>
