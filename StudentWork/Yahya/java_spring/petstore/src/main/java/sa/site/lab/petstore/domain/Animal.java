@@ -3,41 +3,41 @@ package sa.site.lab.petstore.domain;
 
 import javax.persistence.*;
 
+
 @Entity
-public class   Animal {
+public class Animal {
 
-
+    //Map field to BD columns;
+    // Primary KEY
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
     private String name;
+
     @Column
     private String type;
+
     @Column
     private String sound;
 
+    public Animal(){}
 
-
-    public  Animal() {}
-
-    public Animal(String name )
-    {
+    public Animal(String name){
         this.name = name;
     }
 
-
-
-
+    // These are behaviors ..
+    // TODO : ignore these methods in JPA:
     @Transient
-    public void eat()
-    {
-        throw new RuntimeException("not yet Implemented");
+    public void eat() {
+        throw new RuntimeException("Not yet Implemented!");
     }
+
     @Transient
-    public void talk(String name) {
-      throw new RuntimeException("not yet Implemented");
+    public void talk(String voice) {
+        throw new RuntimeException("Not yet Implemented!");
     }
 
     @Override
@@ -50,7 +50,6 @@ public class   Animal {
                 '}';
     }
 
-    //------------------------------Setter And Getter
     public int getId() {
         return id;
     }
@@ -82,4 +81,5 @@ public class   Animal {
     public void setSound(String sound) {
         this.sound = sound;
     }
-} // The End...
+
+} // End of Class ..

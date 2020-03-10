@@ -1,7 +1,11 @@
 package com.example.site.ems.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
+
+
 @Entity
 public class Employee {
     @Id
@@ -10,6 +14,8 @@ public class Employee {
     @Column
     private String firstName;
     private String lastName;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat( pattern = "yyyy-MM-dd")
     private Date date;
     private String email;
     private String department;

@@ -9,42 +9,48 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class AnimalDaoDatabaseImpl implements AnimalDao{
+public class AnimalDaoDatabaseImpl  implements AnimalDao {
+
     @Autowired
     private AnimalRepository repository;
 
-    // TODO: Must implement
-    public Animal findById(int id){
-        System.out.println("* AnimalDaoDatabaseImpl.findPet: " + id);
+    // TODO : MUST implement !
+    public Animal findById(int id) {
+        System.out.println("## AniamlDaoDatabaseImpl.findPet: " + id);
+        //return repository.findById(id).get(); <--- Dose not WORK!
         Optional<Animal> result = repository.findById(id);
-        if (result.isPresent()) {
+        if (result.isPresent()){
             return result.get();
-        }else {
-            return  null;
+        } else {
+            return null;
         }
     }
 
-    // TODO: Must implement
-    public List<Animal> findAll(){
-        System.out.println("* AnimalDaoDatabaseImpl.findAll()");
+    // TODO : MUST implement !
+    public List<Animal> findAll() {
+        System.out.println("## AniamlDaoDatabaseImpl.findAll: ");
         Iterable<Animal> result = repository.findAll();
-
         List<Animal> animals = new ArrayList<>();
-
-        for(Animal animal: result)
-        {
+        for( Animal animal: result){
             animals.add(animal);
-
         }
-
-        return  animals;
+        return animals;
     }
 
-    // TODO: Must implement
-    public void add(Animal animal){
-        System.out.println("* AnimalDaoDatabaseImpl.add()");
-        //TODO: use spring Date Repository to access the animal Table
+    // TODO : MUST implement !
+    public void add(Animal animal) {
+        System.out.println("AnimalDaoDatabaseImpl.add()");
         repository.save(animal);
     }
 
-} // The End...
+    @Override
+    public boolean delete(int id) {
+        Animal animal = this.findById(id);
+        if (animal == null) {
+            return false;
+        } else {
+            repository.delete(animal);
+            return true;
+        }
+    }
+} // end class ...

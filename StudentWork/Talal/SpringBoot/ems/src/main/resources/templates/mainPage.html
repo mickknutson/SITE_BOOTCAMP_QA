@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+<head>
+    <title>Employee Mangement System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div class="main-block">
+    <h2>Employee Mangement System</h2>
+    <form action="/">
+
+
+
+
+        <table class="Table" style="width:100%">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Hire Date</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="employee: ${employeeList}">
+                <td th:text="${employee.id}">Id</td>
+                <td th:text="${employee.firstName}">firstName</td>
+                <td th:text="${employee.lastName}">lastName</td>
+                <td th:text="${employee.email}">email</td>
+                <td th:text="${employee.department}">Department</td>
+                <td th:text="${employee.salary}">Salary</td>
+                <td th:text="${employee.date}">Date</td>
+                <td>
+                    <a th:href="@{'/ems/delete/{id}' (id=${employee.id})}"
+                       th:text="delete">DELETE</a>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </form>
+    <button class="but" type="submit" href="EMS_Project.html" target="_blank">Add</button>
+    <button class="but" type="submit" href="EMS_Project.html" target="_blank">Update</button>
+</div>
+</body>
+</html>
