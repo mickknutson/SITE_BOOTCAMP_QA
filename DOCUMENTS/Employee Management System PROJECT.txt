@@ -1,1 +1,51 @@
+
 Employee Management System
+==
+
+TASKs:
+
+1. Create Presentation for EMS project and include images.
+
+2. README.md completed (in your HOME DIR: "./StrudentWork/[your_DIR]/README.md")
+3. Build base Spring boot project from Initializr
+	a. Spring boot project in Java.
+	b. group is 'com.example.site'
+	c. artifact is 'ems'
+	d. Dependencies needed to builds a 3-tiered boot application.
+	e. Using H2 database
+	f. save the project ZIP file into your home directory
+
+
+4. Build CRUD functionality in Thymeleaf-based web app.
+5. Build CRUD functionality in REST-based web app.
+6. BASED on Domain:
+
+	Employee
+	--------
+	employeeId
+	firstName
+	lastName
+	hireDate
+	email
+	department
+	salary
+
+7. Must have 5++ Employees with valid data in database at startup time.
+
+
+
+Design criteria:
+* Proper use of cameCase
+* Only valid code that is USED.
+* Add GIT TAG to code snapshots in working state.
+* Make HTML & CSS code look presentable.
+* Verifiable with the H2 Admin console
+
+
+
+Work together in your teams using pair programming.
+
+
+
+
+
