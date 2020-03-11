@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to EMS!</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+
 </head>
+
 <body>
 
-<h2><a href="./h2-console">H2 Admin Console</a></h2>
+<div id="main">
+    <div id="header"> <a href="#" class="logo"><img src="../static/images/logo.gif" th:src="@{/images/logo.gif}" width="101" height="29" alt="" /></a>
+        <ul id="top-navigation">
+            <li class="active"><span><span>Homepage</span></span></li>
+            <li><span><span><a href="/employee/list">Employees</a></span></span></li>
+            <li><span><span><a href="/employee/add">Add Employee</a></span></span></li>
+            <li><span><span><a href="./h2-console">H2 Admin Console</a></span></span></li>
+            <li><span><span><a href="">API</a></span></span></li>
+        </ul>
+    </div>
+    <div id="middle">
 
-<h2><a href="/employee/list">List of employees</a></h2>
+        <div id="center-column">
 
-<h2><a href="/employee/add">Add an employee</a></h2>
+            <br>
+
+
+
+        </div>
+        <div id="right-column"> <strong class="h">INFO</strong>
+            <div class="box">Detect and eliminate viruses and Trojan horses, even new and unknown ones. Detect and eliminate viruses and Trojan horses, even new and </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+</div>
 
 </body>
 </html>

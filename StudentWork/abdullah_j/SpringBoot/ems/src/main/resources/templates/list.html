@@ -2,56 +2,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Employees List</title>
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
 </head>
 <body>
 
-<h1>List of Employees</h1>
-
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Hire Date</th>
-        <th>Email</th>
-        <th>Department</th>
-        <th>Salary</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <tr th:each="employee: ${allEmployees}">
+<div id="main">
+    <div id="header"><a href="#" class="logo"><img src="../static/images/logo.gif" th:src="@{/images/logo.gif}"
+                                                   width="101" height="29" alt=""/></a>
+        <ul id="top-navigation">
+            <li class="active"><span><span>Homepage</span></span></li>
+            <li><span><span><a href="/employee/list">Employees</a></span></span></li>
+            <li><span><span><a href="/employee/add">Add Employee</a></span></span></li>
+            <li><span><span><a href="./h2-console">H2 Admin Console</a></span></span></li>
+            <li><span><span><a href="">API</a></span></span></li>
+        </ul>
+    </div>
+    <div id="middle">
 
 
-        <td>
-            <a th:href="@{'/employee/{id}' (id=${employee.employeeId})}"
-               th:text="${employee.employeeId}">00000</a>
-        </td>
+        <div id="center-column">
+            <div class="top-bar"><a href="/employee/add" class="button">ADD NEW </a>
+                <h1>Employees</h1>
+                <div class="breadcrumbs"><a href="#">Homepage</a> / <a href="#">Employees</a></div>
+            </div>
+            <br/>
 
-        <td th:text="${employee.firstName} +' '+ ${employee.lastName}">name</td>
-        <td th:text="${employee.hireDate}">hireDate</td>
-        <td th:text="${employee.email}">email</td>
-        <td th:text="${employee.department}">department</td>
-        <td th:text="${employee.salary}">0.0</td>
+            <div class="table"><img src="../static/images/bg-th-left.gif" th:src="@{/images/bg-th-left.gif}" width="8"
+                                    height="7" alt="" class="left"/> <img
+                    src="../static/images/bg-th-right.gif" th:src="@{/images/bg-th-right.gif}" width="7" height="7"
+                    alt="" class="right"/>
+                <table class="listing" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="first" width="177">Id</th>
+                        <th>Name</th>
+                        <th>Hire Date</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Update</th>
+                        <th class="last">Delete</th>
+                    </tr>
 
-        <td>
-            <a th:href="@{'/employee/delete/{id}' (id=${employee.employeeId})}"
-               th:text="DELETE">DELETE</a>
-        </td>
+                    <tr th:each="employee: ${allEmployees}">
+                        <td class="first style1"><a th:href="@{'/employee/{id}' (id=${employee.employeeId})}"
+                                                    th:text="${employee.employeeId}">00000</a></td>
 
-        <td>
-            <a th:href="@{'/employee/update/{id}' (id=${employee.employeeId})}"
-               th:text="UPDATE">UPDATE</a>
-        </td>
+                        <td th:text="${employee.firstName} +' '+ ${employee.lastName}">name</td>
 
-    </tr>
-    </tbody>
-</table>
+                        <td th:text="${employee.hireDate}">hireDate</td>
+
+                        <td th:text="${employee.email}">email</td>
+
+                        <td th:text="${employee.department}">department</td>
+
+                        <td th:text="${employee.salary}">0.0</td>
 
 
-<h3><a href="/">Home</a></h3>
+                        <td><a th:href="@{'/employee/update/{id}' (id=${employee.employeeId})}">
+                            <img src="../static/images/edit-icon.gif" th:src="@{/images/edit-icon.gif}" width="16"
+                                 height="16" alt="save"/>
+                        </a></td>
 
+                        <td class="last">
+                            <a th:href="@{'/employee/delete/{id}' (id=${employee.employeeId})}">
+                                <img src="../static/images/hr.gif" th:src="@{/images/hr.gif}" width="16" height="16"
+                                     alt="add"/>
+                            </a></td>
+
+                    </tr>
+
+                </table>
+                <div class="select"><strong>Other Pages: </strong>
+                    <select>
+                        <option>1</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
 
 </body>
 </html>
