@@ -15,7 +15,7 @@
           action="#"
           th:action="@{/ems/update}"
           th:object="${employee}"
-          method="put">
+          method="post">
         <div class="info">
             <input type="hidden" th:field="*{id}"  th:value="${employee.id}" id="id" />
             <input th:field="*{firstName}" placeholder="First Name" th:value="${employee.firstName}" id="firstName" required/>
@@ -35,7 +35,7 @@
 <!--                <option value="OPD">OPD</option>-->
 
 <!--            </select>-->
-            <button class="button" type="submit">Add</button>
+            <button class="button" type="submit">Update</button>
 
         </div>
 
