@@ -8,9 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 @Controller
+@RequestMapping("/employees")
 public class EmployeeControllerImpl implements EmployeeController {
     @Autowired
     private EmplpyeeService service;
@@ -35,7 +37,7 @@ public class EmployeeControllerImpl implements EmployeeController {
         List<Employee> allemployees = service.findAll();
         // add the animals object to the view
         model.addAttribute("allemployees",allemployees);
-        return "/list";
+        return "/employees";
     }
 
 
