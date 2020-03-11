@@ -5,74 +5,73 @@ import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping("/employee")
+@RequestMapping("/employees/")
 public class EmployeeControllerImpl implements EmployeeController {
 
-
     @Autowired
-    private EmployeeService service;
+    private EmployeeService employeeService;
 
-//    private Animal animal;
-//    List<AnimalController>
+    @GetMapping("new")
+    public String gotoAdd(Employee employee) {
 
-
-    @GetMapping("/{id}")
-    @Override
-    public String findById(@PathVariable int id , Model model) {
-        System.out.println("* In Controller findById:* " +id);
-        Employee employee = service.findById(id);
-        model.addAttribute("employee" , employee);
-        return "employee";
-
+        //employeeService.add(employee);
+        return "add-emp";
     }
 
-    /*
-     * accept get mapping on:
-     * http://localhsot:8080/list.html
-     *
-     * html html html html html html nader from the html page
-     *
-     * */
+    @GetMapping("list")
+    public String listAll(Model model) {
+        List<Employee> employees = employeeService.findAll();
+        System.out.println(employees.toString());
+        model.addAttribute("employees" , employees);
 
-    @GetMapping("/list.html")
-    @Override
-    public String findAll(Model model) {
-        List<Employee> employeeList = service.findAll();
-
-        model.addAttribute("allEmployees" , employeeList);
-        return "list"; // send back index.html
+        return "index";
     }
 
-    @Override
-    @GetMapping("/add.html")
-    public String add(Model model) {
-        model.addAttribute(new Employee());
-        return "add";
+    @PostMapping("add")
+    public String add(Employee employee, BindingResult result) {
+        if (result.hasErrors()) {
+            return "add-emp";
+        }
+        employeeService.add(employee);
+        return "redirect:list";
     }
 
-    @PostMapping("new")
-    @Override
-    public String create(Employee employee){
-        //FIXME: add validation here
-        //NOTE: add validated animal from the DB
-        service.add(employee);
-
-        return "redirect:/employee/list.html";
-
+    @GetMapping("edit/{id}")
+    public String gotoUpdate(@PathVariable("id") int id, Model model) {
+        Employee employee = employeeService.findById(id);
+        model.addAttribute("employee", employee);
+        return "update-employee";
     }
 
-    @GetMapping("/delete/{id}")
-    @Override
-    public String delete(@PathVariable int id) {
-        service.delete(id);
-        return "redirect:/employee/list.html";
+    @PostMapping("update/{id}")
+    public String update(@PathVariable("id") int id,
+                                Employee employee, BindingResult result,
+                                Model model) {
+        if (result.hasErrors()) {
+            employee.setId(id);
+            return "update-employee";
+        }
+
+        employeeService.add(employee);
+        model.addAttribute("employees", employeeService.findAll());
+        return "index";
+    }
+
+    @GetMapping("delete/{id}")
+    public String delete(@PathVariable("id") int id, Model model) {
+        //Employee employee = employeeService.findById(id);
+        employeeService.delete(id);
+        model.addAttribute("employees", employeeService.findAll());
+        return "index";
     }
 }

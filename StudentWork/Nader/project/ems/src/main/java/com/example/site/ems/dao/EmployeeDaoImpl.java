@@ -35,21 +35,17 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public List<Employee> findAll() {
         System.out.println("## EmployeeDaoDatabaseImpl findPet()");
         Iterable<Employee> result = repository.findAll();
-        List<Employee> animals = new ArrayList<>();
-        for (Employee animal : result){
-            //System.out.println("## animal: " + animal.getName());
-            animals.add(animal);
+        List<Employee> employees = new ArrayList<>();
+        for (Employee employee : result){
+            employees.add(employee);
         }
-        return animals;
+        return employees;
     }
 
-
-    //TODO: Must implement:
-
     @Override
-    public void add(Employee animal) {
+    public void add(Employee employee) {
         System.out.println("* EmployeeDatabaseImpl.add()");
-        repository.save(animal);
+        repository.save(employee);
     }
 
     @Override

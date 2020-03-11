@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Update Employee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+	<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container my-5">
+	<h3> Update Employee</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-8">
+					<form action="#"
+						th:action="@{/employees/update/{id}(id=${employee.id})}"
+						th:object="${employee}" method="post">
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="a_employeeId" class="col-form-label">Employee ID</label> <input
+									type="text" th:field="*{a_employeeId}" class="form-control" id="a_employeeId"
+									placeholder="enter employee ID"> <span
+									th:if="${#fields.hasErrors('a_employeeId')}" th:errors="*{a_employeeId}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="firstName" class="col-form-label">First Name</label> <input
+									type="text" th:field="*{a_firstName}" class="form-control" id="firstName"
+									placeholder="enter first name"> <span
+									th:if="${#fields.hasErrors('a_firstName')}" th:errors="*{a_firstName}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Last Name</label> <input
+									type="text" th:field="*{b_lastName}" class="form-control" id="lastName"
+									placeholder="enter last name"> <span
+									th:if="${#fields.hasErrors('b_lastName')}" th:errors="*{b_lastName}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="email" class="col-form-label">Email</label> <input
+									type="text" th:field="*{email}" class="form-control"
+									id="email" placeholder="enter email"> <span
+									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="department" class="col-form-label">Choose Department</label>
+								<select id="department" class="custom-select" th:field="*{department}">
+									<option th:value="'None'" th:text="'Choose department'"></option>
+									<option th:value="'Quality assurance'" th:text="'Quality assurance'"></option>
+									<option th:value="'Crisis Management'" th:text="'Crisis Management'"></option>
+									<option th:value="'Market Research'" th:text="'Market Research'"></option>
+									<option th:value="'Promotion Decisions'" th:text="'Promotion Decisions'"></option>
+									<option th:value="'Finance Department'" th:text="'Finance Department'"></option>
+									<option th:value="'Sanitation Department'" th:text="'Sanitation Department'"></option>
+									<option th:value="'Telecommunication Department'" th:text="'Telecommunication Department'"></option>
+									<option th:value="'Another Department'" th:text="'Another Department'"></option>
+									<option th:value="'The Last Department'" th:text="'The Last Department'"></option>
+
+								</select>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="hireDate" class="col-form-label">Hiring date</label> <input
+									type="date" th:field="*{hireDate}" class="form-control"
+									id="hireDate" placeholder="enter hiring date"> <span
+									th:if="${#fields.hasErrors('hireDate')}" th:errors="hireDate"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="salary" class="col-form-label">Salary</label> <input
+									type="text" th:field="*{salary}" class="form-control"
+									id="salary" placeholder="enter hiring date"> <span
+									th:if="${#fields.hasErrors('salary')}" th:errors="salary"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<input type="submit" class="btn btn-primary"
+									value="Update Employee">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
