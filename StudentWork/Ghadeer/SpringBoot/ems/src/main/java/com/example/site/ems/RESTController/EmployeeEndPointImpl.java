@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employee")//uri for the entire this class
+@RequestMapping("/api/employee")
 public class EmployeeEndPointImpl implements EmployeeEndPoint {
     @Autowired
     private EmployeeService service;
