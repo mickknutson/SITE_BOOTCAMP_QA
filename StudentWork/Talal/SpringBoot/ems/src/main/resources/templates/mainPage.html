@@ -26,7 +26,11 @@
 
             <tbody>
             <tr th:each="employee: ${employeeList}">
-                <td th:text="${employee.id}">Id</td>
+                <td>
+                    <a th:href="@{'/ems/updateForm/{id}' (id=${employee.id})}"
+                       th:text="${employee.id}">
+                    </a>
+                    Id</td>
                 <td th:text="${employee.firstName}">firstName</td>
                 <td th:text="${employee.lastName}">lastName</td>
                 <td th:text="${employee.email}">email</td>

@@ -5,10 +5,7 @@ import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -53,9 +50,23 @@ public class EmployeeControllerImpl implements EmployeeController {
         return "addPage";
     }
 
+    @GetMapping("updateForm/{id}")
+    public String updateForm (@PathVariable int id, Model model){
+        Employee employee = employeeService.findById(id);
+        model.addAttribute("employee",employee);
+        return"updatePage";
+    }
+    @PutMapping("/update")
     @Override
     public String update(Employee employee) {
-        return null;
+        employeeService.update(employee.getId(),
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getDepartment(),
+                employee.getEmail(),
+                employee.getSalary(),
+                employee.getDate());
+        return "redirect:/ems/employeesList";
     }
 
     @GetMapping("/delete/{id}")
