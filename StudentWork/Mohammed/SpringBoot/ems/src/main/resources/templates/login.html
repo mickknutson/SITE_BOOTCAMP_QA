@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+<head>
+    <title>Empolyee Mangment System</title>
+
+    <link th:href="@{/login.css}" href="/style.css" rel="stylesheet"  type="text/css" >
+
+
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <img th:src="@{/logo.png}" href="/logo.png" alt="our logo" >
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <form action="/ems/goToList"
+            method="post">
+
+                <h1>Login Form</h1>
+                <div class="formcontainer">
+
+                    <hr/>
+
+                    <div class="container">
+                        <label><strong>Username</strong></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label><strong>Password</strong></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                    </div>
+
+                    <button type="submit">Login</button>
+                    <div class="container" style="background-color: #eee">
+                        <label style="padding-left: 15px">
+                            <input type="checkbox"  checked="checked" name="remember"> Remember me
+                        </label>
+
+            <span class="psw"><a href="#"> Forgot password?</a></span>
+                    </div>
+        </td>
+    </tr>
+    </form>
+
+</table>
+</body>
+</html>
