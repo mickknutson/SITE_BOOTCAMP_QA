@@ -1,20 +1,10 @@
-<style>
-*{
-        background-color: #E8f8f5;
-        color : #468499;
 
-
-}
-span {
-    font-weight:bold;
-    color:#133358;
-}
-</style>
 # Employee Management System (EMS)
 
-A very simple Full-Stack Web Application using the <span>3-tire Architecture</span> demonestrating the Full <span>CRUD</span> Operations With Both <span>RESTful</span> services and a <span>Web Interface</span>. 
+A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful services** and a **Web Interface**. 
 
-## Dev-Team (BugHunters) <img src="./ems/target/classes/static/img/BUG_HUNTERS.png" height="300px" width="300px">
+## Dev-Team (BugHunters) 
+<img src="./ems/src/main/resources/static/img/BUG_HUNTERS.png" height="300px" width="300px">
 ### Members :
 * [Haifa Alassaf](https://github.com/haifassaf)
 * [Nada Aljohani](https://github.com/Nada-hs)
@@ -23,15 +13,14 @@ A very simple Full-Stack Web Application using the <span>3-tire Architecture</sp
 
 ## Description
 
-Lets the user see a list of all employees available in the database <span>(H2)</span> . Allowing the user to interact with the data either by <span>adding</span> , <span>deleteing</span> or <span>updating</span> the information of any employee.
+Lets the user see a list of all employees available in the database **(H2)** . Allowing the user to interact with the data either by **adding** , **deleteing** or **updating** the information of any employee.
 
 ## UML Diagram
 ![Diagram](./extra/3-tier.png)
 
 ### Technologies Used
 
-```
-
+```diff
 - Java
 - SpringBoot
 - HTML&CSS
@@ -40,15 +29,12 @@ Lets the user see a list of all employees available in the database <span>(H2)</
 - SQL
 - H2
 - JDBC
-
 ```
 ### Tools Used
 
-```
-
-- IntelliJ Idea
-- VsCode
-
+```diff
++ IntelliJ Idea
++ VsCode
 ```
 
 
@@ -64,7 +50,7 @@ Lets the user see a list of all employees available in the database <span>(H2)</
 
 ### Problem-Solving Strategy
 
-* lots and lots of googling and reading official documentation.
+* lots and lots of **googling** and reading official **documentation**.
 * Using the refrences supplied to us by our instructor.
   
 
@@ -74,20 +60,19 @@ Lets the user see a list of all employees available in the database <span>(H2)</
 ### Sample Pictures
 
 #### Home Page
-![]()
+<img src="./extra/home.png" height="300px" width="600px">
 
-#### Managment Page
-![]()
+#### Employees Page
+<img src="./extra/allemp.png" height="300px" width="600px">
 
 #### Single Employee Information Page
-![]()
-
+<img src="./extra/emp.png" height="300px" width="600px">
 
 
 ---
 
 ## Acknowledgments
 
-- SITE (<span>Saudi Information Technology Company</span>) 
-- <span>KnowledgeHut</span>
+* Saudi Information Technology Company (**SITE**)
+* KnowledgeHut
 
