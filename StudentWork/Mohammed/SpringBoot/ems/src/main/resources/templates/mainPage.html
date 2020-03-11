@@ -28,7 +28,7 @@
             <tr th:each="employee: ${employeeList}">
                 <td>
                     <a th:href="@{'/ems/updateForm/{id}' (id=${employee.id})}"
-                       th:text="${employee.id}">
+                       th:text="${employee.employeeId}">
                     </a>
                 </td>
                 <td th:text="${employee.firstName}">firstName</td>

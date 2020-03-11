@@ -18,6 +18,8 @@
           method="post">
         <div class="info">
             <input type="hidden" th:field="*{id}"  th:value="${employee.id}" id="id" />
+
+            <input th:field="*{employeeId}" placeholder="Employee ID" th:value="${employee.employeeId}" id="employeeId" required/>
             <input th:field="*{firstName}" placeholder="First Name" th:value="${employee.firstName}" id="firstName" required/>
             <input th:field= "*{lastName}" placeholder="Last Name" th:value="${employee.lastName}" id="lastName" required/>
             <input th:field= "*{email}" placeholder="Email" th:value="${employee.email}" id="email" required/>
