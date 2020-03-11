@@ -15,6 +15,16 @@ public class EmployeeControllerImpl implements EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @PostMapping("/goToList")
+    public String goToList(){
+        return "redirect:/ems/employeesList";
+    }
+
     @GetMapping("/{id}")
     @Override
     public String findById(@PathVariable int id,
