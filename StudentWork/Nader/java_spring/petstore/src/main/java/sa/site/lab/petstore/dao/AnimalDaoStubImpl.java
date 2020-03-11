@@ -57,4 +57,9 @@ public class AnimalDaoStubImpl implements AnimalDao {
         System.out.println("* AnimalDataabaseImpl.add()");
         map.put(++counter , animal);
     }
+
+    @Override
+    public boolean delete(int id) {
+        return false;
+    }
 }

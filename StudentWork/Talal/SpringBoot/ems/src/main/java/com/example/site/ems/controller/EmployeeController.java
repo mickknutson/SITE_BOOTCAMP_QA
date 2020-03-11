@@ -1,5 +1,6 @@
 package com.example.site.ems.controller;
 
+<<<<<<< Updated upstream
 import com.example.site.ems.domain.Employee;
 import org.springframework.ui.Model;
 
@@ -19,4 +20,7 @@ public interface EmployeeController {
 
     String delete(int id);
 
+=======
+public interface EmployeeController {
+>>>>>>> Stashed changes
 }

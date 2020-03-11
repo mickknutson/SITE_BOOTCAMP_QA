@@ -1,5 +1,6 @@
 package com.example.site.ems.dao;
 
+<<<<<<< Updated upstream
 import com.example.site.ems.domain.Employee;
 
 import java.util.Date;
@@ -20,4 +21,7 @@ public interface EmployeeDao {
 
 
 
+=======
+public interface EmployeeDao {
+>>>>>>> Stashed changes
 }

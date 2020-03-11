@@ -56,9 +56,10 @@ public class EmployeeControllerImpl implements EmployeeController {
         model.addAttribute("employee",employee);
         return"updatePage";
     }
-    @PutMapping("/update")
+    @PostMapping("/update")
     @Override
     public String update(Employee employee) {
+        System.out.println(employee);
         employeeService.update(employee.getId(),
                 employee.getFirstName(),
                 employee.getLastName(),
