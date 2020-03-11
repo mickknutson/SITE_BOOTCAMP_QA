@@ -64,7 +64,6 @@ public class EmployeeControllerImpl implements EmployeeController {
     @Override
     public String update(@PathVariable long id, Model model) {
         System.out.println("* EmployeeController.update()");
-
         Employee employee = service.findById(id);
         if (employee != null) {
             model.addAttribute("employee", employee);
