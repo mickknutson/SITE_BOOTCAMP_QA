@@ -1,5 +1,6 @@
 package com.example.site.ems;
 
+<<<<<<< Updated upstream
 import com.example.site.ems.domain.Employee;
 import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,19 @@ import org.springframework.context.annotation.Bean;
 public class EmsApplication {
 	@Autowired
 	private EmployeeService service;
+=======
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EmsApplication {
+>>>>>>> Stashed changes
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmsApplication.class, args);
 	}
 
+<<<<<<< Updated upstream
 
 
 	@Bean
@@ -35,4 +44,6 @@ public class EmsApplication {
 		};
 	}
 
+=======
+>>>>>>> Stashed changes
 }
