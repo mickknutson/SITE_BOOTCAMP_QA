@@ -1,6 +1,6 @@
 # Employee Management System (EMS)
 
-A very simple Full-Stack Web Application demonestrating the Full CRUD Operations With Both RESTful services and a Web Interface. 
+A very simple Full-Stack Web Application (3-tire Architecture ) demonestrating the Full CRUD Operations With Both RESTful services and a Web Interface. 
 
 ## Dev-Team (BugHunters)
 ### Members :
@@ -12,6 +12,9 @@ A very simple Full-Stack Web Application demonestrating the Full CRUD Operations
 ## Description
 
 Lets the user see all employees in the database(H2) . Allowing the user to interact with the data either by adding , deleteing or updating the information of any employee.
+
+## UML Diagram
+![Diagram](./3-tier.png)
 
 ### Technologies Used
 
@@ -25,21 +28,7 @@ Lets the user see all employees in the database(H2) . Allowing the user to inter
 - SQL
 - H2
 ```
-
-### Sample Pictures
-
-#### Home Page
-![]()
-
-#### Managment Page
-![]()
-
-#### Single Employee Information Page
-![]()
-
-
-
----
+--- 
 
 ## Planning and Development Process
 
@@ -53,6 +42,22 @@ Lets the user see all employees in the database(H2) . Allowing the user to inter
 * lots and lots of googling and reading official documentation.
 * Using the refrences supplied to us by our instructor.
   
+
+---
+
+
+### Sample Pictures
+
+#### Home Page
+![]()
+
+#### Managment Page
+![]()
+
+#### Single Employee Information Page
+![]()
+
+
 
 ---
 
