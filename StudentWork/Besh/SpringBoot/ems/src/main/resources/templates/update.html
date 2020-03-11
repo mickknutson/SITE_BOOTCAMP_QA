@@ -1,0 +1,80 @@
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <title> Welcome to the EMS!</title>
+</head>
+
+<body>
+<h1>Add new Employee</h1>
+
+<form id="UpdateEmployeeForm"
+      action="#"
+      th:action="@{/employee/save}"
+      th:object="${employee}" method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <th>
+                    <label for="employeeId">Employee Id</label>
+                </th>
+                <td>
+                    <input th:field = "*{employeeId}" id="employeeId"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="firstName">First Name</label>
+                </th>
+                <td>
+                    <input th:field = "*{firstName}" id="firstName"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="lastName">Last Name</label>
+                </th>
+                <td>
+                    <input th:field = "*{lastName}" id="lastName"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="hireDate">Hire Date</label>
+                </th>
+                <td>
+                    <input type="date" th:field = "*{hireDate}" id="hireDate"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="email">Email</label>
+                </th>
+                <td>
+                    <input type="email" th:field = "*{email}" id="email"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="department">Department</label>
+                </th>
+                <td>
+                    <input th:field = "*{department}" id="department"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="salary">Salary</label>
+                </th>
+                <td>
+                    <input th:field = "*{salary}" id="salary"/>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" id="submit">Create</button>
+                </th>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
