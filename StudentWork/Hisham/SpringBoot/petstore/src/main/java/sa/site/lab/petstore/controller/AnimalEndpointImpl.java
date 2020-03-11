@@ -7,7 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import sa.site.lab.petstore.domain.Animal;
 import sa.site.lab.petstore.service.AnimalService;
 
+<<<<<<< Updated upstream
 import java.util.List;
+=======
+import javax.persistence.PostUpdate;
+import java.util.List;
+import java.util.Map;
+>>>>>>> Stashed changes
 
 
 @RestController

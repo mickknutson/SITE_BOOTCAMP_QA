@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add User</title>
+    <title>Employee Managment System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -15,14 +13,34 @@
           crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
 </head>
-
 <body>
 
-<title>Welcome to the EMS</title>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/employee/list.html">Employee Managment <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/h2-console">Admin Console</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reporting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-<table>
 
-    <thead>
+<table class="table table-striped table-borderless table-hover text-center">
+    <thead class="thead-dark">
     <tr>
         <th>First Name</th>
         <th>Last Name </th>
@@ -31,26 +49,33 @@
         <th>Department</th>
         <th>Salary</th>
 
+        <h1 class="mt-4 mb-4 text-center">Employee Information</h1>
+
+
     </tr>
     </thead>
 
     <tbody>
     <tr>
+        <td th:text="${employee.firstName}">not found</td>
         <td th:text="${employee.lastName}">not found</td>
         <td th:text="${employee.email}">not found</td>
         <td th:text="${employee.hireDate}">not found</td>
         <td th:text="${employee.department}">not found</td>
         <td th:text="${employee.salary}">not found</td>
 
-        <a th:href="@{'/employee/delete/{id}'(id=${employee.id})}"
-           th:text="DELETE"></a>
     </tr>
     </tbody>
 
 </table>
 
-<h3> <a href="/"> Home </a> </h3>
-<h3> <a href="/employee/list.html"> List of Employees </a> </h3>
+<div class="text-center">
+
+    <a class="btn btn-danger rounded-pill btn-lg" role="button" th:href="@{'/employee/delete/{id}'(id=${employee.id})}">DELETE</a>
+    <a class="btn btn-danger rounded-pill btn-lg" role="button" th:href="@{'/employee/edit/{id}'(id=${employee.id})}">
+        Edit</a>
+</div>
+
 
 
 

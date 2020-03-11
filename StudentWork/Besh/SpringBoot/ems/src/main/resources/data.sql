@@ -1,0 +1,6 @@
+
+-- Add SQL INSERTS here:
+-- INSERT INTO animal
+-- User Data
+
+INSERT INTO employee (EMPLOYEE_ID, FIRST_NAME, LAST_NAME, HIRE_DATE, EMAIL, DEPARTMENT, SALARY) VALUES (111, 'Besh','Jamil','2020-03-16','Besh@gmail.com','HR',15.000);

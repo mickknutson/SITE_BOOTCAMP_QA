@@ -3,14 +3,14 @@
 
 
 <head>
-    <title> Welcome to the EMPLOYEE MANAGEMENT SYSTEM !</title>
+    <title> Welcome to the EMPLOYEE MANAGEMENT SYSTEM!</title>
 </head>
 <body>
 <h1> Add New Employee</h1>
 *** ************** ***
 <form id="newEmployeeForm"
       action="#"
-      th:action="@{/employee/create}"
+      th:action="@{/employee/save}"
       th:object="${employee}" method="Post">
     <fieldset>
 
@@ -20,7 +20,9 @@
                     <label>employeeId</label>
                 </th>
                 <td>
-                    <label th:text="${employee.getEmployeeId()}"></label>
+<!--                    <input th:field = "*{employeeId}" id="employeeId" value="${employee.employeeId}">-->
+                    <input th:field = "*{employeeId}" id="employeeId"/>
+
                 </td>
             </tr>
             <tr>

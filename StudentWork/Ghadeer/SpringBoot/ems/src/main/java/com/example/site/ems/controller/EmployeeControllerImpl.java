@@ -69,24 +69,28 @@ public class EmployeeControllerImpl implements EmployeeController {
         return "redirect:/employee/list.html";
     }
 
-    @Override
+
     @GetMapping("/update/{id}")
+    @Override
     public String update(@PathVariable long id, Model model) {
-       // System.out.println("hhhh");
-        //model.addAttribute();
-       Employee employee = service.findById(id);
+        System.out.println("* EmployeeController.update()");
+
+        Employee employee = service.findById(id);
         if (employee != null) {
             model.addAttribute("employee", employee);
-            return "redirect:/employee/update.html";
-
+            //model.addAttribute("employee",employee);
+            //return "employee";
         }
-
-return "update.html";
-          //  return "redirect:/employee/list.html";
-
-        }
+        return "update";
+    }
         ///
-    @PutMapping("/update")
+        @PostMapping("save")
+//    @Override
+        public String save(Employee employee) {
+            System.out.println("* EmployeeController.save() -" + employee);
+            service.update(employee);
+            return "redirect:/employee/list.html";
+        }
 
     }
 

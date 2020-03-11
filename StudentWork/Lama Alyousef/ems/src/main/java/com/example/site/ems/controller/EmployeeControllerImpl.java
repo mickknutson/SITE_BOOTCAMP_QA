@@ -5,6 +5,7 @@ import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -91,5 +92,26 @@ public class EmployeeControllerImpl implements EmployeeController{
             return "redirect:/employee/list.html";
 
         }
+
+    @GetMapping("edit/{id}")
+    public String gotoUpdate(@PathVariable("id") int id, Model model) {
+        Employee employee = service.findById(id);
+        model.addAttribute("employee", employee);
+        return "update-employee";
+    }
+
+    @PostMapping("update/{id}")
+    public String update(@PathVariable("id") int id,
+                         Employee employee, BindingResult result,
+                         Model model) {
+        if (result.hasErrors()) {
+            employee.setId(id);
+            return "update-employee";
+        }
+
+        service.add(employee);
+        model.addAttribute("employee", service.findAll());
+        return "redirect:index";
+    }
 
 }

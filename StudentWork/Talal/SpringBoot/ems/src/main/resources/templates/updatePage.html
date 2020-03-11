@@ -15,25 +15,27 @@
           action="#"
           th:action="@{/ems/update}"
           th:object="${employee}"
-          method="put">
+          method="post">
         <div class="info">
             <input type="hidden" th:field="*{id}"  th:value="${employee.id}" id="id" />
             <input th:field="*{firstName}" placeholder="First Name" th:value="${employee.firstName}" id="firstName" required/>
             <input th:field= "*{lastName}" placeholder="Last Name" th:value="${employee.lastName}" id="lastName" required/>
             <input th:field= "*{email}" placeholder="Email" th:value="${employee.email}" id="email" required/>
             <input th:field= "*{salary}" placeholder="Salary" th:value="${employee.salary}" id="salary" required/>
-            <input th:field= "*{date}" placeholder="Hire Date" th:value="${employee.date}" id="date" required/>
+            <input th:field= "*{department}" placeholder="Department" th:value="${employee.department}" id="department" required/>
+            <input th:field= "*{date}" placeholder="Hire Date" th:value="${employee.date}" id="date" required type="date"/>
 
-            <input th:field= "*{department}" placeholder="Department" id="department" required/>
-            <select>
-                <option value="${employee.department}" disabled selected>Department</option>
-                <option value="Information Technology">Information Technology</option>
-                <option value="Human Resource">HumanResource</option>
-                <option value="Finance">Finance</option>
-                <option value="OPD">OPD</option>
 
-            </select>
-            <button class="button" type="submit">Add</button>
+
+<!--            <select>-->
+<!--                <option value="${employee.department}" disabled selected>Department</option>-->
+<!--                <option value="Information Technology">Information Technology</option>-->
+<!--                <option value="Human Resource">HumanResource</option>-->
+<!--                <option value="Finance">Finance</option>-->
+<!--                <option value="OPD">OPD</option>-->
+
+<!--            </select>-->
+            <button class="button" type="submit">Update</button>
 
         </div>
 

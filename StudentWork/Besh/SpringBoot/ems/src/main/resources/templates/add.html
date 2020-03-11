@@ -18,7 +18,7 @@
                     <label for="employeeId">Employee Id</label>
                 </th>
                 <td style = "width:25%">
-                    <input th:field = "*{employeeId}" id="employeeId"/>
+                    <input type="number" th:field = "*{employeeId}" id="employeeId"/>
                 </td>
             </tr>
             <tr>
@@ -58,7 +58,13 @@
                     <label for="department">Department</label>
                 </th>
                 <td style = "width:25%">
-                    <input th:field = "*{department}" id="department"/>
+                   <select th:field = "*{department}" id="department">
+                       <option th:value = "HR" th:text = "Human_Resources"></option>
+                       <option th:value = "IT" th:text = "Information_Technology"></option>
+                       <option th:value = "Finance" th:text = "Finance"></option>
+                       <option th:value = "QA" th:text = "Quality_Assurance"></option>
+                       <option th:value = "Management" th:text = "Management"></option>
+                   </select>
                  </td>
             </tr>
             <tr>
@@ -66,7 +72,7 @@
                     <label for="salary">Salary</label>
                 </th>
                 <td style = "width:25%">
-                    <input th:field = "*{salary}" id="salary"/>
+                    <input type="number" step="0.01" th:field = "*{salary}" id="salary"/>
                 </td>
             </tr>
             <tr>
