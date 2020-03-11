@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,11 +11,8 @@
           href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
           crossorigin="anonymous">
-
     <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
 </head>
-
-
 <body>
 
 <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -44,16 +39,16 @@
 </nav>
 
 
+
 <div class="card bg-light mb-3 text-center mx-auto t-50 m-5" style="width: 24rem;">
     <div class="card-body text-center">
 
-    <h3>Add New Employee</h3>
+        <h3>Edit Employee Information</h3>
 
-
-<form id="newEmployeeForm"
-      action="#"
-      th:action="@{/employee/new}"
-      th:object="${employee}" method="post">
+            <form id="newEmployeeForm"
+                  action="#"
+                  th:action="@{/employee/update/{id}(id=${employee.id})}"
+                  th:object="${employee}" method="post">
 
             <div class="form-group ">
                 <label for="firstName"> First Name: </label>
@@ -85,13 +80,19 @@
                 <input th:field="*{salary}" class="form-control" placeholder="Enter Salary" id="salary"/>
             </div>
 
-            <div class="text-center">
-            <button type="submit" class="btn btn-danger rounded-pill btn-lg " id="submit"> Create </button>
+             <div class="text-center">
+                 <input type="submit" class="btn btn-danger rounded-pill btn-lg " value="Update Employee">
+             </div>
+
+
+
+                </form>
             </div>
-</form>
-
+        </div>
+    </div>
 </div>
+</body>
+</html>
 
-</div>
 </body>
 </html>
