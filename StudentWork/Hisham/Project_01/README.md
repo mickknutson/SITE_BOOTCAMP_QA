@@ -6,8 +6,6 @@ A very simple Full-Stack Web Application using the **3-tire Architecture** demon
 ## Dev-Team (BugHunters) 
 <img src="./ems/src/main/resources/static/img/BUG_HUNTERS.png" height="300px" width="300px">
 
-## Members :
-
 * [Haifa Alassaf](https://github.com/haifassaf)
 * [Nada Aljohani](https://github.com/Nada-hs)
 * [Sara Alhunaiti](https://github.com/saraAlhunaiti)
