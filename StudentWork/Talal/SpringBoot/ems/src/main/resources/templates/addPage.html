@@ -23,19 +23,19 @@
 
                 <input th:field= "*{email}" placeholder="Email" id="email" required/>
 
-                <input th:field= "*{department}" placeholder="Department" id="department" required/>
-                <select>
-                    <option value="number" disabled selected>Department</option>
-                    <option value="10">Information Technology</option>
-                    <option value="20">HumanResource</option>
-                    <option value="30">Finance</option>
-                    <option value="40">OPD</option>
+
+                <select th:field="*{department}">
+                    <option value="NA" disabled selected>Department</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="HumanResource">HumanResource</option>
+                    <option value="Finance">Finance</option>
+                    <option value="OPD">OPD</option>
 
                 </select>
 
                 <input th:field= "*{salary}" placeholder="Salary" id="salary" required/>
 
-                <input th:field= "*{date}" placeholder="Hire Date" id="date" required/>
+                <input th:field= "*{date}" placeholder="Hire Date" id="date" required type="date"/>
                 <button class="button" type="submit">Add</button>
 
             </div>

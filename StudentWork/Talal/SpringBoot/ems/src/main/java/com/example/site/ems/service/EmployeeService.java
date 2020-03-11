@@ -1,5 +1,6 @@
 package com.example.site.ems.service;
 
+<<<<<<< Updated upstream
 import com.example.site.ems.domain.Employee;
 
 import java.util.Date;
@@ -18,4 +19,7 @@ public interface EmployeeService  {
     void delete(int id);
 
 
+=======
+public interface EmployeeService  {
+>>>>>>> Stashed changes
 }
