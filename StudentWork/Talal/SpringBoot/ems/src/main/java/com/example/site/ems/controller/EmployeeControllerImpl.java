@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("ems")
+@RequestMapping("/ems")
 public class EmployeeControllerImpl implements EmployeeController {
 
     @Autowired
@@ -31,25 +31,26 @@ public class EmployeeControllerImpl implements EmployeeController {
 
     @GetMapping("/employeesList")
     @Override
-    public String findALl() {
-        // TODO : HTML PAGE !!
-        return "";
+    public String findALl(Model model) {
+        List<Employee> employeeList = employeeService.findALl();
+        model.addAttribute("employeeList",employeeList);
+        return "mainPage";
     }
 
     // TODO : CHANGE METHOD NAME!!! We have 2 add() methods!!
     @PostMapping("/create")
     public String create(Employee employee){
         employeeService.add(employee);
-        return "redirect://employee/employeesList";
+        return "redirect:/ems/employeesList";
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     @Override
     public String add(Model model) {
         Employee employee = new Employee();
-        model.addAttribute("employee",employee);
-        // TODO : ADD HTML PAGE !!
-        return "";
+        System.out.println("Employee: " + employee);
+        model.addAttribute("employee", employee);
+        return "addPage";
     }
 
     @Override
@@ -59,8 +60,8 @@ public class EmployeeControllerImpl implements EmployeeController {
 
     @GetMapping("/delete/{id}")
     @Override
-    public String delete(int id) {
+    public String delete( @PathVariable  int id) {
         employeeService.delete(id);
-        return "redirect:http:localhost:8080/employee/employeesList";
+        return "redirect:/ems/employeesList";
     }
 }
