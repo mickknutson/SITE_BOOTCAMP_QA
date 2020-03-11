@@ -56,7 +56,6 @@ public class EmployeeControllerImpl implements EmployeeController {
         return "List";
     }
 
-    ///////////////////////////////////////////////////////////////////////
 
     @Override
     @GetMapping("/update/{id}")
@@ -73,7 +72,7 @@ public class EmployeeControllerImpl implements EmployeeController {
         return "redirect:/";
     }
 
-    ////////////////////////////////////////////////////////////////////////////
+
     @Override
     @PostMapping("/save")
     public String save(Employee employee) {

@@ -18,27 +18,29 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return dao.findById(id);
     }
+
     @Override
     public List<Employee> findAll() {
 
         return dao.findAll();
     }
-    @Override
-    public boolean add(Employee employee){
 
-       return dao.add(employee);
-    }
     @Override
-    public boolean update(Employee employee){
+    public boolean add(Employee employee) {
+
+        return dao.add(employee);
+    }
+
+    @Override
+    public boolean update(Employee employee) {
 
         return dao.update(employee);
     }
 
     @Override
-    public boolean delete(long id){
+    public boolean delete(long id) {
         return dao.delete(id);
     }
 
-
-
 }
+

@@ -40,9 +40,11 @@ public class EmployeeEndpoint  {
     @PutMapping("/edit/{id}")
     public void update(@RequestBody Employee newEmp , @PathVariable int id) {
         Employee oldEmp = service.findById(id);
+        oldEmp.setA_employeeId(newEmp.getA_employeeId());
         oldEmp.setA_firstName(newEmp.getA_firstName());
         oldEmp.setB_lastName(newEmp.getB_lastName());
         oldEmp.setDepartment(newEmp.getDepartment());
+        oldEmp.setEmail(newEmp.getEmail());
         oldEmp.setHireDate(newEmp.getHireDate());
         oldEmp.setSalary(newEmp.getSalary());
         service.add(oldEmp);
