@@ -6,7 +6,8 @@ A very simple Full-Stack Web Application using the **3-tire Architecture** demon
 ## Dev-Team (BugHunters) 
 <img src="./ems/src/main/resources/static/img/BUG_HUNTERS.png" height="300px" width="300px">
 
-### Members :
+## Members :
+
 * [Haifa Alassaf](https://github.com/haifassaf)
 * [Nada Aljohani](https://github.com/Nada-hs)
 * [Sara Alhunaiti](https://github.com/saraAlhunaiti)
@@ -19,7 +20,7 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 ## UML Diagram
 ![Diagram](./extra/3-tier.png)
 
-### Technologies Used
+## Technologies Used
 
 ```diff
 - Java
@@ -31,7 +32,7 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 - H2
 - JDBC
 ```
-### Tools Used
+## Tools Used
 
 ```diff
 + IntelliJ Idea
@@ -49,7 +50,7 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 * We combined our work and made 
   a demo-ready version.
 
-### Problem-Solving Strategy
+## Problem-Solving Strategy
 
 * lots and lots of **googling** and reading official **documentation**.
 * Using the refrences supplied to us by our instructor.
@@ -58,15 +59,19 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 ---
 
 
-### Sample Pictures
+## Sample Pictures
 
-#### Home Page
+### Home Page
+
 <img src="./extra/home.png" height="300px" width="600px">
 
-#### Employees Page
+
+### Employees Page
+
 <img src="./extra/allemp.png" height="300px" width="600px">
 
-#### Single Employee Information Page
+### Single Employee Information Page
+
 <img src="./extra/emp.png" height="300px" width="600px">
 
 
