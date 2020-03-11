@@ -1,0 +1,137 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EMP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="../static/css/EmpView.css" th:href="@{/css/EmpView.css}" rel="stylesheet" />
+</head>
+
+<body style="background-color:rgb(238, 240, 243); font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif";
+>
+
+<header>
+    <div class="logo">
+        <img src="../static/img/BUG_HUNTERS.png" th:src="@{/img/BUG_HUNTERS.png}" alt="logo"/>
+    </div>
+    <div class="name">
+        <h1>Employee Management System</h1>
+        <ul>
+            <li><a class="Home" href="/">HOME</a> </li>
+            <li><a href="/employees/list">List</a ></li>
+        </ul>
+    </div>
+
+</header>
+
+<div class="container">
+    <div class="row">
+                <div class="card-body">
+
+                            <div class="image-container">
+                                <img src="../static/img/Profile.png" th:src="@{/img/Profile.png}" alt="profile" id="imgProfile" style="width: 30%; height: 20%" class="img-thumbnail"/>
+                            </div>
+
+                    <div class="Empinfo">
+<!--TODO: FIX THIS-->
+                        <label style="font-weight:bold;">Employee ID</label>
+                        <h4 class="info" th:text="${employee.employeeId}">1</h4>
+                        <hr/>
+
+                        <label style="font-weight:bold;">First Name</label>
+                        <h4 class="info" th:text="${employee.firstName}">Jack</h4>
+                        <hr/>
+
+                        <label style="font-weight:bold;">Last Name</label>
+                        <h4 class="info" th:text="${employee.lastName}">B</h4>
+                        <hr/>
+
+                        <label style="font-weight:bold;">E-mail</label>
+                        <h4 class="info" th:text="${employee.lastName}">B</h4>
+                        <hr/>
+
+                        <label style="font-weight:bold;">Department</label>
+                        <h4 class="info" th:text="${employee.lastName}">B</h4>
+
+                        <hr/>
+
+                        <label style="font-weight:bold;">Start Date</label>
+                        <h4 class="info" th:text="${employee.hiringDate}">2017-03-12</h4>
+                        <hr/>
+
+                        <label style="font-weight:bold;">Salary</label>
+                        <h4 class="info" th:text="${employee.salary}">25,000</h4>
+                    </div>
+<!--                            <div class="userData ml-3">-->
+<!--                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold" th:text="${employee.firstName}">Some Name</h2>-->
+<!--                                <h6 class="d-block"th:text="${employee.employeeId}"> </h6>-->
+<!--                            </div>-->
+
+<!--                    <div class="row">-->
+
+<!--                                        <div class="col-sm-3 col-md-2 col-5">-->
+<!--                                            <label style="font-weight:bold;">First Name</label>-->
+<!--                                        </div>-->
+<!--                                        <h4 class="col-md-8 col-6" th:text="${employee.firstName}">Jack</h4>-->
+
+
+<!--                                    </div>-->
+
+
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-sm-3 col-md-2 col-5">-->
+<!--                                            <label style="font-weight:bold;">Last Name</label>-->
+<!--                                        </div>-->
+<!--                                        <h4 class="col-md-8 col-6"  th:text="${employee.lastName}">B </h4>-->
+<!--                                    </div>-->
+
+
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-sm-3 col-md-2 col-5">-->
+<!--                                            <label style="font-weight:bold;">E-email</label>-->
+<!--                                        </div>-->
+<!--                                        <h4 class="col-md-8 col-6" th:text="${emp.email}">Jack@Gmail.com</h4>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-sm-3 col-md-2 col-5">-->
+<!--                                            <label style="font-weight:bold;">Department</label>-->
+<!--                                        </div>-->
+<!--                                        <h4 class="col-md-8 col-6" th:text="${emp.department}">IT</h4>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-sm-3 col-md-2 col-5">-->
+<!--                                            <label style="font-weight:bold;">Start Date</label>-->
+<!--                                        </div>-->
+<!--                                        <h4 class="col-md-8 col-6" th:text="${employee.hiringDate}">2017-03-12</h4>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-sm-3 col-md-2 col-5">-->
+<!--                                            <label style="font-weight:bold;">Salary</label>-->
+<!--                                        </div>-->
+<!--                                        <h4 class="col-md-8 col-6" th:text="${employee.salary}">25,000</h4>-->
+<!--                                    </div>-->
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
