@@ -1,0 +1,1 @@
+Insert into employee VALUES(1,'1994-12-12','IT',12345,'Moe','aldosry','mow@gmail.cpm',100);
