@@ -1,9 +1,6 @@
 package com.example.site.ems.domain;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Employee {
@@ -12,11 +9,22 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
+    private String a_employeeId;
+
+    public String getA_employeeId() {
+        return a_employeeId;
+    }
+
+    public void setA_employeeId(String a_employeeId) {
+        this.a_employeeId = a_employeeId;
+    }
+
+    @Column
     private String a_firstName;
     @Column
     private String b_lastName;
     @Column
-    private Date hireDate;
+    private String hireDate;
     @Column
     private String department;
     @Column
@@ -52,11 +60,11 @@ public class Employee {
         this.b_lastName = lastName;
     }
 
-    public Date getHireDate() {
+    public String getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(String hireDate) {
         this.hireDate = hireDate;
     }
 

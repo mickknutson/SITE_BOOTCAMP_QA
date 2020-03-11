@@ -58,6 +58,7 @@
 							<table class="table table-striped table-responsive-md">
 								<thead>
 									<tr>
+										<th>Employee ID</th>
 										<th>First Name</th>
 										<th>Last Name</th>
 										<th>Hire Date</th>
@@ -69,6 +70,7 @@
 								</thead>
 								<tbody>
 									<tr th:each="emp : ${employees}">
+										<td th:text="${emp.a_employeeId}"></td>
 										<td th:text="${emp.a_firstName}"></td>
 										<td th:text="${emp.b_lastName}"></td>
 										<td th:text="${emp.hireDate}"></td>
