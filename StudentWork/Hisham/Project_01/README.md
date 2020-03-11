@@ -1,6 +1,6 @@
 # Employee Management System (EMS)
 
-A very simple Full-Stack Web Application (3-tire Architecture ) demonestrating the Full CRUD Operations With Both RESTful services and a Web Interface. 
+A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful** services and a **Web Interface**. 
 
 ## Dev-Team (BugHunters)
 ### Members :
@@ -11,10 +11,10 @@ A very simple Full-Stack Web Application (3-tire Architecture ) demonestrating t
 
 ## Description
 
-Lets the user see all employees in the database(H2) . Allowing the user to interact with the data either by adding , deleteing or updating the information of any employee.
+Lets the user see a list of all employees available in the database **(H2)** . Allowing the user to interact with the data either by **adding** , **deleteing** or **updating** the information of any employee.
 
 ## UML Diagram
-![Diagram](./3-tier.png)
+![Diagram](./extra/3-tier.png)
 
 ### Technologies Used
 
@@ -27,6 +27,7 @@ Lets the user see all employees in the database(H2) . Allowing the user to inter
 - JPA
 - SQL
 - H2
+- JDBC
 ```
 --- 
 
@@ -35,7 +36,8 @@ Lets the user see all employees in the database(H2) . Allowing the user to inter
 * We Started deviding tasks between the team members.
 * Each team member started working on his individual task.
 * We shared and helped each other.
-* We combined our work and made a demo ready version.
+* We combined our work and made 
+  a demo-ready version.
 
 ### Problem-Solving Strategy
 
@@ -63,6 +65,6 @@ Lets the user see all employees in the database(H2) . Allowing the user to inter
 
 ## Acknowledgments
 
-- SITE (Saudi Information Technology company) - For their Continious Support.
-- KnowledgeHut - Mick and Sam especially as being great instructors
+- SITE (**Saudi Information Technology Company**) - For their continuous Support.
+- **KnowledgeHut** - **Mick** and **Sam**  for being great instructors.
 
