@@ -13,7 +13,7 @@ import java.util.List;
         @Autowired
         private AnimalService service;
         @GetMapping
-        public List<Animal> finsAll(){
+        public List<Animal> findAll(){
             List<Animal> animals = service.findAll();
             System.out.println("** REST Animals");
             return animals;
