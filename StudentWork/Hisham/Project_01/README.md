@@ -11,6 +11,8 @@ A very simple Full-Stack Web Application using the **3-tire Architecture** demon
 * [Sara Alhunaiti](https://github.com/saraAlhunaiti)
 * [Hisham Bin Seddeq](https://github.com/HishamBS)
 
+--- 
+
 ## Description
 
 Lets the user see a list of all employees available in the database **(H2)** . Allowing the user to interact with the data either by **adding** , **deleteing** or **updating** the information of any employee.
