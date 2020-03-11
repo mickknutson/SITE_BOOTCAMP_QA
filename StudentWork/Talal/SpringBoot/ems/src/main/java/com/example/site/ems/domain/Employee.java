@@ -1,5 +1,6 @@
 package com.example.site.ems.domain;
 
+<<<<<<< Updated upstream
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -102,4 +103,7 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+=======
+public class Employee {
+>>>>>>> Stashed changes
 }

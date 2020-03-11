@@ -22,6 +22,10 @@ import java.util.List;
 @RequestMapping("/api/animal") // URI
 public class AnimalEndpointImpl  {
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     @Autowired
     private AnimalService service;
 
