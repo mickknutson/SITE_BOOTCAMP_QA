@@ -24,6 +24,11 @@ public class EmployeeControllerRest
     public List<Employee> findAll()
     {
         List<Employee> employees = service.findAll();
+        // To send status, set Response`code
+        // ResponseEntity
+        //->HEADER (status code, mess)
+        //->body employee
+
         return employees;
     }
 
