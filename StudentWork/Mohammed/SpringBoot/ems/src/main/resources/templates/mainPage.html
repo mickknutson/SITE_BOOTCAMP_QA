@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+<head>
+    <title>Employee Management System</title>
+    <link th:href="@{/style.css}" href="/style.css" rel="stylesheet"  type="text/css" >
+
+</head>
+<body>
+
+<div class="main-block">
+    <h1>Employee Management System</h1>
+    <form action="/ems/add">
+        <table class="Table" style="width:100%">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Hire Date</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="employee: ${employeeList}">
+                <td>
+                    <a th:href="@{'/ems/updateForm/{id}' (id=${employee.id})}"
+                       th:text="${employee.employeeId}">
+                    </a>
+                </td>
+                <td th:text="${employee.firstName}">firstName</td>
+                <td th:text="${employee.lastName}">lastName</td>
+                <td th:text="${employee.email}">email</td>
+                <td th:text="${employee.department}">Department</td>
+                <td th:text="${employee.salary}">Salary</td>
+                <td th:text="${employee.date}">Date</td>
+                <td>
+                    <a th:href="@{'/ems/delete/{id}' (id=${employee.id})}"
+                       th:text="delete">DELETE</a>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+        <button class="button" type="submit">Add</button>
+
+    </form>
+</div>
+</body>
+</html>
