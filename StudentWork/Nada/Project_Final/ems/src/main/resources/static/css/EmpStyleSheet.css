@@ -1,0 +1,264 @@
+
+
+body {
+
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
+    background-image: url("/ems/src/main/resources/static/img/19366.png");
+}
+
+
+header {
+
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background: rgba(230, 220, 220, 0.137);
+    border-bottom: 1px solid rgb(128, 129, 131);
+    /* TODO: Fix shadow */
+    box-shadow: 0px 0px 10px #888888;
+}
+
+.name {
+    display: inline;
+    margin-top: 1%;
+    color: rgb(6, 24, 47);
+    margin-right: 100%;
+    width: 50%;
+
+}
+
+.logo img {
+    display: inline;
+    width: 100px;
+    height: 100px;
+    margin-left: 1500%;
+    margin-top: 30%;
+}
+
+h2 {
+    padding-top: 2%;
+    font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;
+
+}
+/* ----------------Beginning Table Style--------------- */
+
+table {
+    border-collapse: collapse;
+    border-radius: 12px;
+    width: 52%;
+    margin-left: 25%;
+    background-color: #dddddd;
+    font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;
+    font-size:15px ;
+
+}
+
+table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom:2px solid;
+    border-bottom-color: #cccccc;
+    height: 20px;
+}
+
+th {
+    color: #003399;
+    text-align: left;
+    justify-content: center;
+    border-color: #131924;
+    border-bottom: 3px solid;
+    padding: 10px;
+    background-color: rgb(238, 240, 243);
+}
+
+
+th:last-child {
+    background-color: rgb(238, 240, 243);
+    border: none;
+}
+
+tr:nth-child(even)  {
+    background-color: lightsteelblue;
+    border-bottom: none;
+}
+
+td:last-child {
+    border: none;
+    background-color:rgb(238, 240, 243);
+}
+
+tr:hover td:not(:last-child) {
+    background-color: #929ca1;
+}
+
+
+
+/* ----------------End Table Style--------------- */
+
+
+.fa fa-trash-o {
+    color: #a54543;
+    margin-left: 1%;
+}
+
+a {
+    text-decoration: underline;
+    border: none;
+    color: rgb(31, 55, 85);
+
+}
+
+.add button {
+    float: right;
+    border: none;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 24.5%;
+    margin-top: 0.5%;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color:rgb(238, 240, 243);
+}
+
+
+
+
+footer {
+    background: rgb(128, 129, 131);
+    margin-top: -0.97%;
+    height: 10%;
+}
+.Home{
+   float: left;
+    margin-left: -40%;
+}
+/*--------------------------Home Page-------------------------*/
+
+
+
+.container {
+    position: relative;
+    width: 100%;
+
+}
+
+.container img {
+    width: 100%;
+    height: 83%;
+    opacity: 0.3;
+
+}
+ /* START BUTTON*/
+
+.container .btn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #a9b2ba;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 12px 24px;
+    opacity: 10;
+    border-radius: 4px;
+    width: 10%;
+    height: 8%;
+    border: 0.5px solid #8e959c;
+    transition-duration: 0.4s;
+
+
+}
+
+.btn:hover {
+    background-color:#8e959c ; /* Green */
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    padding-right: 25px;
+}
+
+
+
+.btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.btn:hover span {
+    padding-right: 25px;
+}
+
+.btn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/*END BUTTON*/
+
+
+.container .paragraph{
+    position: absolute;
+    top: 30%;
+    left: 36%;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(6, 24, 47);
+
+}
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 1000%;
+    margin-left: -45%;
+    margin-bottom: 2px;
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+
+    display: inline-block;
+    color: rgb(6, 24, 47);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    border-color: rgb(6, 24, 47);
+    border: .5px solid;
+
+
+}
