@@ -5,15 +5,12 @@ import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("ems")
+@RequestMapping("/ems")
 public class EmployeeControllerImpl implements EmployeeController {
 
     @Autowired
@@ -31,36 +28,52 @@ public class EmployeeControllerImpl implements EmployeeController {
 
     @GetMapping("/employeesList")
     @Override
-    public String findALl() {
-        // TODO : HTML PAGE !!
-        return "";
+    public String findALl(Model model) {
+        List<Employee> employeeList = employeeService.findALl();
+        model.addAttribute("employeeList",employeeList);
+        return "mainPage";
     }
 
     // TODO : CHANGE METHOD NAME!!! We have 2 add() methods!!
     @PostMapping("/create")
     public String create(Employee employee){
         employeeService.add(employee);
-        return "redirect://employee/employeesList";
+        return "redirect:/ems/employeesList";
     }
 
-    @PostMapping("/add")
+    @GetMapping("/add")
     @Override
     public String add(Model model) {
         Employee employee = new Employee();
-        model.addAttribute("employee",employee);
-        // TODO : ADD HTML PAGE !!
-        return "";
+        System.out.println("Employee: " + employee);
+        model.addAttribute("employee", employee);
+        return "addPage";
     }
 
+    @GetMapping("updateForm/{id}")
+    public String updateForm (@PathVariable int id, Model model){
+        Employee employee = employeeService.findById(id);
+        model.addAttribute("employee",employee);
+        return"updatePage";
+    }
+    @PostMapping("/update")
     @Override
     public String update(Employee employee) {
-        return null;
+        System.out.println(employee);
+        employeeService.update(employee.getId(),
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getDepartment(),
+                employee.getEmail(),
+                employee.getSalary(),
+                employee.getDate());
+        return "redirect:/ems/employeesList";
     }
 
     @GetMapping("/delete/{id}")
     @Override
-    public String delete(int id) {
+    public String delete( @PathVariable  int id) {
         employeeService.delete(id);
-        return "redirect:http:localhost:8080/employee/employeesList";
+        return "redirect:/ems/employeesList";
     }
 }

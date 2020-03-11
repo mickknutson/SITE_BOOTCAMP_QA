@@ -5,20 +5,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class EmployeeDaoImpl implements EmployeeDao{
+public class EmployeeDaoImpl implements EmployeeDao {
     @Autowired
     private EmployeeRepository repository;
+
     @Override
     public Employee findById(int id) {
 
         Optional<Employee> employee = repository.findById(id);
-        if (employee.isPresent()){
+        if (employee.isPresent()) {
             return employee.get();
-        }else {
+        } else {
             return null;
         }
 
@@ -28,19 +30,19 @@ public class EmployeeDaoImpl implements EmployeeDao{
     @Override
     public List<Employee> findALl() {
 
-       Iterable<Employee> employeeIterable= repository.findAll();
+        Iterable<Employee> employeeIterable = repository.findAll();
 
-       List<Employee> employeeList= new ArrayList<>();
-       if (employeeIterable!= null){
+        List<Employee> employeeList = new ArrayList<>();
+        if (employeeIterable != null) {
 
-           for(Employee employee: employeeIterable) {
-               employeeList.add(employee);
-           }
-           return employeeList;
-       }else {
-           return null;
+            for (Employee employee : employeeIterable) {
+                employeeList.add(employee);
+            }
+            return employeeList;
+        } else {
+            return null;
 
-       }
+        }
     }
 
     @Override
@@ -50,18 +52,40 @@ public class EmployeeDaoImpl implements EmployeeDao{
     }
 
     @Override
-    public void update(Employee employee) {
-        throw new RuntimeException("Not implemented yet" );
+    public void update(int id, String fname, String lname, String department, String email, int salary, Date date) {
 
-        //FIXME: ADD IMPLEMENTATION
+//        Optional<Employee> employee = repository.findById(id);
+//        if (employee.isPresent()){
+//            employee.get().setFirstName(fname);
+//            employee.get().setLastName(lname);
+//            employee.get().setDepartment(department);
+//            employee.get().setEmail(email);
+//            employee.get().setDate(date);
+//            employee.get().setSalary(salary);
+//            repository.save(employee.get());
+//        }
+
+        if (repository.findById(id).isPresent()) {
+            Employee emp = repository.findById(id).get();
+            emp.setFirstName(fname);
+            emp.setLastName(lname);
+            emp.setDepartment(department);
+            emp.setEmail(email);
+            emp.setDate(date);
+            emp.setSalary(salary);
+            repository.save(emp);
+
+        }
 
 
 
-    }
+    //FIXME: ADD IMPLEMENTATION
+//   throw new RuntimeException("Not implemented yet" );
+
+}
 
     @Override
     public void delete(int id) {
-
         repository.deleteById(id);
 
     }

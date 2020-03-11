@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees List</title>
+</head>
+<body>
+
+<h1>List of Employees</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Hire Date</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Salary</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="employee: ${allEmployees}">
+
+
+        <td>
+            <a th:href="@{'/employee/{id}' (id=${employeeId})}"
+               th:text="${employee.employeeId}">00000</a>
+        </td>
+
+        <td th:text="${employee.firstName} +' '+ ${employee.lastName}">name</td>
+        <td th:text="${employee.hireDate}">hireDate</td>
+        <td th:text="${employee.email}">email</td>
+        <td th:text="${employee.department}">department</td>
+        <td th:text="${employee.salary}">0.0</td>
+
+        <td>
+            <a th:href="@{'/employee/delete/{id}' (id=${employee.employeeId})}"
+               th:text="DELETE">DELETE</a>
+        </td>
+
+        <td>
+            <a th:href="@{'/employee/update/{id}' (id=${employee.employeeId})}"
+               th:text="UPDATE">UPDATE</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<h3><a href="/">Home</a></h3>
+
+
+</body>
+</html>

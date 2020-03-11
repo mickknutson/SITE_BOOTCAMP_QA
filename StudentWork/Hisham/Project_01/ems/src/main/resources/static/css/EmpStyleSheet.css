@@ -1,0 +1,50 @@
+body{
+    background: rgb(238, 240, 243);
+	font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif; 
+ }
+
+header{
+    display: inline-flex;
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+    background: rgba(230, 220, 220, 0.137);
+}
+
+.name   {
+    display: inline;
+    margin-top:1%;
+    color: rgb(6, 24, 47);
+    margin-right: 100%;
+    width:50%;
+}
+.logo img{
+    display: inline;
+    width:100px;
+    margin-left: 1500%;
+    margin-top:30%;
+  
+}
+h2{
+    padding-top: 2%;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child {
+    background-color: #dddddd;
+}
+
+td:last-child {
+  border :none;
+  background-color: #ffffff;
+}

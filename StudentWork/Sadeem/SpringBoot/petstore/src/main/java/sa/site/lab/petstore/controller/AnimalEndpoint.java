@@ -13,7 +13,11 @@ import java.util.List;
         @Autowired
         private AnimalService service;
         @GetMapping
+<<<<<<< Updated upstream
+        public List<Animal> findAll(){
+=======
         public List<Animal> finsAll(){
+>>>>>>> Stashed changes
             List<Animal> animals = service.findAll();
             System.out.println("** REST Animals");
             return animals;

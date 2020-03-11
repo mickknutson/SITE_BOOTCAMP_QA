@@ -10,4 +10,6 @@ public interface AnimalDao {
     List<Animal> findAll();
 
     void add(Animal animal);
+
+    boolean delete(int id);
 }
