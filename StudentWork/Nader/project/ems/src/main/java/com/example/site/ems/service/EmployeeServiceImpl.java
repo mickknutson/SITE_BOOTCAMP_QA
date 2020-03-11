@@ -16,6 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee findById(int id){
+
         return dao.findById(id);
     }
 
@@ -26,6 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void add(Employee employee) {
+
         dao.add(employee);
     }
 

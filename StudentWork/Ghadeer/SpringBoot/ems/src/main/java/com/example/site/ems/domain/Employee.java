@@ -11,7 +11,6 @@ public class Employee {
     //Map field to DB columns
 
     @Id //Primary key
-//    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long employeeId;
     @Column
     private String firstName;
