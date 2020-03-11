@@ -66,19 +66,33 @@ public class EmployeeDaoDatabaseImpl implements EmployeeDao {
         }
 
     }
-    public boolean update(Employee employee) {
-        System.out.println("EmployeeDaoDatabaseImpl.update()");
-        Optional<Employee> result = repository.findById(employee.getEmployeeId());
-        if (result.isPresent()) {
-            repository.save(employee);
+//    public boolean update(Employee employee) {
+//        System.out.println("EmployeeDaoDatabaseImpl.update()");
+//        Optional<Employee> result = repository.findById(employee.getEmployeeId());
+//        if (result.isPresent()) {
+//            repository.save(employee);
+//
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//
+//    }
+public boolean update (Employee updatedEmployee){
+    System.out.println("EmployeeDaoDatabaseImpl.update()");
+    Optional<Employee> result = repository.findById(updatedEmployee.getEmployeeId());
+    if(result.isPresent()){
+        repository.save(updatedEmployee);
+        System.out.println("update result is : "+updatedEmployee.getEmployeeId()+true);
+        return true;
+    }else {
+        System.out.println("update result is: "+updatedEmployee.getEmployeeId()+false);
 
-            return true;
-        }
-        else{
-            return false;
-        }
+        return false;
 
     }
+}
 
 
 
