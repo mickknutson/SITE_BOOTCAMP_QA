@@ -1,8 +1,14 @@
+<style>
+*{
+      background-color: lightgrey
+
+}
+</style>
 # Employee Management System (EMS)
 
 A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful** services and a **Web Interface**. 
 
-## Dev-Team (BugHunters) ![](ems/src/main/resources/static/img/BUG_HUNTERS.png)
+## Dev-Team (BugHunters) <img src="./ems/target/classes/static/img/BUG_HUNTERS.png" height="300px" width="300px">
 ### Members :
 * [Haifa Alassaf](https://github.com/haifassaf)
 * [Nada Aljohani](https://github.com/Nada-hs)

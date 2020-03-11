@@ -55,12 +55,14 @@ header {
 
 }
 .card-body{
-    width: 36%;
-    height: 60%;
-    margin-left: 25%;
+    width: 50%;
+    height: 30%;
+    margin-left: 17%;
     border: 1px solid;
     border-color: #dddddd;
     padding: 2%;
+    box-shadow: 0px 0px 8px #888888;
+    margin-top: 2%;
 
 }
 hr {
@@ -68,7 +70,7 @@ hr {
     border-color: #dddddd;
 }
 .row{
-    padding: 4%;
+
     display: inline;
 }
 
@@ -77,8 +79,10 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    width: 80%;
+    width: 100%;
     margin-left: -45%;
+    margin-bottom: 2px;
+
 }
 
 li {
@@ -94,7 +98,10 @@ li a {
 }
 
 li a:hover {
-    background-color: #1922c6;
+    border-color: rgb(6, 24, 47);
+    border: .5px solid;
+
+
 }
 
 
@@ -108,17 +115,17 @@ h4{
 
 }
 
-.Empinfo{
-
-    height: 600px;
+.updateform{
+    height: 100%;
     width: 100%;
     margin-top: 0px;
-    padding-top: 5%;
-    text-align:center;
+    text-align:right;
+    display: flex;
+    flex-direction: column;
 }
 
 .info{
-    height: 3%;
+    height: 10%;
     width: 70%;
     margin-top: 14px;
     text-align: right;
@@ -132,3 +139,35 @@ label{
     float:left;
 
 }
+
+.btn{
+    /*margin-top: 5%;*/
+    position: absolute;
+    top: 60%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #bec9d1;
+    text-align: center;
+    font-size: 16px;
+    margin: 190px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 5%;
+    width: 8%;
+    height: 4%;
+    border: 2px solid #4f5357;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+h2{
+    margin-top: 5%;
+    margin-left: 17%;
+}
+
