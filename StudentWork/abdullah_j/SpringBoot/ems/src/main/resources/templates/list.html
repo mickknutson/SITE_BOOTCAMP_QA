@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Employees List</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
 
@@ -24,7 +25,7 @@
 
 
         <td>
-            <a th:href="@{'/employee/{id}' (id=${employeeId})}"
+            <a th:href="@{'/employee/{id}' (id=${employee.employeeId})}"
                th:text="${employee.employeeId}">00000</a>
         </td>
 

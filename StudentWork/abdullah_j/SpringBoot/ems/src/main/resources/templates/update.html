@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Update new Employee</h1>
+<h1>Update an employee</h1>
 
 *** update Employee Form ***
 
@@ -24,7 +24,7 @@
                     <label for="employeeId">Employee Id</label>
                 </th>
                 <td>
-                    <input th:field="*{employeeId}" id="employeeId">
+                    <input readonly th:field="*{employeeId}" id="employeeId">
                 </td>
             </tr>
 
@@ -86,7 +86,7 @@
 
             <tr>
                 <th colspan="2">
-                    <button type="submit" id="submit">Create</button>
+                    <button type="submit" id="submit">Update</button>
                 </th>
             </tr>
 
