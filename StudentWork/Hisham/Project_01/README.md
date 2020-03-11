@@ -1,12 +1,18 @@
 <style>
 *{
-      background-color: lightgrey
+        background-color: #E8f8f5;
+        color : #468499;
 
+
+}
+span {
+    font-weight:bold;
+    color:#133358;
 }
 </style>
 # Employee Management System (EMS)
 
-A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful** services and a **Web Interface**. 
+A very simple Full-Stack Web Application using the <span>3-tire Architecture</span> demonestrating the Full <span>CRUD</span> Operations With Both <span>RESTful</span> services and a <span>Web Interface</span>. 
 
 ## Dev-Team (BugHunters) <img src="./ems/target/classes/static/img/BUG_HUNTERS.png" height="300px" width="300px">
 ### Members :
@@ -17,7 +23,7 @@ A very simple Full-Stack Web Application using the **3-tire Architecture** demon
 
 ## Description
 
-Lets the user see a list of all employees available in the database **(H2)** . Allowing the user to interact with the data either by **adding** , **deleteing** or **updating** the information of any employee.
+Lets the user see a list of all employees available in the database <span>(H2)</span> . Allowing the user to interact with the data either by <span>adding</span> , <span>deleteing</span> or <span>updating</span> the information of any employee.
 
 ## UML Diagram
 ![Diagram](./extra/3-tier.png)
@@ -34,7 +40,18 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 - SQL
 - H2
 - JDBC
+
 ```
+### Tools Used
+
+```
+
+- IntelliJ Idea
+- VsCode
+
+```
+
+
 --- 
 
 ## Planning and Development Process
@@ -71,6 +88,6 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 
 ## Acknowledgments
 
-- SITE (**Saudi Information Technology Company**) - For their continuous Support.
-- **KnowledgeHut** - **Mick** and **Sam**  for being great instructors.
+- SITE (<span>Saudi Information Technology Company</span>) 
+- <span>KnowledgeHut</span>
 
