@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th= "http://www.thymeleaf.org">
 
-<link href="style.css" rel="stylesheet"  type="text/css" >
+<link th:href="@{/style.css}" href="/style.css" rel="stylesheet"  type="text/css" >
 
 <head>
-    <title>Employee Mangement System</title>
+    <title>Employee Management System</title>
 </head>
 <body>
+
+<div class="main-block">
+<h1>Empolyee Mangment System</h1>
 
         <form id="newEmployeeForm"
               action="#"
               th:action="@{/ems/create}"
               th:object="${employee}"
               method="post">
-
-            <div class="main-block">
-                <h1>Empolyee Mangment System</h1>
-
-
+            <div class="info">
                 <input th:field="*{firstName}" class="fname" placeholder="First Name" id="firstName" required/>
 
                 <input th:field= "*{lastName}" placeholder="Last Name" id="lastName" required/>
 
                 <input th:field= "*{email}" placeholder="Email" id="email" required/>
 
-                <input th:field= "*{department}" placeholder="First Name" id="department" required/>
+                <input th:field= "*{department}" placeholder="Department" id="department" required/>
                 <select>
                     <option value="number" disabled selected>Department</option>
                     <option value="10">Information Technology</option>
@@ -34,11 +33,14 @@
 
                 </select>
 
-                <input th:field= "*{salary}" placeholder="First Name" id="salary" required/>
+                <input th:field= "*{salary}" placeholder="Salary" id="salary" required/>
 
-                <input th:field= "*{date}" placeholder="First Name" id="date" required/>
+                <input th:field= "*{date}" placeholder="Hire Date" id="date" required/>
+                <button class="button" type="submit">Add</button>
+
             </div>
 
     </form>
+</div>
 </body>
 </html>
