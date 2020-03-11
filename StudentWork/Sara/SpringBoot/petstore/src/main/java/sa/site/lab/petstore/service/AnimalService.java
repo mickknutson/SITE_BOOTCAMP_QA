@@ -10,6 +10,8 @@ public interface AnimalService
      Animal findById(int id);
      List<Animal> findAll();
      void add(Animal animal);
+     boolean delete(int id);
+
 
 
 }

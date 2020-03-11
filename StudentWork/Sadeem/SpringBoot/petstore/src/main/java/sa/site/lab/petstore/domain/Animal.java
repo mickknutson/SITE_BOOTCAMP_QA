@@ -7,7 +7,7 @@ public class Animal {
 
     //primary key:
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
     private String name;

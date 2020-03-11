@@ -2,7 +2,6 @@ package sa.site.lab.petstore.controller;
 
 import org.springframework.ui.Model;
 import sa.site.lab.petstore.domain.Animal;
-import java.util.List;
 
 public interface AnimalController {
 
@@ -10,7 +9,15 @@ public interface AnimalController {
 
     String findAll(Model model);
 
-    void add(Animal animal);
+    String add(Model model);
+
+    String create(Animal animal);
+
+    /**
+     * Implement this method and print the boolean outcome
+     * to the sout.
+     */
+    String delete(int id);
 
 
 } // The End...

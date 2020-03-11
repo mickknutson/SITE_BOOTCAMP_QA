@@ -8,7 +8,7 @@ public class Animal {
     //Map field to DB columns
 
     @Id //Primary key
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
     @Column

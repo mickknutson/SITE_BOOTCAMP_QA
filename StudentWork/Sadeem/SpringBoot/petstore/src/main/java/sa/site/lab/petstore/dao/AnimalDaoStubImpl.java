@@ -46,5 +46,14 @@ public class AnimalDaoStubImpl implements AnimalDao {
         System.out.println("* AnimalDaoDatabaseImpl.add()");
         animals.put(++counter, animal);
     }
+    public boolean delete (int id){
+        if(animals.containsKey(id)){
+            animals.remove(id);
+            return true;}
+        else{
+            return false;
+        }
+
+    }
 
 }

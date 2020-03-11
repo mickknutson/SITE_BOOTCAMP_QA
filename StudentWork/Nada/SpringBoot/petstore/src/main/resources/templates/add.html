@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Store</title>
+
+</head>
+
+<body style="background-color: #E4F6F8">
+
+<h1>Add New Animal</h1>
+<form id="newAnimalForm"
+action="#"
+th:action="@{/animal/new}"
+    th:Object="${animal}" method="post">
+
+<fieldset>
+    <table>
+        <tr>
+            <th>
+                <label for ="name">Name</label>
+            </th>
+            <td>
+                <input th:field="*{name}" id="name"/>
+            </td>
+            <th>
+                <label for ="type">Type</label>
+            </th>
+            <td>
+                <input th:field="*{type}" id="type"/>
+            </td>
+            <th>
+                <label for ="sound">Sound</label>
+            </th>
+
+            <td>
+                <input th:field="*{sound}" id="sound"/>
+            </td>
+
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button type="submit" id="submit">Create</button>
+                 </th>
+        </tr>
+    </table>
+</fieldset>
+
+</form>
+</body>
+</html>

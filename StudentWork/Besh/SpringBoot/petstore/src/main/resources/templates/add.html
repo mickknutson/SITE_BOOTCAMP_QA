@@ -1,4 +1,3 @@
-
 <html xmlns:th = "http://www.thymeleaf.org">
 <head>
     <title> Welcome to the Petstore!</title>
@@ -7,7 +6,43 @@
 <body>
 <h1>Add new Animal</h1>
 
-*** Add Animal HTML Form(name, type,sound) ***
-
+<form id="newAnimalForm"
+      action="#"
+      th:action="@{/animal/new}"
+      th:object="${animal}" method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <th>
+                    <label for="name">Name</label>
+                </th>
+                <td>
+                    <input th:field = "*{name}" id="name"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="type">Type</label>
+                </th>
+                <td>
+                    <input th:field = "*{type}" id="type"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="sound">Sound</label>
+                </th>
+                <td>
+                    <input th:field = "*{sound}" id="sound"/>
+                </td>
+            </tr>
+            <tr>
+            <th colspan="2">
+                <button type="submit" id="submit">Create</button>
+            </th>
+            </tr>
+        </table>
+        </fieldset>
+</form>
 </body>
 </html>

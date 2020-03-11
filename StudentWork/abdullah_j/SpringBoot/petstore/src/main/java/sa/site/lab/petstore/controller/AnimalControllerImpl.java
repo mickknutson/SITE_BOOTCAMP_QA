@@ -16,6 +16,16 @@ import java.util.List;
 public class AnimalControllerImpl implements AnimalController {
 
 
+    @Override
+    public Animal findById(int id) {
+        return null;
+    }
+
+    @Override
+    public List<Animal> findAll() {
+        return null;
+    }
+
     @Autowired
     private AnimalService service;
 
@@ -52,21 +62,40 @@ public class AnimalControllerImpl implements AnimalController {
         System.out.println("*** AnimalController.add() ***");
 
         model.addAttribute(new Animal());
-        //service.add(animal);
+
         return "add";
-
-        //return "redirect:/animal/list.html";
-
     }
 
 
+
+
     @PostMapping("new")
+    @Override
     public String create(Animal animal){
 
         System.out.println("create() - " + animal);
 
-        //service.add(animal);
+        // NOTE: VALIDATION
+        // TODO: VALIDATION
+        // FIXME: VALIDATION!!!
+
+        service.add(animal);
+
         return "redirect:/animal/list.html";
     }
 
+
+    @Override
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id) {
+
+        System.out.println("delete() - " + id);
+
+        boolean result = service.delete(id);
+
+        System.out.println("result: " + result);
+
+        return "redirect:/animal/list.html";
+
+    }
 }

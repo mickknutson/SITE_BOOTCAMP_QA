@@ -14,7 +14,6 @@ public class AnimalDaoDatabaseImpl  implements AnimalDao {
     @Autowired
     private AnimalRepository repository;
 
-    // TODO : MUST implement !
     public Animal findById(int id) {
         System.out.println("## AniamlDaoDatabaseImpl.findPet: " + id);
         //return repository.findById(id).get(); <--- Dose not WORK!
@@ -26,7 +25,6 @@ public class AnimalDaoDatabaseImpl  implements AnimalDao {
         }
     }
 
-    // TODO : MUST implement !
     public List<Animal> findAll() {
         System.out.println("## AniamlDaoDatabaseImpl.findAll: ");
         Iterable<Animal> result = repository.findAll();
@@ -34,12 +32,25 @@ public class AnimalDaoDatabaseImpl  implements AnimalDao {
         for( Animal animal: result){
             animals.add(animal);
         }
+        if (animals.isEmpty())
+            return null;
+        else
         return animals;
     }
 
-    // TODO : MUST implement !
     public void add(Animal animal) {
         System.out.println("AnimalDaoDatabaseImpl.add()");
         repository.save(animal);
+    }
+
+    @Override
+    public boolean delete(int id) {
+        Animal animal = this.findById(id);
+        if (animal == null) {
+            return false;
+        } else {
+            repository.delete(animal);
+            return true;
+        }
     }
 } // end class ...

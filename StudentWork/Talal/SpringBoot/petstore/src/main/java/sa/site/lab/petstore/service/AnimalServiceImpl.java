@@ -34,4 +34,10 @@ public class AnimalServiceImpl implements AnimalService {
         dao.add(animal);
 
     }
+
+    @Override
+    public boolean delete(int id) {
+       return dao.delete(id);
+
+    }
 }

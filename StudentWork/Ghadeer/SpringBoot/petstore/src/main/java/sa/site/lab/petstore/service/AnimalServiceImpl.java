@@ -29,6 +29,9 @@ public class AnimalServiceImpl implements AnimalService {
 
         dao.add(animal);
     }
+    public boolean delete(int id){
+        return dao.delete(id);
+    }
 
 //    }
 //    public void fillMethod(){

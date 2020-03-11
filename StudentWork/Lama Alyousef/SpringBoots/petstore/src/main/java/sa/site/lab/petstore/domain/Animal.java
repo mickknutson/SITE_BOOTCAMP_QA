@@ -10,7 +10,7 @@ public class Animal extends Object{
     // Map field to DB columns:
     // Primary Key;
     @Id
-    @GeneratedValue // Generate id value
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generate id value
     private int id;
 
     @Column
@@ -18,7 +18,7 @@ public class Animal extends Object{
     @Column
     private String type;
     @Column
-    private  String sound;
+    private String sound;
 
     // Constructor
 
