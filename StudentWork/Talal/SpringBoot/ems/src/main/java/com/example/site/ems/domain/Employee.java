@@ -1,15 +1,22 @@
 package com.example.site.ems.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
+
+
 @Entity
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id ;
+    private Integer id ;
     @Column
     private String firstName;
     private String lastName;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat( pattern = "yyyy-MM-dd")
     private Date date;
     private String email;
     private String department;
@@ -40,7 +47,7 @@ public class Employee {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
