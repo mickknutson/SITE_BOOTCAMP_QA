@@ -3,6 +3,8 @@
 
 A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful services** and a **Web Interface**. 
 
+---
+
 ## Dev-Team (BugHunters) 
 <img src="./ems/src/main/resources/static/img/BUG_HUNTERS.png" height="300px" width="300px">
 
