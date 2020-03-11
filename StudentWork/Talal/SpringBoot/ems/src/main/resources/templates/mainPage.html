@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th= "http://www.thymeleaf.org">
 <head>
-    <title>Employee Mangement System</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Employee Management System</title>
+    <link th:href="@{/style.css}" href="/style.css" rel="stylesheet"  type="text/css" >
 
 </head>
 <body>
-<div class="main-block">
-    <h2>Employee Mangement System</h2>
 
+    <div class="main-block">
+    <h1>Employee Management System</h1>
+        <form action="/ems/add">
         <table class="Table" style="width:100%">
             <thead>
             <tr>
@@ -40,11 +41,9 @@
             </tbody>
 
         </table>
-    <form action="/ems/add">
-        <button type="submit">Add</button>
-    </form>
+            <button class="button" href="/ems/add" type="submit">Add</button>
 
-    <button class="but" type="submit" href="EMS_Project.html" target="_blank">Update</button>
+        </form>
 </div>
 </body>
 </html>
