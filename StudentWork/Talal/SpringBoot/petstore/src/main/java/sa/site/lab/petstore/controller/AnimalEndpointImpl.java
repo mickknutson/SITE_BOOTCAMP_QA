@@ -22,7 +22,6 @@ import java.util.List;
 @RequestMapping("/api/animal") // URI
 public class AnimalEndpointImpl  {
 
-
     @Autowired
     private AnimalService service;
 
