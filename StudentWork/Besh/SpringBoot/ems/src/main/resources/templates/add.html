@@ -2,90 +2,94 @@
 
 <head>
     <title> Welcome to the EMS!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-
-<body>
 <h1>Add new Employee</h1>
 
-<form id="newEmployeeForm"
+<form orm id="newEmployeeForm"
       action="#"
       th:action="@{/employee/create}"
       th:object="${employee}" method="post">
+            <div class="row">
+                    <label for="employeeId" class="col-sm-2 col-form-label"> Employee Id</label>
+                <div lass="col-sm-10%">
+                    <input type="number" class="form-group row" th:field = "*{employeeId}" id="employeeId"/>
+                </div>
+            </div>
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-10">
+            <input class="form-group row" th:field = "*{firstName}" id="firstName">
+        </div>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-10">
+            <input class="form-group row" th:field = "*{lastName}" id="lastName">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="hireDate" class="col-sm-2 col-form-label">Hair Date</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-group row" th:field = "*{hireDate}" id="hireDate">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type = "email" class="form-group row" th:field = "*{email}" id="email">
+        </div>
+    </div>
     <fieldset>
-        <table style = "width:25%;border: 1px solid blue">
-            <tr>
-                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                    <label for="employeeId">Employee Id</label>
-                </th>
-                <td style = "width:25%">
-                    <input type="number" th:field = "*{employeeId}" id="employeeId"/>
-                </td>
-            </tr>
-            <tr>
-                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                    <label for="firstName">First Name</label>
-                </th>
-                <td style = "width:25%">
-                    <input th:field = "*{firstName}" id="firstName"/>
-                </td>
-            </tr>
-            <tr>
-            <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                <label for="lastName">Last Name</label>
-            </th>
-            <td style = "width:25%">
-                <input th:field = "*{lastName}" id="lastName"/>
-            </td>
-        </tr>
-            <tr>
-                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                    <label for="hireDate">Hire Date</label>
-                </th>
-                <td style = "width:25%">
-                    <input type="date" th:field = "*{hireDate}" id="hireDate"/>
-                </td>
-            </tr>
-            <tr>
-                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                    <label for="email">Email</label>
-                </th>
-                <td style = "width:25%">
-                    <input type="email" th:field = "*{email}" id="email"/>
-                </td>
-            </tr>
-            <tr>
-                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                    <label for="department">Department</label>
-                </th>
-                <td style = "width:25%">
-                   <select th:field = "*{department}" id="department">
-                       <option th:value = "HR" th:text = "Human_Resources"></option>
-                       <option th:value = "IT" th:text = "Information_Technology"></option>
-                       <option th:value = "Finance" th:text = "Finance"></option>
-                       <option th:value = "QA" th:text = "Quality_Assurance"></option>
-                       <option th:value = "Management" th:text = "Management"></option>
-                   </select>
-                 </td>
-            </tr>
-            <tr>
-                <th style = "width:25%;border: 1px solid black; background-color: #FA8072">
-                    <label for="salary">Salary</label>
-                </th>
-                <td style = "width:25%">
-                    <input type="number" step="0.01" th:field = "*{salary}" id="salary"/>
-                </td>
-            </tr>
-            <tr>
-                <th colspan="2">
-                    <button style = "width:25%;border: 1px solid black; background-color: #483D8B"; type="submit" id="submit">Create</button>
-                </th>
-            </tr>
-        </table>
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Departments</legend>
+            <div class="col-sm-5">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="department" id="Human Resources" value="Human Resources" checked>
+                    <label class="form-check-label" for="Human Resources">
+                        Human Resources
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="department" id="Information Technology" value="Information Technology">
+                    <label class="form-check-label" for="Information Technology">
+                        Information Technology
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="department" id="Finance" value="Finance">
+                    <label class="form-check-label" for="Finance">
+                        Finance
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="department" id="Quality Assurance" value="Quality Assurance">
+                    <label class="form-check-label" for="Quality Assurance">
+                        Quality Assurance
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="department" id="Management" value="Management">
+                    <label class="form-check-label" for="Management">
+                        Management
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-group row" th:field = "*{salary}" id="salary">
+            </div>
+        </div>
     </fieldset>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
 </form>
-<style>
-body {background-color: #D8BFD8;}
-h1 {color:blue;}
-</style>
+<body>
 </body>
 </html>
