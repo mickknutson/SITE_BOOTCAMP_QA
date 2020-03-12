@@ -19,9 +19,9 @@ It is web based managmenet system that aims to facilitate the processes of handl
 - Deleting employee from the list.
 
 ## UML:
-![UML](HomePage.png)
+![UML](UML.png)
 
 ## Wireframe:
 
-![Home Page](HomePage (9).png)
-![Employee List Page](EmployeeList (4).png)
+![Home Page](Home.png)
+![Employee List Page](list.png)
