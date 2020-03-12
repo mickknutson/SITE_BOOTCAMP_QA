@@ -25,13 +25,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
         } else {
             return null;
         }
-
-
     }
 
     @Override
     public List<Employee> findALl() {
-
         Iterable<Employee> employeeIterable = repository.findAll();
 
         List<Employee> employeeList = new ArrayList<>();
@@ -54,7 +51,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public void update(int id,int employeeId, String fname, String lname, String department, String email, int salary, Date date) {
+    public void update(int id, int employeeId, String fname, String lname, String department, String email, int salary, Date date) {
 
 //        Optional<Employee> employee = repository.findById(id);
 //        if (employee.isPresent()){
