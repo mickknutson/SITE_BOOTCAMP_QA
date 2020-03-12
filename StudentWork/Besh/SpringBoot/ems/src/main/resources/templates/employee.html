@@ -1,17 +1,16 @@
 <html xmlns:th="http://thymeleaf.org">
 
 <head>
-    <title> Welcome to the PetStore!</title>
+    <title> Welcome to the EMS!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-
-
-<h1>List of animals</h1>
-<b>Animals...</b>
-
-<table>
-    <thead>
-    <tr>
-        <th>Link</th>
+<h1>List of Employees</h1>
+<div class="w3-container">
+    <h2>Employees</h2>
+    <table class="w3-table-all">
+        <thead>
+        <tr class="w3-red">
 
         <th>Employee ID</th>
 
@@ -21,6 +20,8 @@
 
         <th>Hire Date</th>
 
+        <th>Email</th>
+
         <th>Department</th>
 
         <th>Salary</th>
@@ -29,18 +30,13 @@
     </tr>
     </thead>
     <tbody>
-    <td>
-        <a th:href="@{'/employee/{id}'(id=${employee.employeeId})}"
-           th:text="${employee.firstName}+' '+${employee.lastName}">Bob</a>
-    </td>
-    <td th:text="${employee.getEmployeeId()}">Bob</td>
-
-    <td th:text="${employee.getFirstName()}">Bob</td>
-    <td th:text="${employee.getLastName()}">cat</td>
-    <td th:text="${employee.getHireDate()}">meow</td>
-
-    <td th:text="${employee.getDepartment()}">meow</td>
-    <td th:text="${employee.getSalary()}">meow</td>
+        <td th:text="${employee.getEmployeeId()}">Bob</td>
+        <td th:text="${employee.getFirstName()}">Bob</td>
+        <td th:text="${employee.getLastName()}">cat</td>
+        <td th:text="${employee.getHireDate()}">meow</td>
+        <td th:text="${employee.getEmail()}">meow</td>
+        <td th:text="${employee.getDepartment()}">meow</td>
+        <td th:text="${employee.getSalary()}">meow</td>
 
     <td>
         <a th:href="@{'/employee/delete/{id}'(id=${employee.employeeId})}"
@@ -49,11 +45,7 @@
 
     </tbody>
 </table>
-
-</html>
 </title>
 </head>
-<body>
-
-</body>
+</div>
 </html>

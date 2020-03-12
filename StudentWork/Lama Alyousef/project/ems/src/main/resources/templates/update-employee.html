@@ -47,7 +47,7 @@
 
             <form id="newEmployeeForm"
                   action="#"
-                  th:action="@{/employee/update/{id}(id=${employee.id})}"
+                  th:action="save"
                   th:object="${employee}" method="post">
 
             <div class="form-group ">
@@ -83,8 +83,6 @@
              <div class="text-center">
                  <input type="submit" class="btn btn-danger rounded-pill btn-lg " value="Update Employee">
              </div>
-
-
 
                 </form>
             </div>
