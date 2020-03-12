@@ -1,15 +1,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title> Welcome to the Employee Management System!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/h2-console">H2 Console</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employee/list">List of Employees<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/employee/add">Add New Employee</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <h1> Welcome to the Employee Management System </h1>
-    <h2><a href="/h2-console">H2 Console </a></h2>
-    <h2><a href="/employee/list">List of Employees</a></h2>
-    <h2><a href="/employee/add">Add New Employee</a></h2>
 </body>
-<style>
-    body {background-color:#C0C0C0}
-    h1 {color:#483D8B}
-</style>
 </html>
