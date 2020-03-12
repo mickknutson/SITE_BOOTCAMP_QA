@@ -1,0 +1,62 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title> Welcome to the EMS!</title>
+</head>
+
+
+<h1>List of Employees</h1>
+<h2>Employee...</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Link</th>
+
+        <th>Employee ID</th>
+
+        <th>First Name</th>
+
+        <th>Last Name</th>
+
+        <th>Hire Date</th>
+
+        <th>Email</th>
+
+        <th>Department</th>
+
+        <th>Salary</th>
+
+        <th>DELETE</th>
+
+        <th>UPDATE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${allEmployees}">
+        <td>
+            <a th:href="@{'/employee/{id}'(id=${employee.employeeId})}"
+               th:text="${employee.firstName}+' '+${employee.lastName}">Bob</a>
+        </td>
+        <td th:text="${employee.getEmployeeId()}">Bob</td>
+
+        <td th:text="${employee.getFirstName()}">Bob</td>
+        <td th:text="${employee.getLastName()}">cat</td>
+        <td th:text="${employee.getHireDate()}">meow</td>
+        <td th:text="${employee.getEmail()}">meow</td>
+        <td th:text="${employee.getDepartment()}">meow</td>
+        <td th:text="${employee.getSalary()}">meow</td>
+
+        <td>
+            <a th:href="@{'/employee/delete/{id}'(id=${employee.employeeId})}"
+               th:text="DELETE"></a>
+        </td>
+        <td>
+            <a th:href="@{'/employee/update/{id}'(id=${employee.employeeId})}"
+               th:text="UPDATE"></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</html>

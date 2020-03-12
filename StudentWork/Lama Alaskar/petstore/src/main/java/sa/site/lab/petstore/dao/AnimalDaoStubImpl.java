@@ -2,57 +2,69 @@ package sa.site.lab.petstore.dao;
 
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
-import sa.site.lab.petstore.domain.Dog;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-@Repository("AnimalDaoStubImpl")
+/**
+ * Data access for Pet Domain Object
+ * <p>
+ * CRUD
+ * <p>
+ * Stereotype:
+ * <p>
+ * Component
+ * Service
+ * Repository
+ * Controller
+ *
+ * Stub: Brut Force / Hard Coded
+ * Mock: Mockito / EasyMock
+ */
+@Repository
 public class AnimalDaoStubImpl implements AnimalDao {
-    // dao = database Access object
-    // stub: Hard coded / Brut Force
-    // Mock: Easy Mock
-    // Map
-/*    Map <Object, Animal> animals = new HashMap<>();
-    animals.put ("foo","foo");*/
 
-    public static Map<Integer, Animal> animalMap;
-    private int counter=0;
+    // LAB: Create Map<?, Animal> of Animals.
+    private Map<Integer, Animal> animals;
+
+    private int counter = 0;
 
     public AnimalDaoStubImpl() {
-        animalMap = new HashMap<>();
-        animalMap.put(++counter, new Cat("kitty"));
-        animalMap.put(++counter, new Dog("bubby"));
+        // LAB: Populate Map with 3+ Animals.
+        animals = new HashMap<>();
+
+        animals.put(++counter, new Animal("Fido"));
+        animals.put(++counter, new Animal("Kitty"));
     }
 
-    // Method Level
-    public Animal findbyid(int id) {
+    // Method level
+    public Animal findById(int id) {
         System.out.println("* AnimalDao: " + id);
 
-        if (animalMap.containsKey(id)) {
-            System.out.println("Animal Found");
-            return animalMap.get(id);
+        // LAB: pull SINGLE animal from Map
+        if(animals.containsKey(id)) {
+            return animals.get(id);
         } else {
             return null;
         }
-        //return new Cat("Kitty");
-    }//End findPet method
+    } // end findPet method
 
-    @Override
-    public Map<Integer, Animal> findAll() {
-        System.out.println(" *AnimalDao.findAll()");
-        return (Map<Integer, Animal>) animalMap;
-        // from map
 
+    public List<Animal> findAll() {
+        System.out.println("* AnimalDao.findAll()");
+        // LAB: return List<Animal> from Map
+        return animals.values() // List of Keys
+                .stream() // Java 8 Stream API
+                .collect(Collectors.toList()); // converting steam to a List
     }
 
-    @Override
-    public void add(Animal animal) {
-        System.out.println("* AnimalController.add");
-        animalMap.put(++counter,animal);
-        //service.add(animal);
 
+    public void add(Animal animal){
+        System.out.println("* AnimalDaoDatabaseImpl.add()");
+        animals.put(++counter, animal);
     }
-}
+
+
+} // The End..

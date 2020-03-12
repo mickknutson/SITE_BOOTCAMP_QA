@@ -6,44 +6,43 @@
 </head>
 <h1>Add new Employee</h1>
 
-<form orm id="newEmployeeForm"
+<div orm id="newEmployeeForm"
       action="#"
       th:action="@{/employee/create}"
       th:object="${employee}" method="post">
-            <div class="row">
-                    <label for="employeeId" class="col-sm-2 col-form-label"> Employee Id</label>
-                <div lass="col-sm-10%">
-                    <input type="number" class="form-group row" th:field = "*{employeeId}" id="employeeId"/>
-                </div>
-            </div>
+    <div class="w3-table-all">
     <div class="form-group row">
-        <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+        <label for="employeeId" align="center" class="col-form-label col-sm-2 pt-0">Employee Id</label>
+            <input type="number" class="form-group row" th:field = "*{employeeId}" id="employeeId"required>
+    </div>
+    <div class="form-group row">
+        <label for="firstName" align="center" class="col-sm-2 col-form-label">First Name</label>
         <div class="col-sm-10">
-            <input class="form-group row" th:field = "*{firstName}" id="firstName">
+            <input class="form-group row" th:field = "*{firstName}" id="firstName" required>
         </div>
     </div>
     </div>
     <div class="form-group row">
-        <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+        <label for="lastName" align="center" class="col-sm-2 col-form-label">Last Name</label>
         <div class="col-sm-10">
-            <input class="form-group row" th:field = "*{lastName}" id="lastName">
+            <input class="form-group row" th:field = "*{lastName}" id="lastName" required>
         </div>
     </div>
     <div class="form-group row">
-        <label for="hireDate" class="col-sm-2 col-form-label">Hair Date</label>
+        <label for="hireDate" align="center" class="col-sm-2 col-form-label">Hair Date</label>
         <div class="col-sm-10">
-            <input type="date" class="form-group row" th:field = "*{hireDate}" id="hireDate">
+            <input type="date" class="form-group row" th:field = "*{hireDate}" id="hireDate"required>
         </div>
     </div>
     <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <label for="email" align="center" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-            <input type = "email" class="form-group row" th:field = "*{email}" id="email">
+            <input type = "email" class="form-group row" th:field = "*{email}" id="email"required>
         </div>
     </div>
     <fieldset>
         <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Departments</legend>
+            <legend class="col-form-label col-sm-2 pt-0" align="center" >Departments</legend>
             <div class="col-sm-5">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="department" id="Human Resources" value="Human Resources" checked>
@@ -78,18 +77,17 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+            <label for="salary" align="center" class="col-sm-2 col-form-label">Salary</label>
             <div class="col-sm-10">
-                <input type="number" class="form-group row" th:field = "*{salary}" id="salary">
+                <input type="number" class="form-group row" th:field = "*{salary}" id="salary" required>
             </div>
         </div>
     </fieldset>
-            <div class="form-group row">
-                <div class="col-sm-10">
+            <div class="col-sm-10">
                     <button type="submit" class="btn btn-primary">Create</button>
-                </div>
             </div>
+</div>
 </form>
-<body>
+<body style="background-color:#B0E0E6";>
 </body>
 </html>
