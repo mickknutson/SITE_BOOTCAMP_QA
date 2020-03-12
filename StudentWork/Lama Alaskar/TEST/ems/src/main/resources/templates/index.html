@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> EMS </title>
+    <meta name="description"
+          content="EMS is An Admin website for management">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: { "families": ["Montserrat:400,500,600,700", "Noto+Sans:400,700"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+
+
+
+    </script>
+    <!-- icon -->
+    <link rel="Alogo" sizes="180x180" href="static/assets/img/logo.png" th:src="@{/assets/img/logo.png}">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/logo-32x32.png"
+          th:src="@{/assets/img/logo-32x32.png}">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/logo-16x16.png"
+          th:src="@{/assets/img/logo-16x16.png}">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../static/assets/vendors/css/base/bootstrap.min.css"
+          th:href="@{/assets/vendors/css/base/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/assets/vendors/css/base/elisyam-1.5.min.css"
+          th:href="@{/assets/vendors/css/base/elisyam-1.5.min.css}">
+    <link rel="stylesheet" href="../static/assets/css/animate/animate.min.css"
+          th:href="@{/assets/css/animate/animate.min.css}">
+
+</head>
+
+<body id="page-top">
+
+
+<!-- Begin Preloader -->
+<div id="preloader">
+    <div class="canvas">
+        <img src="assets/img/logo.png" alt="logo" class="loader-logo">
+        <div class="spinner"></div>
+    </div>
+</div>
+<!-- End Preloader -->
+<div class="page db-modern">
+    <!-- Begin Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+
+                <!-- Begin Topbar -->
+                <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
+
+                    <!-- Begin Logo -->
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">
+                            <div class="brand-image brand-big">
+                                <img src="assets/img/logo.png" alt="logo" style="width: 120px;" class="logo-big">
+                            </div>
+                            <div class="brand-image brand-small">
+                                <img src="assets/img/logo.png" alt="logo" class="logo-small">
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                </div>
+                <!-- End Topbar -->
+            </nav>
+        </div>
+
+
+    </header>
+    <!-- End Header -->
+    <!-- Begin Page Content -->
+    <div class="page-content">
+        <!-- Begin Navigation -->
+        <div class="horizontal-menu">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-light navbar-expand-lg main-menu">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li><a href="/employee/list">Employees</a></li>
+                                <li><a href="/employee/add">Add Employee</a></li>
+                                <li><a href="/h2-console">Database</a></li>
+                                <li><a href="pages-events1.html">API</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- End Navigation -->
+        <div class="content-inner boxed mt-4 w-100">
+            <div class="container">
+                <!-- Begin Page Header-->
+                <div class="row">
+                    <div class="page-header">
+                        <div class="d-flex align-items-center">
+                            <h2 class="page-header-title">Dashboard</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Page Header -->
+                <!-- Begin Row -->
+                <div class="row flex-row">
+                    <div class="col-xl-6 col-md-6 os-animation" data-os-animation="fadeInUp">
+                        <div class="widget widget-21 has-shadow">
+                            <div class="widget-body h-100 d-flex align-items-center">
+                                <div class="section-title">
+                                    <h3>Hit Rate</h3>
+                                </div>
+                                <div class="hit-rate">
+                                    <div class="percent"></div>
+                                </div>
+                                <div class="value-progress text-green">
+                                    + 34%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget-22 bg-gradient-03">
+                            <div class="widget-body h-100 d-flex align-items-center">
+                                <div class="section-title">
+                                    <h3>Happy Customers</h3>
+                                </div>
+                                <div class="happy-customers">
+                                    <div class="percent"></div>
+                                </div>
+                                <div class="value-progress">
+                                    + 54 Today
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-6 os-animation" data-os-animation="fadeInUp">
+                        <!-- Begin Widget 06 -->
+                        <div class="widget widget-06 has-shadow">
+                            <!-- Begin Widget Header -->
+                            <div class="widget-header bordered d-flex align-items-center">
+                                <h2>Reviews</h2>
+
+                            </div>
+                            <!-- End Widget Header -->
+                            <!-- Begin Widget Body -->
+                            <div class="widget-body p-0">
+                                <div id="list-group" class="widget-scroll" style="max-height:490px;">
+                                    <ul class="reviews list-group w-100">
+                                        <!-- 01 -->
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left align-self-start">
+                                                    <img src="assets/img/avatar/avatar-02.jpg"
+                                                         class="user-img rounded-circle" alt="...">
+                                                </div>
+                                                <div class="media-body align-self-center">
+                                                    <div class="username">
+                                                        <h4>Brandon Smith</h4>
+                                                    </div>
+                                                    <div class="msg">
+                                                        <div class="stars">
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star-half-empty"></i>
+                                                        </div>
+                                                        <p>
+                                                            WoW! Amazing Work!
+                                                        </p>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="mr-3">30 minutes ago - 1 Reply</span>
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="media-right pr-3 align-self-center">
+                                                    <div class="like text-center">
+                                                        <i class="ion-heart"></i>
+                                                        <span>12</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- End 01 -->
+                                        <!-- 02 -->
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left align-self-start">
+                                                    <img src="assets/img/avatar/avatar-05.jpg"
+                                                         class="user-img rounded-circle" alt="...">
+                                                </div>
+                                                <div class="media-body align-self-center">
+                                                    <div class="username">
+                                                        <h4>Megan Duncan</h4>
+                                                    </div>
+                                                    <div class="msg">
+                                                        <div class="stars">
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                        </div>
+                                                        <p>
+                                                            Very nice! Keep up the beautiful work.
+                                                        </p>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="mr-3">2 hours ago</span>
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="media-right pr-3 align-self-center">
+                                                    <div class="like text-center">
+                                                        <i class="ion-heart"></i>
+                                                        <span>4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- End 02 -->
+                                        <!-- 03 -->
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left align-self-start">
+                                                    <img src="assets/img/avatar/avatar-04.jpg"
+                                                         class="user-img rounded-circle" alt="...">
+                                                </div>
+                                                <div class="media-body align-self-center">
+                                                    <div class="username">
+                                                        <h4>Nathan Hunter</h4>
+                                                    </div>
+                                                    <div class="msg">
+                                                        <div class="stars">
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                        </div>
+                                                        <p>
+                                                            Nice work, good design!
+                                                        </p>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="mr-3">4 hours ago</span>
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="media-right pr-3 align-self-center">
+                                                    <div class="like text-center">
+                                                        <i class="ion-heart"></i>
+                                                        <span>32</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- End 03 -->
+                                        <!-- 04 -->
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left align-self-start">
+                                                    <img src="assets/img/avatar/avatar-09.jpg"
+                                                         class="user-img rounded-circle" alt="...">
+                                                </div>
+                                                <div class="media-body align-self-center">
+                                                    <div class="username">
+                                                        <h4>Michael Bradley</h4>
+                                                    </div>
+                                                    <div class="msg">
+                                                        <div class="stars">
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star-half-empty"></i>
+                                                        </div>
+                                                        <p>
+                                                            Very nice! Keep up the beautiful work.
+                                                        </p>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="mr-3">5 hours ago - 2 Reply</span>
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="media-right pr-3 align-self-center">
+                                                    <div class="like text-center">
+                                                        <i class="ion-heart"></i>
+                                                        <span>2</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- End 04 -->
+                                        <!-- 05 -->
+                                        <li class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left align-self-start">
+                                                    <img src="assets/img/avatar/avatar-03.jpg"
+                                                         class="user-img rounded-circle" alt="...">
+                                                </div>
+                                                <div class="media-body align-self-center">
+                                                    <div class="username">
+                                                        <h4>Louis Henry</h4>
+                                                    </div>
+                                                    <div class="msg">
+                                                        <div class="stars">
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star"></i>
+                                                            <i class="la la-star-half-empty"></i>
+                                                        </div>
+                                                        <p>
+                                                            I like the color combination!
+                                                        </p>
+                                                    </div>
+                                                    <div class="meta">
+                                                        <span class="mr-3">1 day ago</span>
+                                                        <a href="#">Reply</a>
+                                                    </div>
+                                                </div>
+                                                <div class="media-right pr-3 align-self-center">
+                                                    <div class="like text-center">
+                                                        <i class="ion-heart"></i>
+                                                        <span>9</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- End 05 -->
+                                    </ul>
+                                </div>
+                                <!-- End List -->
+                            </div>
+                            <!-- End Widget Body -->
+                        </div>
+                        <!-- End Widget 06 -->
+                    </div>
+                </div>
+                <!-- End Row -->
+
+                <div class="row flex-row">
+                    <div class="col-xl-6 col-md-6 os-animation" data-os-animation="fadeInUp">
+                        <!-- Begin Widget 08 -->
+                        <div class="widget widget-08 has-shadow">
+                            <!-- Begin Widget Header -->
+                            <div class="widget-header bordered d-flex align-items-center">
+                                <h2>Tasks List</h2>
+                                <div class="widget-options">
+                                    <div class="dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" class="dropdown-toggle">
+                                            <i class="la la-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">
+                                                <i class="la la-plus"></i>Add Task
+                                            </a>
+                                            <a href="#" class="dropdown-item">
+                                                <i class="la la-edit"></i>Edit Widget
+                                            </a>
+                                            <a href="#" class="dropdown-item faq">
+                                                <i class="la la-question-circle"></i>FAQ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Widget Header -->
+                            <!-- Begin Widget Body -->
+                            <div class="widget-body">
+                                <div class="today">
+                                    <div class="title">Today</div>
+                                    <div class="new-tasks"><span class="nb">12</span> new tasks</div>
+                                </div>
+                                <!-- Begin List -->
+                                <div class="todo-list">
+                                    <ul id="sortable" class="list">
+                                        <li class="task-color task-violet">
+                                            <div class="styled-checkbox">
+                                                <input type="checkbox" id="task-1">
+                                                <label class="text-primary" for="task-1">Play Rainbow Six</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="styled-checkbox">
+                                                <input type="checkbox" id="task-2">
+                                                <label class="text-dark" for="task-2">Drink coffee with
+                                                    Megan</label>
+                                            </div>
+                                        </li>
+                                        <li class="task-color task-blue">
+                                            <div class="styled-checkbox">
+                                                <input type="checkbox" id="task-3">
+                                                <label class="text-info" for="task-3">Video conference</label>
+                                            </div>
+                                        </li>
+                                        <li class="task-color task-red">
+                                            <div class="styled-checkbox">
+                                                <input type="checkbox" id="task-4">
+                                                <label class="text-danger" for="task-4">Finish visual design</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="styled-checkbox">
+                                                <input type="checkbox" id="task-5">
+                                                <label class="text-dark" for="task-5">Meeting with team</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End List -->
+                            </div>
+                            <!-- End Widget Body -->
+                        </div>
+                        <!-- End Widget 08 -->
+                    </div>
+                    <div class="col-xl-6 col-md-6 os-animation" data-os-animation="fadeInUp">
+                        <!-- Begin Widget 10 -->
+                        <div class="widget widget-10 has-shadow">
+                            <!-- Begin Widget Header -->
+                            <div class="widget-header bordered d-flex align-items-center">
+                                <h2>Support Tickets</h2>
+                                <div class="widget-options">
+                                    <div class="dropdown">
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" class="dropdown-toggle">
+                                            <i class="la la-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">
+                                                <i class="la la-bell-slash"></i>Disable Alerts
+                                            </a>
+                                            <a href="#" class="dropdown-item">
+                                                <i class="la la-edit"></i>Edit Widget
+                                            </a>
+                                            <a href="#" class="dropdown-item faq">
+                                                <i class="la la-question-circle"></i>FAQ
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Widget Header -->
+                            <!-- Begin Widget Body -->
+                            <div class="widget-body no-padding">
+                                <ul class="ticket list-group w-100">
+                                    <!-- 01 -->
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-left align-self-center pr-4">
+                                                <img src="assets/img/avatar/avatar-02.jpg"
+                                                     class="user-img rounded-circle" alt="...">
+                                            </div>
+                                            <div class="media-body align-self-center">
+                                                <div class="username">
+                                                    <h4>Brandon Smith</h4>
+                                                </div>
+                                                <div class="msg">
+                                                    <p>
+                                                        Hello, Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                        elit, sed do eiusmod tempor incididunt ut labore et mauris
+                                                        sapien sem, ornare id mauris vitae, ultricies volutpat ...
+                                                    </p>
+                                                </div>
+                                                <div class="status"><span class="open mr-2">Open</span>(1 hour ago)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- End 01 -->
+                                    <!-- 02 -->
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-left align-self-center pr-4">
+                                                <img src="assets/img/avatar/avatar-04.jpg"
+                                                     class="user-img rounded-circle" alt="...">
+                                            </div>
+                                            <div class="media-body align-self-center">
+                                                <div class="username">
+                                                    <h4>Nathan Hunter</h4>
+                                                </div>
+                                                <div class="msg">
+                                                    <p>
+                                                        Hello, Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                        elit, sed do eiusmod tempor incididunt ut labore et mauris
+                                                        sapien sem, ornare id mauris vitae, ultricies volutpat ...
+                                                    </p>
+                                                </div>
+                                                <div class="status"><span class="pending mr-2">Pending</span>(2
+                                                    hours ago)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- End 02 -->
+                                    <!-- 03 -->
+                                    <li class="list-group-item">
+                                        <div class="media">
+                                            <div class="media-left align-self-center pr-4">
+                                                <img src="assets/img/avatar/avatar-05.jpg"
+                                                     class="user-img rounded-circle" alt="...">
+                                            </div>
+                                            <div class="media-body align-self-center">
+                                                <div class="username">
+                                                    <h4>Megan Duncan</h4>
+                                                </div>
+                                                <div class="msg">
+                                                    <p>
+                                                        Hello, Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                        elit, sed do eiusmod tempor incididunt ut labore et mauris
+                                                        sapien sem, ornare id mauris vitae, ultricies volutpat ...
+                                                    </p>
+                                                </div>
+                                                <div class="status"><span class="closed mr-2">Closed</span>(1 day
+                                                    ago)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- End 03 -->
+                                </ul>
+                            </div>
+                            <!-- End Widget Body -->
+                        </div>
+                        <!-- End Widget 10 -->
+                    </div>
+                </div>
+                <div class="row flex-row">
+                    <div class="col-xl-4">
+                        <!-- Begin Widget 36 -->
+                        <div class="widget-36 widget has-shadow">
+                            <!-- Begin Widget Body -->
+                            <div class="widget-body">
+                                <div class="row">
+                                    <div class="col-xl-12 text-center mt-5 mb-5">
+                                        <div class="nb-visitors">
+                                            New Users
+                                        </div>
+                                        <div class="visitors-nb text-gradient-02">
+                                            2,861
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 text-center mt-5">
+                                        <p class="text-dark">Registrations</p>
+                                        <div class="mt-2">
+                                            <label>
+                                                <input class="toggle-checkbox" type="checkbox" checked>
+                                                <span>
+                                                        <span></span>
+                                                    </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 text-center mt-5">
+                                        <p class="text-dark">Maintenance Mode</p>
+                                        <div class="mt-2">
+                                            <label>
+                                                <input class="toggle-checkbox" type="checkbox">
+                                                <span>
+                                                        <span></span>
+                                                    </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Widget Body -->
+                        </div>
+                        <!-- End Widget 36 -->
+                    </div>
+
+
+                    <!-- End Row -->
+                </div>
+                <!-- End Container -->
+
+
+                <a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
+
+            </div>
+            <!-- End Page Content -->
+        </div>
+        <!-- Begin Vendor Js -->
+        <script src="../static/assets/vendors/js/base/jquery.min.js"  th:src="@{/assets/vendors/js/base/jquery.min.js}"></script>
+        <script src="../static/assets/vendors/js/base/core.min.js"  th:src="@{/assets/vendors/js/base/core.min.js}"></script>
+        <!-- End Vendor Js -->
+        <!-- Begin Page Vendor Js -->
+        <script src="../static/assets/vendors/js/nicescroll/nicescroll.min.js"  th:src="@{/assets/vendors/js/nicescroll/nicescroll.min.js}"></script>
+        <script src="../static/assets/vendors/js/waypoints/waypoints.min.js"  th:src="@{/assets/vendors/js/waypoints/waypoints.min.js}"></script>
+        <script src="../static/assets/vendors/js/chart/chart.min.js"  th:src="@{/assets/vendors/js/chart/chart.min.js}"></script>
+        <script src="../static/assets/vendors/js/progress/circle-progress.min.js"  th:src="@{/assets/vendors/js/progress/circle-progress.min.js}"></script>
+        <script src="../static/assets/vendors/js/app/app.min.js"  th:src="@{/assets/vendors/js/nicescroll/nicescroll.min.js}"></script>
+        <!-- End Page Vendor Js -->
+        <!-- Begin Page Snippets -->
+        <script src="../static/assets/js/dashboard/db-modern.min.js"  th:src="@{assets/js/dashboard/db-modern.min.js}"></script>
+        <!-- End Page Snippets -->
+
+    </div>
+</div>
+
+</body>
+
+</html>
