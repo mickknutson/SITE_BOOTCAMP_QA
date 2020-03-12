@@ -1,58 +1,12 @@
 <html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
-<!--<head>-->
-<!--    <title> Welcome to the PetStore!</title>-->
-<!--</head>-->
-
-<!--<h1>Welcome to the pet store!!</h1>-->
-
-<!--<h2><a href="/h2-console">Admin console</a></h2>-->
-<!--<h2><a href="/employee/list.html">employee list</a></h2>-->
-<!--<h2><a href="/employee/animal.html">employee info.</a></h2>-->
-<!--<h2><a href="/employee/add">Add employee</a></h2>-->
-<!--<h2><a href="/employee/update.html">update employee</a></h2>-->
-
-
-
-
-<!--</html>-->
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
+    <meta charset="UTF-8">
+    <title>Welcome to EMS!</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
-
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none;
-    }
-  }
-  </style>
 </head>
-<body>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
