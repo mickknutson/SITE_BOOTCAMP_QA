@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -33,8 +32,7 @@ public class EmployeeControllerImpl implements EmployeeController {
         List<Employee> employees = employeeService.findAll();
         System.out.println(employees.toString());
         model.addAttribute("employees" , employees);
-
-        return "index";
+        return "ems";
     }
 
     @PostMapping("add")
@@ -64,7 +62,7 @@ public class EmployeeControllerImpl implements EmployeeController {
 
         employeeService.add(employee);
         model.addAttribute("employees", employeeService.findAll());
-        return "index";
+        return "ems";
     }
 
     @GetMapping("delete/{id}")
@@ -72,6 +70,6 @@ public class EmployeeControllerImpl implements EmployeeController {
         //Employee employee = employeeService.findById(id);
         employeeService.delete(id);
         model.addAttribute("employees", employeeService.findAll());
-        return "index";
+        return "ems";
     }
 }
