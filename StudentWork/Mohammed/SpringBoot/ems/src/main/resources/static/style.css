@@ -35,7 +35,7 @@ html, body {
       width: 80%;
       padding: 25px;
       margin-bottom: 20px;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(32, 32, 32, 0.9);
       }
       input, select {
       padding: 5px;
@@ -44,6 +44,12 @@ html, body {
       border: none;
       border-bottom: 1px solid #eee;
       }
+
+    a:visited {
+        color: red;
+
+    }
+
       input::placeholder {
       color: #eee;
       }
@@ -57,7 +63,6 @@ html, body {
       input[type=radio] {
       display: none;
       }
-
       button {
       display: block;
       width: 400px;
@@ -101,6 +106,15 @@ html, body {
       margin-top: 10px;
 }
 
-table, th, td {
-  border:  solid white;
+table {
+  border-collapse: collapse
 }
+
+table, th, td {
+border:  1px solid white;
+
+}
+
+
+
+
