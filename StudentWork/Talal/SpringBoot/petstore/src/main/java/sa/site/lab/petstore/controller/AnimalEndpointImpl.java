@@ -51,17 +51,10 @@ public class AnimalEndpointImpl  {
 
     public List<Animal> findAll() {
        // throw new RuntimeException("Not Yet Implemented ");
-
-        List<Animal> animals= service.findAll();
-        System.out.println("** REST Animals "+ animals);
-        return animals;
-
-    }
+                                       cv vbfnb gv
 
 
-
-
-    public String add(Model model) {
+    public String add(Model mo d++--------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++el) {
         throw new RuntimeException("Not Yet Implemented ");
 
     }
