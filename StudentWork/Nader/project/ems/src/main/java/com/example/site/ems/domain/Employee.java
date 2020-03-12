@@ -11,13 +11,7 @@ public class Employee {
     @Column
     private String a_employeeId;
 
-    public String getA_employeeId() {
-        return a_employeeId;
-    }
 
-    public void setA_employeeId(String a_employeeId) {
-        this.a_employeeId = a_employeeId;
-    }
 
     @Column
     private String a_firstName;
@@ -42,6 +36,13 @@ public class Employee {
 
     public void setId(int id) {
         this.id = id;
+    }
+    public String getA_employeeId() {
+        return a_employeeId;
+    }
+
+    public void setA_employeeId(String a_employeeId) {
+        this.a_employeeId = a_employeeId;
     }
 
     public String getA_firstName() {
@@ -92,3 +93,4 @@ public class Employee {
         this.salary = salary;
     }
 }
+
