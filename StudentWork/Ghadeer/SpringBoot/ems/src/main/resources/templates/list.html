@@ -1,19 +1,38 @@
 <html xmlns:th="http://thymeleaf.org">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <head>
-    <title> Welcome to the PetStore!</title>
+    <meta charset="UTF-8">
+    <title>Welcome to EMS!</title>
+    <link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet" />
+
 </head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-        <h1>List of animals</h1>
-        <b>Animals...</b>
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<h1>Employees</h1>
+<body>
 
         <table>
             <thead>
@@ -63,10 +82,9 @@
             </tbody>
         </table>
 
-        </html>
-    </title>
-</head>
-<body>
+
+
+
 
 </body>
 </html>
