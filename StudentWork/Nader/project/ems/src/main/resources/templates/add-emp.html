@@ -5,18 +5,43 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Add Employee</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
+
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
 	crossorigin="anonymous">
 <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+	<link th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link th:href="@{/css/ionicons.min.css}" href="/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+<!--	<link th:href="@{/css/styles.css}" href="/css/styles.css" rel="stylesheet" type="text/css" />-->
+
 </head>
 <body>
-	<div class="container my-5">
+<nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand page-scroll" href="#"><i class="ion-ios-analytics-outline"></i> MythBusters</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="page-scroll" href="/employees/list">All Employees</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="http://localhost:8099/">Homepage</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a class="page-scroll" data-toggle="modal" title="MythBusters are here" href="#aboutModal">About</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+	<div class="container my-5" style="margin-top: 100px">
 	<h3> Add employee </h3>
 		<div class="card">
 			<div class="card-body">
@@ -27,28 +52,28 @@
 							<div class="form-group col-md-8">
 								<label for="a_employeeId" class="col-form-label">Employee ID</label> <input
 									type="text" th:field="*{a_employeeId}" class="form-control" id="a_employeeId"
-									placeholder="enter Employee ID"> <span
+									placeholder="enter Employee ID" required> <span
 									th:if="${#fields.hasErrors('a_employeeId')}" th:errors="*{a_employeeId}"
 									class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
 								<label for="a_firstName" class="col-form-label">First Name</label> <input
 									type="text" th:field="*{a_firstName}" class="form-control" id="a_firstName"
-									placeholder="enter first name"> <span
+									placeholder="enter first name" required> <span
 									th:if="${#fields.hasErrors('a_firstName')}" th:errors="*{a_firstName}"
 									class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
 								<label for="b_lastName" class="col-form-label">Last Name</label> <input
 									type="text" th:field="*{b_lastName}" class="form-control" id="b_lastName"
-									placeholder="enter last name"> <span
+									placeholder="enter last name" required> <span
 									th:if="${#fields.hasErrors('b_lastName')}" th:errors="*{b_lastName}"
 									class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
 								<label for="email" class="col-form-label">Email</label> <input
 									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="Email"> <span
+									placeholder="Email" required> <span
 									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 									class="text-danger"></span>
 							</div>
@@ -74,14 +99,14 @@
 							<div class="form-group col-md-8">
 								<label for="hireDate" class="col-form-label">Hiring date</label> <input
 									type="date" th:field="*{hireDate}" class="form-control"
-									id="hireDate" placeholder="enter hiring date"> <span
+									id="hireDate" placeholder="enter hiring date" required> <span
 									th:if="${#fields.hasErrors('hireDate')}" th:errors="*{hireDate}"
 									class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
 								<label for="salary" class="col-form-label">Salary</label> <input
 									type="text" th:field="*{salary}" class="form-control"
-									id="salary" placeholder="enter salary"> <span
+									id="salary" placeholder="enter salary" required> <span
 									th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"
 									class="text-danger"></span>
 							</div>
@@ -98,5 +123,12 @@
 			</div>
 		</div>
 	</div>
+
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.easing.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/wow.js}"></script>
+<script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+
 </body>
 </html>

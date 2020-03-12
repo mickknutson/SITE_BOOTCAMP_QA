@@ -1,25 +1,87 @@
 package sa.site.lab.petstore.domain;
 
-public interface Animal {
+import javax.persistence.*;
 
-    public void eat();
+/**
+ * This is my contract obligation
+ */
+@Entity
+public class Animal{
 
-    public void setName(String name);
+    // Map field to DB columns:
+    // Primary Key:
+    @Id
+    @GeneratedValue
+    private int id;
 
-    public String getName();
+    @Column
+    private String name;
+    @Column
+    private String type;
+    @Column
+    private String sound;
 
-    public void talk();
-}
-//    public static void main (String[] args){
-//        Animal animal = new Animal();
-//        Animal Dog = new Dog();
-//        Animal Cat = new Cat();
-//
-//        animal.eat();
-//        ((Dog)Dog).talk();
-//        ((Cat)Cat).talk();
-//        ((Dog)Dog).talk();
-//        ((Cat)Cat).talk();
-//    }
+    public Animal() {}
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    // These are behavior:
+    // TODO: Ignore these methods in JPA:
+
+    @Transient
+    public void eat(){
+        throw new RuntimeException("not yet implemented");
+    }
+
+    @Transient
+    public void talk(String voice){
+        throw new RuntimeException("not yet implemented");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", sound='" + sound + '\'' +
+                '}';
+    }
 
 
+    // Setter & Getter ------------------------------//
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public void setSound(String sound) {
+        this.sound = sound;
+    }
+} // The End...
