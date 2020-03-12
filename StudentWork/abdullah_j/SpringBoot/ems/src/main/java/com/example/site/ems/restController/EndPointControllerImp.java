@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/employee")
-public class RestControllerImpl implements EndPointController {
+public class EndPointControllerImp implements EndPointController {
 
     @Autowired
     private EmployeeService service;

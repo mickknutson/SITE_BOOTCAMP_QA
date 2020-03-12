@@ -33,11 +33,11 @@
                 <table class="listing" cellpadding="0" cellspacing="0">
                     <tr>
                         <th class="first" width="177">Id</th>
-                        <th>Name</th>
-                        <th>Hire Date</th>
+                        <th th:width="500px">Name</th>
+                        <th width="500px">Hire Date</th>
                         <th>Email</th>
                         <th>Department</th>
-                        <th>Salary</th>
+                        <th width="500">Salary</th>
                         <th>Update</th>
                         <th class="last">Delete</th>
                     </tr>
@@ -54,7 +54,7 @@
 
                         <td th:text="${employee.department}">department</td>
 
-                        <td th:text="${employee.salary}">0.0</td>
+                        <td th:text="${employee.salary} +' SAR'">0.0 <span>SAR</span></td>
 
 
                         <td><a th:href="@{'/employee/update/{id}' (id=${employee.employeeId})}">
