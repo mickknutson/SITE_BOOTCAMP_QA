@@ -1,4 +1,5 @@
 package com.example.site.ems.controller;
+
 import com.example.site.ems.domain.Employee;
 import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,37 +16,15 @@ public class EmployeeControllerImpl implements EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
-
-    @PostMapping("/goToList")
-    public String goToList(){
-        return "redirect:/ems/employeesList";
-    }
-
-    @GetMapping("/{id}")
-    @Override
-    public String findById(@PathVariable int id,
-                           Model model) {
-        Employee employee = employeeService.findById(id);
-        model.addAttribute("employee", employee);
-        // TODO: ADD THE HTML PAGE :
-        return "";
-    }
-
     @GetMapping("/employeesList")
     @Override
     public String findALl(Model model) {
         List<Employee> employeeList = employeeService.findALl();
-        model.addAttribute("employeeList",employeeList);
+        model.addAttribute("employeeList", employeeList);
         return "mainPage";
     }
-
-    // TODO : CHANGE METHOD NAME!!! We have 2 add() methods!!
     @PostMapping("/create")
-    public String create(Employee employee){
+    public String create(Employee employee) {
         employeeService.add(employee);
         return "redirect:/ems/employeesList";
     }
@@ -59,12 +38,33 @@ public class EmployeeControllerImpl implements EmployeeController {
         return "addPage";
     }
 
-    @GetMapping("updateForm/{id}")
-    public String updateForm (@PathVariable int id, Model model){
+    @GetMapping("/{id}")
+    @Override
+    public String findById(@PathVariable int id,
+                           Model model) {
         Employee employee = employeeService.findById(id);
-        model.addAttribute("employee",employee);
-        return"updatePage";
+        model.addAttribute("employee", employee);
+        // TODO: ADD THE HTML PAGE :
+        return "";
     }
+
+    @GetMapping("updateForm/{id}")
+    public String updateForm(@PathVariable int id, Model model) {
+        Employee employee = employeeService.findById(id);
+        model.addAttribute("employee", employee);
+        return "updatePage";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @PostMapping("/goToList")
+    public String goToList() {
+        return "redirect:/ems/employeesList";
+    }
+
     @PostMapping("/update")
     @Override
     public String update(Employee employee) {
@@ -82,7 +82,7 @@ public class EmployeeControllerImpl implements EmployeeController {
 
     @GetMapping("/delete/{id}")
     @Override
-    public String delete( @PathVariable  int id) {
+    public String delete(@PathVariable int id) {
         employeeService.delete(id);
         return "redirect:/ems/employeesList";
     }
