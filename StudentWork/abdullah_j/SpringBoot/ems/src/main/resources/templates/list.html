@@ -7,8 +7,7 @@
 <body>
 
 <div id="main">
-    <div id="header"><a href="/" class="logo"><img src="../static/images/logo.gif" th:src="@{/images/logo.gif}"
-                                                   width="101" height="29" alt=""/></a>
+    <div id="header"> <a href="/" class="logo"><img src="../static/images/logo.png" th:src="@{/images/logo.png}" width="101" height="100" alt="" /></a>
         <ul id="top-navigation">
             <li><span><span><a href="/">Homepage</a></span></span></li>
             <li class="active"><span><span>Employees</span></span></li>
@@ -33,11 +32,11 @@
                 <table class="listing" cellpadding="0" cellspacing="0">
                     <tr>
                         <th class="first" width="177">Id</th>
-                        <th>Name</th>
-                        <th>Hire Date</th>
+                        <th th:width="500px">Name</th>
+                        <th width="500px">Hire Date</th>
                         <th>Email</th>
                         <th>Department</th>
-                        <th>Salary</th>
+                        <th width="500">Salary</th>
                         <th>Update</th>
                         <th class="last">Delete</th>
                     </tr>
@@ -54,7 +53,7 @@
 
                         <td th:text="${employee.department}">department</td>
 
-                        <td th:text="${employee.salary}">0.0</td>
+                        <td th:text="${employee.salary} +' SAR'">0.0 <span>SAR</span></td>
 
 
                         <td><a th:href="@{'/employee/update/{id}' (id=${employee.employeeId})}">
