@@ -1,13 +1,19 @@
+
 # Employee Management System (EMS)
 
-A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful** services and a **Web Interface**. 
+A very simple Full-Stack Web Application using the **3-tire Architecture** demonestrating the Full **CRUD** Operations With Both **RESTful services** and a **Web Interface**. 
 
-## Dev-Team (BugHunters) ![](ems/src/main/resources/static/img/BUG_HUNTERS.png)
-### Members :
+---
+
+## Dev-Team (BugHunters) 
+<img src="./ems/src/main/resources/static/img/BUG_HUNTERS.png" height="300px" width="300px">
+
 * [Haifa Alassaf](https://github.com/haifassaf)
 * [Nada Aljohani](https://github.com/Nada-hs)
 * [Sara Alhunaiti](https://github.com/saraAlhunaiti)
 * [Hisham Bin Seddeq](https://github.com/HishamBS)
+
+--- 
 
 ## Description
 
@@ -16,10 +22,9 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 ## UML Diagram
 ![Diagram](./extra/3-tier.png)
 
-### Technologies Used
+## Technologies Used
 
-```
-
+```diff
 - Java
 - SpringBoot
 - HTML&CSS
@@ -29,6 +34,14 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 - H2
 - JDBC
 ```
+## Tools Used
+
+```diff
++ IntelliJ Idea
++ VsCode
+```
+
+
 --- 
 
 ## Planning and Development Process
@@ -39,32 +52,35 @@ Lets the user see a list of all employees available in the database **(H2)** . A
 * We combined our work and made 
   a demo-ready version.
 
-### Problem-Solving Strategy
+## Problem-Solving Strategy
 
-* lots and lots of googling and reading official documentation.
+* lots and lots of **googling** and reading official **documentation**.
 * Using the refrences supplied to us by our instructor.
   
 
 ---
 
 
-### Sample Pictures
+## Sample Pictures
 
-#### Home Page
-![]()
+### Home Page
 
-#### Managment Page
-![]()
+<img src="./extra/home.png" height="300px" width="600px">
 
-#### Single Employee Information Page
-![]()
 
+### Employees Page
+
+<img src="./extra/allemp.png" height="300px" width="600px">
+
+### Single Employee Information Page
+
+<img src="./extra/emp.png" height="300px" width="600px">
 
 
 ---
 
 ## Acknowledgments
 
-- SITE (**Saudi Information Technology Company**) - For their continuous Support.
-- **KnowledgeHut** - **Mick** and **Sam**  for being great instructors.
+* Saudi Information Technology Company (**SITE**)
+* KnowledgeHut
 

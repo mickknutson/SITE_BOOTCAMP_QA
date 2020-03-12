@@ -33,23 +33,25 @@ public class EmployeeServiceImpl implements EmployeeService
     }
 
     @Override
-    public void add(Employee employee)
+    public Employee add(Employee employee)
     {
         System.out.println("* EmployeeServiceImpl.add() : ");
         dao.add(employee);
+        return employee;
     }
 
     @Override
     public void delete(int id){
         System.out.println("* EmployeeServiceImpl.delete()");
         dao.delete(id);
+
     }
 
-    public void update(int id,Employee employee)
+    public Employee update(int id,Employee employee)
     {
         System.out.println("* EmployeeServiceImpl.update()");
 
-        dao.update(id,employee);
+        return dao.update(id,employee);
     }
 
 
