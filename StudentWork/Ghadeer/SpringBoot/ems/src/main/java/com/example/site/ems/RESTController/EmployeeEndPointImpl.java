@@ -19,7 +19,7 @@ public class EmployeeEndPointImpl implements EmployeeEndPoint {
 
     @GetMapping("/{id}")//uri, mapping
 
-    public String findById(@PathVariable long id, Model model){
+    public String findById(@PathVariable long id){
 
         return service.findById(id).toString();
     }
