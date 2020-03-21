@@ -26,9 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService
     }
 
     @Override
-    public List<Employee> findAll()
-    {
-        System.out.println("* EmployeeServiceImpl.FindAll() : ");
+    public List<Employee> findAll() {
         return dao.findAll();
     }
 

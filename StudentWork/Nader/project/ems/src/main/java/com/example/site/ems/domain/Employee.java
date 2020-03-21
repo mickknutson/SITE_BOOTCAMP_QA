@@ -10,7 +10,7 @@ public class Employee {
     private int id;
     @Column
     private String a_employeeId;
-    
+
     @Column
     private String a_firstName;
     @Column
