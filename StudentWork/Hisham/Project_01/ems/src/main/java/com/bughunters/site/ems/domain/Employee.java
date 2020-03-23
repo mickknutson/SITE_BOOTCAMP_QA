@@ -12,28 +12,21 @@ public class Employee
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-
     @Column
     private Integer employeeId;
-
     @Column
     private String firstName;
-
     @Column
     private String lastName;
-
     @Column
     private String department;
-
     @Column
     private BigDecimal salary;
-
     @Column
     private Date hiringDate;
-
     @Column
     private String email;
+
 
     public Employee(){}
 

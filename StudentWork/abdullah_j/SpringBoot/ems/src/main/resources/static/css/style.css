@@ -43,7 +43,7 @@ input.text {
 #header {
     position:relative;
     width:992px;
-    height:106px;
+    height:160px;
     background:url(../images/bg-header.gif) no-repeat left bottom;
 }
 /* site logo */
@@ -56,7 +56,7 @@ a.logo {
 /* header tabs */
 #top-navigation {
     position:absolute;
-    top:60px;
+    top:113px;
     left:20px;
     margin:0;
     padding:0;

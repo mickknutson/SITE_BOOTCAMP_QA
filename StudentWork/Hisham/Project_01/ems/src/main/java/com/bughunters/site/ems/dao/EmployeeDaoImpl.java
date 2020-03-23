@@ -29,15 +29,11 @@ public class EmployeeDaoImpl implements EmployeeDao
 
     // find all employees in the database
     public List<Employee> findAll(){
-        System.out.println("* EmployeeDaoImpl.findAll()");
         Iterable<Employee> result = repository.findAll();
-
         List<Employee> employees = new ArrayList<>();
-
         for(Employee emp: result){
             employees.add(emp);
         }
-
         return employees;
     }
 

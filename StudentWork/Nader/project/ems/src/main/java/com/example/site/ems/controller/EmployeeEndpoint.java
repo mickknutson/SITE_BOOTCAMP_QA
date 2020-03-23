@@ -3,6 +3,7 @@ package com.example.site.ems.controller;
 import com.example.site.ems.domain.Employee;
 import com.example.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,17 +28,19 @@ public class EmployeeEndpoint  {
     }
 
     @PostMapping("add")
+    @ResponseStatus(HttpStatus.CREATED)
     public void add(@RequestBody Employee employee){
         service.add(employee);
     }
 
     @DeleteMapping("delete/{id}")
-    public void delete(int id){
+    public void delete(@PathVariable int id){
         service.delete(id);
 
     }
 
     @PutMapping("/edit/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public void update(@RequestBody Employee newEmp , @PathVariable int id) {
         Employee oldEmp = service.findById(id);
         oldEmp.setA_employeeId(newEmp.getA_employeeId());

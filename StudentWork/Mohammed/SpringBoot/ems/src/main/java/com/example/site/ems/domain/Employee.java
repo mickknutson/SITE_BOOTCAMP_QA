@@ -11,13 +11,13 @@ import java.util.Date;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id ;
+    private Integer id;
     @Column
     private int employeeId;
     private String firstName;
     private String lastName;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat( pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
     private String email;
     private String department;
@@ -114,4 +114,4 @@ public class Employee {
         this.salary = salary;
     }
 
-    }
+}
