@@ -1,12 +1,14 @@
-print("Hello")
+print("Hello World")
 
-def evenOdd( x ):
-    
+def evenOdd(x):
     if (x % 2 == 0):
+
         print("even")
+
     else:
+
         print("odd")
 
-    evenOdd(2)
+evenOdd(2)
 
-    evenOdd(3)
+evenOdd(3)
