@@ -11,6 +11,15 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
+/**
+ * TODO:
+ * 1. Add ADD, Delete functional for Thymeleaf
+ * 2. Add REST Support
+ */
+
+
+
+
 @SpringBootApplication
 public class PetstoreApplication {
 
@@ -20,55 +29,22 @@ public class PetstoreApplication {
     // @Autowired
     //private AnimalService service;
 
-    @Autowired
-    private AnimalController controller;
+    //@Autowired
+    //private AnimalController controller;
 
     public static void main(String[] args) {
-        System.out.println(" ** Start Main **");
 
         SpringApplication.run(PetstoreApplication.class, args);
 
-        System.out.println(" ** End Main **");
-
     }
-
+    //Run this code first as test code:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 
         return args -> {
 
             System.out.println(" ** Start CommandLine Runner **");
-
-            System.out.println("Add a new Dog:");
-
-            Animal dog = new Animal();
-            dog.setName("Fido");
-            dog.setSound("woof");
-            dog.setType("DOG");
-           /* Animal animal1 = controller.findById(1);
-            if (animal1 == null) {
-                System.out.println("Animal is NULL");
-            }*/
-            //_____________________________________________________________________________________//
-            List<Animal> animals = controller.findAll();
-            System.out.println("List of Animals: "+animals);
-            //_____________________________________________________________________________________//
-            controller.add(dog);
-
-            //_____________________________________________________________________________________//
-            Animal animal2 = controller.findById(1);
-
-            if (animal2 == null) {
-                System.out.println("Animal is NULL");
-            } else {
-                System.out.println("Animal: " + animal2.getName());
-            }
-            // toString method is assumed here (animals.toString())
-
-            animals =controller.findAll();
-            System.out.println("List of Animals: "+animals);
-
-            System.out.println(" ** End CommandLine Runner **");
+            System.out.println(" ** Sand Box Code Only **");
 
 
         };
@@ -100,3 +76,35 @@ List<Animal> animals = controller.findAll();
 
         //-------------------------------------------------------------
         System.out.println("POST Number of animals: "+updatedAnimal.size());*/
+//????????????????????????????????????????????????????????????????????????????????????
+   /* System.out.println("Add a new Dog:");
+
+            Animal dog = new Animal();
+            dog.setName("Fido");
+            dog.setSound("woof");
+            dog.setType("Dog");
+           *//* Animal animal1 = controller.findById(1);
+            if (animal1 == null) {
+                System.out.println("Animal is NULL");
+            }*//*
+            //_____________________________________________________________________________________//
+            // List<Animal> animals = controller.findAll();
+            //System.out.println("List of Animals: "+animals);
+            //_____________________________________________________________________________________//
+            // THIS LINE MUST BE DELETED IF USING data.sql
+            //TO NOT DO CRUD FROM MULTIPLE PLACES
+            //controller.add(dog);
+
+            //_____________________________________________________________________________________//
+            Animal animal2 = controller.findById(1);
+
+            if (animal2 == null) {
+                System.out.println("Animal is NULL");
+            } else {
+                System.out.println("Animal: " + animal2.getName());
+            }
+            // toString method is assumed here (animals.toString())
+
+            //animals =controller.findAll();
+            //System.out.println("List of Animals: "+animals);
+*/
