@@ -1,8 +1,13 @@
-def evenOdd( x ): 
+
+# Even and Odd function
+def evenOdd( x ):
+    
     if (x % 2 == 0): 
-        print ("even")
+        print("even")
     else: 
-        print ("odd")
+        print("odd")
+
 
 evenOdd(2)
+
 evenOdd(3)
