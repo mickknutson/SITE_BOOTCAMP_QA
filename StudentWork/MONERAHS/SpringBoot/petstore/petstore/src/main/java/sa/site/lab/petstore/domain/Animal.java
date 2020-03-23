@@ -6,11 +6,10 @@ import javax.persistence.*;
 Types of errors:
 RunTime errors
 LoadTime errors
-ComplieTime errors
+CompliedTime errors
 */
 
 @Entity
-//scope  type  classname
 public class Animal {
     //Map field to DB columns
     //Primary Key:
