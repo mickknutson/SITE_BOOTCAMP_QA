@@ -1,3 +1,6 @@
+
+## Even Or Odd Function
+
 def evenOdd(x):
     if(x % 2 == 0):
         print("Even")
@@ -6,5 +9,8 @@ def evenOdd(x):
 evenOdd(2)
 evenOdd(3)
 
-def fibonacci(x):
-    
+
+
+## String Manipulation
+name = "Hisham BinSeddeq"
+print(name)

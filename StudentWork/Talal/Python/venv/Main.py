@@ -1,5 +1,5 @@
 def oddEven(x):
-    if x % 2 == 0:
+    if (x % 2 == 0):
         print("even")
     else:
         print("odd")
@@ -8,3 +8,12 @@ def oddEven(x):
 oddEven(2)
 oddEven(3)
 oddEven(4)
+
+
+# ------------
+
+def name(sirName):
+    print("Talal" + sirName)
+
+
+name(" ALjasser")
