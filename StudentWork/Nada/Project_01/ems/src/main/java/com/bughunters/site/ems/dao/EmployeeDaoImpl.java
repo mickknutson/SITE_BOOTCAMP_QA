@@ -43,10 +43,10 @@ public class EmployeeDaoImpl implements EmployeeDao
 
     // Adding a single employee to the database
     @Override
-    public void add(Employee employee){
+    public Employee add(Employee employee){
         System.out.println("* EmployeeDaoImpl.add()");
         // use Spring Data Repository to access the Employee TABLE
-        repository.save(employee);
+        return repository.save(employee);
     }
 
     // Deleting a single employee to the database
@@ -58,7 +58,7 @@ public class EmployeeDaoImpl implements EmployeeDao
 
     // Updating a single employee by taking the database id
     // and saving the updated employee
-    public void update(int id, Employee employee)
+    public Employee update(int id, Employee employee)
     {
         Employee updatedEmployee = repository.findById(id).get();
         updatedEmployee.setEmployeeId(employee.getEmployeeId());
@@ -68,7 +68,7 @@ public class EmployeeDaoImpl implements EmployeeDao
         updatedEmployee.setSalary(employee.getSalary());
         updatedEmployee.setHiringDate(employee.getHiringDate());
         updatedEmployee.setEmail(employee.getEmail());
-        repository.save(updatedEmployee);
+        return repository.save(updatedEmployee);
     }
 
 }

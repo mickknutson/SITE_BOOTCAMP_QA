@@ -8,10 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link href="../static/css/AddUpdate.css" th:href="@{/css/AddUpdate.css}" rel="stylesheet" />
+    <link href="../static/css/AddUpdate.css" th:href="@{/css/AddUpdate.css}" rel="stylesheet"/>
 
 </head>
-<body scroll="no" style="overflow:hidden">
+
+<body th:style="'background:url('+ @{'/img/19366.png');} + ') background-attachment:fixed; background-size:cover;'">
 
 
 <header>
@@ -19,13 +20,14 @@
         <img src="../static/img/BUG_HUNTERS.png" th:src="@{/img/BUG_HUNTERS.png}" alt="logo"/>
     </div>
     <div class="name">
-        <h1 >Employee Management System</h1>
+        <h1>Employee Management System</h1>
         <ul>
-            <li><a class="Home" href="/">HOME</a> </li>
-            <li><a href="/employees/list">LIST</a ></li>
+            <li><a class="Home" href="/">HomeE</a></li>
+            <li><a href="/employees/list">Employees Records</a></li>
+            <li><a href="/h2-console"> Control Panel</a></li>
+
         </ul>
     </div>
-
 
 
 </header>
@@ -34,45 +36,57 @@
     <h2>Update Employee Record</h2>
     <div class="row">
         <div class="card-body">
-                <form class="updateform" th:action="@{'/employees/update/{id}'(id=${employee.id}) }"
-                      th:object="${employee}" method="post">
-                    <div>
-                        <label>Employee Id :</label>
-                        <input class="info" th:field="*{employeeId}" name="employeeId" for="employeeId" th:placeholder="${employee.employeeId}">
-                    </div>
-                    <div>
-                        <label>First Name :</label>
-                        <input class="info"th:field="*{firstName}" name="firstName" for="firstName" th:placeholder="${employee.firstName}">
-                    </div>
-                    <div>
-                        <label>Last Name :</label>
-                        <input class="info"th:field="*{lastName}" name="lastName" for="lastName" th:placeholder="${employee.lastName}">
-                    </div>
-                    <div>
-                        <label>Department :</label>
-                        <input class="info"type="text" th:field="*{department}" name="department" for="department" th:placeholder="${employee.department}">
-                    </div>
-                    <div>
-                        <label>Salary :</label>
-                        <input class="info"th:field="*{salary}" name="salary" for="salary" th:placeholder="${employee.salary}">
-                    </div>
-                    <div>
-                        <label>Hiring Date :</label>
-                        <input class="info" type="date" th:field="*{hiringDate}" name="hiringDate" for="hiringDate" th:placeholder="${employee.hiringDate}">
-                    </div>
-                    <div>
-                        <label>E-mail :</label>
-                        <input class="info"type="email" th:field="*{email}" name="email" for="email" th:placeholder="${employee.email}">
-                    </div>
+            <form class="updateform" th:action="@{'/employees/update/{id}'(id=${employee.id}) }"
+                  th:object="${employee}" method="post">
+                <div>
+                    <label>Employee Id :</label>
+                    <input class="info" th:field="*{employeeId}" name="employeeId" for="employeeId"
+                           th:placeholder="${employee.employeeId}">
+                </div>
+                <div>
+                    <label>First Name :</label>
+                    <input class="info" th:field="*{firstName}" name="firstName" for="firstName"
+                           th:placeholder="${employee.firstName}">
+                </div>
+                <div>
+                    <label>Last Name :</label>
+                    <input class="info" th:field="*{lastName}" name="lastName" for="lastName"
+                           th:placeholder="${employee.lastName}">
+                </div>
+                <div>
+                    <label>Department :</label>
+                    <select class="info" type="text" th:field="*{department}" name="department" for="department"
+                            th:placeholder="${employee.department}">
+                        <option value="IT">IT</option>
+                        <option value="HR">Human Resources</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finanace">Finanace</option>
+                        <option value="Logistics">Logistics</option>
+                    </select>
+                </div>
 
-                    <div>
-                        <button class="btn" type="submit" id="submit" >Save</button>
-                    </div>
+                <div>
+                    <label>Salary :</label>
+                    <input class="info" th:field="*{salary}" name="salary" for="salary"
+                           th:placeholder="${employee.salary}">
+                </div>
+                <div>
+                    <label>Hiring Date :</label>
+                    <input class="info" type="date" th:field="*{hiringDate}" name="hiringDate" for="hiringDate"
+                           th:placeholder="${employee.hiringDate}">
+                </div>
+                <div>
+                    <label>E-mail :</label>
+                    <input class="info" type="email" th:field="*{email}" name="email" for="email"
+                           th:placeholder="${employee.email}">
+                </div>
+
+                <div>
+                    <button class="btn" type="submit" id="submit">Save</button>
+                </div>
 
 
-                </form>
-
-
+            </form>
 
 
         </div>
