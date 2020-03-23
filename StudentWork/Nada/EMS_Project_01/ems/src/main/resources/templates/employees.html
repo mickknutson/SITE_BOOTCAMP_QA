@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Management System </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="../static/css/EmpStyleSheet.css" th:href="@{/css/EmpStyleSheet.css}" rel="stylesheet" />
+
+
+</head>
+<body th:style="'background:url('+ @{'/img/19366.png');} + ') background-attachment:fixed; background-size:cover;'">
+<header>
+    <div class="logo">
+        <img src="../static/img/BUG_HUNTERS.png" th:src="@{/img/BUG_HUNTERS.png}" alt="logo"/>
+    </div>
+    <div class="name">
+        <h1>Employee Management System</h1>
+        <ul>
+            <li style="margin-left: 5%"><a class="Home" href="/">Home</a> </li>
+            <li><a href="/employees/list">Employees Records</a ></li>
+            <li> <a href="/h2-console"> Control Panel</a> </li>
+        </ul>
+    </div>
+
+
+</header>
+
+<div class="add">
+    <h2 style="font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;margin-left: 25%;">Employees Information:</h2>
+    <button> <a href="/employees/add"><i class="fa fa-plus-square-o" aria-hidden="true" style="color: #008b00; font-size:22px;"></i></a> </button>
+
+
+</div>
+
+<table>
+    <thead>
+    <tr class="head">
+        <th >#</th>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>E-mail</th>
+        <th>Department</th>
+        <th>Start Date</th>
+        <th>Salary</th>
+        <th></th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="emp: ${allEmployees}">
+        <td>
+            <a  th:href="@{'/employees/{id}'(id=${emp.id})}"
+                th:text="${emp.id}">1</a>
+        </td>
+
+        <td th:text="${emp.employeeId}">200</td>
+        <td th:text="${emp.firstName}">Jack</td>
+        <td th:text="${emp.lastName}">B</td>
+        <td th:text="${emp.email}">JackB@gmail.com</td>
+        <td th:text="${emp.department}">IT</td>
+        <td th:text="${emp.hiringDate}">2017-03-12</td>
+        <td th:text="${emp.salary}">25,000</td>
+
+
+        <!-- TODO: fix the link -->
+        <td>
+            <a th:href="@{'/employees/edit/{id}' (id=${emp.id})}" style="color: #335197;">Edit</a>
+            <a th:href="@{'/employees/delete/{id}' (id=${emp.id})}"><i class="fa fa-trash-o" aria-hidden="true" style="color: #a54543"></i></a></td>
+    </tr>
+
+    </tbody>
+</table>
+
+
+</body>
+</html>
+
+
