@@ -10,4 +10,8 @@ Insert into employee (id,date,department,first_name,employee_id,last_name,email,
 Insert into employee (id,date,department,first_name,employee_id,last_name,email,salary) VALUES(3,'1992-12-12','IT','Abdullah',1233457,'aldosry','abdullah@gmail.com',100);
 Insert into employee (id,date,department,first_name,employee_id,last_name,email,salary) VALUES(4,'1992-12-12','IT','Yahya',1233458,'aldosry','yahya@gmail.com',100);
 Insert into employee (id,date,department,first_name,employee_id,last_name,email,salary) VALUES(5,'1992-12-12','IT','Yousef',1233459,'aldosry','Yousef@gmail.com',100);
+<<<<<<< HEAD
+>>>>>>> 31a6a350a19e1eec55ff7e30592eea39967f8462
+=======
+>>>>>>> master
 >>>>>>> master
