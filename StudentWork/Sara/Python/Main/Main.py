@@ -12,3 +12,7 @@ def evenOdd(x):
 evenOdd(2)
 
 evenOdd(3)
+
+
+myName = "Sara Alhunaiti"
+print(myName[5:14])
