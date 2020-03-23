@@ -14,6 +14,10 @@ public class Employee {
 
 =======
     
+<<<<<<< HEAD
+>>>>>>> 31a6a350a19e1eec55ff7e30592eea39967f8462
+=======
+>>>>>>> master
 >>>>>>> master
     @Column
     private String a_firstName;

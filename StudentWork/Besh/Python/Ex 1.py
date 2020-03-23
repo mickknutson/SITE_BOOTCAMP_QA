@@ -5,3 +5,5 @@ def EvenOdd(x):
 		print x, ('is Odd Number')
 EvenOdd(2)
 EvenOdd(3)
+EvenOdd(7)
+EvenOdd(10)
