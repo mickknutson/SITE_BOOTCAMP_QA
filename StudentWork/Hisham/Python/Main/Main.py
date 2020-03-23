@@ -5,6 +5,3 @@ def evenOdd(x):
         print("Odd")
 evenOdd(2)
 evenOdd(3)
-
-def fibonacci(x):
-    
