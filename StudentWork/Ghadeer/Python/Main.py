@@ -26,3 +26,12 @@ print (name.split()[1]);
 for x in range(10):
         print(x * 19)
 
+T = (10,20,30,40,50)
+
+for var in T:
+    print (T.index(var),var)
+#4th exercise
+try:
+  print(3/0)
+except:
+  print("An mathematical exception occurred")
