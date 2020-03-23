@@ -9,3 +9,11 @@ evenOdd(2)
 evenOdd(3)
 
 evenOdd(122)
+
+
+#------------------------------------------------------
+# String lab:
+
+name = "Abdullah Alsrhri"
+
+print(name[9:])
