@@ -10,7 +10,11 @@ public class Employee {
     private int id;
     @Column
     private String a_employeeId;
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> master
     @Column
     private String a_firstName;
     @Column

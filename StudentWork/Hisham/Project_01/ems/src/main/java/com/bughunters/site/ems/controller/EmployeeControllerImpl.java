@@ -1,15 +1,10 @@
 package com.bughunters.site.ems.controller;
-
-
 import com.bughunters.site.ems.domain.Employee;
 import com.bughunters.site.ems.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -56,14 +51,10 @@ public class EmployeeControllerImpl implements EmployeeController
         return "redirect:/employees/list";
     }
 
-    // accept requests on /list
     @GetMapping("/list")
     @Override
-    public String findAll(Model model)
-    {
-        System.out.println("* EmplpoyeeController.FindAll() : ");
+    public String findAll(Model model) {
         List<Employee> allEmployees = service.findAll();
-        // add the animals object to the view
         model.addAttribute("allEmployees",allEmployees);
         return "/employees";
     }
