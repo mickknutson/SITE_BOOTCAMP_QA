@@ -11,8 +11,7 @@
     <link href="../static/css/AddUpdate.css" th:href="@{/css/AddUpdate.css}" rel="stylesheet" />
 
 </head>
-<body>
-
+<body th:style="'background:url('+ @{'/img/19366.png');} + ') background-attachment:fixed; background-size:cover;'">
 
 <header>
     <div class="logo">
@@ -21,8 +20,9 @@
     <div class="name">
         <h1 >Employee Management System</h1>
         <ul>
-            <li><a class="Home" href="/">HOME</a> </li>
-            <li><a href="/employees/list">LIST</a ></li>
+            <li><a class="Home" href="/">Home</a> </li>
+            <li><a href="/employees/list">Employees Records</a ></li>
+            <li> <a href="/h2-console"> Control Panel</a> </li>
         </ul>
     </div>
 
@@ -47,14 +47,35 @@
                 <div>
                     <label>Last Name :</label>
                     <input class="info"th:field="*{lastName}" name="lastName" for="lastName">
+
+                </div><div>
+                <label>Department :</label>
+                <select class="info"type="text" th:field="*{department}" name="department" for="department">
+                    <option value="IT">IT</option>
+                    <option value="HR">Human Resources</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Finanace">Finanace</option>
+                    <option value="Logistics">Logistics</option>
+                </select>
+            </div>
+
                 </div>
                 <div>
                     <label>Department :</label>
-                    <input class="info"type="text" th:field="*{department}" name="department" for="department">
+<!--                    <input class="info"type="text" th:field="*{department}" name="department" for="department">-->
+                    <select id="department" class="info"type="text" th:field="*{department}" name="department" for="department">
+                        <option value="IT">IT</option>
+                        <option value="HR">Human Resources</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finanace">Finanace</option>
+                        <option value="Logistics">Logistics</option>
+                    </select>
                 </div>
+                </div>
+
                 <div>
                     <label>Salary :</label>
-                    <input class="info"th:field="*{salary}" name="salary" for="salary">
+                    <input  class="info" th:field="*{salary}" name="salary" for="salary">
                 </div>
                 <div>
                     <label>Hiring Date :</label>
