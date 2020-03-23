@@ -1,3 +1,4 @@
+#1st exercise
 def evenOdd( x ):
 
     if (x % 2 == 0):
@@ -10,7 +11,8 @@ def evenOdd( x ):
 evenOdd(2)
 
 evenOdd(3)
-# a use of raw_input()
+
+#2nd exercise
 
 name = input("Enter your full name: ")
 #in this way i used finding the index of the seperation character and then substring starting from
@@ -19,3 +21,17 @@ index=1+name.index(' ',2)
 print (name[(index):]);
 #in this way i used pre-defind method in python
 print (name.split()[1]);
+
+#3rd exercise
+for x in range(10):
+        print(x * 19)
+
+T = (10,20,30,40,50)
+
+for var in T:
+    print (T.index(var),var)
+#4th exercise
+try:
+  print(3/0)
+except:
+  print("An mathematical exception occurred")
