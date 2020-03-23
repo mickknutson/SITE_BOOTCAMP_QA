@@ -10,7 +10,11 @@ public class Employee {
     private int id;
     @Column
     private String a_employeeId;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 31a6a350a19e1eec55ff7e30592eea39967f8462
     @Column
     private String a_firstName;
     @Column
