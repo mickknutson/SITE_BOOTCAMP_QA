@@ -73,28 +73,7 @@
             <a th:href="@{'/employees/edit/{id}' (id=${emp.id})}" style="color: #335197;">Edit</a>
             <a th:href="@{'/employees/delete/{id}' (id=${emp.id})}"><i class="fa fa-trash-o" aria-hidden="true" style="color: #a54543"></i></a></td>
     </tr>
-    <tr th:each="emp: ${allEmployees}">
 
-        <td>
-            <a  th:href="@{'/employees/{id}'(id=${emp.id})}"
-                th:text="${emp.id}">1</a>
-        </td>
-
-        <td th:text="${emp.employeeId}">200</td>
-        <td th:text="${emp.firstName}">Jack</td>
-        <td th:text="${emp.lastName}">B</td>
-        <td th:text="${emp.email}">JackB@gmail.com</td>
-        <td th:text="${emp.department}">IT</td>
-        <td th:text="${emp.hiringDate}">2017-03-12</td>
-        <td th:text="${emp.salary}">25,000</td>
-
-
-        <!-- TODO: fix the link -->
-        <td>
-            <a th:href="@{'/employees/edit/{id}' (id=${emp.id})}" style="color: #335197;">Edit</a>
-            <a th:href="@{'/employees/delete/{id}' (id=${emp.id})}"><i class="fa fa-trash-o" aria-hidden="true" style="color: #a54543"></i></a>
-        </td>
-    </tr>
     </tbody>
 </table>
 

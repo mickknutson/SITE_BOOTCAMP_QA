@@ -9,9 +9,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="../static/css/EmpView.css" th:href="@{/css/EmpView.css}" rel="stylesheet" />
 </head>
+<body th:style="'background:url('+ @{'/img/19366.png');} + ') background-attachment:fixed; background-size:cover;'">
 
-<body style="background-color:rgb(238, 240, 243); font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif";
->
+
 
 <header>
     <div class="logo">
@@ -20,8 +20,9 @@
     <div class="name">
         <h1>Employee Management System</h1>
         <ul>
-            <li><a class="Home" href="/">HOME</a> </li>
-            <li><a href="/employees/list">List</a ></li>
+            <li><a class="Home" href="/">Home</a> </li>
+            <li><a href="/employees/list">Employees Records</a ></li>
+            <li> <a href="/h2-console"> Control Panel</a> </li>
         </ul>
     </div>
 
@@ -49,11 +50,11 @@
                         <hr/>
 
                         <label style="font-weight:bold;">E-mail</label>
-                        <h4 class="info" th:text="${employee.lastName}">B</h4>
+                        <h4 class="info" th:text="${employee.email}">B</h4>
                         <hr/>
 
                         <label style="font-weight:bold;">Department</label>
-                        <h4 class="info" th:text="${employee.lastName}">B</h4>
+                        <h4 class="info" th:text="${employee.department}">B</h4>
 
                         <hr/>
 
@@ -67,6 +68,7 @@
 
                 </div>
     </div>
+</div>
 </div>
 </body>
 </html>
