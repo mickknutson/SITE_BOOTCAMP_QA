@@ -38,4 +38,13 @@ print(list1)
 # Indexing!
 print(list1[0:1])
 
-## homework -- excption deived by zero // chnuk norris
+## homework -- Exception divide by zero // chnuk norris
+x = 500
+y = 0
+
+try:
+    print(x/y)
+except:
+    print("You cannot divide By 0 ")
+finally:
+    print("Exception Check has been done!")
