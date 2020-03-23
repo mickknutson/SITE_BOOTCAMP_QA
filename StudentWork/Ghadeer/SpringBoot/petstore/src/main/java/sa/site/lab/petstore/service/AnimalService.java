@@ -7,8 +7,12 @@ import java.util.Map;
 
 public interface AnimalService {
 
-    public Animal findPet(int id);
+     Animal findById(int id);
     List<Animal> findAll();
+    void add(Animal animal);
+    boolean delete(int id);
+
+
 //    public void fillMethod();
 
 

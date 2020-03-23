@@ -15,38 +15,17 @@ import java.util.List;
 public class PetstoreApplication {
 
 
-    @Autowired
-    private AnimalController controller;// Automatically wire
-
-
-    public static void main(String[] args) {
-        System.out.println("*Start main()");
+    public static void main(String[] args)
+    {
         SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("*end main()");
-
-
     }
+
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
-            System.out.println("* commandLineRunner");
-
-            List<Animal> animals = controller.findAll();
-
-            System.out.println("*****Animals" + animals);
-
-            for (int i = 0; i < animals.size(); i++) {
-
-                animals.get(i).eat();
-            }
-
-            Animal animal = controller.findPet(1);
-            animal.eat();
-
-
-            System.out.println("end commandLineRunner");
+            System.out.println("* Start commandLineRunner");
 
         };
     }

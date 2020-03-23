@@ -1,32 +1,68 @@
 package sa.site.lab.petstore.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import sa.site.lab.petstore.domain.Animal;
 
+import javax.sql.DataSource;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
-public class AnimalDaoDatabaseImpl implements AnimalDao
-{
+public class AnimalDaoDatabaseImpl implements AnimalDao{
 
+    @Autowired
+    private AnimalRepository repository;
+
+    // TODO: Must implement
+    public Animal findById(int id){
+        System.out.println("* AnimalDaoDatabaseImpl.findPet: " + id);
+        Optional<Animal> result = repository.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        } else {
+            return null;
+        }
+    }
+
+    // TODO: Must implement
+    public List<Animal> findAll(){
+        System.out.println("* AnimalDaoDatabaseImpl.findAll()");
+        Iterable<Animal> result = repository.findAll();
+
+        List<Animal> animals = new ArrayList<>();
+
+        for(Animal animal: result){
+            animals.add(animal);
+        }
+
+        return animals;
+    }
+
+    // TODO: Must implement
     @Override
-    public Animal findById(int id)
-    {
-        System.out.printf("** AnimalDaoDatabaseImpl.findpet:  %d **",id);
-        throw new RuntimeException("Not Available yet");
+    public void add(Animal animal){
+        System.out.println("* AnimalDaoDatabaseImpl.add()");
+        // use Spring Data Repository to access the Animal TABLE
+        repository.save(animal);
     }
 
     @Override
-    public List<Animal> findAll()
-    {
-        System.out.println("** AnimalDaoDatabaseImpl.findAll()**");
-        throw new RuntimeException("Not Available yet");
+    public void delete(int id){
+        System.out.println("* AnimalDaoDatabaseImpl.delete()");
+        repository.deleteById(id);
     }
 
-    @Override
-    public void add(Animal animal)
+    public void update(int id, Animal animal)
     {
-        System.out.println("** AnimalDaoDatabaseImpl.Add()**");
-        throw new RuntimeException("Not Available yet");
+        Animal updatedAnimal = repository.findById(id).get();
+        updatedAnimal.setName(animal.getName());
+        updatedAnimal.setType(animal.getType());
+        updatedAnimal.setSound(animal.getSound());
+        repository.save(updatedAnimal);
     }
-}
+
+
+} // The End...

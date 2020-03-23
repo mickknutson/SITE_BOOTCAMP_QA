@@ -6,13 +6,19 @@
 
 [Hypertext Transfer Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 
-[**HTTP Status Codes**](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+[HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 
 
-[**HTTP Request Methods**](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+[HTTP Request Methods](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
 
 
-[**HTTP Header Fields**](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+[HTTP Header Fields](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+
+
+[HTTP Redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
+
+
+[HTTP Forwards](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded)
 
 
 
@@ -35,9 +41,10 @@
 [RegEx Tester](https://regexr.com)
 
 
-## Spring Boot
-[Spring Boot Reference](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html)
+## Spring Boot[Spring Boot Reference](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html)
 
+
+[Tomcat HTTP Servlet Engine](http://tomcat.apache.org/)
 
 
 
@@ -55,9 +62,10 @@
 
 [**Builder_pattern**](https://en.wikipedia.org/wiki/Builder_pattern)
 
+[MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 
-[**Enterprise Integration Patterns**]
-(https://www.enterpriseintegrationpatterns.com)
+
+[**Enterprise Integration Patterns**](https://www.enterpriseintegrationpatterns.com)
 
 
 

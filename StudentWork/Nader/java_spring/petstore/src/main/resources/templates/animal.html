@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>List of animals</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Sound</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${animal.name}">Bob</td>
+        <td th:text="${animal.type}">Cat</td>
+        <td th:text="${animal.sound}">Meooow</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3><a href="/animal/list.html">Animals List</a></h3>
+</body>
+</html>

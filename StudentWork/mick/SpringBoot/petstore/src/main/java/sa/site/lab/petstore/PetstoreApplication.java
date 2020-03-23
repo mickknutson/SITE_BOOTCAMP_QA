@@ -8,61 +8,31 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.domain.Cat;
 
 import java.util.List;
 
+/**
+ * TODO:
+ * 1. Add ADD, DELETE functional for Thymeleaf
+ * 2. Add REST Support
+ *
+ *
+ */
 @SpringBootApplication
 public class PetstoreApplication{
 
-    // Only Fields / Variables go here...
-
-    @Autowired
-    private AnimalController controller;
-
 	public static void main(String[] args) { // Start of MAIN method
-        System.out.println("* Start main()");
 		SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("* end main()");
-
 	} // End of MAIN method
 
+    // RUN THIS CODE FIRST AS TEST CODE:
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
+
             System.out.println("* start commandLineRunner");
+            System.out.println("* sand box code only");
 
-            List<Animal> animals = controller.findAll();
-
-            if(animals != null) {
-                System.out.println("*** Animals: " + animals);
-            } else{
-                System.out.println("No animals found");
-            }
-
-            Animal animal = controller.findById(1);
-            if(animal != null) {
-                animal.eat();
-            } else {
-                System.out.println("Animal 1 is not found");
-            }
-
-            //------------------------------------------------------
-            System.out.println("* Number of animals: " + animals.size());
-
-            // Create New Animal:
-            controller.add(new Cat("Bob"));
-
-            List<Animal> updatedAnimal = controller.findAll();
-
-            System.out.println("* POST Number of animals: " + updatedAnimal.size());
-            //------------------------------------------------------
-
-
-
-
-
-            System.out.println("* end commandLineRunner");
         };
     }
 

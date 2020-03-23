@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Animal </title>
+</head>
+<body>
+<form th:action="@{'/animals/update/{id}'(id=${animal.id}) }"
+      th:object="${animal}" method="post"
+>
+    <div>
+        <label>Name :</label>
+        <input th:field="*{name}" name="name" for="name" th:placeholder="${animal.name}">
+
+    </div>
+    <div>
+        <label>Type :</label>
+        <input th:field="*{type}" name="type" for="type" th:placeholder="${animal.type}">
+
+    </div>
+    <div>
+        <label>Sound :</label>
+        <input th:field="*{sound}" name="sound" for="sound" th:placeholder="${animal.sound}">
+
+    </div>
+    <div>
+        <button type="submit" id="submit" >Save</button>
+    </div>
+
+
+</form>
+
+
+<h2><a href="/animals/list">List</a> </h2>
+<h2><a href="/">Home</a> </h2>
+
+
+
+
+</body>
+</html>

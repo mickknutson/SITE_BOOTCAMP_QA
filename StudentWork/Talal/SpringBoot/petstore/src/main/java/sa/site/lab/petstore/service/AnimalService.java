@@ -12,8 +12,11 @@ import java.util.List;
 
 public interface AnimalService {
 
+    public Animal findById(int id);
     public List<Animal> findAll();
-    public Animal findPet(int id);
+    void add (Animal animal);
+
+    boolean delete (int id);
 
 }
 

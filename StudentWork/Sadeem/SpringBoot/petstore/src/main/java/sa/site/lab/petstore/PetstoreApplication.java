@@ -7,13 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import sa.site.lab.petstore.controller.AnimalController;
-import sa.site.lab.petstore.dao.AnimalDaoImp;
 import sa.site.lab.petstore.domain.Animal;
-import sa.site.lab.petstore.service.AnimalService;
 
-import javax.xml.bind.SchemaOutputResolver;
 import java.util.List;
 
+/**
+ * TODO:
+ * 1. Add ADD, DELETE, functional for Thymeleaf
+ * 2. Add REST Support
+ */
 @SpringBootApplication
 public class PetstoreApplication {
 
@@ -22,28 +24,17 @@ public class PetstoreApplication {
     private AnimalController controller;
 
     public static void main(String[] args) { //start of MAIN method
-        System.out.println("* start main()");
         SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("* end main()");
     } // end of MAIN method
 
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx){
         return args ->{
-          //Runnable code goes here
-            System.out.println("***animal dao output: ***");
-
-            // map<string, object> context;
-        //    AnimalDao dao = ctx.getBean(AnimalDao.class);
+            System.out.println(" ** Start CommandLine Runner **");
+            System.out.println(" ** Sand box code only **");
 
 
-            List<Animal> animals = controller.findAll();
 
-            if (animals !=null)
-            System.out.println("***animalS:  " + animals);
-
-            Animal animal = controller.findPet(1);
-            animal.eat();
         };
     }
 

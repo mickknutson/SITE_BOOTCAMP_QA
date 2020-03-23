@@ -1,6 +1,5 @@
 package sa.site.lab.petstore;
 
-import sa.site.lab.petstore.domain.Dog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,52 +11,61 @@ import sa.site.lab.petstore.domain.Animal;
 
 import java.util.List;
 
+/**
+ * 1. Add ADD, DELETE functions for Thymeleaf
+ * 2. Add REST Support
+ */
 @SpringBootApplication
 public class PetstoreApplication {
 
     //Only fields / Variables go here...
-    @Autowired
-    private AnimalController controller;
+    //@Autowired
+    //private AnimalController controller;
     //private AnimalService service;
 
     public static void main(String[] args) {// Start of MAIN method
-        System.out.println("Start Main()");
-        //System.out.println("Starting Spring Boot");
+        //System.out.println("*** Start Main() ***");
         SpringApplication.run(PetstoreApplication.class, args);
-        System.out.println("End Main()");
-        //System.out.println("Stopped Spring Boot");
+        //System.out.println("*** End Main() ***");
+
     }// End of MAIN method
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx){
         return args -> {
             // Runnable code goes here
-            System.out.println("* Start CommandLineRunner ***");
-            System.out.println("*** Animal DAO output ***");
+            System.out.println("*** Start CommandLineRunner ***");
+            //System.out.println("*** Add a new Dog ***");
+
+            //Animal dog = new Animal();
+            //dog.setName("Fido");
+            //dog.setSound("Woof");
+           // dog.setType("Dog");
 
             // Animal DAO Goes here
-            List<Animal> animals = controller.findAll();
-            if (animals != null){
-                System.out.println(" Animals: " + animals);
-            }
-            else{
-                System.out.println("Not Found");
-            }
-            //Map<Integer, Animal> animals = controller.findAll();
-            //System.out.println("Animals:" + animals);
-            Animal animal = controller.findById(2);
-            if (animals != null){
-                animal.eat();
-            }
-            else{
-                System.out.println("Animal 2 is Not Found");
-            }
+            //List<Animal> animals = controller.findAll();
+            //System.out.println("Animals" + animals);
+
+            //Adding single pet to DB
+//            controller.add(dog);
+
+            //Find first oet from DB
+            //Animal animal2 = controller.findById(1);
+            //if (animal2 == null){
+              //  System.out.println("Animals is Null");
+            //}
+            //else{
+              //  System.out.println("Animal: " + animal2.getName());
+            //}
+            //Should have one pet at least in DB
+            //animals = controller.findAll();
+            //System.out.println("Animal: " + animals);
             //---------------------------
-            System.out.println("Number of animals: " + animals.size());
-            //create a new Animal:
-            controller.add(new Dog ("Bob"));
-            List<Animal> updatedAnimal = controller.findAll();
-            System.out.println("* POST Number of animals " + updatedAnimal.size());
-            //---------------------------
+           /* System.out.println("Number of animals: " + animals.size());
+            //            //create a new Animal:
+            //            controller.add(new Dog ("Bob"));
+            //            List<Animal> updatedAnimal = controller.findAll();
+            //            System.out.println("* POST Number of animals " + updatedAnimal.size());
+            //            //---------------------------*/
             //animal.eat();
             System.out.println("* End CommandLine Runner");
             // AnimalDao dao = new AnimalDao();

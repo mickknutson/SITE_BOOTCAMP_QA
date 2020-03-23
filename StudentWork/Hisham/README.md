@@ -1,5 +1,10 @@
 # Hisham's Student Files
 
+## Projects
+
+* [Project 1 - EMS](./Project_01/)
+
+
 ## HTML
 
 [HTML Section](./Html_Css_Js/)
@@ -12,9 +17,9 @@
 
 [Java](./Java/)
 
-## Sql
+## SQL
 
-[Sql](./Sql/)
+[SQL](./Sql/)
 
 ## SpringBoot
 

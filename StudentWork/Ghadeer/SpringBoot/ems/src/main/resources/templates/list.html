@@ -1,0 +1,72 @@
+<html xmlns:th="http://thymeleaf.org">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<head>
+    <title> Welcome to the PetStore!</title>
+</head>
+
+
+        <h1>List of animals</h1>
+        <b>Animals...</b>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Link</th>
+
+                <th>Employee ID</th>
+
+                <th>First Name</th>
+
+                <th>Last Name</th>
+
+                <th>Hire Date</th>
+
+                <th>Department</th>
+
+                <th>Salary</th>
+
+                <th>DELETE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee: ${allEmployees}">
+                <td>
+                    <a th:href="@{'/employee/{id}'(id=${employee.employeeId})}"
+                       th:text="${employee.firstName}+' '+${employee.lastName}">Bob</a>
+                </td>
+                <td th:text="${employee.getEmployeeId()}">Bob</td>
+
+                <td th:text="${employee.getFirstName()}">Bob</td>
+                <td th:text="${employee.getLastName()}">cat</td>
+                <td th:text="${employee.getHireDate()}">meow</td>
+
+                <td th:text="${employee.getDepartment()}">meow</td>
+                <td th:text="${employee.getSalary()}">meow</td>
+
+                <td>
+                    <a th:href="@{'/employee/delete/{id}'(id=${employee.employeeId})}"
+                       th:text="DELETE"></a>
+                </td>
+                <td>
+                    <a th:href="@{'/employee/update/{id}'(id=${employee.employeeId})}"
+                       th:text="update"></a>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+        </html>
+    </title>
+</head>
+<body>
+
+</body>
+</html>

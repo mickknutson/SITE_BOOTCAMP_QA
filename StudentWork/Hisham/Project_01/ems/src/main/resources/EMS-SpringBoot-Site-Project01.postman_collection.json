@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "5fb73b17-e7a0-4bf1-bfe0-9dcba70b8bc5",
+		"name": "EMS-SpringBoot-Site-Project01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET : All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				},
+				"description": "return an an array of all employees objects\n"
+			},
+			"response": []
+		},
+		{
+			"name": "GET : Single Employee By {id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				},
+				"description": "return an object of a single employee by his id"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete : Single Employee by {id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				},
+				"description": "delete a single employee from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "POST : Add A single employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"employeeId\": 120,\n        \"firstName\": \"Dummy\",\n        \"lastName\": \"DumDum\",\n        \"department\": \"FooBar\",\n        \"salary\": 99999,\n        \"hiringDate\": \"2121-12-12\",\n        \"email\": \"dum@dum.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"add"
+					]
+				},
+				"description": "add a single employee to the database\nrequest body {\n        \"employeeId\": \"String\",\n        \"firstName\": \"String\",\n        \"lastName\": \"String\",\n        \"department\": \"String\",\n        \"salary\": Number,\n        \"hiringDate\": \"yyyy-mm-dd\",\n        \"email\": \"String\"\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT : Update an employee by his {id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employees/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employees",
+						"1"
+					]
+				},
+				"description": "update a single employee from the database by his id\nrequest body {\n        \"employeeId\": \"String\",\n        \"firstName\": \"String\",\n        \"lastName\": \"String\",\n        \"department\": \"String\",\n        \"salary\": Number,\n        \"hiringDate\": \"yyyy-mm-dd\",\n        \"email\": \"String\"\n}\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

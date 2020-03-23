@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Employee Managment System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/employee/list.html">Employee Managment <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/h2-console">Admin Console</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reporting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="card bg-light mb-3 text-center mx-auto t-50 m-5" style="width: 24rem;">
+    <div class="card-body text-center">
+
+    <h3>Add New Employee</h3>
+
+
+<form id="newEmployeeForm"
+      action="#"
+      th:action="@{/employee/new}"
+      th:object="${employee}" method="post">
+
+            <div class="form-group ">
+                <label for="firstName"> First Name: </label>
+                <input th:field="*{firstName}" class="form-control"  placeholder="Enter first name" id="firstName"/>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName"> Last Name: </label>
+                <input th:field="*{lastName}" class="form-control" placeholder="Enter last name"  id="lastName"/>
+            </div>
+
+            <div class="form-group">
+                <label for="email"> Email: </label>
+                <input th:field="*{email}" type="email" class="form-control" placeholder="Enter email"  id="email"/>
+            </div>
+
+            <div class="form-group">
+                <label for="hireDate"> Hire Date: </label>
+                <input th:field="*{hireDate}" class="form-control" placeholder="Enter Hire Date" id="hireDate"/>
+            </div>
+
+            <div class="form-group">
+                <label for="department"> Department: </label>
+                <input th:field="*{department}" class="form-control" placeholder="Enter Department" id="department"/>
+            </div>
+
+            <div class="form-group">
+                <label for="salary"> Salary: </label>
+                <input th:field="*{salary}" class="form-control" placeholder="Enter Salary" id="salary"/>
+            </div>
+
+            <div class="text-center">
+            <button type="submit" class="btn btn-danger rounded-pill btn-lg " id="submit"> Create </button>
+            </div>
+</form>
+
+</div>
+
+</div>
+</body>
+</html>
