@@ -14,9 +14,10 @@
 import re as regex
 
 pattern = "^966"
+pattern2 = "^(966)(5|05)[0-9]{8}"
 test_string ="966551166749"
 
-result = regex.match(pattern,test_string)
+result = regex.match(pattern2,test_string)
 
 if result:
     print("Number is form Saudi")
