@@ -1,3 +1,3 @@
-## Hisham Bin Seddeq / Jira Account
+## Mohammed Aldawsari / Jira Account
 
 [Jira Cloud](https://mohdsite.atlassian.net/)
