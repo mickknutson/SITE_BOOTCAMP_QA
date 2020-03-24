@@ -27,3 +27,15 @@ print()
 while (i <= 19):
     print(19 , " x " , i , " = " , i*19)
     i+=1
+
+
+#----------------------------------------------------------
+#  exception handling lab
+
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print()
+    print("Exception of type ZeroDivisionError occurred")
+finally:
+    print("*** inside finally ***")
