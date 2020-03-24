@@ -22,3 +22,9 @@ num = 19
 
 for i in range(1, 11):
     print(num, 'x', i, '=', num * i)
+
+num = 0
+try:
+    print(3 / num)
+except:
+    print("<<< dividing by Zero >>>  ")
