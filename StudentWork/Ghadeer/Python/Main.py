@@ -35,3 +35,4 @@ try:
   print(3/0)
 except:
   print("An mathematical exception occurred")
+
