@@ -22,3 +22,13 @@ def table(num):
 
 table(19)
 
+#####################
+#ASSIGNMENT#
+
+def f(x):
+    return x/0
+try:
+   print(f(5))
+except ValueError:
+    print(" Divide by Zero Exception !!! ")
+
