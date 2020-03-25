@@ -1,3 +1,3 @@
 ## Bashaer Jamil / Jira Account
 
-[Jira Cloud](https://https://site-bashaer.atlassian.net/) 
+[Jira Cloud](https://site-bashaer.atlassian.net/) 
