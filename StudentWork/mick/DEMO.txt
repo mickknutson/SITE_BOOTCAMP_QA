@@ -1,0 +1,83 @@
+
+
+NOTES:
+========
+
+
+Teams one:
+----------
+
+Presentation:
+
+1. how did you add the initial data.
+2. Fixed size of departments
+
+
+Challenges?
+> THymeleaf
+> Bugs
+> Errors
+
+
+Teams two:
+----------
+
+What creates the SQL for you in the application
+
+
+
+Challenges?
+> css
+> Custom REST Repsonse Objects.
+
+
+
+
+
+
+Teams three:
+------------
+
+
+
+
+
+Challenges?
+
+> CSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Teams four:
+------------
+
+
+
+Challenges?
+
+
+
+
+
+
+
+
+
+
+
+
