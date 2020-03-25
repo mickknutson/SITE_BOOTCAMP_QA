@@ -1,2 +1,6 @@
 My JIRA URL :-
 https://yahya-alwehashi.atlassian.net/
+
+JIRA Issues Link:-
+
+https://yahya-alwehashi.atlassian.net/browse/SBQ-1
