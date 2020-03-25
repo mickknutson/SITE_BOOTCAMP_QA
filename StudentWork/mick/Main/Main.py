@@ -11,11 +11,3 @@ def evenOdd( x ):
 evenOdd(2)
 
 evenOdd(3)
-
-
-
-
-
-####################
-# Create String Lab:
-####################
