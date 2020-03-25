@@ -1,4 +1,3 @@
+# jira account url
 
-##jira account url:
-
-https://naderdroid.atlassian.net
+[jira_account] <https://naderdroid.atlassian.net>
