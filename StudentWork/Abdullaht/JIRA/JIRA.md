@@ -1,3 +1,3 @@
-	## Abdullah Altubayshi / Jira Account
+## Abdullah Altubayshi / Jira Account
 
-	[Jira Cloud](https://abdullah-at.atlassian.net/)
+[Jira Cloud](https://abdullah-at.atlassian.net/)
