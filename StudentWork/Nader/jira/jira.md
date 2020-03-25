@@ -1,3 +1,5 @@
 # jira account url
 
-[jira_account] <https://naderdroid.atlassian.net>
+[Jira Cloud HOME](https://naderdroid.atlassian.net)
+
+[Jira for SITE Project](https://naderdroid.atlassian.net/browse/SBQ)
