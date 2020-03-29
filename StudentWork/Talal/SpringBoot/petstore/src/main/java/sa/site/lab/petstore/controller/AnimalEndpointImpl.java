@@ -20,12 +20,9 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/animal") // URI
-public class AnimalEndpointImpl  {
+public class AnimalEndpointImpl {
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     @Autowired
     private AnimalService service;
 
@@ -48,13 +45,12 @@ public class AnimalEndpointImpl  {
 //    }
 
 
+//    public List<Animal> findAll() {
+//        // throw new RuntimeException("Not Yet Implemented ");
+//
+//    }
 
-    public List<Animal> findAll() {
-       // throw new RuntimeException("Not Yet Implemented ");
-                                       cv vbfnb gv
-
-
-    public String add(Model mo d++--------------------+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++el) {
+    public String add(Model model) {
         throw new RuntimeException("Not Yet Implemented ");
 
     }
