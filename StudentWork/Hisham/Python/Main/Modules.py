@@ -32,3 +32,8 @@ if result3:
     print("Match Saudi Number")
 else:
     print("No Match")
+
+
+foo = 'abc' * 10
+
+print(foo)
