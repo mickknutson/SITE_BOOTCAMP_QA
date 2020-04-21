@@ -1,0 +1,4 @@
+build:
+	mvn clean install
+
+
